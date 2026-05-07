@@ -1,17 +1,18 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+MJØÅR final package
 
-document.querySelectorAll('.reveal').forEach(el => {
-  let delay = 0;
-  if (el.classList.contains('d1')) delay = 120;
-  if (el.classList.contains('d2')) delay = 240;
-  if (el.classList.contains('d3')) delay = 360;
-  el.animate([
-    { opacity: 0, transform: 'translateY(10px)' },
-    { opacity: 1, transform: 'translateY(0)' }
-  ], {
-    duration: 1100,
-    delay,
-    fill: 'forwards',
-    easing: 'cubic-bezier(.22,1,.36,1)'
-  });
-});
+Dateien:
+- index.html
+- impressum.html
+- datenschutz.html
+- styles.css
+- script.js
+- assets/logo.png
+
+Enthalten:
+- aktuelle Landingpage im selben Stil
+- responsive/mobile optimiert
+- Footer mit Impressum + Datenschutz
+- statische Datenschutzseite passend zum Funktionsumfang dieses Pakets
+
+Wichtiger Hinweis:
+- Wenn du später Tracking, Newsletter, Shop-Funktionen, externe Fonts, Analytics, Cookie-Banner oder weitere Drittanbieter einbindest, müssen die Rechtstexte angepasst werden.
