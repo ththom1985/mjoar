@@ -1,4 +1,191 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
-});
+:root {
+  --bg: #ffffff;
+  --text: #667068;
+  --muted: #909993;
+  --muted-soft: rgba(144, 153, 147, 0.56);
+  --line: rgba(102, 112, 104, 0.16);
+  --panel: rgba(255,255,255,0.72);
+  --shadow: 0 18px 46px rgba(44,51,47,0.06);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.shell {
+  min-height: calc(100vh - 62px);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: clamp(18px, 2.8vw, 28px);
+  padding: clamp(18px, 3vw, 28px) 18px 10px;
+}
+
+.logo {
+  display: block;
+  width: min(92vw, 900px);
+  height: auto;
+  object-fit: contain;
+  background: var(--bg);
+}
+
+.copy {
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  width: min(100%, 980px);
+}
+
+.statement {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.25vw, 2.05rem);
+  line-height: 1.16;
+  letter-spacing: 0.015em;
+  text-align: center;
+  max-width: 100%;
+}
+.one-line { white-space: nowrap; }
+
+.descriptor, .origin, .launch, .site-footer {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+.descriptor {
+  color: var(--muted);
+  font-size: clamp(0.74rem, 0.95vw, 0.88rem);
+  letter-spacing: 0.23em;
+}
+
+.origin {
+  color: var(--muted-soft);
+  font-size: clamp(0.60rem, 0.8vw, 0.68rem);
+  letter-spacing: 0.22em;
+}
+
+.launch {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.30em;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  min-width: min(340px, 72vw);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 0 18px 22px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  flex-wrap: wrap;
+}
+.site-footer a { opacity: .9; }
+.site-footer a:hover { opacity: 1; }
+
+.legal-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 22px 16px;
+}
+
+.legal-card {
+  width: min(100%, 760px);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: clamp(22px, 4vw, 34px);
+  border-radius: 18px;
+}
+
+.back-link,
+.legal-card p,
+.legal-card a,
+.legal-card li,
+.legal-card h2 {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.legal-card h1 {
+  margin: 0 0 24px;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  line-height: 1.1;
+}
+
+.legal-card h2 {
+  margin: 0 0 10px;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+
+.legal-card p {
+  margin: 0;
+  color: #6f7772;
+  line-height: 1.78;
+  font-size: 0.98rem;
+}
+
+.legal-block + .legal-block {
+  margin-top: 22px;
+}
+
+.animate-in {
+  animation: rise .9s cubic-bezier(.22,1,.36,1) both;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 860px) {
+  .one-line { white-space: normal; }
+  .statement {
+    max-width: 18ch;
+    font-size: clamp(1.18rem, 5.2vw, 1.62rem);
+  }
+  .logo { width: min(96vw, 880px); }
+  .descriptor { font-size: 0.74rem; letter-spacing: 0.18em; }
+  .origin { font-size: 0.58rem; letter-spacing: 0.18em; }
+  .launch { min-width: 80vw; letter-spacing: 0.24em; }
+}
+
+@media (max-width: 520px) {
+  .shell { gap: 16px; padding-top: 12px; padding-bottom: 8px; }
+  .statement { max-width: 17ch; font-size: clamp(1.10rem, 6vw, 1.40rem); }
+  .copy { gap: 8px; }
+  .descriptor { font-size: 0.68rem; letter-spacing: 0.16em; }
+  .origin { font-size: 0.54rem; letter-spacing: 0.15em; }
+  .launch { font-size: 0.66rem; padding-top: 16px; min-width: 84vw; }
+  .site-footer { gap: 12px; font-size: 0.63rem; letter-spacing: 0.12em; }
+  .legal-card p { font-size: 0.94rem; }
+}
