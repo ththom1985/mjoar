@@ -50,7 +50,7 @@
         <p class="lede" style="margin-top:16px">Made to be reached for.</p>
       </div>
       <figure class="hero-shot" data-reveal>
-        <img src="/assets/hero.jpg" width="1364" height="768" loading="eager" alt="MJØÅR milk pitcher in Moss on a barista counter, beside an espresso machine" />
+        <img src="/assets/hero.jpg" width="1364" height="768" loading="eager" alt="MJØÅR milk pitcher in Juniper on a barista counter, beside an espresso machine" />
       </figure>
     </section>
 
@@ -112,8 +112,8 @@
             <ellipse class="shade" cx="60" cy="36" rx="20" ry="4"/>
           </svg>
         </div>
-        <div class="cname" id="cName">Moss</div>
-        <div class="cral" id="cRal">RAL 6021</div>
+        <div class="cname" id="cName">Juniper</div>
+        <div class="cral" id="cRal">Forest green</div>
         <div class="dots" id="dots" role="group" aria-label="Choose a colour"></div>
       </div>
     </section>
@@ -192,11 +192,11 @@
     onScroll();
 
     const colours = [
-      { name: 'Moss', ral: 'RAL 6021', body: '#8b9575', shade: '#798264', rim: '#687055' },
-      { name: 'Bone', ral: 'RAL 9001', body: '#e7e0d0', shade: '#d8d0bc', rim: '#c4bba4' },
-      { name: 'Stone', ral: 'RAL 7038', body: '#adb4b5', shade: '#9aa1a2', rim: '#878e8f' },
-      { name: 'Steel', ral: 'Natural', body: '#bcc0c1', shade: '#aab0b1', rim: '#969b9c' },
-      { name: 'Onyx', ral: 'RAL 9005', body: '#2c2f31', shade: '#232527', rim: '#191b1c' }
+      { name: 'Juniper', tag: 'Forest green', body: '#8a927a', shade: '#78806a', rim: '#666e5a' },
+      { name: 'Linen', tag: 'Warm white', body: '#e9e3d6', shade: '#dad3c2', rim: '#c6bda8' },
+      { name: 'Fjord', tag: 'Blue-grey', body: '#a6aeb0', shade: '#949c9e', rim: '#828a8c' },
+      { name: 'Steel', tag: 'Brushed steel', body: '#bcc0c1', shade: '#a9aeaf', rim: '#969b9c' },
+      { name: 'Onyx', tag: 'Matte black', body: '#2b2d2e', shade: '#232527', rim: '#1a1c1d' }
     ];
     const picker = document.getElementById('pickerObj');
     const dots = document.getElementById('dots');
@@ -207,7 +207,7 @@
       picker.style.setProperty('--c-shade', c.shade);
       picker.style.setProperty('--c-rim', c.rim);
       nameEl.textContent = c.name;
-      ralEl.textContent = c.ral;
+      ralEl.textContent = c.tag;
       dots.querySelectorAll('.dot').forEach((d) => d.setAttribute('aria-pressed', 'false'));
       btn.setAttribute('aria-pressed', 'true');
     };
