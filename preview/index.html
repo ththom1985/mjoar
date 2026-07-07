@@ -44,22 +44,14 @@
       </div>
     </section>
 
-    <section class="stage" id="object">
-      <div class="sticky">
-        <svg class="object pitcher" viewBox="0 0 120 140" aria-hidden="true">
-          <ellipse class="floor" cx="60" cy="128" rx="36" ry="5"/>
-          <path class="body" d="M34,35 L23,27 L26,38 Z"/>
-          <path class="body" d="M34,36 L86,36 Q92,36 92,44 L88,112 Q88,118 80,118 L40,118 Q32,118 32,112 L28,44 Q28,36 34,36 Z"/>
-          <path class="shade" d="M70,36 L86,36 Q92,36 92,44 L88,112 Q88,118 80,118 L70,118 Z"/>
-          <path class="handle" d="M88,50 Q108,56 106,74 Q104,92 86,94" fill="none" stroke-width="6" stroke-linecap="round"/>
-          <ellipse class="rim" cx="60" cy="36" rx="27" ry="6"/>
-          <ellipse class="shade" cx="60" cy="36" rx="20" ry="4"/>
-        </svg>
-        <div class="object-cap" data-reveal>
-          <h2>One object, made properly.</h2>
-        </div>
+    <section class="showpiece" id="object">
+      <div class="center narrow" data-reveal>
+        <p class="eyebrow">The object</p>
+        <p class="lede" style="margin-top:16px">Made to be reached for.</p>
       </div>
-      <div class="stage-scroll"></div>
+      <figure class="hero-shot" data-reveal>
+        <img src="/assets/hero.jpg" width="1364" height="768" loading="eager" alt="MJØÅR milk pitcher in Moss on a barista counter, beside an espresso machine" />
+      </figure>
     </section>
 
     <section id="story">
@@ -120,8 +112,8 @@
             <ellipse class="shade" cx="60" cy="36" rx="20" ry="4"/>
           </svg>
         </div>
-        <div class="cname" id="cName">Coral</div>
-        <div class="cral" id="cRal">RAL 3016</div>
+        <div class="cname" id="cName">Moss</div>
+        <div class="cral" id="cRal">RAL 6021</div>
         <div class="dots" id="dots" role="group" aria-label="Choose a colour"></div>
       </div>
     </section>
@@ -198,12 +190,11 @@
     }
 
     const colours = [
-      { name: 'Coral', ral: 'RAL 3016', body: '#c0533c', shade: '#a6432f', rim: '#8e3a28' },
-      { name: 'Reseda', ral: 'RAL 6011', body: '#6e7b4f', shade: '#5c6842', rim: '#4e5838' },
-      { name: 'Pastel blue', ral: 'RAL 5024', body: '#7fa0b4', shade: '#6b8ca0', rim: '#5a7b8f' },
-      { name: 'Anthracite', ral: 'RAL 7016', body: '#3b4145', shade: '#2f353a', rim: '#23282b' },
+      { name: 'Moss', ral: 'RAL 6021', body: '#8b9575', shade: '#798264', rim: '#687055' },
       { name: 'Bone', ral: 'RAL 9001', body: '#e7e0d0', shade: '#d8d0bc', rim: '#c4bba4' },
-      { name: 'Sage', ral: 'Signature', body: '#667068', shade: '#56605a', rim: '#49524c' }
+      { name: 'Stone', ral: 'RAL 7038', body: '#adb4b5', shade: '#9aa1a2', rim: '#878e8f' },
+      { name: 'Steel', ral: 'Natural', body: '#bcc0c1', shade: '#aab0b1', rim: '#969b9c' },
+      { name: 'Onyx', ral: 'RAL 9005', body: '#2c2f31', shade: '#232527', rim: '#191b1c' }
     ];
     const picker = document.getElementById('pickerObj');
     const dots = document.getElementById('dots');
