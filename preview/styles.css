@@ -83,6 +83,7 @@ section{padding-block:clamp(96px,18vh,220px)}
 .spec-list li:last-child{border-bottom:1px solid var(--line)}
 .spec-list .k{color:var(--ink);font-family:var(--serif);font-size:1.15rem}
 .spec-list .v{color:var(--muted);font-size:.92rem;text-align:right;max-width:24ch}
+.smile-note{margin-top:22px;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--text)}
 
 .picker{text-align:center}
 .picker .stageobj{width:min(60vw,300px);margin:clamp(30px,5vw,54px) auto 0}
@@ -128,6 +129,19 @@ section{padding-block:clamp(96px,18vh,220px)}
 
 @media (max-width:720px){
   .topnav{display:none}
+  .topbar .wrap{padding:12px 0}
+  .nav-right{gap:14px}
+  section{padding-block:clamp(60px,11vh,92px)}
+  .hero{min-height:82vh;padding-block:40px}
+  .hero .brand{width:min(80%,440px);margin-bottom:30px}
+  .hero .line{font-size:clamp(1.4rem,6.5vw,1.9rem);max-width:18ch}
+  .narrow{width:88%}
+  .display{font-size:clamp(2rem,8.5vw,2.8rem)}
+  .lede{font-size:clamp(1.35rem,6vw,1.9rem)}
   .form{flex-direction:column}.form .btn{width:100%}
-  .stage-scroll{height:30vh}
+  .spec-list li{flex-direction:column;gap:5px;padding:14px 0}
+  .spec-list .v{text-align:left;max-width:100%}
+  .anatomy-fig{display:none}
+  .hero-shot{height:58vh}
+  .smile-note{font-size:1rem}
 }
