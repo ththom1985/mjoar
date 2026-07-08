@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MJØÅR — Instruments for the bar, in considered colour</title>
-  <meta name="description" content="MJØÅR makes barista instruments in considered, matte colour. Nordic restraint, drawn with Bavarian precision. Conceived between Munich and Vienna." />
+  <title>MJØÅR — Considered tools for coffee</title>
+  <meta name="description" content="MJØÅR makes considered, matte barista tools — a heavier-gauge stainless body, a hard-wearing finish, built to last. A father-and-son brand between Munich and Vienna." />
   <meta name="robots" content="noindex" />
-  <meta property="og:title" content="MJØÅR — Colour, considered." />
-  <meta property="og:description" content="Barista instruments in considered, matte colour. Conceived between Munich and Vienna." />
+  <meta property="og:title" content="MJØÅR — Crafted to last. Designed for the moment." />
+  <meta property="og:description" content="Considered, matte barista tools. Between Munich and Vienna." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,11 +21,18 @@
     <div class="wrap">
       <a href="#top" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="topnav">
-        <a href="#story">Story</a>
-        <a href="#colour">Colour</a>
-        <a href="#craft">Craft</a>
+        <a href="#story" data-i18n="nav.story">Story</a>
+        <a href="#colour" data-i18n="nav.finishes">Finishes</a>
+        <a href="#craft" data-i18n="nav.craft">Craft</a>
       </nav>
-      <a class="shoplink" href="https://shop.mjoar.com">Shop</a>
+      <div class="nav-right">
+        <div class="langtoggle" role="group" aria-label="Language">
+          <button type="button" data-lang="de">DE</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a class="shoplink" href="https://shop.mjoar.com" data-i18n="nav.shop">Shop</a>
+      </div>
     </div>
   </header>
 
@@ -33,21 +40,21 @@
 
     <section class="hero" id="hero">
       <img class="brand" src="/assets/logo.png" alt="MJØÅR" />
-      <p class="line">Crafted to last. Designed for the moment.</p>
+      <p class="line" data-i18n="hero.line">Crafted to last. Designed for the moment.</p>
       <p class="origin">München · Wien</p>
-      <p class="scrollcue">Scroll</p>
+      <p class="scrollcue" data-i18n="hero.scroll">Scroll</p>
     </section>
 
     <section class="manifesto">
       <div class="narrow" data-reveal>
-        <p class="display">Most bars are black, or steel. We chose colour — the quiet kind.</p>
+        <p class="display" data-i18n="manifesto">Most coffee tools are an afterthought. Ours are the opposite: considered, matte, made to last.</p>
       </div>
     </section>
 
     <section class="showpiece" id="object">
       <div class="center narrow" data-reveal>
-        <p class="eyebrow">The object</p>
-        <p class="lede" style="margin-top:16px">Instruments for the modern bar.</p>
+        <p class="eyebrow" data-i18n="object.eyebrow">The object</p>
+        <p class="lede" style="margin-top:16px" data-i18n="object.lede">Instruments for the modern bar.</p>
       </div>
       <figure class="hero-shot" data-reveal>
         <img src="/assets/hero.jpg" width="1364" height="768" loading="eager" alt="MJØÅR milk pitcher in Juniper on a barista counter, beside an espresso machine" />
@@ -56,9 +63,9 @@
 
     <section id="story">
       <div class="center narrow">
-        <p class="eyebrow" data-reveal>Our story</p>
-        <p class="lede" data-reveal style="margin-top:22px">Good coffee deserves good tools. We made the ones we couldn't find.</p>
-        <p class="sub d1" data-reveal>Nothing decorative. Nothing loud. A palette taken from nature rather than trend, and pieces made to be lived with for years — not replaced each season. Calm, on the outside; exact, underneath.</p>
+        <p class="eyebrow" data-reveal data-i18n="story.eyebrow">Our story</p>
+        <p class="lede" data-reveal style="margin-top:22px" data-i18n="story.lede">Good coffee deserves good tools. We made the ones we couldn't find.</p>
+        <p class="sub d1" data-reveal data-i18n="story.sub">Nothing decorative, nothing loud. Honest materials, a heavier-than-standard steel body, and matte finishes chosen with restraint. Made to be used every day, for years.</p>
       </div>
     </section>
 
@@ -77,22 +84,22 @@
               <ellipse class="shade" cx="60" cy="36" rx="20" ry="4"/>
             </g>
             <g class="anno">
-              <circle cx="98" cy="80" r="2.5"/><line x1="98" y1="80" x2="300" y2="72"/><text x="308" y="76">Precision spout</text>
-              <circle cx="200" cy="150" r="2.5"/><line x1="200" y1="150" x2="300" y2="150"/><text x="308" y="154">Matte 18/10 body</text>
-              <circle cx="150" cy="228" r="2.5"/><line x1="150" y1="228" x2="300" y2="228"/><text x="308" y="232">Weighted base</text>
+              <circle cx="98" cy="80" r="2.5"/><line x1="98" y1="80" x2="300" y2="72"/><text x="308" y="76" data-i18n="anno.spout">Precision spout</text>
+              <circle cx="200" cy="150" r="2.5"/><line x1="200" y1="150" x2="300" y2="150"/><text x="308" y="154" data-i18n="anno.body">Heavier 18/10 body</text>
+              <circle cx="150" cy="228" r="2.5"/><line x1="150" y1="228" x2="300" y2="228"/><text x="308" y="232" data-i18n="anno.base">Weighted base</text>
             </g>
           </svg>
         </div>
         <div data-reveal class="d1">
-          <p class="eyebrow">The craft</p>
-          <h2 style="margin-top:16px">Made to be used. Made to last.</h2>
-          <p class="sub" style="max-width:52ch">We make the tools we wanted on our own bars: precise, matte, colourful, built for years.</p>
+          <p class="eyebrow" data-i18n="craft.eyebrow">The craft</p>
+          <h2 style="margin-top:16px" data-i18n="craft.h2">Made to be used. Made to last.</h2>
+          <p class="sub" style="max-width:52ch" data-i18n="craft.promise">We make the tools we wanted on our own bars: precise, matte, and built better.</p>
           <ul class="spec-list">
-            <li><span class="k">Body</span><span class="v">Food-grade 18/10 stainless steel</span></li>
-            <li><span class="k">Finish</span><span class="v">Matte powder coat, food-safe, dishwasher-friendly</span></li>
-            <li><span class="k">Spout</span><span class="v">Sharply drawn for controlled latte art</span></li>
-            <li><span class="k">Sizes</span><span class="v">350 &amp; 600 ml</span></li>
-            <li><span class="k">From</span><span class="v">€24.90</span></li>
+            <li><span class="k" data-i18n="spec.body.k">Body</span><span class="v" data-i18n="spec.body.v">Food-grade 18/10 stainless steel</span></li>
+            <li><span class="k" data-i18n="spec.gauge.k">Heavier gauge</span><span class="v" data-i18n="spec.gauge.v">~0.9 mm wall vs. the usual ~0.6 mm — more thermal mass for steadier steaming and a solid, balanced feel</span></li>
+            <li><span class="k" data-i18n="spec.finish.k">Finish</span><span class="v" data-i18n="spec.finish.v">Hard-wearing matte coating, scratch- and dishwasher-resistant</span></li>
+            <li><span class="k" data-i18n="spec.spout.k">Spout</span><span class="v" data-i18n="spec.spout.v">Sharply drawn for controlled latte art</span></li>
+            <li><span class="k" data-i18n="spec.sizes.k">Sizes</span><span class="v" data-i18n="spec.sizes.v">350 &amp; 600 ml</span></li>
           </ul>
         </div>
       </div>
@@ -100,8 +107,9 @@
 
     <section id="colour">
       <div class="picker center narrow">
-        <p class="eyebrow" data-reveal>The colour system</p>
-        <p class="lede" data-reveal style="margin-top:18px">Serious about colour. Serious about coffee.</p>
+        <p class="eyebrow" data-reveal data-i18n="colour.eyebrow">The finishes</p>
+        <p class="lede" data-reveal style="margin-top:18px" data-i18n="colour.lede">Serious about colour. Serious about coffee.</p>
+        <p class="sub d1" data-reveal data-i18n="colour.sub">Mostly quiet neutrals — with Juniper as the one that speaks up.</p>
         <div class="stageobj" data-reveal>
           <svg class="pitcher" id="pickerObj" viewBox="0 0 120 140" aria-hidden="true">
             <ellipse class="floor" cx="60" cy="128" rx="36" ry="5"/>
@@ -115,38 +123,49 @@
         </div>
         <div class="cname" id="cName">Juniper</div>
         <div class="cral" id="cRal">Forest green</div>
-        <div class="dots" id="dots" role="group" aria-label="Choose a colour"></div>
+        <div class="dots" id="dots" role="group" aria-label="Choose a finish"></div>
       </div>
     </section>
 
     <section>
       <div class="quote" data-reveal>
-        <p>“The first pitcher that looks, on the bar, the way a clean shot feels.”</p>
-        <div class="attr">Barista test round · Spring 2026</div>
+        <p data-i18n="quote.text">“The first pitcher that looks, on the bar, the way a clean shot feels.”</p>
+        <div class="attr" data-i18n="quote.attr">Barista test round · Spring 2026</div>
       </div>
     </section>
 
-    <section id="provenance">
+    <section id="founders">
       <div class="center narrow founder">
-        <p class="eyebrow" data-reveal>The founders</p>
-        <p class="lede" data-reveal style="margin-top:20px">A father, a son, and two coffee cities.</p>
-        <p class="sub d1" data-reveal>MJØÅR started at home, around a portafilter — and behind a bar in Vienna. We are a father and son: Thorsten in Munich, and Jonah, who studies international business in Vienna and has pulled weekend shifts at a café there for three years. One of us in tech, the other behind the bar — both hooked on the same cup.</p>
-        <p class="sub d1" data-reveal>The best milk pitchers were always black, or steel — never anything with real character. So we made the one we both wanted: matte, colourful, exact. Chosen curve by curve, colour by colour, and proven where it counts — on a real bar, on a real morning.</p>
+        <p class="eyebrow" data-reveal data-i18n="founders.eyebrow">The founders</p>
+        <p class="lede" data-reveal style="margin-top:20px" data-i18n="founders.lede">A father, a son, and two coffee cities.</p>
+        <p class="sub d1" data-reveal data-i18n="founders.p1">MJØÅR started at home, around a portafilter — and behind a bar in Vienna. We are a father and son: Thorsten in Munich, and Jonah, who studies international business in Vienna and has pulled weekend shifts at a café there for three years. One of us in tech, the other behind the bar — both hooked on the same cup.</p>
+        <p class="sub d1" data-reveal data-i18n="founders.p2">The best milk pitchers were always black, or steel — never anything with real character. So we made the one we both wanted: matte, considered, exact, and built better than the rest.</p>
         <div data-reveal class="d2">
           <div class="sign">Thorsten &amp; Jonah</div>
-          <div class="role">Founders · Munich &amp; Vienna</div>
+          <div class="role" data-i18n="founders.role">Founders · Munich &amp; Vienna</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="assurances" data-reveal>
+          <div class="item"><div class="k" data-i18n="assure.1.k">Food-safe</div><div class="v" data-i18n="assure.1.v">18/10 stainless, food-grade coating</div></div>
+          <div class="item"><div class="k" data-i18n="assure.2.k">Designed in Germany</div><div class="v" data-i18n="assure.2.v">Thomas Mercantile, Munich</div></div>
+          <div class="item"><div class="k" data-i18n="assure.3.k">Tested by baristas</div><div class="v" data-i18n="assure.3.v">Proven on a working bar</div></div>
+          <div class="item"><div class="k" data-i18n="assure.4.k">Made to last</div><div class="v" data-i18n="assure.4.v">Built for years of service</div></div>
         </div>
       </div>
     </section>
 
     <section class="signup" id="early">
       <div class="narrow">
-        <p class="eyebrow" data-reveal>Early access</p>
-        <h2 data-reveal style="margin-top:14px">The first colours arrive this autumn.</h2>
-        <p class="sub d1" data-reveal>Leave your email for early access, and a first look at the collection before anyone else.</p>
+        <p class="eyebrow" data-reveal data-i18n="early.eyebrow">Early access</p>
+        <h2 data-reveal style="margin-top:14px" data-i18n="early.h2">The first finishes arrive this autumn.</h2>
+        <p class="sub d1" data-reveal data-i18n="early.sub">Leave your email for early access, and a first look at the collection before anyone else.</p>
         <form class="form" data-reveal onsubmit="return false">
-          <input type="email" placeholder="you@email.com" aria-label="Email address" />
-          <button class="btn" type="submit">Notify me</button>
+          <input type="email" placeholder="you@email.com" aria-label="Email address" data-i18n-ph="early.ph" />
+          <button class="btn" type="submit" data-i18n="early.btn">Notify me</button>
         </form>
       </div>
     </section>
@@ -157,9 +176,9 @@
     <div class="wrap">
       <a href="#top" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="footnav">
-        <a href="#story">Story</a>
-        <a href="#colour">Colour</a>
-        <a href="https://shop.mjoar.com">Shop</a>
+        <a href="#story" data-i18n="nav.story">Story</a>
+        <a href="#colour" data-i18n="nav.finishes">Finishes</a>
+        <a href="https://shop.mjoar.com" data-i18n="nav.shop">Shop</a>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
       </nav>
@@ -169,8 +188,8 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.14 });
@@ -194,24 +213,24 @@
     onScroll();
 
     const colours = [
-      { name: 'Juniper', tag: 'Forest green', body: '#8a927a', shade: '#78806a', rim: '#666e5a' },
-      { name: 'Linen', tag: 'Warm white', body: '#e9e3d6', shade: '#dad3c2', rim: '#c6bda8' },
-      { name: 'Fjord', tag: 'Blue-grey', body: '#a6aeb0', shade: '#949c9e', rim: '#828a8c' },
-      { name: 'Steel', tag: 'Brushed steel', body: '#bcc0c1', shade: '#a9aeaf', rim: '#969b9c' },
-      { name: 'Onyx', tag: 'Matte black', body: '#2b2d2e', shade: '#232527', rim: '#1a1c1d' }
+      { name: 'Juniper', tagEn: 'Forest green', tagDe: 'Waldgrün', body: '#8a927a', shade: '#78806a', rim: '#666e5a' },
+      { name: 'Linen', tagEn: 'Warm white', tagDe: 'Warmweiß', body: '#e9e3d6', shade: '#dad3c2', rim: '#c6bda8' },
+      { name: 'Fjord', tagEn: 'Blue-grey', tagDe: 'Blaugrau', body: '#a6aeb0', shade: '#949c9e', rim: '#828a8c' },
+      { name: 'Steel', tagEn: 'Brushed steel', tagDe: 'Gebürsteter Stahl', body: '#bcc0c1', shade: '#a9aeaf', rim: '#969b9c' },
+      { name: 'Onyx', tagEn: 'Matte black', tagDe: 'Mattschwarz', body: '#2b2d2e', shade: '#232527', rim: '#1a1c1d' }
     ];
     const picker = document.getElementById('pickerObj');
     const dots = document.getElementById('dots');
     const nameEl = document.getElementById('cName');
     const ralEl = document.getElementById('cRal');
-    const setColour = (c, i, btn) => {
+    let currentColour = 0, currentLang = 'en';
+    const paintColour = () => {
+      const c = colours[currentColour];
       picker.style.setProperty('--c-body', c.body);
       picker.style.setProperty('--c-shade', c.shade);
       picker.style.setProperty('--c-rim', c.rim);
       nameEl.textContent = c.name;
-      ralEl.textContent = c.tag;
-      dots.querySelectorAll('.dot').forEach((d) => d.setAttribute('aria-pressed', 'false'));
-      btn.setAttribute('aria-pressed', 'true');
+      ralEl.textContent = currentLang === 'de' ? c.tagDe : c.tagEn;
     };
     colours.forEach((c, i) => {
       const b = document.createElement('button');
@@ -219,10 +238,92 @@
       b.style.background = c.body;
       b.setAttribute('aria-label', c.name);
       b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false');
-      b.addEventListener('click', () => setColour(c, i, b));
+      b.addEventListener('click', () => {
+        currentColour = i;
+        dots.querySelectorAll('.dot').forEach((d) => d.setAttribute('aria-pressed', 'false'));
+        b.setAttribute('aria-pressed', 'true');
+        paintColour();
+      });
       dots.appendChild(b);
     });
-    setColour(colours[0], 0, dots.firstChild);
+
+    const T = {
+      en: {
+        'nav.story':'Story','nav.finishes':'Finishes','nav.craft':'Craft','nav.shop':'Shop',
+        'hero.line':'Crafted to last. Designed for the moment.','hero.scroll':'Scroll',
+        'manifesto':'Most coffee tools are an afterthought. Ours are the opposite: considered, matte, made to last.',
+        'object.eyebrow':'The object','object.lede':'Instruments for the modern bar.',
+        'story.eyebrow':'Our story','story.lede':'Good coffee deserves good tools. We made the ones we couldn’t find.',
+        'story.sub':'Nothing decorative, nothing loud. Honest materials, a heavier-than-standard steel body, and matte finishes chosen with restraint. Made to be used every day, for years.',
+        'anno.spout':'Precision spout','anno.body':'Heavier 18/10 body','anno.base':'Weighted base',
+        'craft.eyebrow':'The craft','craft.h2':'Made to be used. Made to last.',
+        'craft.promise':'We make the tools we wanted on our own bars: precise, matte, and built better.',
+        'spec.body.k':'Body','spec.body.v':'Food-grade 18/10 stainless steel',
+        'spec.gauge.k':'Heavier gauge','spec.gauge.v':'~0.9 mm wall vs. the usual ~0.6 mm — more thermal mass for steadier steaming and a solid, balanced feel',
+        'spec.finish.k':'Finish','spec.finish.v':'Hard-wearing matte coating, scratch- and dishwasher-resistant',
+        'spec.spout.k':'Spout','spec.spout.v':'Sharply drawn for controlled latte art',
+        'spec.sizes.k':'Sizes','spec.sizes.v':'350 & 600 ml',
+        'colour.eyebrow':'The finishes','colour.lede':'Serious about colour. Serious about coffee.',
+        'colour.sub':'Mostly quiet neutrals — with Juniper as the one that speaks up.',
+        'quote.text':'“The first pitcher that looks, on the bar, the way a clean shot feels.”','quote.attr':'Barista test round · Spring 2026',
+        'founders.eyebrow':'The founders','founders.lede':'A father, a son, and two coffee cities.',
+        'founders.p1':'MJØÅR started at home, around a portafilter — and behind a bar in Vienna. We are a father and son: Thorsten in Munich, and Jonah, who studies international business in Vienna and has pulled weekend shifts at a café there for three years. One of us in tech, the other behind the bar — both hooked on the same cup.',
+        'founders.p2':'The best milk pitchers were always black, or steel — never anything with real character. So we made the one we both wanted: matte, considered, exact, and built better than the rest.',
+        'founders.role':'Founders · Munich & Vienna',
+        'assure.1.k':'Food-safe','assure.1.v':'18/10 stainless, food-grade coating',
+        'assure.2.k':'Designed in Germany','assure.2.v':'Thomas Mercantile, Munich',
+        'assure.3.k':'Tested by baristas','assure.3.v':'Proven on a working bar',
+        'assure.4.k':'Made to last','assure.4.v':'Built for years of service',
+        'early.eyebrow':'Early access','early.h2':'The first finishes arrive this autumn.',
+        'early.sub':'Leave your email for early access, and a first look at the collection before anyone else.',
+        'early.ph':'you@email.com','early.btn':'Notify me'
+      },
+      de: {
+        'nav.story':'Marke','nav.finishes':'Farben','nav.craft':'Handwerk','nav.shop':'Shop',
+        'hero.line':'Gemacht, um zu bleiben. Entworfen für den Moment.','hero.scroll':'Scrollen',
+        'manifesto':'Die meisten Barista-Werkzeuge sind Nebensache. Unsere sind das Gegenteil: durchdacht, matt, für Jahre gemacht.',
+        'object.eyebrow':'Das Objekt','object.lede':'Werkzeug für die moderne Bar.',
+        'story.eyebrow':'Unsere Geschichte','story.lede':'Guter Kaffee verdient gutes Werkzeug. Wir haben das gemacht, das uns gefehlt hat.',
+        'story.sub':'Nichts Dekoratives, nichts Lautes. Ehrliche Materialien, ein dickwandigerer Korpus als üblich und matte Töne mit Zurückhaltung gewählt. Für den täglichen Gebrauch gemacht — über Jahre.',
+        'anno.spout':'Präziser Ausguss','anno.body':'Kräftiger 18/10-Korpus','anno.base':'Standfester Boden',
+        'craft.eyebrow':'Das Handwerk','craft.h2':'Zum Benutzen gemacht. Zum Bleiben gebaut.',
+        'craft.promise':'Wir machen das Werkzeug, das wir selbst wollten: präzise, matt und besser gebaut.',
+        'spec.body.k':'Korpus','spec.body.v':'Lebensmittelechter 18/10-Edelstahl',
+        'spec.gauge.k':'Mehr Wandstärke','spec.gauge.v':'~0,9 mm statt üblicher ~0,6 mm — mehr thermische Masse für gleichmäßigeres Aufschäumen und ein sattes, ausbalanciertes Gefühl',
+        'spec.finish.k':'Oberfläche','spec.finish.v':'Widerstandsfähige matte Beschichtung, kratz- und spülmaschinenfest',
+        'spec.spout.k':'Ausguss','spec.spout.v':'Scharf gezogen für kontrollierte Latte-Art',
+        'spec.sizes.k':'Größen','spec.sizes.v':'350 & 600 ml',
+        'colour.eyebrow':'Die Farben','colour.lede':'Farbe ernst genommen. Kaffee erst recht.',
+        'colour.sub':'Überwiegend ruhige Neutraltöne — mit Juniper als dem, der auffällt.',
+        'quote.text':'„Das erste Kännchen, das auf der Bar so aussieht, wie sich ein sauberer Shot anfühlt.“','quote.attr':'Barista-Testrunde · Frühjahr 2026',
+        'founders.eyebrow':'Die Gründer','founders.lede':'Ein Vater, ein Sohn und zwei Kaffeestädte.',
+        'founders.p1':'MJØÅR begann zu Hause am Siebträger — und hinter einer Bar in Wien. Wir sind Vater und Sohn: Thorsten in München, und Jonah, der in Wien International Business studiert und dort seit drei Jahren am Wochenende in einem Café arbeitet. Einer im Tech, der andere hinter der Theke — beide von derselben Tasse gepackt.',
+        'founders.p2':'Die besten Milchkännchen waren immer schwarz oder Edelstahl — nie etwas mit echtem Charakter. Also machten wir das, das wir beide wollten: matt, durchdacht, exakt — und besser gebaut als der Rest.',
+        'founders.role':'Gründer · München & Wien',
+        'assure.1.k':'Lebensmittelecht','assure.1.v':'18/10-Stahl, food-grade Beschichtung',
+        'assure.2.k':'Entworfen in Deutschland','assure.2.v':'Thomas Mercantile, München',
+        'assure.3.k':'Von Baristas getestet','assure.3.v':'Auf echter Bar bewährt',
+        'assure.4.k':'Für Jahre gemacht','assure.4.v':'Gebaut für den Dauereinsatz',
+        'early.eyebrow':'Früher Zugang','early.h2':'Die ersten Farben kommen diesen Herbst.',
+        'early.sub':'Trag dich ein für frühen Zugang und einen ersten Blick auf die Kollektion — vor allen anderen.',
+        'early.ph':'du@email.com','early.btn':'Benachrichtigen'
+      }
+    };
+
+    const applyLang = (lang) => {
+      currentLang = (lang === 'de') ? 'de' : 'en';
+      document.documentElement.lang = currentLang;
+      const dict = T[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach((el) => { const k = el.getAttribute('data-i18n'); if (dict[k] !== undefined) el.textContent = dict[k]; });
+      document.querySelectorAll('[data-i18n-ph]').forEach((el) => { const k = el.getAttribute('data-i18n-ph'); if (dict[k] !== undefined) el.placeholder = dict[k]; });
+      document.querySelectorAll('.langtoggle button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === currentLang ? 'true' : 'false'));
+      paintColour();
+      try { localStorage.setItem('mjoar_lang', currentLang); } catch (e) {}
+    };
+    document.querySelectorAll('.langtoggle button').forEach((b) => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+    let initial = 'en';
+    try { initial = localStorage.getItem('mjoar_lang') || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en'); } catch (e) {}
+    applyLang(initial);
   </script>
 </body>
 </html>

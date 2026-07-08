@@ -35,6 +35,11 @@ p{margin:0}
 .topnav a:hover{color:var(--ink)}
 .shoplink{color:var(--ink);border:1px solid var(--line-strong);padding:9px 20px;border-radius:24px;letter-spacing:.18em;transition:.3s var(--ease)}
 .shoplink:hover{background:var(--bone)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.langtoggle{display:flex;align-items:center;gap:7px;font-size:.72rem;letter-spacing:.14em;color:var(--muted)}
+.langtoggle button{background:none;border:none;padding:0;margin:0;font:inherit;letter-spacing:inherit;color:var(--muted);cursor:pointer;transition:color .3s var(--ease)}
+.langtoggle button:hover{color:var(--ink)}
+.langtoggle button[aria-pressed="true"]{color:var(--ink)}
 
 section{padding-block:clamp(96px,18vh,220px)}
 .hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-block:60px}
