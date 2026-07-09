@@ -150,7 +150,6 @@ section{padding-block:clamp(96px,18vh,220px)}
   .form{flex-direction:column}.form .btn{width:100%}
   .spec-list li{flex-direction:column;gap:5px;padding:14px 0}
   .spec-list .v{text-align:left;max-width:100%}
-  .anatomy-fig{display:none}
-  .hero-shot{height:58vh}
-  .smile-note{font-size:1rem}
+  .site-footer .wrap{flex-direction:column;text-align:center;gap:16px}
+  .footnav{flex-wrap:wrap;justify-content:center;gap:14px 18px}
 }
