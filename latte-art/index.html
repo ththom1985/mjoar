@@ -24,8 +24,6 @@
     .sec-head h2{margin-top:14px}
     .sec-head p{color:var(--muted);margin-top:16px;font-size:1.08rem;line-height:1.6}
 
-    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);margin-top:clamp(38px,5vw,62px)}
-    @media(max-width:820px){.cards3{grid-template-columns:1fr;max-width:460px;margin-inline:auto;gap:28px}}
     .card .num{font-family:var(--serif);font-size:1rem;color:var(--muted)}
     .card .k{font-family:var(--serif);font-size:1.35rem;color:var(--ink);margin:6px 0 10px}
     .card p{color:var(--muted);font-size:.97rem;line-height:1.66}
@@ -57,6 +55,37 @@
     .guide-cta p{color:var(--muted);margin:18px auto 0;max-width:44ch;line-height:1.6}
     .guide-cta .btn{margin-top:30px}
     .disclaimer{text-align:center;color:var(--soft);font-size:.82rem;margin-top:clamp(30px,5vh,50px);letter-spacing:.02em}
+
+    .block{margin-top:clamp(52px,7vw,92px)}
+    .blockhead{font-size:clamp(1.5rem,3vw,2rem);color:var(--ink)}
+    .blocksub{color:var(--muted);margin-top:12px;font-size:1.05rem;line-height:1.55;max-width:52ch}
+    .legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+    .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px;border:1px solid var(--line-strong)}
+    .drinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(14px,1.8vw,22px);margin-top:26px}
+    .drink{border:1px solid var(--line);border-radius:12px;padding:18px 18px 20px}
+    .drink .dn{font-family:var(--serif);font-size:1.18rem;color:var(--ink)}
+    .drink .dnote{color:var(--muted);font-size:.85rem;line-height:1.5;margin-top:7px}
+    .bar{display:flex;height:9px;border-radius:6px;overflow:hidden;margin-top:15px;border:1px solid var(--line)}
+    .bar span{display:block;height:100%}
+    .seg-base{background:#6b5140}
+    .seg-milk{background:#e4ddcd}
+    .seg-foam{background:#f4f2ec}
+    .seg-matcha{background:#8a9a6b}
+    .tex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.5vw,34px);margin-top:28px}
+    @media(max-width:760px){.tex-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
+    .tex .tt{font-family:var(--serif);font-size:1.2rem;color:var(--ink);margin-bottom:8px}
+    .tex p{color:var(--muted);line-height:1.6;font-size:.96rem;max-width:34ch}
+    .tex-foot{margin-top:26px;color:var(--text);font-size:.98rem;line-height:1.55;text-align:center;max-width:62ch;margin-inline:auto}
+    .milks{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2.2vw,26px);margin-top:28px}
+    @media(max-width:700px){.milks{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
+    .milk-card{border:1px solid var(--line);border-radius:12px;padding:22px}
+    .milk-card .mn{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
+    .milk-card .md{color:var(--muted);font-size:.95rem;line-height:1.6;margin-top:9px}
+    .metrics{display:flex;gap:30px;margin-top:18px}
+    .metric .ml{font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--soft)}
+    .metric .mv{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-top:3px}
+    .milk-notes{margin-top:clamp(26px,3vw,40px);display:grid;gap:14px}
+    .milk-note{padding:14px 18px;border-left:2px solid var(--line-strong);border-radius:0;color:var(--text);font-size:.95rem;line-height:1.6}
   </style>
 </head>
 <body class="guide">
@@ -90,28 +119,126 @@
       </div>
     </section>
 
-    <section>
+    <section id="basics">
       <div class="wrap">
         <div class="center sec-head" data-reveal>
-          <p class="eyebrow" data-i18n="basics.eyebrow">Fundamentals</p>
-          <h2 data-i18n="basics.h">It is won or lost in the milk.</h2>
-          <p data-i18n="basics.p">Latte art is not wrist magic. It is texture. Get the milk to wet paint, glossy and fine, and the pattern almost pours itself. Everything below matters more than the pour.</p>
+          <p class="eyebrow" data-i18n="basics.eyebrow">Start here</p>
+          <h2 data-i18n="basics.h">Milk school.</h2>
+          <p data-i18n="basics.lede">Before the patterns: how much milk each coffee wants, how to texture it, and how every kind of milk behaves.</p>
         </div>
-        <div class="cards3">
-          <div class="card" data-reveal>
-            <p class="num">01</p>
-            <p class="k" data-i18n="f1.t">The milk</p>
-            <p data-i18n="f1.d">Cold, fresh whole milk is easiest; its proteins build the most stable foam. Barista oat is the best non-dairy option and steams close to milk. Start with a cold jug, filled just below the spout.</p>
+
+        <div class="block" data-reveal>
+          <h3 class="blockhead" data-i18n="drinks.h">The drinks, and their milk</h3>
+          <p class="blocksub" data-i18n="drinks.p">A quick map of the classics: how much steamed milk, and how much foam on top.</p>
+          <div class="legend">
+            <span><i class="seg-base"></i><span data-i18n="leg.base">Espresso</span></span>
+            <span><i class="seg-milk"></i><span data-i18n="leg.milk">Steamed milk</span></span>
+            <span><i class="seg-foam"></i><span data-i18n="leg.foam">Foam</span></span>
           </div>
-          <div class="card" data-reveal>
-            <p class="num">02</p>
-            <p class="k" data-i18n="f2.t">Microfoam</p>
-            <p data-i18n="f2.d">Stretch first: tip just below the surface for a short hiss of air, two to three seconds. Then submerge the tip to spin the milk into a smooth whirlpool and heat to about 60 to 65 degrees. No big bubbles, just a glossy sheen.</p>
+          <div class="drinks">
+            <div class="drink">
+              <p class="dn" data-i18n="d.espresso.n">Espresso</p>
+              <p class="dnote" data-i18n="d.espresso.note">No milk. The base of it all.</p>
+              <div class="bar"><span class="seg-base" style="width:100%"></span></div>
+            </div>
+            <div class="drink">
+              <p class="dn" data-i18n="d.macchiato.n">Espresso Macchiato</p>
+              <p class="dnote" data-i18n="d.macchiato.note">Espresso, just marked with a dab of foam.</p>
+              <div class="bar"><span class="seg-base" style="width:78%"></span><span class="seg-foam" style="width:22%"></span></div>
+            </div>
+            <div class="drink">
+              <p class="dn" data-i18n="d.cortado.n">Cortado</p>
+              <p class="dnote" data-i18n="d.cortado.note">Equal espresso and warm milk, barely any foam.</p>
+              <div class="bar"><span class="seg-base" style="width:45%"></span><span class="seg-milk" style="width:50%"></span><span class="seg-foam" style="width:5%"></span></div>
+            </div>
+            <div class="drink">
+              <p class="dn" data-i18n="d.flatwhite.n">Flat White</p>
+              <p class="dnote" data-i18n="d.flatwhite.note">Double espresso, silky milk, a thin microfoam.</p>
+              <div class="bar"><span class="seg-base" style="width:32%"></span><span class="seg-milk" style="width:62%"></span><span class="seg-foam" style="width:6%"></span></div>
+            </div>
+            <div class="drink">
+              <p class="dn" data-i18n="d.cappuccino.n">Cappuccino</p>
+              <p class="dnote" data-i18n="d.cappuccino.note">The classic third each: espresso, milk, foam.</p>
+              <div class="bar"><span class="seg-base" style="width:33%"></span><span class="seg-milk" style="width:33%"></span><span class="seg-foam" style="width:34%"></span></div>
+            </div>
+            <div class="drink">
+              <p class="dn" data-i18n="d.latte.n">Caffè Latte</p>
+              <p class="dnote" data-i18n="d.latte.note">Lots of milk, a thin cap of foam. The mildest.</p>
+              <div class="bar"><span class="seg-base" style="width:20%"></span><span class="seg-milk" style="width:68%"></span><span class="seg-foam" style="width:12%"></span></div>
+            </div>
+            <div class="drink">
+              <p class="dn" data-i18n="d.lattemacchiato.n">Latte Macchiato</p>
+              <p class="dnote" data-i18n="d.lattemacchiato.note">Layered milk, espresso, and a tall foam top.</p>
+              <div class="bar"><span class="seg-base" style="width:15%"></span><span class="seg-milk" style="width:62%"></span><span class="seg-foam" style="width:23%"></span></div>
+            </div>
+            <div class="drink">
+              <p class="dn" data-i18n="d.matcha.n">Matcha Latte</p>
+              <p class="dnote" data-i18n="d.matcha.note">Same steamed milk, whisked matcha instead of coffee.</p>
+              <div class="bar"><span class="seg-matcha" style="width:20%"></span><span class="seg-milk" style="width:68%"></span><span class="seg-foam" style="width:12%"></span></div>
+            </div>
           </div>
-          <div class="card" data-reveal>
-            <p class="num">03</p>
-            <p class="k" data-i18n="f3.t">The pour</p>
-            <p data-i18n="f3.d">Swirl the milk before pouring so it stays glossy. Start high and thin to blend into the crema, then drop the spout close to the surface to let the white float. Height hides the pattern, closeness reveals it.</p>
+        </div>
+
+        <div class="block" data-reveal>
+          <h3 class="blockhead" data-i18n="tex.h">The perfect texture</h3>
+          <p class="blocksub" data-i18n="tex.p">You are after wet paint: glossy, silky, with no bubbles you can see. Two moves get you there.</p>
+          <div class="tex-grid">
+            <div class="tex">
+              <p class="tt" data-i18n="tex.1.t">Stretch</p>
+              <p data-i18n="tex.1.d">In the first two to three seconds, keep the tip just under the surface for a soft hiss of air.</p>
+            </div>
+            <div class="tex">
+              <p class="tt" data-i18n="tex.2.t">Roll</p>
+              <p data-i18n="tex.2.d">Then submerge the tip and spin the milk into a smooth whirlpool until it folds in on itself.</p>
+            </div>
+            <div class="tex">
+              <p class="tt" data-i18n="tex.3.t">Heat</p>
+              <p data-i18n="tex.3.d">Stop at 60 to 65 degrees: the jug is almost too hot to hold. Never boil, it scorches and kills the sweetness.</p>
+            </div>
+          </div>
+          <p class="tex-foot" data-i18n="tex.foot">Fill the jug just below the spout, and swirl it before every pour so it stays glossy.</p>
+        </div>
+
+        <div class="block" data-reveal>
+          <h3 class="blockhead" data-i18n="milk.h">Every milk, and how to foam it</h3>
+          <p class="blocksub" data-i18n="milk.p">Milk foams thanks to protein, which builds the walls of the bubbles, and fat, which makes it creamy and stable. More protein means a steadier foam.</p>
+          <div class="milks">
+            <div class="milk-card">
+              <p class="mn" data-i18n="m.whole.n">Whole cow's milk</p>
+              <p class="md" data-i18n="m.whole.d">The benchmark, and the most forgiving. High protein and fat give a stable, creamy microfoam. Use it cold and fresh.</p>
+              <div class="metrics">
+                <div class="metric"><p class="ml" data-i18n="lab.foam">Foaming</p><p class="mv" data-i18n="m.whole.foam">High</p></div>
+                <div class="metric"><p class="ml" data-i18n="lab.stab">Stability</p><p class="mv" data-i18n="m.whole.stab">High</p></div>
+              </div>
+            </div>
+            <div class="milk-card">
+              <p class="mn" data-i18n="m.oat.n">Oat, barista edition</p>
+              <p class="md" data-i18n="m.oat.d">The best plant option, closest to milk. Barista versions foam well and stay sweet against espresso. Steam it a touch cooler. Plain oat barely foams.</p>
+              <div class="metrics">
+                <div class="metric"><p class="ml" data-i18n="lab.foam">Foaming</p><p class="mv" data-i18n="m.oat.foam">High</p></div>
+                <div class="metric"><p class="ml" data-i18n="lab.stab">Stability</p><p class="mv" data-i18n="m.oat.stab">Medium to high</p></div>
+              </div>
+            </div>
+            <div class="milk-card">
+              <p class="mn" data-i18n="m.soy.n">Soy</p>
+              <p class="md" data-i18n="m.soy.d">High protein, so it foams well and holds. It can split against hot, acidic espresso: steam cooler and pour promptly.</p>
+              <div class="metrics">
+                <div class="metric"><p class="ml" data-i18n="lab.foam">Foaming</p><p class="mv" data-i18n="m.soy.foam">High</p></div>
+                <div class="metric"><p class="ml" data-i18n="lab.stab">Stability</p><p class="mv" data-i18n="m.soy.stab">Medium</p></div>
+              </div>
+            </div>
+            <div class="milk-card">
+              <p class="mn" data-i18n="m.almond.n">Almond and the rest</p>
+              <p class="md" data-i18n="m.almond.d">Low in protein, so the foam is thin and airy and splits easily. Reach for a barista edition and keep the heat down.</p>
+              <div class="metrics">
+                <div class="metric"><p class="ml" data-i18n="lab.foam">Foaming</p><p class="mv" data-i18n="m.almond.foam">Low to medium</p></div>
+                <div class="metric"><p class="ml" data-i18n="lab.stab">Stability</p><p class="mv" data-i18n="m.almond.stab">Low</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="milk-notes">
+            <p class="milk-note" data-i18n="milk.cow">Best cow's milk: whole, fresh and cold. Its protein and fat build the steadiest foam; low-fat froths bigger but drier and falls apart faster.</p>
+            <p class="milk-note" data-i18n="milk.plant">With any plant milk: use a barista edition, steam cooler (around 55 to 60 degrees), and wipe and purge the wand after, they scorch fast.</p>
           </div>
         </div>
       </div>
@@ -321,11 +448,31 @@
         'nav.story':'Philosophy','nav.finishes':'Finishes','nav.craft':'Detail','nav.shop':'Shop',
         'la.eyebrow':'Latte art','la.title':'Pour like the counter.',
         'la.lede':'A free, no-nonsense guide to milk, microfoam, and the four patterns worth learning. From people who pour every day.',
-        'basics.eyebrow':'Fundamentals','basics.h':'It is won or lost in the milk.',
-        'basics.p':'Latte art is not wrist magic. It is texture. Get the milk to wet paint, glossy and fine, and the pattern almost pours itself. Everything below matters more than the pour.',
-        'f1.t':'The milk','f1.d':'Cold, fresh whole milk is easiest; its proteins build the most stable foam. Barista oat is the best non-dairy option and steams close to milk. Start with a cold jug, filled just below the spout.',
-        'f2.t':'Microfoam','f2.d':'Stretch first: tip just below the surface for a short hiss of air, two to three seconds. Then submerge the tip to spin the milk into a smooth whirlpool and heat to about 60 to 65 degrees. No big bubbles, just a glossy sheen.',
-        'f3.t':'The pour','f3.d':'Swirl the milk before pouring so it stays glossy. Start high and thin to blend into the crema, then drop the spout close to the surface to let the white float. Height hides the pattern, closeness reveals it.',
+        'basics.eyebrow':'Start here','basics.h':'Milk school.',
+        'basics.lede':'Before the patterns: how much milk each coffee wants, how to texture it, and how every kind of milk behaves.',
+        'drinks.h':'The drinks, and their milk','drinks.p':'A quick map of the classics: how much steamed milk, and how much foam on top.',
+        'leg.base':'Espresso','leg.milk':'Steamed milk','leg.foam':'Foam',
+        'd.espresso.n':'Espresso','d.espresso.note':'No milk. The base of it all.',
+        'd.macchiato.n':'Espresso Macchiato','d.macchiato.note':'Espresso, just marked with a dab of foam.',
+        'd.cortado.n':'Cortado','d.cortado.note':'Equal espresso and warm milk, barely any foam.',
+        'd.flatwhite.n':'Flat White','d.flatwhite.note':'Double espresso, silky milk, a thin microfoam.',
+        'd.cappuccino.n':'Cappuccino','d.cappuccino.note':'The classic third each: espresso, milk, foam.',
+        'd.latte.n':'Caffè Latte','d.latte.note':'Lots of milk, a thin cap of foam. The mildest.',
+        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.note':'Layered milk, espresso, and a tall foam top.',
+        'd.matcha.n':'Matcha Latte','d.matcha.note':'Same steamed milk, whisked matcha instead of coffee.',
+        'tex.h':'The perfect texture','tex.p':'You are after wet paint: glossy, silky, with no bubbles you can see. Two moves get you there.',
+        'tex.1.t':'Stretch','tex.1.d':'In the first two to three seconds, keep the tip just under the surface for a soft hiss of air.',
+        'tex.2.t':'Roll','tex.2.d':'Then submerge the tip and spin the milk into a smooth whirlpool until it folds in on itself.',
+        'tex.3.t':'Heat','tex.3.d':'Stop at 60 to 65 degrees: the jug is almost too hot to hold. Never boil, it scorches and kills the sweetness.',
+        'tex.foot':'Fill the jug just below the spout, and swirl it before every pour so it stays glossy.',
+        'milk.h':'Every milk, and how to foam it','milk.p':'Milk foams thanks to protein, which builds the walls of the bubbles, and fat, which makes it creamy and stable. More protein means a steadier foam.',
+        'lab.foam':'Foaming','lab.stab':'Stability',
+        'm.whole.n':"Whole cow's milk",'m.whole.d':'The benchmark, and the most forgiving. High protein and fat give a stable, creamy microfoam. Use it cold and fresh.','m.whole.foam':'High','m.whole.stab':'High',
+        'm.oat.n':'Oat, barista edition','m.oat.d':'The best plant option, closest to milk. Barista versions foam well and stay sweet against espresso. Steam it a touch cooler. Plain oat barely foams.','m.oat.foam':'High','m.oat.stab':'Medium to high',
+        'm.soy.n':'Soy','m.soy.d':'High protein, so it foams well and holds. It can split against hot, acidic espresso: steam cooler and pour promptly.','m.soy.foam':'High','m.soy.stab':'Medium',
+        'm.almond.n':'Almond and the rest','m.almond.d':'Low in protein, so the foam is thin and airy and splits easily. Reach for a barista edition and keep the heat down.','m.almond.foam':'Low to medium','m.almond.stab':'Low',
+        'milk.cow':'Best cow’s milk: whole, fresh and cold. Its protein and fat build the steadiest foam; low-fat froths bigger but drier and falls apart faster.',
+        'milk.plant':'With any plant milk: use a barista edition, steam cooler (around 55 to 60 degrees), and wipe and purge the wand after, they scorch fast.',
         'figs.eyebrow':'The patterns','figs.h':'Four to learn, in order.','figs.p':'Each one builds on the last. Master the heart before you chase the swan.',
         'heart.t':'Heart','heart.lvl':'Beginner','heart.d':'The foundation of every pattern. Pour a round white pool, then cut straight through it to pull the point.',
         'heart.s1':'Fill the cup to about half with a high, thin stream.','heart.s2':'Drop close and pour on one spot until a white circle grows and rises.','heart.s3':'Lift and draw a thin stream straight through the middle to the far edge.',
@@ -348,11 +495,31 @@
         'nav.story':'Philosophie','nav.finishes':'Farben','nav.craft':'Detail','nav.shop':'Shop',
         'la.eyebrow':'Latte Art','la.title':'Gießen wie im Café.',
         'la.lede':'Eine kostenlose, ehrliche Anleitung zu Milch, Mikroschaum und den vier Mustern, die sich lohnen. Von Leuten, die täglich gießen.',
-        'basics.eyebrow':'Grundlagen','basics.h':'Es entscheidet sich in der Milch.',
-        'basics.p':'Latte Art ist keine Handgelenk-Magie, sondern Textur. Bring die Milch auf die Konsistenz von nasser Farbe, glänzend und feinporig, dann gießt sich das Muster fast von selbst. Alles Folgende zählt mehr als der Guss.',
-        'f1.t':'Die Milch','f1.d':'Kalte, frische Vollmilch ist am einfachsten, ihre Proteine geben den stabilsten Schaum. Barista-Hafermilch ist die beste pflanzliche Wahl und schäumt fast wie Milch. Starte mit kaltem Kännchen, gefüllt knapp unter den Ausguss.',
-        'f2.t':'Mikroschaum','f2.d':'Zuerst ziehen: Düse knapp unter die Oberfläche für ein kurzes Zischen Luft, zwei bis drei Sekunden. Dann eintauchen und die Milch zu einem glatten Strudel drehen, auf etwa 60 bis 65 Grad. Keine großen Blasen, nur ein glänzender Schimmer.',
-        'f3.t':'Der Guss','f3.d':'Schwenke die Milch vor dem Gießen, damit sie glänzend bleibt. Beginne hoch und dünn, um dich in die Crema einzumischen, dann senke den Ausguss dicht über die Oberfläche, damit das Weiß aufschwimmt. Höhe versteckt das Muster, Nähe zeigt es.',
+        'basics.eyebrow':'Für den Anfang','basics.h':'Milchkunde.',
+        'basics.lede':'Vor den Mustern: wie viel Milch jeder Kaffee braucht, wie du sie texturierst und wie sich jede Milch verhält.',
+        'drinks.h':'Die Getränke und ihre Milch','drinks.p':'Eine kurze Übersicht der Klassiker: wie viel geschäumte Milch und wie viel Schaum obendrauf.',
+        'leg.base':'Espresso','leg.milk':'Milch','leg.foam':'Schaum',
+        'd.espresso.n':'Espresso','d.espresso.note':'Keine Milch. Die Basis von allem.',
+        'd.macchiato.n':'Espresso Macchiato','d.macchiato.note':'Espresso, nur mit einem Tupfer Schaum markiert.',
+        'd.cortado.n':'Cortado','d.cortado.note':'Espresso und warme Milch zu gleichen Teilen, kaum Schaum.',
+        'd.flatwhite.n':'Flat White','d.flatwhite.note':'Doppelter Espresso, seidige Milch, hauchdünner Mikroschaum.',
+        'd.cappuccino.n':'Cappuccino','d.cappuccino.note':'Der Klassiker, je ein Drittel: Espresso, Milch, Schaum.',
+        'd.latte.n':'Caffè Latte','d.latte.note':'Viel Milch, eine dünne Schaumhaube. Der mildeste.',
+        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.note':'Geschichtet: Milch, Espresso und eine hohe Schaumkrone.',
+        'd.matcha.n':'Matcha Latte','d.matcha.note':'Gleiche geschäumte Milch, aufgeschlagener Matcha statt Kaffee.',
+        'tex.h':'Die perfekte Konsistenz','tex.p':'Du willst nasse Farbe: glänzend, seidig, ohne sichtbare Blasen. Zwei Handgriffe bringen dich hin.',
+        'tex.1.t':'Ziehen','tex.1.d':'In den ersten zwei bis drei Sekunden die Düse knapp unter der Oberfläche halten, für ein leises Zischen Luft.',
+        'tex.2.t':'Rollen','tex.2.d':'Dann die Düse eintauchen und die Milch zu einem glatten Strudel drehen, bis sie sich in sich selbst einrollt.',
+        'tex.3.t':'Temperatur','tex.3.d':'Bei 60 bis 65 Grad stoppen: das Kännchen ist fast zu heiß zum Halten. Nie kochen, das brennt an und nimmt die Süße.',
+        'tex.foot':'Fülle das Kännchen knapp unter den Ausguss und schwenke es vor jedem Guss, damit es glänzend bleibt.',
+        'milk.h':'Jede Milch, und wie sie schäumt','milk.p':'Milch schäumt dank Protein, das die Wände der Bläschen bildet, und Fett, das sie cremig und stabil macht. Mehr Protein heißt stabilerer Schaum.',
+        'lab.foam':'Schäumbarkeit','lab.stab':'Stabilität',
+        'm.whole.n':'Vollmilch (3,5%)','m.whole.d':'Der Maßstab und am gutmütigsten. Viel Protein und Fett geben stabilen, cremigen Mikroschaum. Kalt und frisch verwenden.','m.whole.foam':'Sehr gut','m.whole.stab':'Hoch',
+        'm.oat.n':'Hafer, Barista-Edition','m.oat.d':'Die beste pflanzliche Wahl, am nächsten an Milch. Barista-Versionen schäumen gut und bleiben süß zum Espresso. Etwas kühler schäumen. Normaler Hafer schäumt kaum.','m.oat.foam':'Sehr gut','m.oat.stab':'Mittel bis hoch',
+        'm.soy.n':'Soja','m.soy.d':'Viel Protein, schäumt gut und hält. Kann bei heißem, saurem Espresso ausflocken: kühler schäumen und zügig gießen.','m.soy.foam':'Gut','m.soy.stab':'Mittel',
+        'm.almond.n':'Mandel und der Rest','m.almond.d':'Wenig Protein, daher dünner, luftiger Schaum, der schnell trennt. Zur Barista-Edition greifen und die Hitze niedrig halten.','m.almond.foam':'Mäßig','m.almond.stab':'Niedrig',
+        'milk.cow':'Beste Kuhmilch: Vollmilch, frisch und kalt. Ihr Protein und Fett geben den stabilsten Schaum; fettarme schäumt voluminöser, aber trockener und fällt schneller zusammen.',
+        'milk.plant':'Bei jeder Pflanzenmilch: Barista-Edition nehmen, kühler schäumen (etwa 55 bis 60 Grad) und die Düse danach abwischen und abdampfen, sie brennt schnell an.',
         'figs.eyebrow':'Die Muster','figs.h':'Vier zum Lernen, der Reihe nach.','figs.p':'Jedes baut auf dem vorigen auf. Beherrsche das Herz, bevor du dem Schwan nachjagst.',
         'heart.t':'Herz','heart.lvl':'Einsteiger','heart.d':'Die Basis für jedes Muster. Gieße einen runden weißen Punkt und ziehe dann gerade hindurch, um die Spitze zu formen.',
         'heart.s1':'Fülle die Tasse mit hohem, dünnem Strahl etwa zur Hälfte.','heart.s2':'Geh dicht heran und gieße auf einen Punkt, bis ein weißer Kreis wächst und aufsteigt.','heart.s3':'Hebe ab und ziehe einen dünnen Strahl gerade durch die Mitte bis zum Rand.',
