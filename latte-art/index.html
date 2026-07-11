@@ -28,20 +28,17 @@
     .card .k{font-family:var(--serif);font-size:1.35rem;color:var(--ink);margin:6px 0 10px}
     .card p{color:var(--muted);font-size:.97rem;line-height:1.66}
 
-    .figure-row{display:grid;grid-template-columns:240px 1fr;gap:clamp(26px,4vw,58px);align-items:start;padding-block:clamp(38px,6vh,68px);border-top:1px solid var(--line)}
-    @media(max-width:760px){.figure-row{grid-template-columns:1fr;gap:22px}.diagram{max-width:230px}}
-    .diagram{width:100%;max-width:240px;margin-inline:auto}
-    .diagram img{width:100%;height:auto;display:block;border-radius:16px}
-    .figure-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-    .figure-head h3{font-size:clamp(1.5rem,3vw,2rem)}
+    .figure{padding-block:clamp(40px,6vh,72px);border-top:1px solid var(--line);text-align:center}
+    .figure-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;justify-content:center}
+    .figure-head h3{font-size:clamp(1.6rem,3.4vw,2.2rem)}
     .lvl{text-transform:uppercase;letter-spacing:.2em;font-size:.6rem;color:var(--muted);border:1px solid var(--line-strong);padding:5px 11px;border-radius:20px}
-    .figure-row .desc{color:var(--text);margin-top:12px;font-size:1.06rem;line-height:1.55;max-width:46ch}
-    .steps{list-style:none;margin:22px 0 0;padding:0;counter-reset:s}
-    .steps li{counter-increment:s;position:relative;padding-left:42px;margin-bottom:15px;color:var(--muted);line-height:1.6;max-width:52ch}
+    .figure .desc{color:var(--text);margin:12px auto 26px;font-size:1.08rem;line-height:1.55;max-width:56ch}
+    .figure-body{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,50px);align-items:stretch;max-width:820px;margin-inline:auto;text-align:left}
+    .figure-img img{width:100%;height:auto;border-radius:16px;display:block}
+    .steps{list-style:none;margin:0;padding:0;counter-reset:s;display:flex;flex-direction:column;justify-content:center;gap:16px}
+    .steps li{counter-increment:s;position:relative;padding-left:42px;color:var(--muted);line-height:1.55}
     .steps li::before{content:counter(s);position:absolute;left:0;top:-1px;width:27px;height:27px;border-radius:50%;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--ink);font-family:var(--serif)}
-    .clip{margin-top:24px;width:100%;max-width:360px;aspect-ratio:16/10;border-radius:14px;border:1px dashed var(--line-strong);background:var(--bone);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted)}
-    .clip svg{width:36px;height:36px;opacity:.55}
-    .clip span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+    @media(max-width:640px){.figure-body{grid-template-columns:1fr;gap:20px;max-width:420px}}
 
     .fixes{margin-top:clamp(30px,4vw,48px)}
     .fix{padding:22px 0;border-top:1px solid var(--line)}
@@ -56,36 +53,44 @@
     .guide-cta .btn{margin-top:30px}
     .disclaimer{text-align:center;color:var(--soft);font-size:.82rem;margin-top:clamp(30px,5vh,50px);letter-spacing:.02em}
 
-    .block{margin-top:clamp(52px,7vw,92px)}
+    .block{margin-top:clamp(52px,7vw,92px);text-align:center}
     .blockhead{font-size:clamp(1.5rem,3vw,2rem);color:var(--ink)}
-    .blocksub{color:var(--muted);margin-top:12px;font-size:1.05rem;line-height:1.55;max-width:52ch}
-    .legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px;font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+    .blocksub{color:var(--muted);margin:12px auto 0;font-size:1.05rem;line-height:1.55;max-width:58ch}
+    .legend{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:24px;font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
     .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px;border:1px solid var(--line-strong)}
-    .drinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(14px,1.8vw,22px);margin-top:26px}
-    .drink{border:1px solid var(--line);border-radius:12px;padding:18px 18px 20px}
+    .drinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(14px,1.8vw,22px);margin-top:26px}
+    .drink{border:1px solid var(--line);border-radius:14px;padding:20px 16px 22px;text-align:center}
+    .glass{width:100%;max-width:116px;margin:0 auto 14px}
+    .glass svg{width:100%;height:auto;display:block}
     .drink .dn{font-family:var(--serif);font-size:1.18rem;color:var(--ink)}
-    .drink .dnote{color:var(--muted);font-size:.85rem;line-height:1.5;margin-top:7px}
-    .bar{display:flex;height:9px;border-radius:6px;overflow:hidden;margin-top:15px;border:1px solid var(--line)}
-    .bar span{display:block;height:100%}
+    .drink .dnote{color:var(--muted);font-size:.85rem;line-height:1.5;margin-top:6px}
+    .drink .dspec{color:var(--ink);font-size:.76rem;line-height:1.5;margin-top:11px;letter-spacing:.01em}
     .seg-base{background:#6b5140}
     .seg-milk{background:#e4ddcd}
     .seg-foam{background:#f4f2ec}
     .seg-matcha{background:#8a9a6b}
-    .tex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.5vw,34px);margin-top:28px}
-    @media(max-width:760px){.tex-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
+    .tex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.5vw,34px);margin-top:32px}
+    @media(max-width:760px){.tex-grid{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
+    .tex{text-align:center}
+    .tex-ic{width:42px;height:42px;color:var(--ink);margin:0 auto 14px}
+    .tex-ic svg{width:100%;height:100%;display:block}
     .tex .tt{font-family:var(--serif);font-size:1.2rem;color:var(--ink);margin-bottom:8px}
-    .tex p{color:var(--muted);line-height:1.6;font-size:.96rem;max-width:34ch}
-    .tex-foot{margin-top:26px;color:var(--text);font-size:.98rem;line-height:1.55;text-align:center;max-width:62ch;margin-inline:auto}
-    .milks{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2.2vw,26px);margin-top:28px}
-    @media(max-width:700px){.milks{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
-    .milk-card{border:1px solid var(--line);border-radius:12px;padding:22px}
-    .milk-card .mn{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
-    .milk-card .md{color:var(--muted);font-size:.95rem;line-height:1.6;margin-top:9px}
-    .metrics{display:flex;gap:30px;margin-top:18px}
-    .metric .ml{font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--soft)}
-    .metric .mv{font-family:var(--serif);font-size:1.05rem;color:var(--ink);margin-top:3px}
-    .milk-notes{margin-top:clamp(26px,3vw,40px);display:grid;gap:14px}
-    .milk-note{padding:14px 18px;border-left:2px solid var(--line-strong);border-radius:0;color:var(--text);font-size:.95rem;line-height:1.6}
+    .tex p{color:var(--muted);line-height:1.6;font-size:.96rem;max-width:32ch;margin-inline:auto}
+    .tex-foot{margin-top:30px;color:var(--text);font-size:.98rem;line-height:1.55;text-align:center;max-width:62ch;margin-inline:auto}
+    .milks{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2.2vw,26px);margin-top:32px}
+    @media(max-width:700px){.milks{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+    .milk-card{border:1px solid var(--line);border-radius:14px;padding:24px 22px;text-align:center}
+    .milk-card .mn{font-family:var(--serif);font-size:1.35rem;color:var(--ink)}
+    .milk-card .md{color:var(--muted);font-size:.95rem;line-height:1.6;margin:10px auto 0;max-width:40ch}
+    .mfacts{margin:18px auto 0;max-width:260px;display:grid;gap:0}
+    .mf{display:flex;justify-content:space-between;gap:14px;font-size:.85rem;padding:7px 0;border-top:1px solid var(--line)}
+    .mf:first-child{border-top:none}
+    .mfl{color:var(--muted)}
+    .mfv{color:var(--ink);text-align:right}
+    .mtip{margin:16px auto 0;color:var(--text);font-size:.9rem;line-height:1.55;max-width:40ch}
+    .mtl{display:inline-block;text-transform:uppercase;letter-spacing:.14em;font-size:.58rem;color:var(--ink);border:1px solid var(--line-strong);border-radius:12px;padding:2px 9px;margin-right:8px;vertical-align:1px}
+    .milk-notes{margin-top:clamp(28px,3vw,42px);display:grid;gap:12px;max-width:640px;margin-inline:auto}
+    .milk-note{padding:14px 18px;border:1px solid var(--line);border-radius:12px;color:var(--text);font-size:.94rem;line-height:1.6;text-align:center}
   </style>
 </head>
 <body class="guide">
@@ -129,7 +134,7 @@
 
         <div class="block" data-reveal>
           <h3 class="blockhead" data-i18n="drinks.h">The drinks, and their milk</h3>
-          <p class="blocksub" data-i18n="drinks.p">A quick map of the classics: how much steamed milk, and how much foam on top.</p>
+          <p class="blocksub" data-i18n="drinks.p">How much espresso, how much steamed milk, how much foam. Layered bottom to top, with rough amounts.</p>
           <div class="legend">
             <span><i class="seg-base"></i><span data-i18n="leg.base">Espresso</span></span>
             <span><i class="seg-milk"></i><span data-i18n="leg.milk">Steamed milk</span></span>
@@ -137,44 +142,52 @@
           </div>
           <div class="drinks">
             <div class="drink">
+              <div class="glass" data-b="100" data-m="0" data-f="0"></div>
               <p class="dn" data-i18n="d.espresso.n">Espresso</p>
               <p class="dnote" data-i18n="d.espresso.note">No milk. The base of it all.</p>
-              <div class="bar"><span class="seg-base" style="width:100%"></span></div>
+              <p class="dspec" data-i18n="d.espresso.spec">1 shot · 30 ml</p>
             </div>
             <div class="drink">
+              <div class="glass" data-b="80" data-m="0" data-f="20"></div>
               <p class="dn" data-i18n="d.macchiato.n">Espresso Macchiato</p>
               <p class="dnote" data-i18n="d.macchiato.note">Espresso, just marked with a dab of foam.</p>
-              <div class="bar"><span class="seg-base" style="width:78%"></span><span class="seg-foam" style="width:22%"></span></div>
+              <p class="dspec" data-i18n="d.macchiato.spec">1 shot · 30 ml + a dab of foam</p>
             </div>
             <div class="drink">
+              <div class="glass" data-b="45" data-m="50" data-f="5"></div>
               <p class="dn" data-i18n="d.cortado.n">Cortado</p>
               <p class="dnote" data-i18n="d.cortado.note">Equal espresso and warm milk, barely any foam.</p>
-              <div class="bar"><span class="seg-base" style="width:45%"></span><span class="seg-milk" style="width:50%"></span><span class="seg-foam" style="width:5%"></span></div>
+              <p class="dspec" data-i18n="d.cortado.spec">1 shot · ~30 ml milk · about 60 ml</p>
             </div>
             <div class="drink">
+              <div class="glass" data-b="33" data-m="62" data-f="5"></div>
               <p class="dn" data-i18n="d.flatwhite.n">Flat White</p>
               <p class="dnote" data-i18n="d.flatwhite.note">Double espresso, silky milk, a thin microfoam.</p>
-              <div class="bar"><span class="seg-base" style="width:32%"></span><span class="seg-milk" style="width:62%"></span><span class="seg-foam" style="width:6%"></span></div>
+              <p class="dspec" data-i18n="d.flatwhite.spec">2 shots · ~120 ml milk · about 180 ml</p>
             </div>
             <div class="drink">
+              <div class="glass" data-b="33" data-m="33" data-f="34"></div>
               <p class="dn" data-i18n="d.cappuccino.n">Cappuccino</p>
               <p class="dnote" data-i18n="d.cappuccino.note">The classic third each: espresso, milk, foam.</p>
-              <div class="bar"><span class="seg-base" style="width:33%"></span><span class="seg-milk" style="width:33%"></span><span class="seg-foam" style="width:34%"></span></div>
+              <p class="dspec" data-i18n="d.cappuccino.spec">1 shot · 60 ml milk · 60 ml foam · small 150 / large 250 ml</p>
             </div>
             <div class="drink">
+              <div class="glass" data-b="20" data-m="68" data-f="12"></div>
               <p class="dn" data-i18n="d.latte.n">Caffè Latte</p>
               <p class="dnote" data-i18n="d.latte.note">Lots of milk, a thin cap of foam. The mildest.</p>
-              <div class="bar"><span class="seg-base" style="width:20%"></span><span class="seg-milk" style="width:68%"></span><span class="seg-foam" style="width:12%"></span></div>
+              <p class="dspec" data-i18n="d.latte.spec">2 shots · ~200 ml milk · about 300 ml</p>
             </div>
             <div class="drink">
+              <div class="glass" data-b="15" data-m="62" data-f="23"></div>
               <p class="dn" data-i18n="d.lattemacchiato.n">Latte Macchiato</p>
               <p class="dnote" data-i18n="d.lattemacchiato.note">Layered milk, espresso, and a tall foam top.</p>
-              <div class="bar"><span class="seg-base" style="width:15%"></span><span class="seg-milk" style="width:62%"></span><span class="seg-foam" style="width:23%"></span></div>
+              <p class="dspec" data-i18n="d.lattemacchiato.spec">1 shot · ~250 ml milk · tall glass</p>
             </div>
             <div class="drink">
+              <div class="glass" data-b="20" data-m="68" data-f="12" data-base="#8a9a6b"></div>
               <p class="dn" data-i18n="d.matcha.n">Matcha Latte</p>
               <p class="dnote" data-i18n="d.matcha.note">Same steamed milk, whisked matcha instead of coffee.</p>
-              <div class="bar"><span class="seg-matcha" style="width:20%"></span><span class="seg-milk" style="width:68%"></span><span class="seg-foam" style="width:12%"></span></div>
+              <p class="dspec" data-i18n="d.matcha.spec">1 scoop matcha · ~200 ml milk</p>
             </div>
           </div>
         </div>
@@ -184,14 +197,17 @@
           <p class="blocksub" data-i18n="tex.p">You are after wet paint: glossy, silky, with no bubbles you can see. Two moves get you there.</p>
           <div class="tex-grid">
             <div class="tex">
+              <div class="tex-ic" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 15 L13 28 Q13 31 16 31 L23 31 Q26 31 26 28 L26 15 Z"/><path d="M26 18 Q31 18 31 23 Q31 27 26 27"/><path d="M13 15 L9 12"/><path d="M17 10 Q19 8 17 6"/><path d="M22 10 Q24 8 22 6"/></svg></div>
               <p class="tt" data-i18n="tex.1.t">Stretch</p>
               <p data-i18n="tex.1.d">In the first two to three seconds, keep the tip just under the surface for a soft hiss of air.</p>
             </div>
             <div class="tex">
+              <div class="tex-ic" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M30 14 A11 11 0 1 1 13 21 A7 7 0 1 1 26 20 A3.5 3.5 0 1 1 19.5 20"/></svg></div>
               <p class="tt" data-i18n="tex.2.t">Roll</p>
               <p data-i18n="tex.2.d">Then submerge the tip and spin the milk into a smooth whirlpool until it folds in on itself.</p>
             </div>
             <div class="tex">
+              <div class="tex-ic" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 24 V12 a3 3 0 0 1 6 0 v12 a4.6 4.6 0 1 1 -6 0 Z"/><circle cx="20" cy="29.5" r="2.4" fill="currentColor" stroke="none"/><path d="M20 17 L20 27"/></svg></div>
               <p class="tt" data-i18n="tex.3.t">Heat</p>
               <p data-i18n="tex.3.d">Stop at 60 to 65 degrees: the jug is almost too hot to hold. Never boil, it scorches and kills the sweetness.</p>
             </div>
@@ -201,39 +217,47 @@
 
         <div class="block" data-reveal>
           <h3 class="blockhead" data-i18n="milk.h">Every milk, and how to foam it</h3>
-          <p class="blocksub" data-i18n="milk.p">Milk foams thanks to protein, which builds the walls of the bubbles, and fat, which makes it creamy and stable. More protein means a steadier foam.</p>
+          <p class="blocksub" data-i18n="milk.p">Two things decide it. Protein builds the walls of the bubbles, so it sets structure and stability. Fat makes the foam creamy and rounds out the taste. More protein means a steadier foam; more fat means more creaminess. Barista editions are tuned for exactly this.</p>
           <div class="milks">
             <div class="milk-card">
               <p class="mn" data-i18n="m.whole.n">Whole cow's milk</p>
-              <p class="md" data-i18n="m.whole.d">The benchmark, and the most forgiving. High protein and fat give a stable, creamy microfoam. Use it cold and fresh.</p>
-              <div class="metrics">
-                <div class="metric"><p class="ml" data-i18n="lab.foam">Foaming</p><p class="mv" data-i18n="m.whole.foam">High</p></div>
-                <div class="metric"><p class="ml" data-i18n="lab.stab">Stability</p><p class="mv" data-i18n="m.whole.stab">High</p></div>
+              <p class="md" data-i18n="m.whole.d">The benchmark, and the most forgiving. Its high protein builds a fine, stable foam, and the fat makes it creamy and lightly sweet. Handles beginner mistakes best of all.</p>
+              <div class="mfacts">
+                <div class="mf"><span class="mfl" data-i18n="lab.protein">Protein</span><span class="mfv" data-i18n="m.whole.pro">3.4 g / 100 ml</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.fat">Fat</span><span class="mfv" data-i18n="m.whole.fat">3.5 g</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.whole.foam">Excellent, stable</span></div>
               </div>
+              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.whole.tip">Cold and fresh from the fridge. The easiest choice for latte art.</span></p>
             </div>
             <div class="milk-card">
               <p class="mn" data-i18n="m.oat.n">Oat, barista edition</p>
-              <p class="md" data-i18n="m.oat.d">The best plant option, closest to milk. Barista versions foam well and stay sweet against espresso. Steam it a touch cooler. Plain oat barely foams.</p>
-              <div class="metrics">
-                <div class="metric"><p class="ml" data-i18n="lab.foam">Foaming</p><p class="mv" data-i18n="m.oat.foam">High</p></div>
-                <div class="metric"><p class="ml" data-i18n="lab.stab">Stability</p><p class="mv" data-i18n="m.oat.stab">Medium to high</p></div>
+              <p class="md" data-i18n="m.oat.d">The best plant option, closest to milk. Naturally lower in protein, but barista editions add a little oil and stabilisers, so they foam almost like milk. Naturally sweet and easy against espresso.</p>
+              <div class="mfacts">
+                <div class="mf"><span class="mfl" data-i18n="lab.protein">Protein</span><span class="mfv" data-i18n="m.oat.pro">~1.0 g / 100 ml</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.fat">Fat</span><span class="mfv" data-i18n="m.oat.fat">~1.5 to 3 g</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.oat.foam">Excellent (barista only)</span></div>
               </div>
+              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.oat.tip">Always the barista version. Steam a touch cooler. Plain oat barely foams.</span></p>
             </div>
             <div class="milk-card">
               <p class="mn" data-i18n="m.soy.n">Soy</p>
-              <p class="md" data-i18n="m.soy.d">High protein, so it foams well and holds. It can split against hot, acidic espresso: steam cooler and pour promptly.</p>
-              <div class="metrics">
-                <div class="metric"><p class="ml" data-i18n="lab.foam">Foaming</p><p class="mv" data-i18n="m.soy.foam">High</p></div>
-                <div class="metric"><p class="ml" data-i18n="lab.stab">Stability</p><p class="mv" data-i18n="m.soy.stab">Medium</p></div>
+              <p class="md" data-i18n="m.soy.d">The highest-protein plant milk, so it foams well and holds its shape. The catch: the protein can curdle against hot, acidic espresso.</p>
+              <div class="mfacts">
+                <div class="mf"><span class="mfl" data-i18n="lab.protein">Protein</span><span class="mfv" data-i18n="m.soy.pro">~3.3 g / 100 ml</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.fat">Fat</span><span class="mfv" data-i18n="m.soy.fat">~1.8 g</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.soy.foam">Good, can curdle</span></div>
               </div>
+              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.soy.tip">Steam cooler (max 60 degrees) and pour promptly, then it will not split.</span></p>
             </div>
             <div class="milk-card">
               <p class="mn" data-i18n="m.almond.n">Almond and the rest</p>
-              <p class="md" data-i18n="m.almond.d">Low in protein, so the foam is thin and airy and splits easily. Reach for a barista edition and keep the heat down.</p>
-              <div class="metrics">
-                <div class="metric"><p class="ml" data-i18n="lab.foam">Foaming</p><p class="mv" data-i18n="m.almond.foam">Low to medium</p></div>
-                <div class="metric"><p class="ml" data-i18n="lab.stab">Stability</p><p class="mv" data-i18n="m.almond.stab">Low</p></div>
+              <p class="md" data-i18n="m.almond.d">Nutty and light, but the trickiest to foam: little protein means thin, airy foam that collapses fast and separates from the coffee.</p>
+              <div class="mfacts">
+                <div class="mf"><span class="mfl" data-i18n="lab.protein">Protein</span><span class="mfv" data-i18n="m.almond.pro">~0.5 g / 100 ml</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.fat">Fat</span><span class="mfv" data-i18n="m.almond.fat">~1.1 g</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.almond.foam">Thin, unstable</span></div>
               </div>
+              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.almond.tip">Barista edition only, low heat, pour straight away.</span></p>
             </div>
           </div>
           <div class="milk-notes">
@@ -253,77 +277,69 @@
         </div>
 
         <!-- HEART -->
-        <div class="figure-row" data-reveal>
-          <div class="diagram">
-            <img src="/assets/latte/heart.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Herz in salbeigrüner Tasse, von oben" />
+        <div class="figure" data-reveal>
+          <div class="figure-head">
+            <h3 data-i18n="heart.t">Heart</h3>
+            <span class="lvl" data-i18n="heart.lvl">Beginner</span>
           </div>
-          <div>
-            <div class="figure-head">
-              <h3 data-i18n="heart.t">Heart</h3>
-              <span class="lvl" data-i18n="heart.lvl">Beginner</span>
-            </div>
-            <p class="desc" data-i18n="heart.d">The foundation of every pattern. Pour a round white pool, then cut straight through it to pull the point.</p>
+          <p class="desc" data-i18n="heart.d">The starting point for everything. You pour a round white pool into the centre, then slice through it to pull the tip.</p>
+          <div class="figure-body">
+            <div class="figure-img"><img src="/assets/latte/heart.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Herz in salbeigrüner Tasse, von oben" /></div>
             <ol class="steps">
-              <li data-i18n="heart.s1">Fill the cup to about half with a high, thin stream.</li>
-              <li data-i18n="heart.s2">Drop close and pour on one spot until a white circle grows and rises.</li>
-              <li data-i18n="heart.s3">Lift and draw a thin stream straight through the middle to the far edge.</li>
+              <li data-i18n="heart.s1">Pour the textured milk in from a height into the tilted cup until it is about half full and still mostly brown.</li>
+              <li data-i18n="heart.s2">Lower the spout almost onto the surface and pour steadily into one spot. A white circle blooms and rises.</li>
+              <li data-i18n="heart.s3">When the circle nearly fills the cup, lift and cut a thin stream straight through its middle to the near edge. That pulls the point.</li>
             </ol>
           </div>
         </div>
 
         <!-- ROSETTA -->
-        <div class="figure-row" data-reveal>
-          <div class="diagram">
-            <img src="/assets/latte/rosetta.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Rosetta in salbeigrüner Tasse, von oben" />
+        <div class="figure" data-reveal>
+          <div class="figure-head">
+            <h3 data-i18n="rosetta.t">Rosetta</h3>
+            <span class="lvl" data-i18n="rosetta.lvl">Intermediate</span>
           </div>
-          <div>
-            <div class="figure-head">
-              <h3 data-i18n="rosetta.t">Rosetta</h3>
-              <span class="lvl" data-i18n="rosetta.lvl">Intermediate</span>
-            </div>
-            <p class="desc" data-i18n="rosetta.d">The leaf. A gentle side-to-side wiggle lays down stacked leaves, then one line ties them together.</p>
+          <p class="desc" data-i18n="rosetta.d">The classic leaf. A steady side-to-side wobble of the jug lays down rows of leaves, then one line ties them together.</p>
+          <div class="figure-body">
+            <div class="figure-img"><img src="/assets/latte/rosetta.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Rosetta in salbeigrüner Tasse, von oben" /></div>
             <ol class="steps">
-              <li data-i18n="rosetta.s1">Base as before, then drop close near the far rim and start a small, steady wiggle.</li>
-              <li data-i18n="rosetta.s2">Wiggle in place while slowly drawing the jug back toward you; the leaves fan out.</li>
-              <li data-i18n="rosetta.s3">Stop wiggling, lift, and draw one line straight through to the front for the stem.</li>
+              <li data-i18n="rosetta.s1">Build the brown base as before, then bring the spout down close near the far side of the cup.</li>
+              <li data-i18n="rosetta.s2">Start a small, even wobble left and right and very slowly drift the jug back toward you. Each wobble drops a leaf, and they fan out.</li>
+              <li data-i18n="rosetta.s3">At the near edge, stop wobbling, lift, and draw one thin line straight back through the centre. That is the stem.</li>
             </ol>
           </div>
         </div>
 
         <!-- TULIP -->
-        <div class="figure-row" data-reveal>
-          <div class="diagram">
-            <img src="/assets/latte/tulip.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Tulpe in salbeigrüner Tasse, von oben" />
+        <div class="figure" data-reveal>
+          <div class="figure-head">
+            <h3 data-i18n="tulip.t">Tulip</h3>
+            <span class="lvl" data-i18n="tulip.lvl">Intermediate</span>
           </div>
-          <div>
-            <div class="figure-head">
-              <h3 data-i18n="tulip.t">Tulip</h3>
-              <span class="lvl" data-i18n="tulip.lvl">Intermediate</span>
-            </div>
-            <p class="desc" data-i18n="tulip.d">Stacked pushes. Several pulses of white pushed into each other, then capped with a heart.</p>
+          <p class="desc" data-i18n="tulip.d">Stacked hearts. You pour several separate pushes of white that shove into each other, then finish with a heart on top.</p>
+          <div class="figure-body">
+            <div class="figure-img"><img src="/assets/latte/tulip.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Tulpe in salbeigrüner Tasse, von oben" /></div>
             <ol class="steps">
-              <li data-i18n="tulip.s1">Pour a small blob close to the surface, then stop.</li>
-              <li data-i18n="tulip.s2">Pour a second blob just behind it; the first gets pushed forward. Repeat two or three times.</li>
-              <li data-i18n="tulip.s3">Finish with a heart on top and cut through all the layers to a single point.</li>
+              <li data-i18n="tulip.s1">On the brown base, drop close and pour a small round blob, then stop the pour completely.</li>
+              <li data-i18n="tulip.s2">Pour a second blob just behind the first; it pushes the first one forward into a bump. Repeat two or three times.</li>
+              <li data-i18n="tulip.s3">For the last one, pour a slightly bigger heart and cut a line straight through all the layers to a single point.</li>
             </ol>
           </div>
         </div>
 
         <!-- SWAN -->
-        <div class="figure-row" data-reveal>
-          <div class="diagram">
-            <img src="/assets/latte/swan.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Schwan in salbeigrüner Tasse, von oben" />
+        <div class="figure" data-reveal>
+          <div class="figure-head">
+            <h3 data-i18n="swan.t">Swan</h3>
+            <span class="lvl" data-i18n="swan.lvl">Advanced</span>
           </div>
-          <div>
-            <div class="figure-head">
-              <h3 data-i18n="swan.t">Swan</h3>
-              <span class="lvl" data-i18n="swan.lvl">Advanced</span>
-            </div>
-            <p class="desc" data-i18n="swan.d">The showpiece. A rosetta for the wing, a curved pour for the neck, a small heart for the head.</p>
+          <p class="desc" data-i18n="swan.d">The showpiece, and really a rosetta plus a heart. One side becomes the feathered wing, a thin line the neck, a small heart the head.</p>
+          <div class="figure-body">
+            <div class="figure-img"><img src="/assets/latte/swan.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Schwan in salbeigrüner Tasse, von oben" /></div>
             <ol class="steps">
-              <li data-i18n="swan.s1">Pour a rosetta to one side of the cup as the wing and tail.</li>
-              <li data-i18n="swan.s2">From the wing, draw a long thin curved line out and around for the neck.</li>
-              <li data-i18n="swan.s3">At the end of the neck, pour and cut a small heart for the head.</li>
+              <li data-i18n="swan.s1">Pour a rosetta into one half of the cup. That is the wing and the tail of the swan.</li>
+              <li data-i18n="swan.s2">From the top of the wing, lift slightly and drag a long, thin, curved line out and around. That draws the neck.</li>
+              <li data-i18n="swan.s3">At the end of the neck, drop close, pour a small round blob and cut through it. That is the head and beak.</li>
             </ol>
           </div>
         </div>
@@ -395,6 +411,25 @@
     const topbar = document.querySelector('.topbar');
     addEventListener('scroll', () => { if (topbar) topbar.classList.toggle('scrolled', window.scrollY > 12); }, { passive: true });
 
+    const buildGlass = (el) => {
+      const b = +el.dataset.b || 0, m = +el.dataset.m || 0, f = +el.dataset.f || 0;
+      const base = el.dataset.base || '#6b5140';
+      const H = 106, bottom = 150, x = 28, w = 84;
+      const eh = H * b / 100, mh = H * m / 100, fh = H * f / 100;
+      const ey = bottom - eh, my = ey - mh, fy = my - fh;
+      const clip = 'M35 44 L105 44 L96 148 Q94 154 84 154 L56 154 Q46 154 44 148 Z';
+      let fills = `<rect x="${x}" y="${ey.toFixed(1)}" width="${w}" height="${eh.toFixed(1)}" fill="${base}"/>`;
+      if (m > 0) fills += `<rect x="${x}" y="${my.toFixed(1)}" width="${w}" height="${mh.toFixed(1)}" fill="#e9e1cf"/>`;
+      if (f > 0) fills += `<rect x="${x}" y="${fy.toFixed(1)}" width="${w}" height="${fh.toFixed(1)}" fill="#f5f1e8"/>`;
+      let surface, bubbles = '', outline = '';
+      if (f > 0) { surface = '#f5f1e8'; outline = '<ellipse cx="70" cy="45" rx="35" ry="7" fill="none" stroke="#d8cdbb" stroke-width="1.6"/>'; }
+      else if (m > 0) { surface = '#e9e1cf'; outline = '<ellipse cx="70" cy="45" rx="35" ry="7" fill="none" stroke="#d8cdbb" stroke-width="1.6"/>'; }
+      else { surface = '#a07a54'; bubbles = '<circle cx="60" cy="44" r="2.4" fill="#c9a87f"/><circle cx="80" cy="46" r="1.8" fill="#c9a87f"/>'; }
+      const uid = 'gc' + Math.random().toString(36).slice(2, 8);
+      return `<svg viewBox="0 0 140 172" xmlns="http://www.w3.org/2000/svg"><ellipse cx="70" cy="162" rx="40" ry="6" fill="#e7e0d4"/><clipPath id="${uid}"><path d="${clip}"/></clipPath><g clip-path="url(#${uid})">${fills}</g><ellipse cx="70" cy="45" rx="35" ry="7" fill="${surface}"/>${outline}${bubbles}<path d="M35 44 L44 148 Q46 154 56 154 L84 154 Q94 154 96 148 L105 44" fill="none" stroke="#9aa3a0" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="70" cy="44" rx="35" ry="7.5" fill="none" stroke="#9aa3a0" stroke-width="2.6"/><path d="M46 60 L54 140" stroke="#ffffff" stroke-opacity=".4" stroke-width="4" stroke-linecap="round"/></svg>`;
+    };
+    document.querySelectorAll('.glass').forEach((el) => { el.innerHTML = buildGlass(el); });
+
     const T = {
       en: {
         'nav.story':'Philosophy','nav.finishes':'Finishes','nav.craft':'Detail','nav.shop':'Shop',
@@ -402,38 +437,38 @@
         'la.lede':'A free, no-nonsense guide to milk, microfoam, and the four patterns worth learning. From people who pour every day.',
         'basics.eyebrow':'Start here','basics.h':'Milk school.',
         'basics.lede':'Before the patterns: how much milk each coffee wants, how to texture it, and how every kind of milk behaves.',
-        'drinks.h':'The drinks, and their milk','drinks.p':'A quick map of the classics: how much steamed milk, and how much foam on top.',
+        'drinks.h':'The drinks, and their milk','drinks.p':'How much espresso, how much steamed milk, how much foam. Layered bottom to top, with rough amounts.',
         'leg.base':'Espresso','leg.milk':'Steamed milk','leg.foam':'Foam',
-        'd.espresso.n':'Espresso','d.espresso.note':'No milk. The base of it all.',
-        'd.macchiato.n':'Espresso Macchiato','d.macchiato.note':'Espresso, just marked with a dab of foam.',
-        'd.cortado.n':'Cortado','d.cortado.note':'Equal espresso and warm milk, barely any foam.',
-        'd.flatwhite.n':'Flat White','d.flatwhite.note':'Double espresso, silky milk, a thin microfoam.',
-        'd.cappuccino.n':'Cappuccino','d.cappuccino.note':'The classic third each: espresso, milk, foam.',
-        'd.latte.n':'Caffè Latte','d.latte.note':'Lots of milk, a thin cap of foam. The mildest.',
-        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.note':'Layered milk, espresso, and a tall foam top.',
-        'd.matcha.n':'Matcha Latte','d.matcha.note':'Same steamed milk, whisked matcha instead of coffee.',
+        'd.espresso.n':'Espresso','d.espresso.note':'No milk. The base of it all.','d.espresso.spec':'1 shot · 30 ml',
+        'd.macchiato.n':'Espresso Macchiato','d.macchiato.note':'Espresso, just marked with a dab of foam.','d.macchiato.spec':'1 shot · 30 ml + a dab of foam',
+        'd.cortado.n':'Cortado','d.cortado.note':'Equal espresso and warm milk, barely any foam.','d.cortado.spec':'1 shot · ~30 ml milk · about 60 ml',
+        'd.flatwhite.n':'Flat White','d.flatwhite.note':'Double espresso, silky milk, a thin microfoam.','d.flatwhite.spec':'2 shots · ~120 ml milk · about 180 ml',
+        'd.cappuccino.n':'Cappuccino','d.cappuccino.note':'The classic third each: espresso, milk, foam.','d.cappuccino.spec':'1 shot · 60 ml milk · 60 ml foam · small 150 / large 250 ml',
+        'd.latte.n':'Caffè Latte','d.latte.note':'Lots of milk, a thin cap of foam. The mildest.','d.latte.spec':'2 shots · ~200 ml milk · about 300 ml',
+        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.note':'Layered milk, espresso, and a tall foam top.','d.lattemacchiato.spec':'1 shot · ~250 ml milk · tall glass',
+        'd.matcha.n':'Matcha Latte','d.matcha.note':'Same steamed milk, whisked matcha instead of coffee.','d.matcha.spec':'1 scoop matcha · ~200 ml milk',
         'tex.h':'The perfect texture','tex.p':'You are after wet paint: glossy, silky, with no bubbles you can see. Two moves get you there.',
         'tex.1.t':'Stretch','tex.1.d':'In the first two to three seconds, keep the tip just under the surface for a soft hiss of air.',
         'tex.2.t':'Roll','tex.2.d':'Then submerge the tip and spin the milk into a smooth whirlpool until it folds in on itself.',
         'tex.3.t':'Heat','tex.3.d':'Stop at 60 to 65 degrees: the jug is almost too hot to hold. Never boil, it scorches and kills the sweetness.',
         'tex.foot':'Fill the jug just below the spout, and swirl it before every pour so it stays glossy.',
-        'milk.h':'Every milk, and how to foam it','milk.p':'Milk foams thanks to protein, which builds the walls of the bubbles, and fat, which makes it creamy and stable. More protein means a steadier foam.',
-        'lab.foam':'Foaming','lab.stab':'Stability',
-        'm.whole.n':"Whole cow's milk",'m.whole.d':'The benchmark, and the most forgiving. High protein and fat give a stable, creamy microfoam. Use it cold and fresh.','m.whole.foam':'High','m.whole.stab':'High',
-        'm.oat.n':'Oat, barista edition','m.oat.d':'The best plant option, closest to milk. Barista versions foam well and stay sweet against espresso. Steam it a touch cooler. Plain oat barely foams.','m.oat.foam':'High','m.oat.stab':'Medium to high',
-        'm.soy.n':'Soy','m.soy.d':'High protein, so it foams well and holds. It can split against hot, acidic espresso: steam cooler and pour promptly.','m.soy.foam':'High','m.soy.stab':'Medium',
-        'm.almond.n':'Almond and the rest','m.almond.d':'Low in protein, so the foam is thin and airy and splits easily. Reach for a barista edition and keep the heat down.','m.almond.foam':'Low to medium','m.almond.stab':'Low',
+        'milk.h':'Every milk, and how to foam it','milk.p':'Two things decide it. Protein builds the walls of the bubbles, so it sets structure and stability. Fat makes the foam creamy and rounds out the taste. More protein means a steadier foam; more fat means more creaminess. Barista editions are tuned for exactly this.',
+        'lab.foam':'Foam','lab.protein':'Protein','lab.fat':'Fat','lab.tip':'Tip','lab.stab':'Stability',
+        'm.whole.n':"Whole cow's milk",'m.whole.d':'The benchmark, and the most forgiving. Its high protein builds a fine, stable foam, and the fat makes it creamy and lightly sweet. Handles beginner mistakes best of all.','m.whole.pro':'3.4 g / 100 ml','m.whole.fat':'3.5 g','m.whole.foam':'Excellent, stable','m.whole.tip':'Cold and fresh from the fridge. The easiest choice for latte art.',
+        'm.oat.n':'Oat, barista edition','m.oat.d':'The best plant option, closest to milk. Naturally lower in protein, but barista editions add a little oil and stabilisers, so they foam almost like milk. Naturally sweet and easy against espresso.','m.oat.pro':'~1.0 g / 100 ml','m.oat.fat':'~1.5 to 3 g','m.oat.foam':'Excellent (barista only)','m.oat.tip':'Always the barista version. Steam a touch cooler. Plain oat barely foams.',
+        'm.soy.n':'Soy','m.soy.d':'The highest-protein plant milk, so it foams well and holds its shape. The catch: the protein can curdle against hot, acidic espresso.','m.soy.pro':'~3.3 g / 100 ml','m.soy.fat':'~1.8 g','m.soy.foam':'Good, can curdle','m.soy.tip':'Steam cooler (max 60 degrees) and pour promptly, then it will not split.',
+        'm.almond.n':'Almond and the rest','m.almond.d':'Nutty and light, but the trickiest to foam: little protein means thin, airy foam that collapses fast and separates from the coffee.','m.almond.pro':'~0.5 g / 100 ml','m.almond.fat':'~1.1 g','m.almond.foam':'Thin, unstable','m.almond.tip':'Barista edition only, low heat, pour straight away.',
         'milk.cow':'Best cow’s milk: whole, fresh and cold. Its protein and fat build the steadiest foam; low-fat froths bigger but drier and falls apart faster.',
         'milk.plant':'With any plant milk: use a barista edition, steam cooler (around 55 to 60 degrees), and wipe and purge the wand after, they scorch fast.',
         'figs.eyebrow':'The patterns','figs.h':'Four to learn, in order.','figs.p':'Each one builds on the last. Master the heart before you chase the swan.',
-        'heart.t':'Heart','heart.lvl':'Beginner','heart.d':'The foundation of every pattern. Pour a round white pool, then cut straight through it to pull the point.',
-        'heart.s1':'Fill the cup to about half with a high, thin stream.','heart.s2':'Drop close and pour on one spot until a white circle grows and rises.','heart.s3':'Lift and draw a thin stream straight through the middle to the far edge.',
-        'rosetta.t':'Rosetta','rosetta.lvl':'Intermediate','rosetta.d':'The leaf. A gentle side-to-side wiggle lays down stacked leaves, then one line ties them together.',
-        'rosetta.s1':'Base as before, then drop close near the far rim and start a small, steady wiggle.','rosetta.s2':'Wiggle in place while slowly drawing the jug back toward you; the leaves fan out.','rosetta.s3':'Stop wiggling, lift, and draw one line straight through to the front for the stem.',
-        'tulip.t':'Tulip','tulip.lvl':'Intermediate','tulip.d':'Stacked pushes. Several pulses of white pushed into each other, then capped with a heart.',
-        'tulip.s1':'Pour a small blob close to the surface, then stop.','tulip.s2':'Pour a second blob just behind it; the first gets pushed forward. Repeat two or three times.','tulip.s3':'Finish with a heart on top and cut through all the layers to a single point.',
-        'swan.t':'Swan','swan.lvl':'Advanced','swan.d':'The showpiece. A rosetta for the wing, a curved pour for the neck, a small heart for the head.',
-        'swan.s1':'Pour a rosetta to one side of the cup as the wing and tail.','swan.s2':'From the wing, draw a long thin curved line out and around for the neck.','swan.s3':'At the end of the neck, pour and cut a small heart for the head.',
+        'heart.t':'Heart','heart.lvl':'Beginner','heart.d':'The starting point for everything. You pour a round white pool into the centre, then slice through it to pull the tip.',
+        'heart.s1':'Pour the textured milk in from a height into the tilted cup until it is about half full and still mostly brown.','heart.s2':'Lower the spout almost onto the surface and pour steadily into one spot. A white circle blooms and rises.','heart.s3':'When the circle nearly fills the cup, lift and cut a thin stream straight through its middle to the near edge. That pulls the point.',
+        'rosetta.t':'Rosetta','rosetta.lvl':'Intermediate','rosetta.d':'The classic leaf. A steady side-to-side wobble of the jug lays down rows of leaves, then one line ties them together.',
+        'rosetta.s1':'Build the brown base as before, then bring the spout down close near the far side of the cup.','rosetta.s2':'Start a small, even wobble left and right and very slowly drift the jug back toward you. Each wobble drops a leaf, and they fan out.','rosetta.s3':'At the near edge, stop wobbling, lift, and draw one thin line straight back through the centre. That is the stem.',
+        'tulip.t':'Tulip','tulip.lvl':'Intermediate','tulip.d':'Stacked hearts. You pour several separate pushes of white that shove into each other, then finish with a heart on top.',
+        'tulip.s1':'On the brown base, drop close and pour a small round blob, then stop the pour completely.','tulip.s2':'Pour a second blob just behind the first; it pushes the first one forward into a bump. Repeat two or three times.','tulip.s3':'For the last one, pour a slightly bigger heart and cut a line straight through all the layers to a single point.',
+        'swan.t':'Swan','swan.lvl':'Advanced','swan.d':'The showpiece, and really a rosetta plus a heart. One side becomes the feathered wing, a thin line the neck, a small heart the head.',
+        'swan.s1':'Pour a rosetta into one half of the cup. That is the wing and the tail of the swan.','swan.s2':'From the top of the wing, lift slightly and drag a long, thin, curved line out and around. That draws the neck.','swan.s3':'At the end of the neck, drop close, pour a small round blob and cut through it. That is the head and beak.',
         'clip':'Clip with Jonah coming soon',
         'fix.eyebrow':'Troubleshooting','fix.h':'When it goes wrong.',
         'fix1.q':'The white sinks, no pattern','fix1.a':'You poured too high or too early. Get the spout closer to the surface before the white should show.',
@@ -449,38 +484,38 @@
         'la.lede':'Eine kostenlose, ehrliche Anleitung zu Milch, Mikroschaum und den vier Mustern, die sich lohnen. Von Leuten, die täglich gießen.',
         'basics.eyebrow':'Für den Anfang','basics.h':'Milchkunde.',
         'basics.lede':'Vor den Mustern: wie viel Milch jeder Kaffee braucht, wie du sie texturierst und wie sich jede Milch verhält.',
-        'drinks.h':'Die Getränke und ihre Milch','drinks.p':'Eine kurze Übersicht der Klassiker: wie viel geschäumte Milch und wie viel Schaum obendrauf.',
+        'drinks.h':'Die Getränke und ihre Milch','drinks.p':'Wie viel Espresso, wie viel Milch, wie viel Schaum. Von unten nach oben geschichtet, mit ungefähren Mengen.',
         'leg.base':'Espresso','leg.milk':'Milch','leg.foam':'Schaum',
-        'd.espresso.n':'Espresso','d.espresso.note':'Keine Milch. Die Basis von allem.',
-        'd.macchiato.n':'Espresso Macchiato','d.macchiato.note':'Espresso, nur mit einem Tupfer Schaum markiert.',
-        'd.cortado.n':'Cortado','d.cortado.note':'Espresso und warme Milch zu gleichen Teilen, kaum Schaum.',
-        'd.flatwhite.n':'Flat White','d.flatwhite.note':'Doppelter Espresso, seidige Milch, hauchdünner Mikroschaum.',
-        'd.cappuccino.n':'Cappuccino','d.cappuccino.note':'Der Klassiker, je ein Drittel: Espresso, Milch, Schaum.',
-        'd.latte.n':'Caffè Latte','d.latte.note':'Viel Milch, eine dünne Schaumhaube. Der mildeste.',
-        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.note':'Geschichtet: Milch, Espresso und eine hohe Schaumkrone.',
-        'd.matcha.n':'Matcha Latte','d.matcha.note':'Gleiche geschäumte Milch, aufgeschlagener Matcha statt Kaffee.',
+        'd.espresso.n':'Espresso','d.espresso.note':'Keine Milch. Die Basis von allem.','d.espresso.spec':'1 Shot · 30 ml',
+        'd.macchiato.n':'Espresso Macchiato','d.macchiato.note':'Espresso, nur mit einem Tupfer Schaum markiert.','d.macchiato.spec':'1 Shot · 30 ml + Schaumtupfer',
+        'd.cortado.n':'Cortado','d.cortado.note':'Espresso und warme Milch zu gleichen Teilen, kaum Schaum.','d.cortado.spec':'1 Shot · ~30 ml Milch · ca. 60 ml',
+        'd.flatwhite.n':'Flat White','d.flatwhite.note':'Doppelter Espresso, seidige Milch, hauchdünner Mikroschaum.','d.flatwhite.spec':'2 Shots · ~120 ml Milch · ca. 180 ml',
+        'd.cappuccino.n':'Cappuccino','d.cappuccino.note':'Der Klassiker, je ein Drittel: Espresso, Milch, Schaum.','d.cappuccino.spec':'1 Shot · 60 ml Milch · 60 ml Schaum · klein 150 / groß 250 ml',
+        'd.latte.n':'Caffè Latte','d.latte.note':'Viel Milch, eine dünne Schaumhaube. Der mildeste.','d.latte.spec':'2 Shots · ~200 ml Milch · ca. 300 ml',
+        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.note':'Geschichtet: Milch, Espresso und eine hohe Schaumkrone.','d.lattemacchiato.spec':'1 Shot · ~250 ml Milch · hohes Glas',
+        'd.matcha.n':'Matcha Latte','d.matcha.note':'Gleiche geschäumte Milch, aufgeschlagener Matcha statt Kaffee.','d.matcha.spec':'1 Portion Matcha · ~200 ml Milch',
         'tex.h':'Die perfekte Konsistenz','tex.p':'Du willst nasse Farbe: glänzend, seidig, ohne sichtbare Blasen. Zwei Handgriffe bringen dich hin.',
         'tex.1.t':'Ziehen','tex.1.d':'In den ersten zwei bis drei Sekunden die Düse knapp unter der Oberfläche halten, für ein leises Zischen Luft.',
         'tex.2.t':'Rollen','tex.2.d':'Dann die Düse eintauchen und die Milch zu einem glatten Strudel drehen, bis sie sich in sich selbst einrollt.',
         'tex.3.t':'Temperatur','tex.3.d':'Bei 60 bis 65 Grad stoppen: das Kännchen ist fast zu heiß zum Halten. Nie kochen, das brennt an und nimmt die Süße.',
         'tex.foot':'Fülle das Kännchen knapp unter den Ausguss und schwenke es vor jedem Guss, damit es glänzend bleibt.',
-        'milk.h':'Jede Milch, und wie sie schäumt','milk.p':'Milch schäumt dank Protein, das die Wände der Bläschen bildet, und Fett, das sie cremig und stabil macht. Mehr Protein heißt stabilerer Schaum.',
-        'lab.foam':'Schäumbarkeit','lab.stab':'Stabilität',
-        'm.whole.n':'Vollmilch (3,5%)','m.whole.d':'Der Maßstab und am gutmütigsten. Viel Protein und Fett geben stabilen, cremigen Mikroschaum. Kalt und frisch verwenden.','m.whole.foam':'Sehr gut','m.whole.stab':'Hoch',
-        'm.oat.n':'Hafer, Barista-Edition','m.oat.d':'Die beste pflanzliche Wahl, am nächsten an Milch. Barista-Versionen schäumen gut und bleiben süß zum Espresso. Etwas kühler schäumen. Normaler Hafer schäumt kaum.','m.oat.foam':'Sehr gut','m.oat.stab':'Mittel bis hoch',
-        'm.soy.n':'Soja','m.soy.d':'Viel Protein, schäumt gut und hält. Kann bei heißem, saurem Espresso ausflocken: kühler schäumen und zügig gießen.','m.soy.foam':'Gut','m.soy.stab':'Mittel',
-        'm.almond.n':'Mandel und der Rest','m.almond.d':'Wenig Protein, daher dünner, luftiger Schaum, der schnell trennt. Zur Barista-Edition greifen und die Hitze niedrig halten.','m.almond.foam':'Mäßig','m.almond.stab':'Niedrig',
+        'milk.h':'Jede Milch, und wie sie schäumt','milk.p':'Zwei Dinge entscheiden. Protein baut die Wände der Bläschen, es bestimmt also Struktur und Stabilität. Fett macht den Schaum cremig und rund im Geschmack. Mehr Protein heißt stabilerer Schaum, mehr Fett mehr Cremigkeit. Barista-Editionen sind genau darauf abgestimmt.',
+        'lab.foam':'Schaum','lab.protein':'Protein','lab.fat':'Fett','lab.tip':'Tipp','lab.stab':'Stabilität',
+        'm.whole.n':'Vollmilch (3,5%)','m.whole.d':'Der Maßstab und am gutmütigsten. Ihr hoher Proteingehalt baut einen feinen, stabilen Schaum, das Fett macht ihn cremig und leicht süßlich. Verzeiht Anfängerfehler am meisten.','m.whole.pro':'3,4 g / 100 ml','m.whole.fat':'3,5 g','m.whole.foam':'Sehr gut, stabil','m.whole.tip':'Kalt und frisch aus dem Kühlschrank. Für Latte Art die einfachste Wahl.',
+        'm.oat.n':'Hafer, Barista-Edition','m.oat.d':'Die beste pflanzliche Wahl, am nächsten an Milch. Von Natur aus proteinärmer, aber Barista-Editionen setzen etwas Öl und Stabilisatoren zu, so schäumen sie fast wie Milch. Von Natur aus süßlich und unkompliziert zum Espresso.','m.oat.pro':'~1,0 g / 100 ml','m.oat.fat':'~1,5 bis 3 g','m.oat.foam':'Sehr gut (nur Barista)','m.oat.tip':'Immer die Barista-Version. Etwas kühler schäumen. Normaler Hafer schäumt kaum.',
+        'm.soy.n':'Soja','m.soy.d':'Die proteinreichste Pflanzenmilch, schäumt gut und hält die Form. Der Haken: Das Eiweiß kann bei heißem, saurem Espresso ausflocken.','m.soy.pro':'~3,3 g / 100 ml','m.soy.fat':'~1,8 g','m.soy.foam':'Gut, kann flocken','m.soy.tip':'Kühler schäumen (max. 60 Grad) und zügig gießen, dann flockt nichts.',
+        'm.almond.n':'Mandel und der Rest','m.almond.d':'Nussig und leicht, aber am schwierigsten zu schäumen: wenig Protein heißt dünner, luftiger Schaum, der schnell zerfällt und sich vom Kaffee trennt.','m.almond.pro':'~0,5 g / 100 ml','m.almond.fat':'~1,1 g','m.almond.foam':'Dünn, instabil','m.almond.tip':'Nur Barista-Edition, niedrige Hitze, sofort gießen.',
         'milk.cow':'Beste Kuhmilch: Vollmilch, frisch und kalt. Ihr Protein und Fett geben den stabilsten Schaum; fettarme schäumt voluminöser, aber trockener und fällt schneller zusammen.',
         'milk.plant':'Bei jeder Pflanzenmilch: Barista-Edition nehmen, kühler schäumen (etwa 55 bis 60 Grad) und die Düse danach abwischen und abdampfen, sie brennt schnell an.',
         'figs.eyebrow':'Die Muster','figs.h':'Vier zum Lernen, der Reihe nach.','figs.p':'Jedes baut auf dem vorigen auf. Beherrsche das Herz, bevor du dem Schwan nachjagst.',
-        'heart.t':'Herz','heart.lvl':'Einsteiger','heart.d':'Die Basis für jedes Muster. Gieße einen runden weißen Punkt und ziehe dann gerade hindurch, um die Spitze zu formen.',
-        'heart.s1':'Fülle die Tasse mit hohem, dünnem Strahl etwa zur Hälfte.','heart.s2':'Geh dicht heran und gieße auf einen Punkt, bis ein weißer Kreis wächst und aufsteigt.','heart.s3':'Hebe ab und ziehe einen dünnen Strahl gerade durch die Mitte bis zum Rand.',
-        'rosetta.t':'Rosetta','rosetta.lvl':'Fortgeschritten','rosetta.d':'Das Blatt. Ein sanftes Hin-und-Her legt gestapelte Blätter, dann verbindet eine Linie sie.',
-        'rosetta.s1':'Basis wie zuvor, dann dicht am hinteren Rand ansetzen und ein kleines, gleichmäßiges Wackeln beginnen.','rosetta.s2':'Auf der Stelle wackeln und das Kännchen langsam zu dir ziehen, die Blätter fächern auf.','rosetta.s3':'Wackeln stoppen, abheben und eine Linie gerade nach vorn durchziehen, das ist der Stiel.',
-        'tulip.t':'Tulpe','tulip.lvl':'Fortgeschritten','tulip.d':'Gestapelte Stöße. Mehrere weiße Stöße ineinander geschoben und mit einem Herz gekrönt.',
-        'tulip.s1':'Gieße dicht über der Oberfläche einen kleinen Klecks, dann stopp.','tulip.s2':'Gieße einen zweiten Klecks knapp dahinter, der erste wird nach vorn geschoben. Zwei- bis dreimal wiederholen.','tulip.s3':'Schließe mit einem Herz oben ab und ziehe durch alle Lagen zu einer Spitze.',
-        'swan.t':'Schwan','swan.lvl':'Könner','swan.d':'Das Schaustück. Eine Rosetta als Flügel, ein geschwungener Guss als Hals, ein kleines Herz als Kopf.',
-        'swan.s1':'Gieße eine Rosetta an eine Seite der Tasse, das sind Flügel und Schwanz.','swan.s2':'Vom Flügel aus eine lange, dünne, geschwungene Linie nach außen und herum ziehen, der Hals.','swan.s3':'Am Ende des Halses ein kleines Herz gießen und durchziehen, der Kopf.',
+        'heart.t':'Herz','heart.lvl':'Einsteiger','heart.d':'Der Ausgangspunkt für alles. Du gießt einen runden weißen Punkt in die Mitte und ziehst dann gerade hindurch, um die Spitze zu formen.',
+        'heart.s1':'Gieße die texturierte Milch aus etwas Höhe in die schräg gehaltene Tasse, bis sie etwa halb voll und noch überwiegend braun ist.','heart.s2':'Senke den Ausguss fast auf die Oberfläche und gieße gleichmäßig auf einen Punkt. Ein weißer Kreis wächst und steigt nach oben.','heart.s3':'Wenn der Kreis fast die Tasse füllt, heb ab und ziehe einen dünnen Strahl gerade durch die Mitte bis zum nahen Rand. Das formt die Spitze.',
+        'rosetta.t':'Rosetta','rosetta.lvl':'Fortgeschritten','rosetta.d':'Das klassische Blatt. Ein gleichmäßiges Hin-und-Her des Kännchens legt Reihen von Blättern, dann verbindet eine Linie sie.',
+        'rosetta.s1':'Bau die braune Basis wie zuvor, dann bring den Ausguss dicht an den hinteren Rand der Tasse.','rosetta.s2':'Beginne ein kleines, gleichmäßiges Wackeln nach links und rechts und zieh das Kännchen ganz langsam zu dir. Jedes Wackeln legt ein Blatt, sie fächern auf.','rosetta.s3':'Am nahen Rand hörst du auf zu wackeln, hebst ab und ziehst eine dünne Linie gerade zurück durch die Mitte. Das ist der Stiel.',
+        'tulip.t':'Tulpe','tulip.lvl':'Fortgeschritten','tulip.d':'Gestapelte Herzen. Du gießt mehrere einzelne weiße Stöße, die sich ineinander schieben, und schließt oben mit einem Herz ab.',
+        'tulip.s1':'Auf der braunen Basis dicht herangehen und einen kleinen runden Klecks gießen, dann den Guss ganz stoppen.','tulip.s2':'Gieße einen zweiten Klecks knapp hinter den ersten; er schiebt den ersten nach vorn zu einer Wölbung. Zwei- bis dreimal wiederholen.','tulip.s3':'Für den letzten ein etwas größeres Herz gießen und mit einer Linie gerade durch alle Lagen zu einer Spitze ziehen.',
+        'swan.t':'Schwan','swan.lvl':'Könner','swan.d':'Das Schaustück, im Grunde eine Rosetta plus ein Herz. Eine Seite wird zum gefiederten Flügel, eine dünne Linie zum Hals, ein kleines Herz zum Kopf.',
+        'swan.s1':'Gieße eine Rosetta in eine Hälfte der Tasse. Das ist Flügel und Schwanz des Schwans.','swan.s2':'Vom oberen Ende des Flügels leicht abheben und eine lange, dünne, geschwungene Linie nach außen und herum ziehen. Das zeichnet den Hals.','swan.s3':'Am Ende des Halses dicht herangehen, einen kleinen runden Klecks gießen und durchziehen. Das ist Kopf und Schnabel.',
         'clip':'Clip mit Jonah folgt in Kürze',
         'fix.eyebrow':'Fehlerbehebung','fix.h':'Wenn es schiefgeht.',
         'fix1.q':'Das Weiß sinkt, kein Muster','fix1.a':'Zu hoch oder zu früh gegossen. Bring den Ausguss näher an die Oberfläche, bevor das Weiß erscheinen soll.',
