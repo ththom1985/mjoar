@@ -62,6 +62,7 @@
     .glass{width:100%;max-width:116px;margin:0 auto 14px}
     .glass svg{width:100%;height:auto;display:block}
     .drink .dn{font-family:var(--serif);font-size:1.18rem;color:var(--ink)}
+    .drink .dtot{font-family:var(--sans);font-size:.72rem;color:var(--muted);letter-spacing:.02em;white-space:nowrap}
     .drink .dnote{color:var(--muted);font-size:.85rem;line-height:1.5;margin-top:6px}
     .drink .dspec{color:var(--ink);font-size:.76rem;line-height:1.45;margin-top:12px;letter-spacing:.01em}
     .drink .dspec span{display:block;margin-top:3px}
@@ -122,16 +123,15 @@
       <div class="wrap">
         <p class="eyebrow" data-i18n="la.eyebrow">Latte art</p>
         <h1 data-i18n="la.title">Pour like the counter.</h1>
-        <p class="lede" data-i18n="la.lede">A free, no-nonsense guide to milk, microfoam, and the four patterns worth learning. From people who pour every day.</p>
+        <p class="lede" data-i18n="la.lede">Free and honest: milk, microfoam, and the four latte art figures everyone starts with. From people who pour every day.</p>
       </div>
     </section>
 
     <section id="basics">
       <div class="wrap">
         <div class="center sec-head" data-reveal>
-          <p class="eyebrow" data-i18n="basics.eyebrow">Start here</p>
           <h2 data-i18n="basics.h">Milk school.</h2>
-          <p data-i18n="basics.lede">Before the patterns: how much milk each coffee wants, how to texture it, and how every kind of milk behaves.</p>
+          <p data-i18n="basics.lede">Before the latte art: how much milk goes into which coffee, how to texture it, and how each milk behaves.</p>
         </div>
 
         <div class="block" data-reveal>
@@ -145,49 +145,49 @@
           <div class="drinks">
             <div class="drink">
               <div class="glass" data-vessel="espresso" data-b="100" data-m="0" data-f="0"></div>
-              <p class="dn" data-i18n="d.espresso.n">Espresso</p>
+              <p class="dn"><span data-i18n="d.espresso.n">Espresso</span> <span class="dtot" data-i18n="d.espresso.tot">(30 ml)</span></p>
               <p class="dnote" data-i18n="d.espresso.note">No milk. The base of it all.</p>
               <p class="dspec" data-i18n="d.espresso.spec">1 shot · 30 ml</p>
             </div>
             <div class="drink">
               <div class="glass" data-vessel="espresso" data-b="80" data-m="0" data-f="20"></div>
-              <p class="dn" data-i18n="d.macchiato.n">Espresso Macchiato</p>
+              <p class="dn"><span data-i18n="d.macchiato.n">Espresso Macchiato</span> <span class="dtot" data-i18n="d.macchiato.tot">(~35 ml)</span></p>
               <p class="dnote" data-i18n="d.macchiato.note">Espresso, just marked with a dab of foam.</p>
               <p class="dspec" data-i18n="d.macchiato.spec">1 shot · 30 ml + a dab of foam</p>
             </div>
             <div class="drink">
               <div class="glass" data-vessel="glassS" data-b="45" data-m="50" data-f="5"></div>
-              <p class="dn" data-i18n="d.cortado.n">Cortado</p>
+              <p class="dn"><span data-i18n="d.cortado.n">Cortado</span> <span class="dtot" data-i18n="d.cortado.tot">(60 ml)</span></p>
               <p class="dnote" data-i18n="d.cortado.note">Equal espresso and warm milk, barely any foam.</p>
               <p class="dspec" data-i18n="d.cortado.spec">1 shot · ~30 ml milk · about 60 ml</p>
             </div>
             <div class="drink">
               <div class="glass" data-vessel="cappuccino" data-b="33" data-m="62" data-f="5"></div>
-              <p class="dn" data-i18n="d.flatwhite.n">Flat White</p>
+              <p class="dn"><span data-i18n="d.flatwhite.n">Flat White</span> <span class="dtot" data-i18n="d.flatwhite.tot">(180 ml)</span></p>
               <p class="dnote" data-i18n="d.flatwhite.note">Double espresso, silky milk, a thin microfoam.</p>
               <p class="dspec" data-i18n="d.flatwhite.spec">2 shots · ~120 ml milk · about 180 ml</p>
             </div>
             <div class="drink">
               <div class="glass" data-vessel="cappuccino" data-b="33" data-m="33" data-f="34"></div>
-              <p class="dn" data-i18n="d.cappuccino.n">Cappuccino</p>
+              <p class="dn"><span data-i18n="d.cappuccino.n">Cappuccino</span> <span class="dtot" data-i18n="d.cappuccino.tot">(150–250 ml)</span></p>
               <p class="dnote" data-i18n="d.cappuccino.note">The classic third each: espresso, milk, foam.</p>
               <p class="dspec" data-i18n="d.cappuccino.spec">1 shot · 60 ml milk · 60 ml foam · small 150 / large 250 ml</p>
             </div>
             <div class="drink">
               <div class="glass" data-vessel="glassT" data-b="20" data-m="68" data-f="12"></div>
-              <p class="dn" data-i18n="d.latte.n">Caffè Latte</p>
+              <p class="dn"><span data-i18n="d.latte.n">Caffè Latte</span> <span class="dtot" data-i18n="d.latte.tot">(300 ml)</span></p>
               <p class="dnote" data-i18n="d.latte.note">Lots of milk, a thin cap of foam. The mildest.</p>
               <p class="dspec" data-i18n="d.latte.spec">2 shots · ~200 ml milk · about 300 ml</p>
             </div>
             <div class="drink">
               <div class="glass" data-vessel="glassT" data-b="15" data-m="62" data-f="23"></div>
-              <p class="dn" data-i18n="d.lattemacchiato.n">Latte Macchiato</p>
+              <p class="dn"><span data-i18n="d.lattemacchiato.n">Latte Macchiato</span> <span class="dtot" data-i18n="d.lattemacchiato.tot">(~280 ml)</span></p>
               <p class="dnote" data-i18n="d.lattemacchiato.note">Layered milk, espresso, and a tall foam top.</p>
               <p class="dspec" data-i18n="d.lattemacchiato.spec">1 shot · ~250 ml milk · tall glass</p>
             </div>
             <div class="drink">
               <div class="glass" data-vessel="cappuccino" data-b="20" data-m="68" data-f="12" data-base="#8a9a6b"></div>
-              <p class="dn" data-i18n="d.matcha.n">Matcha Latte</p>
+              <p class="dn"><span data-i18n="d.matcha.n">Matcha Latte</span> <span class="dtot" data-i18n="d.matcha.tot">(~220 ml)</span></p>
               <p class="dnote" data-i18n="d.matcha.note">Same steamed milk, whisked matcha instead of coffee.</p>
               <p class="dspec" data-i18n="d.matcha.spec">1 scoop matcha · ~200 ml milk</p>
             </div>
@@ -451,19 +451,19 @@
       en: {
         'nav.story':'Philosophy','nav.finishes':'Finishes','nav.craft':'Detail','nav.shop':'Shop',
         'la.eyebrow':'Latte art','la.title':'Pour like the counter.',
-        'la.lede':'A free, no-nonsense guide to milk, microfoam, and the four patterns worth learning. From people who pour every day.',
+        'la.lede':'Free and honest: milk, microfoam, and the four latte art figures everyone starts with. From people who pour every day.',
         'basics.eyebrow':'Start here','basics.h':'Milk school.',
-        'basics.lede':'Before the patterns: how much milk each coffee wants, how to texture it, and how every kind of milk behaves.',
+        'basics.lede':'Before the latte art: how much milk goes into which coffee, how to texture it, and how each milk behaves.',
         'drinks.h':'The drinks, and their milk','drinks.p':'How much espresso, how much steamed milk, how much foam. Layered bottom to top, with rough amounts.',
         'leg.base':'Espresso','leg.milk':'Steamed milk','leg.foam':'Foam',
-        'd.espresso.n':'Espresso','d.espresso.note':'No milk. The base of it all.','d.espresso.spec':'1 shot · 30 ml',
-        'd.macchiato.n':'Espresso Macchiato','d.macchiato.note':'Espresso, just marked with a dab of foam.','d.macchiato.spec':'1 shot · 30 ml + a dab of foam',
-        'd.cortado.n':'Cortado','d.cortado.note':'Equal espresso and warm milk, barely any foam.','d.cortado.spec':'1 shot · ~30 ml milk · about 60 ml',
-        'd.flatwhite.n':'Flat White','d.flatwhite.note':'Double espresso, silky milk, a thin microfoam.','d.flatwhite.spec':'2 shots · ~120 ml milk · about 180 ml',
-        'd.cappuccino.n':'Cappuccino','d.cappuccino.note':'The classic third each: espresso, milk, foam.','d.cappuccino.spec':'1 shot · 60 ml milk · 60 ml foam · small 150 / large 250 ml',
-        'd.latte.n':'Caffè Latte','d.latte.note':'Lots of milk, a thin cap of foam. The mildest.','d.latte.spec':'2 shots · ~200 ml milk · about 300 ml',
-        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.note':'Layered milk, espresso, and a tall foam top.','d.lattemacchiato.spec':'1 shot · ~250 ml milk · tall glass',
-        'd.matcha.n':'Matcha Latte','d.matcha.note':'Same steamed milk, whisked matcha instead of coffee.','d.matcha.spec':'1 scoop matcha · ~200 ml milk',
+        'd.espresso.n':'Espresso','d.espresso.tot':'(30 ml)','d.espresso.note':'No milk. The base of it all.','d.espresso.spec':'1 shot espresso (30 ml)',
+        'd.macchiato.n':'Espresso Macchiato','d.macchiato.tot':'(~35 ml)','d.macchiato.note':'Espresso, just marked with a dab of foam.','d.macchiato.spec':'1 shot espresso (30 ml) · a dab of foam',
+        'd.cortado.n':'Cortado','d.cortado.tot':'(60 ml)','d.cortado.note':'Equal espresso and warm milk, barely any foam.','d.cortado.spec':'1 shot espresso (30 ml) · 30 ml milk',
+        'd.flatwhite.n':'Flat White','d.flatwhite.tot':'(180 ml)','d.flatwhite.note':'Double espresso, silky milk, a thin microfoam.','d.flatwhite.spec':'2 shots espresso (2× 30 ml) · 120 ml milk · a little foam',
+        'd.cappuccino.n':'Cappuccino','d.cappuccino.tot':'(150–250 ml)','d.cappuccino.note':'The classic third each: espresso, milk, foam.','d.cappuccino.spec':'1 shot espresso (30 ml) · 60 ml milk · 60 ml foam',
+        'd.latte.n':'Caffè Latte','d.latte.tot':'(300 ml)','d.latte.note':'Lots of milk, a thin cap of foam. The mildest.','d.latte.spec':'2 shots espresso (60 ml) · ~200 ml milk · a little foam',
+        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.tot':'(~280 ml)','d.lattemacchiato.note':'Layered milk, espresso, and a tall foam top.','d.lattemacchiato.spec':'~250 ml milk · 1 shot espresso (30 ml) · foam crown',
+        'd.matcha.n':'Matcha Latte','d.matcha.tot':'(~220 ml)','d.matcha.note':'Same steamed milk, whisked matcha instead of coffee.','d.matcha.spec':'1 scoop matcha · ~200 ml milk · a little foam',
         'tex.h':'The perfect texture','tex.p':'You are after wet paint: glossy, silky, with no bubbles you can see. Two moves get you there.',
         'tex.1.t':'Stretch','tex.1.d':'In the first two to three seconds, keep the tip just under the surface for a soft hiss of air.',
         'tex.2.t':'Roll','tex.2.d':'Then submerge the tip and spin the milk into a smooth whirlpool until it folds in on itself.',
@@ -477,7 +477,7 @@
         'm.almond.n':'Almond and the rest','m.almond.d':'Nutty and light, but the trickiest to foam: little protein means thin, airy foam that collapses fast and separates from the coffee.','m.almond.pro':'~0.5 g / 100 ml','m.almond.fat':'~1.1 g','m.almond.foam':'Thin, unstable','m.almond.tip':'Barista edition only, low heat, pour straight away.',
         'milk.cow':'Best cow’s milk: whole, fresh and cold. Its protein and fat build the steadiest foam; low-fat froths bigger but drier and falls apart faster.',
         'milk.plant':'With any plant milk: use a barista edition, steam cooler (around 55 to 60 degrees), and wipe and purge the wand after, they scorch fast.',
-        'figs.eyebrow':'The patterns','figs.h':'Four to learn, in order.','figs.p':'Each one builds on the last. Master the heart before you chase the swan.',
+        'figs.eyebrow':'The figures','figs.h':'Four to learn, in order.','figs.p':'Each one builds on the last. Master the heart before you chase the swan.',
         'heart.t':'Heart','heart.lvl':'Beginner','heart.d':'The starting point for everything. You pour a round white pool into the centre, then slice through it to pull the tip.',
         'heart.s1':'Pour the textured milk in from a height into the tilted cup until it is about half full and still mostly brown.','heart.s2':'Lower the spout almost onto the surface and pour steadily into one spot. A white circle blooms and rises.','heart.s3':'When the circle nearly fills the cup, lift and cut a thin stream straight through its middle to the near edge. That pulls the point.',
         'rosetta.t':'Rosetta','rosetta.lvl':'Intermediate','rosetta.d':'The classic leaf. A steady side-to-side wobble of the jug lays down rows of leaves, then one line ties them together.',
@@ -498,19 +498,19 @@
       de: {
         'nav.story':'Philosophie','nav.finishes':'Farben','nav.craft':'Detail','nav.shop':'Shop',
         'la.eyebrow':'Latte Art','la.title':'Gießen wie im Café.',
-        'la.lede':'Eine kostenlose, ehrliche Anleitung zu Milch, Mikroschaum und den vier Mustern, die sich lohnen. Von Leuten, die täglich gießen.',
+        'la.lede':'Kostenlos und ehrlich: Milch, Mikroschaum und die vier Figuren, mit denen jeder anfängt. Von Leuten, die täglich gießen.',
         'basics.eyebrow':'Für den Anfang','basics.h':'Milchkunde.',
-        'basics.lede':'Vor den Mustern: wie viel Milch jeder Kaffee braucht, wie du sie texturierst und wie sich jede Milch verhält.',
+        'basics.lede':'Vor der Latte Art: wie viel Milch in welchen Kaffee gehört, wie du sie texturierst und wie sich jede Milch verhält.',
         'drinks.h':'Die Getränke und ihre Milch','drinks.p':'Wie viel Espresso, wie viel Milch, wie viel Schaum. Von unten nach oben geschichtet, mit ungefähren Mengen.',
         'leg.base':'Espresso','leg.milk':'Milch','leg.foam':'Schaum',
-        'd.espresso.n':'Espresso','d.espresso.note':'Keine Milch. Die Basis von allem.','d.espresso.spec':'1 Shot · 30 ml',
-        'd.macchiato.n':'Espresso Macchiato','d.macchiato.note':'Espresso, nur mit einem Tupfer Schaum markiert.','d.macchiato.spec':'1 Shot · 30 ml + Schaumtupfer',
-        'd.cortado.n':'Cortado','d.cortado.note':'Espresso und warme Milch zu gleichen Teilen, kaum Schaum.','d.cortado.spec':'1 Shot · ~30 ml Milch · ca. 60 ml',
-        'd.flatwhite.n':'Flat White','d.flatwhite.note':'Doppelter Espresso, seidige Milch, hauchdünner Mikroschaum.','d.flatwhite.spec':'2 Shots · ~120 ml Milch · ca. 180 ml',
-        'd.cappuccino.n':'Cappuccino','d.cappuccino.note':'Der Klassiker, je ein Drittel: Espresso, Milch, Schaum.','d.cappuccino.spec':'1 Shot · 60 ml Milch · 60 ml Schaum · klein 150 / groß 250 ml',
-        'd.latte.n':'Caffè Latte','d.latte.note':'Viel Milch, eine dünne Schaumhaube. Der mildeste.','d.latte.spec':'2 Shots · ~200 ml Milch · ca. 300 ml',
-        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.note':'Geschichtet: Milch, Espresso und eine hohe Schaumkrone.','d.lattemacchiato.spec':'1 Shot · ~250 ml Milch · hohes Glas',
-        'd.matcha.n':'Matcha Latte','d.matcha.note':'Gleiche geschäumte Milch, aufgeschlagener Matcha statt Kaffee.','d.matcha.spec':'1 Portion Matcha · ~200 ml Milch',
+        'd.espresso.n':'Espresso','d.espresso.tot':'(30 ml)','d.espresso.note':'Keine Milch. Die Basis von allem.','d.espresso.spec':'1 Shot Espresso (30 ml)',
+        'd.macchiato.n':'Espresso Macchiato','d.macchiato.tot':'(~35 ml)','d.macchiato.note':'Espresso, nur mit einem Tupfer Schaum markiert.','d.macchiato.spec':'1 Shot Espresso (30 ml) · Schaumtupfer',
+        'd.cortado.n':'Cortado','d.cortado.tot':'(60 ml)','d.cortado.note':'Espresso und warme Milch zu gleichen Teilen, kaum Schaum.','d.cortado.spec':'1 Shot Espresso (30 ml) · 30 ml Milch',
+        'd.flatwhite.n':'Flat White','d.flatwhite.tot':'(180 ml)','d.flatwhite.note':'Doppelter Espresso, seidige Milch, hauchdünner Mikroschaum.','d.flatwhite.spec':'2 Shots Espresso (2× 30 ml) · 120 ml Milch · wenig Schaum',
+        'd.cappuccino.n':'Cappuccino','d.cappuccino.tot':'(150–250 ml)','d.cappuccino.note':'Der Klassiker, je ein Drittel: Espresso, Milch, Schaum.','d.cappuccino.spec':'1 Shot Espresso (30 ml) · 60 ml Milch · 60 ml Schaum',
+        'd.latte.n':'Caffè Latte','d.latte.tot':'(300 ml)','d.latte.note':'Viel Milch, eine dünne Schaumhaube. Der mildeste.','d.latte.spec':'2 Shots Espresso (60 ml) · ~200 ml Milch · wenig Schaum',
+        'd.lattemacchiato.n':'Latte Macchiato','d.lattemacchiato.tot':'(~280 ml)','d.lattemacchiato.note':'Geschichtet: Milch, Espresso und eine hohe Schaumkrone.','d.lattemacchiato.spec':'~250 ml Milch · 1 Shot Espresso (30 ml) · Schaumkrone',
+        'd.matcha.n':'Matcha Latte','d.matcha.tot':'(~220 ml)','d.matcha.note':'Gleiche geschäumte Milch, aufgeschlagener Matcha statt Kaffee.','d.matcha.spec':'1 Portion Matcha · ~200 ml Milch · wenig Schaum',
         'tex.h':'Die perfekte Konsistenz','tex.p':'Du willst nasse Farbe: glänzend, seidig, ohne sichtbare Blasen. Zwei Handgriffe bringen dich hin.',
         'tex.1.t':'Ziehen','tex.1.d':'In den ersten zwei bis drei Sekunden die Düse knapp unter der Oberfläche halten, für ein leises Zischen Luft.',
         'tex.2.t':'Rollen','tex.2.d':'Dann die Düse eintauchen und die Milch zu einem glatten Strudel drehen, bis sie sich in sich selbst einrollt.',
@@ -524,7 +524,7 @@
         'm.almond.n':'Mandel und der Rest','m.almond.d':'Nussig und leicht, aber am schwierigsten zu schäumen: wenig Protein heißt dünner, luftiger Schaum, der schnell zerfällt und sich vom Kaffee trennt.','m.almond.pro':'~0,5 g / 100 ml','m.almond.fat':'~1,1 g','m.almond.foam':'Dünn, instabil','m.almond.tip':'Nur Barista-Edition, niedrige Hitze, sofort gießen.',
         'milk.cow':'Beste Kuhmilch: Vollmilch, frisch und kalt. Ihr Protein und Fett geben den stabilsten Schaum; fettarme schäumt voluminöser, aber trockener und fällt schneller zusammen.',
         'milk.plant':'Bei jeder Pflanzenmilch: Barista-Edition nehmen, kühler schäumen (etwa 55 bis 60 Grad) und die Düse danach abwischen und abdampfen, sie brennt schnell an.',
-        'figs.eyebrow':'Die Muster','figs.h':'Vier zum Lernen, der Reihe nach.','figs.p':'Jedes baut auf dem vorigen auf. Beherrsche das Herz, bevor du dem Schwan nachjagst.',
+        'figs.eyebrow':'Die Figuren','figs.h':'Vier zum Lernen, der Reihe nach.','figs.p':'Jedes baut auf dem vorigen auf. Beherrsche das Herz, bevor du dem Schwan nachjagst.',
         'heart.t':'Herz','heart.lvl':'Einsteiger','heart.d':'Der Ausgangspunkt für alles. Du gießt einen runden weißen Punkt in die Mitte und ziehst dann gerade hindurch, um die Spitze zu formen.',
         'heart.s1':'Gieße die texturierte Milch aus etwas Höhe in die schräg gehaltene Tasse, bis sie etwa halb voll und noch überwiegend braun ist.','heart.s2':'Senke den Ausguss fast auf die Oberfläche und gieße gleichmäßig auf einen Punkt. Ein weißer Kreis wächst und steigt nach oben.','heart.s3':'Wenn der Kreis fast die Tasse füllt, heb ab und ziehe einen dünnen Strahl gerade durch die Mitte bis zum nahen Rand. Das formt die Spitze.',
         'rosetta.t':'Rosetta','rosetta.lvl':'Fortgeschritten','rosetta.d':'Das klassische Blatt. Ein gleichmäßiges Hin-und-Her des Kännchens legt Reihen von Blättern, dann verbindet eine Linie sie.',
