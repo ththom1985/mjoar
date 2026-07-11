@@ -19,8 +19,7 @@
     .guide-hero{text-align:center;padding-top:clamp(70px,13vh,140px)}
     .guide-hero h1{font-family:var(--serif);font-weight:400;color:var(--ink);font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.08;margin-top:14px}
     .guide-hero .lede{margin:22px auto 0;max-width:38ch}
-    .sec-head{max-width:44ch}
-    .center .sec-head{margin-inline:auto}
+    .sec-head{max-width:44ch;margin-inline:auto}
     .sec-head h2{margin-top:14px}
     .sec-head p{color:var(--muted);margin-top:16px;font-size:1.08rem;line-height:1.6}
 
@@ -64,7 +63,8 @@
     .glass svg{width:100%;height:auto;display:block}
     .drink .dn{font-family:var(--serif);font-size:1.18rem;color:var(--ink)}
     .drink .dnote{color:var(--muted);font-size:.85rem;line-height:1.5;margin-top:6px}
-    .drink .dspec{color:var(--ink);font-size:.76rem;line-height:1.5;margin-top:11px;letter-spacing:.01em}
+    .drink .dspec{color:var(--ink);font-size:.76rem;line-height:1.45;margin-top:12px;letter-spacing:.01em}
+    .drink .dspec span{display:block;margin-top:3px}
     .seg-base{background:#6b5140}
     .seg-milk{background:#e4ddcd}
     .seg-foam{background:#f4f2ec}
@@ -532,6 +532,7 @@
       document.documentElement.lang = cur;
       const dict = T[cur];
       document.querySelectorAll('[data-i18n]').forEach((el) => { const k = el.getAttribute('data-i18n'); if (dict[k] !== undefined) el.textContent = dict[k]; });
+      document.querySelectorAll('.dspec').forEach((el) => { el.innerHTML = el.textContent.split('·').map((s) => `<span>${s.trim()}</span>`).join(''); });
       document.querySelectorAll('.langtoggle button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === cur ? 'true' : 'false'));
       try { localStorage.setItem('mjoar_lang', cur); } catch (e) {}
     };
