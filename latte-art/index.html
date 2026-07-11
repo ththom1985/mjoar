@@ -39,11 +39,11 @@
     .steps li::before{content:counter(s);position:absolute;left:0;top:-1px;width:27px;height:27px;border-radius:50%;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--ink);font-family:var(--serif)}
     @media(max-width:640px){.figure-body{grid-template-columns:1fr;gap:20px;max-width:420px}}
 
-    .fixes{margin-top:clamp(30px,4vw,48px)}
-    .fix{padding:22px 0;border-top:1px solid var(--line)}
+    .fixes{margin:clamp(28px,4vw,44px) auto 0;max-width:660px}
+    .fix{padding:20px 0;border-top:1px solid var(--line);text-align:center}
     .fix:last-child{border-bottom:1px solid var(--line)}
-    .fix .q{font-family:var(--serif);font-size:1.22rem;color:var(--ink);margin-bottom:7px}
-    .fix .a{color:var(--muted);line-height:1.62;max-width:62ch}
+    .fix .q{font-family:var(--serif);font-size:1.22rem;color:var(--ink);margin-bottom:6px}
+    .fix .a{color:var(--muted);line-height:1.62;max-width:58ch;margin-inline:auto}
 
     .guide-cta-wrap{padding-block:clamp(50px,8vh,100px)}
     .guide-cta{text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(40px,6vw,76px)}
@@ -74,6 +74,8 @@
     .tex{text-align:center}
     .tex-ic{width:42px;height:42px;color:var(--ink);margin:0 auto 14px}
     .tex-ic svg{width:100%;height:100%;display:block}
+    .milk-ic{width:40px;height:40px;color:var(--ink);margin:0 auto 12px}
+    .milk-ic svg{width:100%;height:100%;display:block}
     .tex .tt{font-family:var(--serif);font-size:1.2rem;color:var(--ink);margin-bottom:8px}
     .tex p{color:var(--muted);line-height:1.6;font-size:.96rem;max-width:32ch;margin-inline:auto}
     .tex-foot{margin-top:30px;color:var(--text);font-size:.98rem;line-height:1.55;text-align:center;max-width:62ch;margin-inline:auto}
@@ -142,49 +144,49 @@
           </div>
           <div class="drinks">
             <div class="drink">
-              <div class="glass" data-b="100" data-m="0" data-f="0"></div>
+              <div class="glass" data-vessel="espresso" data-b="100" data-m="0" data-f="0"></div>
               <p class="dn" data-i18n="d.espresso.n">Espresso</p>
               <p class="dnote" data-i18n="d.espresso.note">No milk. The base of it all.</p>
               <p class="dspec" data-i18n="d.espresso.spec">1 shot · 30 ml</p>
             </div>
             <div class="drink">
-              <div class="glass" data-b="80" data-m="0" data-f="20"></div>
+              <div class="glass" data-vessel="espresso" data-b="80" data-m="0" data-f="20"></div>
               <p class="dn" data-i18n="d.macchiato.n">Espresso Macchiato</p>
               <p class="dnote" data-i18n="d.macchiato.note">Espresso, just marked with a dab of foam.</p>
               <p class="dspec" data-i18n="d.macchiato.spec">1 shot · 30 ml + a dab of foam</p>
             </div>
             <div class="drink">
-              <div class="glass" data-b="45" data-m="50" data-f="5"></div>
+              <div class="glass" data-vessel="glassS" data-b="45" data-m="50" data-f="5"></div>
               <p class="dn" data-i18n="d.cortado.n">Cortado</p>
               <p class="dnote" data-i18n="d.cortado.note">Equal espresso and warm milk, barely any foam.</p>
               <p class="dspec" data-i18n="d.cortado.spec">1 shot · ~30 ml milk · about 60 ml</p>
             </div>
             <div class="drink">
-              <div class="glass" data-b="33" data-m="62" data-f="5"></div>
+              <div class="glass" data-vessel="cappuccino" data-b="33" data-m="62" data-f="5"></div>
               <p class="dn" data-i18n="d.flatwhite.n">Flat White</p>
               <p class="dnote" data-i18n="d.flatwhite.note">Double espresso, silky milk, a thin microfoam.</p>
               <p class="dspec" data-i18n="d.flatwhite.spec">2 shots · ~120 ml milk · about 180 ml</p>
             </div>
             <div class="drink">
-              <div class="glass" data-b="33" data-m="33" data-f="34"></div>
+              <div class="glass" data-vessel="cappuccino" data-b="33" data-m="33" data-f="34"></div>
               <p class="dn" data-i18n="d.cappuccino.n">Cappuccino</p>
               <p class="dnote" data-i18n="d.cappuccino.note">The classic third each: espresso, milk, foam.</p>
               <p class="dspec" data-i18n="d.cappuccino.spec">1 shot · 60 ml milk · 60 ml foam · small 150 / large 250 ml</p>
             </div>
             <div class="drink">
-              <div class="glass" data-b="20" data-m="68" data-f="12"></div>
+              <div class="glass" data-vessel="glassT" data-b="20" data-m="68" data-f="12"></div>
               <p class="dn" data-i18n="d.latte.n">Caffè Latte</p>
               <p class="dnote" data-i18n="d.latte.note">Lots of milk, a thin cap of foam. The mildest.</p>
               <p class="dspec" data-i18n="d.latte.spec">2 shots · ~200 ml milk · about 300 ml</p>
             </div>
             <div class="drink">
-              <div class="glass" data-b="15" data-m="62" data-f="23"></div>
+              <div class="glass" data-vessel="glassT" data-b="15" data-m="62" data-f="23"></div>
               <p class="dn" data-i18n="d.lattemacchiato.n">Latte Macchiato</p>
               <p class="dnote" data-i18n="d.lattemacchiato.note">Layered milk, espresso, and a tall foam top.</p>
               <p class="dspec" data-i18n="d.lattemacchiato.spec">1 shot · ~250 ml milk · tall glass</p>
             </div>
             <div class="drink">
-              <div class="glass" data-b="20" data-m="68" data-f="12" data-base="#8a9a6b"></div>
+              <div class="glass" data-vessel="cappuccino" data-b="20" data-m="68" data-f="12" data-base="#8a9a6b"></div>
               <p class="dn" data-i18n="d.matcha.n">Matcha Latte</p>
               <p class="dnote" data-i18n="d.matcha.note">Same steamed milk, whisked matcha instead of coffee.</p>
               <p class="dspec" data-i18n="d.matcha.spec">1 scoop matcha · ~200 ml milk</p>
@@ -197,12 +199,12 @@
           <p class="blocksub" data-i18n="tex.p">You are after wet paint: glossy, silky, with no bubbles you can see. Two moves get you there.</p>
           <div class="tex-grid">
             <div class="tex">
-              <div class="tex-ic" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 15 L13 28 Q13 31 16 31 L23 31 Q26 31 26 28 L26 15 Z"/><path d="M26 18 Q31 18 31 23 Q31 27 26 27"/><path d="M13 15 L9 12"/><path d="M17 10 Q19 8 17 6"/><path d="M22 10 Q24 8 22 6"/></svg></div>
+              <div class="tex-ic" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20 L8 15"/><path d="M12 20 L12 37 Q12 40 15 40 L29 40 Q32 40 32 37 L32 20"/><path d="M32 24 Q38 25 37 32"/><path d="M13 26 L31 26" stroke-opacity=".5"/><path d="M42 8 L30 25" stroke-width="2.4"/><rect x="28.4" y="23.6" width="3.2" height="3.2" rx="1" fill="currentColor" stroke="none"/><circle cx="26" cy="30" r="1.2" fill="currentColor" stroke="none"/><circle cx="23" cy="32.5" r="0.9" fill="currentColor" stroke="none"/><circle cx="28.5" cy="33" r="0.7" fill="currentColor" stroke="none"/></svg></div>
               <p class="tt" data-i18n="tex.1.t">Stretch</p>
               <p data-i18n="tex.1.d">In the first two to three seconds, keep the tip just under the surface for a soft hiss of air.</p>
             </div>
             <div class="tex">
-              <div class="tex-ic" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M30 14 A11 11 0 1 1 13 21 A7 7 0 1 1 26 20 A3.5 3.5 0 1 1 19.5 20"/></svg></div>
+              <div class="tex-ic" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path id="rollSpiral" d=""/></svg></div>
               <p class="tt" data-i18n="tex.2.t">Roll</p>
               <p data-i18n="tex.2.d">Then submerge the tip and spin the milk into a smooth whirlpool until it folds in on itself.</p>
             </div>
@@ -220,6 +222,7 @@
           <p class="blocksub" data-i18n="milk.p">Two things decide it. Protein builds the walls of the bubbles, so it sets structure and stability. Fat makes the foam creamy and rounds out the taste. More protein means a steadier foam; more fat means more creaminess. Barista editions are tuned for exactly this.</p>
           <div class="milks">
             <div class="milk-card">
+              <div class="milk-ic" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21 L16 40 L32 40 L32 21"/><path d="M16 21 L24 14 L32 21"/><path d="M24 14 L24 21"/></svg></div>
               <p class="mn" data-i18n="m.whole.n">Whole cow's milk</p>
               <p class="md" data-i18n="m.whole.d">The benchmark, and the most forgiving. Its high protein builds a fine, stable foam, and the fat makes it creamy and lightly sweet. Handles beginner mistakes best of all.</p>
               <div class="mfacts">
@@ -230,6 +233,7 @@
               <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.whole.tip">Cold and fresh from the fridge. The easiest choice for latte art.</span></p>
             </div>
             <div class="milk-card">
+              <div class="milk-ic" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 37 C 17 32 17 18 24 12 C 31 18 31 32 24 37 Z"/><path d="M24 16 L24 34"/><path d="M24 40 L24 37"/><path d="M24 13 L21 9"/><path d="M24 13 L27 9"/></svg></div>
               <p class="mn" data-i18n="m.oat.n">Oat, barista edition</p>
               <p class="md" data-i18n="m.oat.d">The best plant option, closest to milk. Naturally lower in protein, but barista editions add a little oil and stabilisers, so they foam almost like milk. Naturally sweet and easy against espresso.</p>
               <div class="mfacts">
@@ -240,6 +244,7 @@
               <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.oat.tip">Always the barista version. Steam a touch cooler. Plain oat barely foams.</span></p>
             </div>
             <div class="milk-card">
+              <div class="milk-ic" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="20" cy="24" rx="4.5" ry="6.5" transform="rotate(-14 20 24)"/><ellipse cx="28" cy="26" rx="4.5" ry="6.5" transform="rotate(14 28 26)"/></svg></div>
               <p class="mn" data-i18n="m.soy.n">Soy</p>
               <p class="md" data-i18n="m.soy.d">The highest-protein plant milk, so it foams well and holds its shape. The catch: the protein can curdle against hot, acidic espresso.</p>
               <div class="mfacts">
@@ -250,6 +255,7 @@
               <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.soy.tip">Steam cooler (max 60 degrees) and pour promptly, then it will not split.</span></p>
             </div>
             <div class="milk-card">
+              <div class="milk-ic" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10 C 31 16 31 30 24 38 C 17 30 17 16 24 10 Z"/><path d="M24 15 C 27 20 27 30 24 35" stroke-opacity=".55"/></svg></div>
               <p class="mn" data-i18n="m.almond.n">Almond and the rest</p>
               <p class="md" data-i18n="m.almond.d">Nutty and light, but the trickiest to foam: little protein means thin, airy foam that collapses fast and separates from the coffee.</p>
               <div class="mfacts">
@@ -263,6 +269,29 @@
           <div class="milk-notes">
             <p class="milk-note" data-i18n="milk.cow">Best cow's milk: whole, fresh and cold. Its protein and fat build the steadiest foam; low-fat froths bigger but drier and falls apart faster.</p>
             <p class="milk-note" data-i18n="milk.plant">With any plant milk: use a barista edition, steam cooler (around 55 to 60 degrees), and wipe and purge the wand after, they scorch fast.</p>
+          </div>
+        </div>
+
+        <div class="block" data-reveal>
+          <h3 class="blockhead" data-i18n="fix.h">What can happen, and how to fix it</h3>
+          <p class="blocksub" data-i18n="fix.sub">The usual snags at the milk stage, and the quick fix for each.</p>
+          <div class="fixes">
+            <div class="fix">
+              <p class="q" data-i18n="fix1.q">The white sinks, no pattern</p>
+              <p class="a" data-i18n="fix1.a">You poured too high or too early. Get the spout closer to the surface before the white should show.</p>
+            </div>
+            <div class="fix">
+              <p class="q" data-i18n="fix2.q">Big bubbles on top</p>
+              <p class="a" data-i18n="fix2.a">Too much air, or air added too late. Stretch only in the first seconds, then submerge the tip. Tap the jug and swirl to pop bubbles.</p>
+            </div>
+            <div class="fix">
+              <p class="q" data-i18n="fix3.q">Foam too stiff to pour</p>
+              <p class="a" data-i18n="fix3.a">Over-stretched. You want wet paint, not meringue. Less air, more spinning.</p>
+            </div>
+            <div class="fix">
+              <p class="q" data-i18n="fix4.q">No contrast, all pale</p>
+              <p class="a" data-i18n="fix4.a">The base was not blended in. Start higher and thinner to mix with the crema before you drop close.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -346,32 +375,6 @@
       </div>
     </section>
 
-    <section>
-      <div class="wrap">
-        <div class="center sec-head" data-reveal>
-          <p class="eyebrow" data-i18n="fix.eyebrow">Troubleshooting</p>
-          <h2 data-i18n="fix.h">When it goes wrong.</h2>
-        </div>
-        <div class="fixes" data-reveal>
-          <div class="fix">
-            <p class="q" data-i18n="fix1.q">The white sinks, no pattern</p>
-            <p class="a" data-i18n="fix1.a">You poured too high or too early. Get the spout closer to the surface before the white should show.</p>
-          </div>
-          <div class="fix">
-            <p class="q" data-i18n="fix2.q">Big bubbles on top</p>
-            <p class="a" data-i18n="fix2.a">Too much air, or air added too late. Stretch only in the first seconds, then submerge the tip. Tap the jug and swirl to pop bubbles.</p>
-          </div>
-          <div class="fix">
-            <p class="q" data-i18n="fix3.q">Foam too stiff to pour</p>
-            <p class="a" data-i18n="fix3.a">Over-stretched. You want wet paint, not meringue. Less air, more spinning.</p>
-          </div>
-          <div class="fix">
-            <p class="q" data-i18n="fix4.q">No contrast, all pale</p>
-            <p class="a" data-i18n="fix4.a">The base was not blended in. Start higher and thinner to mix with the crema before you drop close.</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="guide-cta-wrap">
       <div class="wrap">
@@ -411,24 +414,38 @@
     const topbar = document.querySelector('.topbar');
     addEventListener('scroll', () => { if (topbar) topbar.classList.toggle('scrolled', window.scrollY > 12); }, { passive: true });
 
-    const buildGlass = (el) => {
+    const V = {
+      espresso:{top:78,bot:116,fx:49,fw:42,rim:[70,78,22,4.5],body:'M48 78 Q47 116 70 116 Q93 116 92 78',clip:'M49 78 Q49 115 70 115 Q91 115 91 78 Z',handle:'M92 86 Q104 88 102 98 Q101 104 92 103',saucer:[70,121,33,5]},
+      cappuccino:{top:56,bot:122,fx:33,fw:70,rim:[68,56,37,6.8],body:'M31 56 Q31 122 68 122 Q105 122 105 56',clip:'M32 56 Q32 121 68 121 Q104 121 104 56 Z',handle:'M105 66 Q126 71 122 96 Q118 112 104 108',saucer:[68,127,47,6]},
+      glassS:{top:60,bot:132,fx:41,fw:58,rim:[70,60,28,5.6],body:'M42 60 L48 130 Q50 136 59 136 L81 136 Q90 136 92 130 L98 60',clip:'M44 60 L96 60 L90 130 Q88 135 81 135 L59 135 Q51 135 50 130 Z',handle:null,saucer:null},
+      glassT:{top:42,bot:150,fx:41,fw:58,rim:[70,42,28,5.6],body:'M42 42 L47 148 Q49 154 59 154 L81 154 Q91 154 93 148 L98 42',clip:'M44 42 L96 42 L90 148 Q88 153 81 153 L59 153 Q51 153 50 148 Z',handle:null,saucer:null}
+    };
+    const buildVessel = (el) => {
       const b = +el.dataset.b || 0, m = +el.dataset.m || 0, f = +el.dataset.f || 0;
       const base = el.dataset.base || '#6b5140';
-      const H = 106, bottom = 150, x = 28, w = 84;
-      const eh = H * b / 100, mh = H * m / 100, fh = H * f / 100;
-      const ey = bottom - eh, my = ey - mh, fy = my - fh;
-      const clip = 'M35 44 L105 44 L96 148 Q94 154 84 154 L56 154 Q46 154 44 148 Z';
-      let fills = `<rect x="${x}" y="${ey.toFixed(1)}" width="${w}" height="${eh.toFixed(1)}" fill="${base}"/>`;
-      if (m > 0) fills += `<rect x="${x}" y="${my.toFixed(1)}" width="${w}" height="${mh.toFixed(1)}" fill="#e9e1cf"/>`;
-      if (f > 0) fills += `<rect x="${x}" y="${fy.toFixed(1)}" width="${w}" height="${fh.toFixed(1)}" fill="#f5f1e8"/>`;
-      let surface, bubbles = '', outline = '';
-      if (f > 0) { surface = '#f5f1e8'; outline = '<ellipse cx="70" cy="45" rx="35" ry="7" fill="none" stroke="#d8cdbb" stroke-width="1.6"/>'; }
-      else if (m > 0) { surface = '#e9e1cf'; outline = '<ellipse cx="70" cy="45" rx="35" ry="7" fill="none" stroke="#d8cdbb" stroke-width="1.6"/>'; }
-      else { surface = '#a07a54'; bubbles = '<circle cx="60" cy="44" r="2.4" fill="#c9a87f"/><circle cx="80" cy="46" r="1.8" fill="#c9a87f"/>'; }
-      const uid = 'gc' + Math.random().toString(36).slice(2, 8);
-      return `<svg viewBox="0 0 140 172" xmlns="http://www.w3.org/2000/svg"><ellipse cx="70" cy="162" rx="40" ry="6" fill="#e7e0d4"/><clipPath id="${uid}"><path d="${clip}"/></clipPath><g clip-path="url(#${uid})">${fills}</g><ellipse cx="70" cy="45" rx="35" ry="7" fill="${surface}"/>${outline}${bubbles}<path d="M35 44 L44 148 Q46 154 56 154 L84 154 Q94 154 96 148 L105 44" fill="none" stroke="#9aa3a0" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="70" cy="44" rx="35" ry="7.5" fill="none" stroke="#9aa3a0" stroke-width="2.6"/><path d="M46 60 L54 140" stroke="#ffffff" stroke-opacity=".4" stroke-width="4" stroke-linecap="round"/></svg>`;
+      const v = V[el.dataset.vessel] || V.cappuccino;
+      const H = v.bot - v.top, rcx = v.rim[0], rcy = v.rim[1], rx = v.rim[2], ry = v.rim[3];
+      const eh = H*b/100, mh = H*m/100, fh = H*f/100;
+      const ey = v.bot - eh, my = ey - mh, fy = my - fh;
+      const uid = 'vs' + Math.random().toString(36).slice(2, 7);
+      let fills = `<rect x="${v.fx}" y="${ey.toFixed(1)}" width="${v.fw}" height="${eh.toFixed(1)}" fill="${base}"/>`;
+      if (m > 0) fills += `<rect x="${v.fx}" y="${my.toFixed(1)}" width="${v.fw}" height="${mh.toFixed(1)}" fill="#efe9db"/>`;
+      if (f > 0) fills += `<rect x="${v.fx}" y="${fy.toFixed(1)}" width="${v.fw}" height="${fh.toFixed(1)}" fill="#fdfbf7"/>`;
+      if (f > 4) fills += `<circle cx="${(v.fx+v.fw*0.3).toFixed(0)}" cy="${(fy+3.5).toFixed(0)}" r="1.8" fill="#e9e0cd"/><circle cx="${(v.fx+v.fw*0.62).toFixed(0)}" cy="${(fy+5.5).toFixed(0)}" r="1.4" fill="#ffffff"/><circle cx="${(v.fx+v.fw*0.46).toFixed(0)}" cy="${(fy+Math.min(fh*0.6,10)).toFixed(0)}" r="1.5" fill="#e9e0cd"/>`;
+      const sep = (f>0&&m>0) ? `<line x1="${v.fx}" y1="${my.toFixed(1)}" x2="${v.fx+v.fw}" y2="${my.toFixed(1)}" stroke="#d8cdb6" stroke-width="1"/>` : '';
+      const surf = f>0 ? '#fdfbf7' : (m>0 ? '#efe9db' : '#a07a54');
+      const outline = (f>0||m>0) ? `<ellipse cx="${rcx}" cy="${rcy}" rx="${rx}" ry="${ry}" fill="none" stroke="#dad0bd" stroke-width="1.3"/>` : '';
+      const froth = f>0 ? `<circle cx="${(rcx-rx*0.4).toFixed(0)}" cy="${rcy}" r="1.8" fill="#e9e0cd"/><circle cx="${(rcx+rx*0.35).toFixed(0)}" cy="${(rcy+1)}" r="1.4" fill="#ffffff"/>` : (m===0 ? `<circle cx="${rcx-8}" cy="${rcy}" r="2" fill="#c9a87f"/><circle cx="${rcx+8}" cy="${rcy+1}" r="1.4" fill="#c9a87f"/>` : '');
+      const handle = v.handle ? `<path d="${v.handle}" fill="none" stroke="#9aa3a0" stroke-width="2.6" stroke-linejoin="round"/>` : '';
+      let saucer = '<ellipse cx="70" cy="164" rx="34" ry="5" fill="#e7e0d4"/>';
+      if (v.saucer) { const s = v.saucer; saucer = `<ellipse cx="${s[0]}" cy="${s[1]}" rx="${s[2]}" ry="${s[3]}" fill="#ece5d8"/><ellipse cx="${s[0]}" cy="${s[1]}" rx="${s[2]}" ry="${s[3]}" fill="none" stroke="#c7bfad" stroke-width="1.4"/><ellipse cx="${s[0]}" cy="${(s[1]-0.5)}" rx="${(s[2]*0.5).toFixed(0)}" ry="${(s[3]*0.5).toFixed(1)}" fill="none" stroke="#d7cfbd" stroke-width="1"/>`; }
+      return `<svg viewBox="0 0 140 172" xmlns="http://www.w3.org/2000/svg">${saucer}<clipPath id="${uid}"><path d="${v.clip}"/></clipPath><g clip-path="url(#${uid})">${fills}${sep}</g><ellipse cx="${rcx}" cy="${rcy}" rx="${rx}" ry="${ry}" fill="${surf}"/>${outline}${froth}${handle}<path d="${v.body}" fill="none" stroke="#9aa3a0" stroke-width="2.6" stroke-linejoin="round"/><ellipse cx="${rcx}" cy="${rcy}" rx="${rx}" ry="${(ry+0.5)}" fill="none" stroke="#9aa3a0" stroke-width="2.6"/></svg>`;
     };
-    document.querySelectorAll('.glass').forEach((el) => { el.innerHTML = buildGlass(el); });
+    document.querySelectorAll('.glass').forEach((el) => { el.innerHTML = buildVessel(el); });
+
+    const spiralPath = (cx, cy, rMax, turns, pts) => { let d = ''; for (let i = 0; i <= pts; i++) { const t = i/pts, a = t*turns*2*Math.PI, r = rMax*t; d += (i?'L':'M') + (cx+r*Math.cos(a)).toFixed(1) + ' ' + (cy+r*Math.sin(a)).toFixed(1); } return d; };
+    const roll = document.getElementById('rollSpiral');
+    if (roll) roll.setAttribute('d', spiralPath(20, 20, 13.5, 2.75, 90));
 
     const T = {
       en: {
@@ -470,7 +487,7 @@
         'swan.t':'Swan','swan.lvl':'Advanced','swan.d':'The showpiece, and really a rosetta plus a heart. One side becomes the feathered wing, a thin line the neck, a small heart the head.',
         'swan.s1':'Pour a rosetta into one half of the cup. That is the wing and the tail of the swan.','swan.s2':'From the top of the wing, lift slightly and drag a long, thin, curved line out and around. That draws the neck.','swan.s3':'At the end of the neck, drop close, pour a small round blob and cut through it. That is the head and beak.',
         'clip':'Clip with Jonah coming soon',
-        'fix.eyebrow':'Troubleshooting','fix.h':'When it goes wrong.',
+        'fix.eyebrow':'Troubleshooting','fix.h':'What can happen, and how to fix it','fix.sub':'The usual snags at the milk stage, and the quick fix for each.',
         'fix1.q':'The white sinks, no pattern','fix1.a':'You poured too high or too early. Get the spout closer to the surface before the white should show.',
         'fix2.q':'Big bubbles on top','fix2.a':'Too much air, or air added too late. Stretch only in the first seconds, then submerge the tip. Tap the jug and swirl to pop bubbles.',
         'fix3.q':'Foam too stiff to pour','fix3.a':'Over-stretched. You want wet paint, not meringue. Less air, more spinning.',
@@ -517,7 +534,7 @@
         'swan.t':'Schwan','swan.lvl':'Könner','swan.d':'Das Schaustück, im Grunde eine Rosetta plus ein Herz. Eine Seite wird zum gefiederten Flügel, eine dünne Linie zum Hals, ein kleines Herz zum Kopf.',
         'swan.s1':'Gieße eine Rosetta in eine Hälfte der Tasse. Das ist Flügel und Schwanz des Schwans.','swan.s2':'Vom oberen Ende des Flügels leicht abheben und eine lange, dünne, geschwungene Linie nach außen und herum ziehen. Das zeichnet den Hals.','swan.s3':'Am Ende des Halses dicht herangehen, einen kleinen runden Klecks gießen und durchziehen. Das ist Kopf und Schnabel.',
         'clip':'Clip mit Jonah folgt in Kürze',
-        'fix.eyebrow':'Fehlerbehebung','fix.h':'Wenn es schiefgeht.',
+        'fix.eyebrow':'Fehlerbehebung','fix.h':'Was passieren kann, und wie du es löst','fix.sub':'Die typischen Stolpersteine bei der Milch, und die schnelle Lösung.',
         'fix1.q':'Das Weiß sinkt, kein Muster','fix1.a':'Zu hoch oder zu früh gegossen. Bring den Ausguss näher an die Oberfläche, bevor das Weiß erscheinen soll.',
         'fix2.q':'Große Blasen obenauf','fix2.a':'Zu viel Luft oder zu spät gezogen. Nur in den ersten Sekunden ziehen, dann Düse eintauchen. Kännchen aufklopfen und schwenken, um Blasen zu lösen.',
         'fix3.q':'Schaum zu steif zum Gießen','fix3.a':'Zu stark gezogen. Du willst nasse Farbe, kein Baiser. Weniger Luft, mehr Strudel.',
