@@ -28,10 +28,10 @@
     .card .k{font-family:var(--serif);font-size:1.35rem;color:var(--ink);margin:6px 0 10px}
     .card p{color:var(--muted);font-size:.97rem;line-height:1.66}
 
-    .figure-row{display:grid;grid-template-columns:210px 1fr;gap:clamp(26px,4vw,58px);align-items:start;padding-block:clamp(38px,6vh,68px);border-top:1px solid var(--line)}
-    @media(max-width:760px){.figure-row{grid-template-columns:1fr;gap:22px}.diagram{max-width:180px}}
-    .diagram{width:100%;max-width:210px;margin-inline:auto}
-    .diagram svg{width:100%;height:auto;display:block;border-radius:50%}
+    .figure-row{display:grid;grid-template-columns:240px 1fr;gap:clamp(26px,4vw,58px);align-items:start;padding-block:clamp(38px,6vh,68px);border-top:1px solid var(--line)}
+    @media(max-width:760px){.figure-row{grid-template-columns:1fr;gap:22px}.diagram{max-width:230px}}
+    .diagram{width:100%;max-width:240px;margin-inline:auto}
+    .diagram img{width:100%;height:auto;display:block;border-radius:16px}
     .figure-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
     .figure-head h3{font-size:clamp(1.5rem,3vw,2rem)}
     .lvl{text-transform:uppercase;letter-spacing:.2em;font-size:.6rem;color:var(--muted);border:1px solid var(--line-strong);padding:5px 11px;border-radius:20px}
@@ -254,12 +254,8 @@
 
         <!-- HEART -->
         <div class="figure-row" data-reveal>
-          <div class="diagram" aria-hidden="true">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="96" fill="#ece6da"/>
-              <circle cx="100" cy="100" r="87" fill="#6b5140"/>
-              <path d="M100 152 C 78 130, 60 114, 60 93 C 60 79, 72 71, 84 75 C 92 78, 98 85, 100 93 C 102 85, 108 78, 116 75 C 128 71, 140 79, 140 93 C 140 114, 122 130, 100 152 Z" fill="#f2ece0"/>
-            </svg>
+          <div class="diagram">
+            <img src="/assets/latte/heart.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Herz in salbeigrüner Tasse, von oben" />
           </div>
           <div>
             <div class="figure-head">
@@ -272,28 +268,13 @@
               <li data-i18n="heart.s2">Drop close and pour on one spot until a white circle grows and rises.</li>
               <li data-i18n="heart.s3">Lift and draw a thin stream straight through the middle to the far edge.</li>
             </ol>
-            <div class="clip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>
-              <span data-i18n="clip">Clip with Jonah coming soon</span>
-            </div>
           </div>
         </div>
 
         <!-- ROSETTA -->
         <div class="figure-row" data-reveal>
-          <div class="diagram" aria-hidden="true">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="96" fill="#ece6da"/>
-              <circle cx="100" cy="100" r="87" fill="#6b5140"/>
-              <path d="M100 40 C 128 84, 128 116, 100 162 C 72 116, 72 84, 100 40 Z" fill="#f2ece0"/>
-              <g stroke="#6b5140" stroke-width="4" fill="none" stroke-linecap="round">
-                <path d="M100 54 L100 156"/>
-                <path d="M100 68 L83 78"/><path d="M100 68 L117 78"/>
-                <path d="M100 88 L81 99"/><path d="M100 88 L119 99"/>
-                <path d="M100 108 L83 119"/><path d="M100 108 L117 119"/>
-                <path d="M100 128 L86 137"/><path d="M100 128 L114 137"/>
-              </g>
-            </svg>
+          <div class="diagram">
+            <img src="/assets/latte/rosetta.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Rosetta in salbeigrüner Tasse, von oben" />
           </div>
           <div>
             <div class="figure-head">
@@ -306,24 +287,13 @@
               <li data-i18n="rosetta.s2">Wiggle in place while slowly drawing the jug back toward you; the leaves fan out.</li>
               <li data-i18n="rosetta.s3">Stop wiggling, lift, and draw one line straight through to the front for the stem.</li>
             </ol>
-            <div class="clip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>
-              <span data-i18n="clip">Clip with Jonah coming soon</span>
-            </div>
           </div>
         </div>
 
         <!-- TULIP -->
         <div class="figure-row" data-reveal>
-          <div class="diagram" aria-hidden="true">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="96" fill="#ece6da"/>
-              <circle cx="100" cy="100" r="87" fill="#6b5140"/>
-              <path d="M100 162 C 84 142, 71 130, 71 115 C 71 105, 81 101, 89 105 C 94 107, 98 112, 100 118 C 102 112, 106 107, 111 105 C 119 101, 129 105, 129 115 C 129 130, 116 142, 100 162 Z" fill="#f2ece0"/>
-              <path d="M72 106 C 80 88, 120 88, 128 106 C 115 98, 85 98, 72 106 Z" fill="#f2ece0"/>
-              <path d="M79 88 C 87 73, 113 73, 121 88 C 110 81, 90 81, 79 88 Z" fill="#f2ece0"/>
-              <path d="M86 72 C 92 60, 108 60, 114 72 C 106 66, 94 66, 86 72 Z" fill="#f2ece0"/>
-            </svg>
+          <div class="diagram">
+            <img src="/assets/latte/tulip.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Tulpe in salbeigrüner Tasse, von oben" />
           </div>
           <div>
             <div class="figure-head">
@@ -336,27 +306,13 @@
               <li data-i18n="tulip.s2">Pour a second blob just behind it; the first gets pushed forward. Repeat two or three times.</li>
               <li data-i18n="tulip.s3">Finish with a heart on top and cut through all the layers to a single point.</li>
             </ol>
-            <div class="clip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>
-              <span data-i18n="clip">Clip with Jonah coming soon</span>
-            </div>
           </div>
         </div>
 
         <!-- SWAN -->
         <div class="figure-row" data-reveal>
-          <div class="diagram" aria-hidden="true">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="96" fill="#ece6da"/>
-              <circle cx="100" cy="100" r="87" fill="#6b5140"/>
-              <g fill="none" stroke="#f2ece0" stroke-linecap="round">
-                <path d="M64 156 C 54 124, 70 96, 104 82" stroke-width="6"/>
-                <path d="M70 158 C 62 130, 80 106, 110 94" stroke-width="6"/>
-                <path d="M78 160 C 72 138, 90 118, 118 108" stroke-width="6"/>
-                <path d="M106 92 C 138 86, 150 62, 136 46" stroke-width="6"/>
-              </g>
-              <path d="M136 48 C 129 39, 129 32, 136 32 C 140 32, 142 35, 142 39 C 142 35, 145 32, 149 32 C 156 32, 156 40, 148 45 C 144 48, 140 51, 136 56 Z" fill="#f2ece0"/>
-            </svg>
+          <div class="diagram">
+            <img src="/assets/latte/swan.jpg" width="720" height="720" loading="lazy" alt="Latte-Art-Schwan in salbeigrüner Tasse, von oben" />
           </div>
           <div>
             <div class="figure-head">
@@ -369,10 +325,6 @@
               <li data-i18n="swan.s2">From the wing, draw a long thin curved line out and around for the neck.</li>
               <li data-i18n="swan.s3">At the end of the neck, pour and cut a small heart for the head.</li>
             </ol>
-            <div class="clip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>
-              <span data-i18n="clip">Clip with Jonah coming soon</span>
-            </div>
           </div>
         </div>
       </div>
