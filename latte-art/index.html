@@ -28,7 +28,7 @@
     .card p{color:var(--muted);font-size:.97rem;line-height:1.66}
 
     .figure{padding-block:clamp(40px,6vh,72px);border-top:1px solid var(--line);text-align:center}
-    .figure-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;justify-content:center}
+    .figure-head{display:flex;flex-direction:column;align-items:center;gap:10px}
     .figure-head h3{font-size:clamp(1.6rem,3.4vw,2.2rem)}
     .lvl{text-transform:uppercase;letter-spacing:.2em;font-size:.6rem;color:var(--muted);border:1px solid var(--line-strong);padding:5px 11px;border-radius:20px}
     .figure .desc{color:var(--text);margin:12px auto 26px;font-size:1.08rem;line-height:1.55;max-width:56ch}
@@ -53,12 +53,12 @@
     .disclaimer{text-align:center;color:var(--soft);font-size:.82rem;margin-top:clamp(30px,5vh,50px);letter-spacing:.02em}
 
     .block{margin-top:clamp(52px,7vw,92px);text-align:center}
-    .blockhead{font-size:clamp(1.5rem,3vw,2rem);color:var(--ink)}
+    .blockhead{font-size:clamp(1.5rem,3vw,2rem);font-weight:500;color:var(--ink)}
     .blocksub{color:var(--muted);margin:12px auto 0;font-size:1.05rem;line-height:1.55;max-width:58ch}
     .legend{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:24px;font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
     .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px;border:1px solid var(--line-strong)}
     .drinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(14px,1.8vw,22px);margin-top:26px}
-    .drink{border:1px solid var(--line);border-radius:14px;padding:20px 16px 22px;text-align:center}
+    .drink{border:1px solid var(--line);border-radius:14px;padding:20px 16px 22px;text-align:center;background:#f5f7f4;box-shadow:0 1px 2px rgba(63,72,66,.04)}
     .glass{width:100%;max-width:116px;margin:0 auto 14px}
     .glass svg{width:100%;height:auto;display:block}
     .drink .dn{font-family:var(--serif);font-size:1.18rem;color:var(--ink)}
@@ -82,7 +82,7 @@
     .tex-foot{margin-top:30px;color:var(--text);font-size:.98rem;line-height:1.55;text-align:center;max-width:62ch;margin-inline:auto}
     .milks{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2.2vw,26px);margin-top:32px}
     @media(max-width:700px){.milks{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
-    .milk-card{border:1px solid var(--line);border-radius:14px;padding:24px 22px;text-align:center}
+    .milk-card{border:1px solid var(--line);border-radius:14px;padding:24px 22px;text-align:center;background:#f5f7f4;box-shadow:0 1px 2px rgba(63,72,66,.04)}
     .milk-card .mn{font-family:var(--serif);font-size:1.35rem;color:var(--ink)}
     .milk-card .md{color:var(--muted);font-size:.95rem;line-height:1.6;margin:10px auto 0;max-width:40ch}
     .mfacts{margin:18px auto 0;max-width:260px;display:grid;gap:0}
@@ -301,8 +301,8 @@
       <div class="wrap">
         <div class="center sec-head" data-reveal>
           <p class="eyebrow" data-i18n="figs.eyebrow">The designs</p>
-          <h2 data-i18n="figs.h">Four to learn, in order.</h2>
-          <p data-i18n="figs.p">Each one builds on the last. Master the heart before you chase the swan.</p>
+          <h2 data-i18n="figs.h">Four designs, easy to hard.</h2>
+          <p data-i18n="figs.p">Each builds on the last. Once the heart sits, the rest comes much easier.</p>
         </div>
 
         <!-- HEART -->
@@ -477,7 +477,7 @@
         'm.almond.n':'Almond and the rest','m.almond.d':'Nutty and light, but the trickiest to foam: little protein means thin, airy foam that collapses fast and separates from the coffee.','m.almond.pro':'~0.5 g / 100 ml','m.almond.fat':'~1.1 g','m.almond.foam':'Thin, unstable','m.almond.tip':'Barista edition only, low heat, pour straight away.',
         'milk.cow':'Best cow’s milk: whole, fresh and cold. Its protein and fat build the steadiest foam; low-fat froths bigger but drier and falls apart faster.',
         'milk.plant':'With any plant milk: use a barista edition, steam cooler (around 55 to 60 degrees), and wipe and purge the wand after, they scorch fast.',
-        'figs.eyebrow':'The designs','figs.h':'Four to learn, in order.','figs.p':'Each one builds on the last. Master the heart before you chase the swan.',
+        'figs.eyebrow':'The designs','figs.h':'Four designs, easy to hard.','figs.p':'Each builds on the last. Once the heart sits, the rest comes much easier.',
         'heart.t':'Heart','heart.lvl':'Beginner','heart.d':'The starting point for everything. You pour a round white pool into the centre, then slice through it to pull the tip.',
         'heart.s1':'Pour the textured milk in from a height into the tilted cup until it is about half full and still mostly brown.','heart.s2':'Lower the spout almost onto the surface and pour steadily into one spot. A white circle blooms and rises.','heart.s3':'When the circle nearly fills the cup, lift and cut a thin stream straight through its middle to the near edge. That pulls the point.',
         'rosetta.t':'Rosetta','rosetta.lvl':'Intermediate','rosetta.d':'The classic leaf. A steady side-to-side wobble of the jug lays down rows of leaves, then one line ties them together.',
@@ -524,7 +524,7 @@
         'm.almond.n':'Mandel und der Rest','m.almond.d':'Nussig und leicht, aber am schwierigsten zu schäumen: wenig Protein heißt dünner, luftiger Schaum, der schnell zerfällt und sich vom Kaffee trennt.','m.almond.pro':'~0,5 g / 100 ml','m.almond.fat':'~1,1 g','m.almond.foam':'Dünn, instabil','m.almond.tip':'Nur Barista-Edition, niedrige Hitze, sofort gießen.',
         'milk.cow':'Beste Kuhmilch: Vollmilch, frisch und kalt. Ihr Protein und Fett geben den stabilsten Schaum; fettarme schäumt voluminöser, aber trockener und fällt schneller zusammen.',
         'milk.plant':'Bei jeder Pflanzenmilch: Barista-Edition nehmen, kühler schäumen (etwa 55 bis 60 Grad) und die Düse danach abwischen und abdampfen, sie brennt schnell an.',
-        'figs.eyebrow':'Die Motive','figs.h':'Vier zum Lernen, der Reihe nach.','figs.p':'Jedes baut auf dem vorigen auf. Beherrsche das Herz, bevor du dem Schwan nachjagst.',
+        'figs.eyebrow':'Die Motive','figs.h':'Vier Motive, von leicht bis schwer.','figs.p':'Eins baut auf dem anderen auf. Sitzt das Herz, fällt dir der Rest viel leichter.',
         'heart.t':'Herz','heart.lvl':'Einsteiger','heart.d':'Der Ausgangspunkt für alles. Du gießt einen runden weißen Punkt in die Mitte und ziehst dann gerade hindurch, um die Spitze zu formen.',
         'heart.s1':'Gieße die texturierte Milch aus etwas Höhe in die schräg gehaltene Tasse, bis sie etwa halb voll und noch überwiegend braun ist.','heart.s2':'Senke den Ausguss fast auf die Oberfläche und gieße gleichmäßig auf einen Punkt. Ein weißer Kreis wächst und steigt nach oben.','heart.s3':'Wenn der Kreis fast die Tasse füllt, heb ab und ziehe einen dünnen Strahl gerade durch die Mitte bis zum nahen Rand. Das formt die Spitze.',
         'rosetta.t':'Rosetta','rosetta.lvl':'Fortgeschritten','rosetta.d':'Das klassische Blatt. Ein gleichmäßiges Hin-und-Her des Kännchens legt Reihen von Blättern, dann verbindet eine Linie sie.',
