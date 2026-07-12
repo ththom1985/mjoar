@@ -43,6 +43,7 @@ p{margin:0}
 .langtoggle button[aria-pressed="true"]{color:var(--ink)}
 
 section{padding-block:clamp(64px,11vh,132px)}
+section[id]{scroll-margin-top:76px}
 .hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-block:60px}
 .hero .brand{width:min(80%,640px);margin-bottom:clamp(34px,6vh,60px)}
 .hero .line{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.3rem);color:var(--ink);max-width:22ch;line-height:1.25}
