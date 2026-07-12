@@ -8,9 +8,23 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="legal-shell animate-in">
+  <header class="topbar">
+    <div class="wrap">
+      <a href="/" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
+      <nav class="topnav">
+        <a href="/#story">Philosophie</a>
+        <a href="/#colour">Farben</a>
+        <a href="/#craft">Detail</a>
+        <a href="/latte-art/">Latte Art</a>
+      </nav>
+      <div class="nav-right">
+        <a class="shoplink" href="https://shop.mjoar.com">Shop</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-shell">
     <article class="legal-card">
-      <a class="back-link" href="index.html">← Zurück</a>
       <h1>Datenschutzerklärung</h1>
 
       <section class="legal-block">
@@ -85,5 +99,21 @@
       </section>
     </article>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="/" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
+      <nav class="footnav">
+        <a href="/#story">Philosophie</a>
+        <a href="/#colour">Farben</a>
+        <a href="/latte-art/">Latte Art</a>
+        <a href="https://shop.mjoar.com">Shop</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+      <span class="copyline">© <span id="year"></span> Thomas Mercantile</span>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
