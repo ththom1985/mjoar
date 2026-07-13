@@ -41,7 +41,7 @@
     <section class="hero" id="hero">
       <img class="brand" src="/assets/logo.png" alt="MJØÅR" />
       <p class="line" data-i18n="hero.line">Crafted to last. Designed for the moment.</p>
-      <p class="origin cities"><span>München</span><span class="citylink" aria-hidden="true"></span><span>Wien</span></p>
+      <p class="origin">München · Wien</p>
       <p class="scrollcue" aria-hidden="true">↓</p>
     </section>
 
@@ -133,10 +133,10 @@
       <div class="wrap">
         <div class="assurances" data-reveal>
           <div class="item"><div class="k" data-i18n="assure.1.k">Food-safe</div><div class="v" data-i18n="assure.1.v">18/10 stainless, safe every day.</div></div>
-          <div class="item"><div class="k" data-i18n="assure.2.k">Munich &amp; Vienna</div><div class="v" data-i18n="assure.2.v">Designed between two coffee cities.</div></div>
+          <div class="item"><div class="k" data-i18n="assure.2.k">Munich &amp; Vienna</div><div class="v" data-i18n="assure.2.v">From the specialty coffee scene of both cities.</div></div>
           <div class="item"><div class="k" data-i18n="assure.3.k">Barista-tested</div><div class="v" data-i18n="assure.3.v">Proven on a real bar, not on paper.</div></div>
-          <div class="item"><div class="k" data-i18n="assure.4.k">Built to last</div><div class="v" data-i18n="assure.4.v">A thick wall, made for years.</div></div>
-          <div class="item"><div class="k" data-i18n="assure.5.k">Packed with care</div><div class="v" data-i18n="assure.5.v">Premium packaging, made to be gifted.</div></div>
+          <div class="item"><div class="k" data-i18n="assure.4.k">Solidly built</div><div class="v" data-i18n="assure.4.v">0.9 mm wall, noticeably heavier than most.</div></div>
+          <div class="item"><div class="k" data-i18n="assure.5.k">Packed with care</div><div class="v" data-i18n="assure.5.v">In a cotton pouch, ready to gift.</div></div>
         </div>
       </div>
     </section>
@@ -258,7 +258,7 @@
       if (!ids.length) return;
       const spy = new IntersectionObserver((es) => {
         es.forEach((e) => { if (e.isIntersecting) { links.forEach((a) => a.classList.remove('active')); if (map[e.target.id]) map[e.target.id].classList.add('active'); } });
-      }, { rootMargin: '-45% 0px -50% 0px' });
+      }, { rootMargin: '-40% 0px -40% 0px' });
       ids.forEach((id) => spy.observe(document.getElementById(id)));
     })();
 
@@ -320,10 +320,10 @@
         'founders.p2':'The best milk pitchers were always black, or steel, never anything with real character. So we built the one we both wanted: matte, understated, exact, and better made than the rest.',
         'founders.role':'Founders · Munich & Vienna',
         'assure.1.k':'Food-safe','assure.1.v':'18/10 stainless, safe every day.',
-        'assure.2.k':'Munich & Vienna','assure.2.v':'Designed between two coffee cities.',
+        'assure.2.k':'Munich & Vienna','assure.2.v':'From the specialty coffee scene of both cities.',
         'assure.3.k':'Barista-tested','assure.3.v':'Proven on a real bar, not on paper.',
-        'assure.4.k':'Built to last','assure.4.v':'A thick wall, made for years.',
-        'assure.5.k':'Packed with care','assure.5.v':'Premium packaging, made to be gifted.',
+        'assure.4.k':'Solidly built','assure.4.v':'0.9 mm wall, noticeably heavier than most.',
+        'assure.5.k':'Packed with care','assure.5.v':'In a cotton pouch, ready to gift.',
         'partners.eyebrow':'Partner cafés','partners.lede':'Soon, in selected cafés.','partners.sub':'We are partnering with a handful of cafés in Munich and Vienna: places that stock our pitchers on the counter and pour with them every day. If that sounds like your café, we would love to talk.','partners.cta':'Cafés, get in touch',
         'early.eyebrow':'Early access','early.h2':'The first finishes arrive this autumn.',
         'early.sub':'Leave your email for early access, and a first look at the collection before anyone else.',
@@ -352,10 +352,10 @@
         'founders.p2':'Die besten Milchkännchen waren immer schwarz oder Edelstahl, nie etwas mit echtem Charakter. Also bauten wir genau das, was wir beide wollten: matt, zurückhaltend, exakt und besser gemacht als der Rest.',
         'founders.role':'Gründer · München & Wien',
         'assure.1.k':'Lebensmittelecht','assure.1.v':'18/10-Edelstahl, sicher für jeden Tag.',
-        'assure.2.k':'München & Wien','assure.2.v':'Zwischen zwei Kaffeestädten entworfen.',
+        'assure.2.k':'München & Wien','assure.2.v':'Aus der Specialty-Coffee-Szene beider Städte.',
         'assure.3.k':'Barista-geprüft','assure.3.v':'Im Café-Alltag erprobt, nicht am Reißbrett.',
-        'assure.4.k':'Für die Ewigkeit','assure.4.v':'Dicke Wand, gebaut für viele Jahre.',
-        'assure.5.k':'Mit Liebe verpackt','assure.5.v':'Hochwertige Verpackung, zum Verschenken gemacht.',
+        'assure.4.k':'Solide gebaut','assure.4.v':'0,9 mm Wand, spürbar schwerer als Standard.',
+        'assure.5.k':'Mit Liebe verpackt','assure.5.v':'Im Baumwollsäckchen, geschenkfertig.',
         'partners.eyebrow':'Partnercafés','partners.lede':'Bald, in ausgewählten Cafés.','partners.sub':'Wir arbeiten mit einer Handvoll Cafés in München und Wien zusammen: Orten, die unsere Kännchen vor Ort verkaufen und täglich damit arbeiten. Wenn das nach deinem Café klingt, sprich uns an.','partners.cta':'Cafés, meldet euch',
         'early.eyebrow':'Früher Zugang','early.h2':'Die ersten Farben kommen diesen Herbst.',
         'early.sub':'Trag dich ein für frühen Zugang und einen ersten Blick auf die Kollektion, vor allen anderen.',

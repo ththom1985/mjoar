@@ -165,7 +165,9 @@ section[id]{scroll-margin-top:76px}
 .cities .citylink::after{right:-1px}
 
 /* active nav section */
+.topnav a{position:relative}
 .topnav a.active{color:var(--ink)}
+.topnav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--ink)}
 
 /* findable smile */
 .foot-smile{height:15px;width:auto;display:inline-block;margin-left:9px;vertical-align:-2px;opacity:.4;cursor:pointer;transition:opacity .3s var(--ease)}
