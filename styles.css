@@ -74,6 +74,8 @@ section[id]{scroll-margin-top:76px}
 .feature h3{font-size:1.2rem;margin-bottom:9px}
 .feature p{font-size:.95rem;color:var(--muted);line-height:1.6;max-width:26ch;margin-inline:auto}
 .sizes-line{margin-top:clamp(40px,6vw,66px);text-align:center;text-transform:uppercase;letter-spacing:.18em;font-size:.74rem;color:var(--muted)}
+.trust-line{margin-top:14px;text-align:center;font-size:.78rem;letter-spacing:.06em;color:var(--soft)}
+.sustain-line{margin:clamp(30px,4vw,46px) auto 0;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--text);max-width:44ch}
 
 .pitcher .body{fill:var(--c-body);transition:fill .7s var(--ease)}
 .pitcher .shade{fill:var(--c-shade);transition:fill .7s var(--ease)}
