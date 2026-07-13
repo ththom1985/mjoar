@@ -224,6 +224,19 @@
     addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
     onScroll();
 
+    (function () {
+      const brand = document.querySelector('.topbar .brand');
+      if (!brand) return;
+      let n = 0, tmr;
+      const show = () => {
+        let o = document.getElementById('smile-egg');
+        if (!o) { o = document.createElement('div'); o.id = 'smile-egg'; o.innerHTML = '<img src="/assets/smile.png" alt="" />'; document.body.appendChild(o); }
+        o.classList.add('show');
+        clearTimeout(o._t); o._t = setTimeout(() => o.classList.remove('show'), 1900);
+      };
+      brand.addEventListener('click', () => { n++; clearTimeout(tmr); tmr = setTimeout(() => (n = 0), 600); if (n >= 3) { n = 0; show(); } });
+    })();
+
     const colours = [
       { name: 'Juniper', tagEn: 'Forest green', tagDe: 'Waldgrün', body: '#8a927a', shade: '#78806a', rim: '#666e5a' },
       { name: 'Linen', tagEn: 'Warm white', tagDe: 'Warmweiß', body: '#e9e3d6', shade: '#dad3c2', rim: '#c6bda8' },

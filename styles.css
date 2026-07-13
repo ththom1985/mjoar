@@ -151,6 +151,12 @@ section[id]{scroll-margin-top:76px}
 .legal-note{border-top:1px solid var(--line);padding-top:20px}
 .legal-note p{color:var(--muted);font-size:.92rem}
 
+/* smile easter egg */
+#smile-egg{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:60;opacity:0;transition:opacity .45s var(--ease)}
+#smile-egg.show{opacity:1}
+#smile-egg img{width:min(46vw,260px);height:auto;transform:scale(.7) rotate(-5deg);transition:transform .55s var(--ease)}
+#smile-egg.show img{transform:scale(1) rotate(0)}
+
 [data-reveal]{opacity:0;transform:translateY(30px);filter:blur(6px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease),filter 1.2s var(--ease)}
 [data-reveal].in{opacity:1;transform:none;filter:none}
 [data-reveal].d1{transition-delay:.1s}[data-reveal].d2{transition-delay:.2s}[data-reveal].d3{transition-delay:.3s}
