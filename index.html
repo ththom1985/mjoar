@@ -225,16 +225,27 @@
     onScroll();
 
     (function () {
-      const brand = document.querySelector('.topbar .brand');
-      if (!brand) return;
-      let n = 0, tmr;
+      const link = document.querySelector('.topbar a[aria-label="MJØÅR"]');
+      if (!link) return;
+      let n = 0, navT;
       const show = () => {
         let o = document.getElementById('smile-egg');
         if (!o) { o = document.createElement('div'); o.id = 'smile-egg'; o.innerHTML = '<img src="/assets/smile.png" alt="" />'; document.body.appendChild(o); }
         o.classList.add('show');
         clearTimeout(o._t); o._t = setTimeout(() => o.classList.remove('show'), 1900);
       };
-      brand.addEventListener('click', () => { n++; clearTimeout(tmr); tmr = setTimeout(() => (n = 0), 600); if (n >= 3) { n = 0; show(); } });
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        clearTimeout(navT);
+        n++;
+        if (n >= 3) { n = 0; show(); return; }
+        navT = setTimeout(() => {
+          n = 0;
+          const href = link.getAttribute('href');
+          if (href === '#top') window.scrollTo({ top: 0, behavior: 'smooth' });
+          else window.location.href = href;
+        }, 450);
+      });
     })();
 
     const colours = [
