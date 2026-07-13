@@ -20,7 +20,7 @@
     <div class="wrap">
       <a href="#top" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="topnav">
-        <a href="#story" data-i18n="nav.story">Story</a>
+        <a href="#story" data-i18n="nav.story">Philosophy</a>
         <a href="#colour" data-i18n="nav.finishes">Colours</a>
         <a href="#craft" data-i18n="nav.craft">Quality</a>
         <a href="/latte-art/" data-i18n="nav.latteart">Latte Art</a>
@@ -41,7 +41,7 @@
     <section class="hero" id="hero">
       <img class="brand" src="/assets/logo.png" alt="MJØÅR" />
       <p class="line" data-i18n="hero.line">Crafted to last. Designed for the moment.</p>
-      <p class="origin">München · Wien</p>
+      <p class="origin cities"><span>München</span><span class="citylink" aria-hidden="true"></span><span>Wien</span></p>
       <p class="scrollcue" aria-hidden="true">↓</p>
     </section>
 
@@ -187,14 +187,14 @@
     <div class="wrap">
       <a href="#top" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="footnav">
-        <a href="#story" data-i18n="nav.story">Story</a>
+        <a href="#story" data-i18n="nav.story">Philosophy</a>
         <a href="#colour" data-i18n="nav.finishes">Colours</a>
         <a href="/latte-art/" data-i18n="nav.latteart">Latte Art</a>
         <a href="https://shop.mjoar.com" data-i18n="nav.shop">Shop</a>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
       </nav>
-      <span class="copyline">© <span id="year"></span> MJØÅR</span>
+      <span class="copyline">© <span id="year"></span> MJØÅR<img class="foot-smile" src="/assets/smile.png" alt="smile" /></span>
     </div>
   </footer>
 
@@ -246,6 +246,20 @@
           else window.location.href = href;
         }, 450);
       });
+      const fs = document.querySelector('.foot-smile');
+      if (fs) fs.addEventListener('click', show);
+    })();
+
+    (function () {
+      const links = [...document.querySelectorAll('.topnav a[href^="#"]')];
+      const map = {};
+      links.forEach((a) => { const id = a.getAttribute('href').slice(1); const s = document.getElementById(id); if (s) map[id] = a; });
+      const ids = Object.keys(map);
+      if (!ids.length) return;
+      const spy = new IntersectionObserver((es) => {
+        es.forEach((e) => { if (e.isIntersecting) { links.forEach((a) => a.classList.remove('active')); if (map[e.target.id]) map[e.target.id].classList.add('active'); } });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      ids.forEach((id) => spy.observe(document.getElementById(id)));
     })();
 
     const colours = [
@@ -284,7 +298,7 @@
 
     const T = {
       en: {
-        'nav.story':'Story','nav.finishes':'Colours','nav.craft':'Quality','nav.latteart':'Latte Art','nav.shop':'Shop',
+        'nav.story':'Philosophy','nav.finishes':'Colours','nav.craft':'Quality','nav.latteart':'Latte Art','nav.shop':'Shop',
         'hero.line':'Crafted to last. Designed for the moment.','hero.scroll':'',
         'manifesto':'A cappuccino, a flat white, a matcha latte. Whatever you steam, dairy or oat, it starts with the pitcher. So we made one worth reaching for, and keeping on show.',
         'object.eyebrow':'Everyday ritual','object.lede':'Made for people who love their coffee.',
@@ -316,7 +330,7 @@
         'early.ph':'you@email.com','early.btn':'Notify me'
       },
       de: {
-        'nav.story':'Idee','nav.finishes':'Farben','nav.craft':'Qualität','nav.latteart':'Latte Art','nav.shop':'Shop',
+        'nav.story':'Philosophie','nav.finishes':'Farben','nav.craft':'Qualität','nav.latteart':'Latte Art','nav.shop':'Shop',
         'hero.line':'Crafted to last. Designed for the moment.','hero.scroll':'',
         'manifesto':'Ein Cappuccino, ein Flat White, ein Matcha Latte. Was auch immer du aufschäumst, ob Kuh- oder Hafermilch, es beginnt mit dem Kännchen. Also haben wir eins gemacht, nach dem du gern greifst und das du gern stehen lässt.',
         'object.eyebrow':'Tägliches Ritual','object.lede':'Für alle, die ihren Kaffee lieben.',

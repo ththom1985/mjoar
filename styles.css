@@ -157,6 +157,20 @@ section[id]{scroll-margin-top:76px}
 #smile-egg img{width:min(48vw,230px);height:auto;transform:translateY(20px) scale(.92) rotate(-4deg);transition:transform .6s var(--ease)}
 #smile-egg.show img{transform:translateY(0) scale(1) rotate(0)}
 
+/* two-cities motif */
+.cities{display:inline-flex;align-items:center;justify-content:center;gap:14px}
+.cities .citylink{position:relative;width:clamp(34px,9vw,74px);height:1px;background:var(--soft)}
+.cities .citylink::before,.cities .citylink::after{content:"";position:absolute;top:50%;width:4px;height:4px;border-radius:50%;background:var(--soft);transform:translateY(-50%)}
+.cities .citylink::before{left:-1px}
+.cities .citylink::after{right:-1px}
+
+/* active nav section */
+.topnav a.active{color:var(--ink)}
+
+/* findable smile */
+.foot-smile{height:15px;width:auto;display:inline-block;margin-left:9px;vertical-align:-2px;opacity:.4;cursor:pointer;transition:opacity .3s var(--ease)}
+.foot-smile:hover{opacity:.85}
+
 [data-reveal]{opacity:0;transform:translateY(30px);filter:blur(6px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease),filter 1.2s var(--ease)}
 [data-reveal].in{opacity:1;transform:none;filter:none}
 [data-reveal].d1{transition-delay:.1s}[data-reveal].d2{transition-delay:.2s}[data-reveal].d3{transition-delay:.3s}

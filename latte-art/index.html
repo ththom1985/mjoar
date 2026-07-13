@@ -104,7 +104,7 @@
     <div class="wrap">
       <a href="/" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="topnav">
-        <a href="/#story" data-i18n="nav.story">Story</a>
+        <a href="/#story" data-i18n="nav.story">Philosophy</a>
         <a href="/#colour" data-i18n="nav.finishes">Colours</a>
         <a href="/#craft" data-i18n="nav.craft">Quality</a>
         <a href="/latte-art/" aria-current="page" data-i18n="nav.latteart">Latte Art</a>
@@ -396,14 +396,14 @@
     <div class="wrap">
       <a href="/" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="footnav">
-        <a href="/#story" data-i18n="nav.story">Story</a>
+        <a href="/#story" data-i18n="nav.story">Philosophy</a>
         <a href="/#colour" data-i18n="nav.finishes">Colours</a>
         <a href="/latte-art/" data-i18n="nav.latteart">Latte Art</a>
         <a href="https://shop.mjoar.com" data-i18n="nav.shop">Shop</a>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
       </nav>
-      <span class="copyline">© <span id="year"></span> MJØÅR</span>
+      <span class="copyline">© <span id="year"></span> MJØÅR<img class="foot-smile" src="/assets/smile.png" alt="smile" /></span>
     </div>
   </footer>
 
@@ -440,6 +440,8 @@
           else window.location.href = href;
         }, 450);
       });
+      const fs = document.querySelector('.foot-smile');
+      if (fs) fs.addEventListener('click', show);
     })();
 
     const V = {
@@ -477,7 +479,7 @@
 
     const T = {
       en: {
-        'nav.story':'Story','nav.finishes':'Colours','nav.craft':'Quality','nav.latteart':'Latte Art','nav.shop':'Shop',
+        'nav.story':'Philosophy','nav.finishes':'Colours','nav.craft':'Quality','nav.latteart':'Latte Art','nav.shop':'Shop',
         'la.eyebrow':'Latte art','la.title':'Pour like the counter.',
         'la.lede':'Free and honest: milk, microfoam, and the four latte art designs everyone starts with. From people who pour every day.',
         'basics.eyebrow':'Start here','basics.h':'Milk school.',
@@ -524,7 +526,7 @@
         'disclaimer':'Written by baristas, not a recipe set in stone. Every machine and milk is a little different; adjust as you go.'
       },
       de: {
-        'nav.story':'Idee','nav.finishes':'Farben','nav.craft':'Qualität','nav.latteart':'Latte Art','nav.shop':'Shop',
+        'nav.story':'Philosophie','nav.finishes':'Farben','nav.craft':'Qualität','nav.latteart':'Latte Art','nav.shop':'Shop',
         'la.eyebrow':'Latte Art','la.title':'Gießen wie im Café.',
         'la.lede':'Kostenlos und ehrlich: Milch, Mikroschaum und die vier Motive, mit denen jeder anfängt. Von Leuten, die täglich gießen.',
         'basics.eyebrow':'Für den Anfang','basics.h':'Milchkunde.',
