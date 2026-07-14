@@ -48,6 +48,12 @@ section[id]{scroll-margin-top:76px}
 .hero .brand{width:min(80%,640px);margin-bottom:clamp(34px,6vh,60px)}
 .hero .line{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.3rem);color:var(--ink);max-width:22ch;line-height:1.25}
 .hero .origin{margin-top:26px;text-transform:uppercase;letter-spacing:.34em;font-size:.66rem;color:var(--soft)}
+.hero-launch{margin-top:clamp(28px,5vh,44px);display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.22em;font-size:.64rem;color:var(--muted)}
+.hero-launch .dot-pulse{width:7px;height:7px;border-radius:50%;background:#8a927a;position:relative;flex:none}
+.dot-pulse::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid #8a927a;opacity:0;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.4);opacity:.7}70%{transform:scale(1.25);opacity:0}100%{opacity:0}}
+.hero-cta{display:inline-block;margin-top:20px;font-size:.74rem;text-transform:uppercase;letter-spacing:.18em;color:var(--ink);border:1px solid var(--line-strong);padding:12px 28px;border-radius:26px;transition:.3s var(--ease)}
+.hero-cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .scrollcue{margin-top:clamp(40px,8vh,80px);text-transform:uppercase;letter-spacing:.28em;font-size:.6rem;color:var(--muted);animation:breathe 3.4s ease-in-out infinite}
 @keyframes breathe{0%,100%{opacity:.4;transform:translateY(0)}50%{opacity:1;transform:translateY(5px)}}
 
@@ -180,7 +186,7 @@ section[id]{scroll-margin-top:76px}
 [data-reveal].d1{transition-delay:.1s}[data-reveal].d2{transition-delay:.2s}[data-reveal].d3{transition-delay:.3s}
 .topbar{transition:padding .4s var(--ease),background .4s var(--ease)}
 .topbar.scrolled .wrap{padding:10px 0}
-@media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;filter:none;transition:none}.object,.hero-shot img{transform:none!important}.scrollcue{animation:none}}
+@media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;filter:none;transition:none}.object,.hero-shot img{transform:none!important}.scrollcue{animation:none}.dot-pulse::after{animation:none}}
 
 @media (max-width:720px){
   .topnav{display:none}
