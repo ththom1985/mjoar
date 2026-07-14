@@ -13,11 +13,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <style>
-    .confirm-shell{min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 6%}
-    .confirm-shell h1{font-family:var(--serif);font-weight:400;color:var(--ink);font-size:clamp(2.2rem,5.5vw,3.6rem);line-height:1.1}
-    .confirm-shell .sub{margin:20px auto 0;max-width:44ch}
-    .confirm-shell .btn{margin-top:32px}
-    .confirm-smile{width:min(38vw,150px);height:auto;margin:34px auto 0;display:block}
+    body{background:var(--band)}
+    .topbar{background:rgba(246,248,245,.8)}
+    .confirm-shell{min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:48px 6%}
+    .rise{opacity:0;transform:translateY(22px);animation:rise 1s var(--ease) forwards}
+    .rise.d1{animation-delay:.12s}.rise.d2{animation-delay:.24s}.rise.d3{animation-delay:.36s}
+    @keyframes rise{to{opacity:1;transform:none}}
+    .heart-shot{width:min(52vw,190px);height:min(52vw,190px);margin:0 auto 32px;border-radius:50%;overflow:hidden;box-shadow:0 10px 34px rgba(63,72,66,.16)}
+    .heart-shot img{width:100%;height:100%;object-fit:cover;display:block}
+    .confirm-shell h1{font-family:var(--serif);font-weight:400;color:var(--ink);font-size:clamp(2.4rem,6vw,4rem);line-height:1.08}
+    .confirm-shell .sub{margin:22px auto 0;max-width:42ch;font-size:1.1rem}
+    .confirm-shell .btn{margin-top:34px}
+    .confirm-smile{height:22px;width:auto;margin:40px auto 0;display:block;opacity:.55}
+    .site-footer{background:var(--band)}
   </style>
 </head>
 <body>
@@ -36,11 +44,12 @@
 
   <main class="confirm-shell">
     <div>
-      <p class="eyebrow" data-i18n="c.eyebrow">Early access</p>
-      <h1 style="margin-top:14px" data-i18n="c.h1">You're in.</h1>
-      <p class="sub" data-i18n="c.sub">Your signup is confirmed. You will be the first to hear when the first finishes arrive this autumn.</p>
-      <img class="confirm-smile" src="/assets/smile.png" alt="" />
-      <a class="btn" href="/latte-art/" data-i18n="c.btn">Learn latte art while you wait</a>
+      <div class="heart-shot rise" aria-hidden="true"><img src="/assets/latte/heart.jpg" alt="" /></div>
+      <p class="eyebrow rise d1" data-i18n="c.eyebrow">Early access</p>
+      <h1 class="rise d1" style="margin-top:14px" data-i18n="c.h1">You're in.</h1>
+      <p class="sub rise d2" data-i18n="c.sub">Your signup is confirmed. You will be the first to hear when the first finishes arrive this autumn.</p>
+      <a class="btn rise d2" href="/latte-art/" data-i18n="c.btn">Learn latte art while you wait</a>
+      <img class="confirm-smile rise d3" src="/assets/smile.png" alt="" />
     </div>
   </main>
 
