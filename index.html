@@ -119,16 +119,8 @@
         <p class="eyebrow" data-reveal data-i18n="colour.eyebrow">The finishes</p>
         <p class="lede" data-reveal style="margin-top:18px" data-i18n="colour.lede">Colour, considered.</p>
         <p class="sub d1" data-reveal data-i18n="colour.sub">Mostly quiet tones, with Juniper as the one that speaks up.</p>
-        <div class="stageobj" data-reveal>
-          <svg class="pitcher" id="pickerObj" viewBox="0 0 120 140" aria-hidden="true">
-            <ellipse class="floor" cx="60" cy="128" rx="36" ry="5"/>
-            <path class="body" d="M34,35 L23,27 L26,38 Z"/>
-            <path class="body" d="M34,36 L86,36 Q92,36 92,44 L88,112 Q88,118 80,118 L40,118 Q32,118 32,112 L28,44 Q28,36 34,36 Z"/>
-            <path class="shade" d="M70,36 L86,36 Q92,36 92,44 L88,112 Q88,118 80,118 L70,118 Z"/>
-            <path class="handle" d="M88,50 Q108,56 106,74 Q104,92 86,94" fill="none" stroke-width="6" stroke-linecap="round"/>
-            <ellipse class="rim" cx="60" cy="36" rx="27" ry="6"/>
-            <ellipse class="shade" cx="60" cy="36" rx="20" ry="4"/>
-          </svg>
+        <div class="pickerframe" data-reveal>
+          <img class="pickershot" id="pickerShot" src="/assets/finishes/juniper.jpg" width="1000" height="750" loading="lazy" alt="MJØÅR Milchkännchen in Juniper" />
         </div>
         <div class="cname" id="cName">Juniper</div>
         <div class="cral" id="cRal">Forest green</div>
@@ -274,21 +266,28 @@
     })();
 
     const colours = [
-      { name: 'Juniper', tagEn: 'Forest green', tagDe: 'Waldgrün', body: '#8a927a', shade: '#78806a', rim: '#666e5a' },
-      { name: 'Linen', tagEn: 'Warm white', tagDe: 'Warmweiß', body: '#e9e3d6', shade: '#dad3c2', rim: '#c6bda8' },
-      { name: 'Steel', tagEn: 'Satin steel', tagDe: 'Satinierter Stahl', body: '#bcc0c1', shade: '#a9aeaf', rim: '#969b9c' },
-      { name: 'Onyx', tagEn: 'Matte black', tagDe: 'Mattschwarz', body: '#2b2d2e', shade: '#232527', rim: '#1a1c1d' }
+      { name: 'Juniper', tagEn: 'Forest green', tagDe: 'Waldgrün', body: '#8a927a', img: 'juniper.jpg' },
+      { name: 'Linen', tagEn: 'Warm white', tagDe: 'Warmweiß', body: '#e9e3d6', img: 'linen.jpg' },
+      { name: 'Steel', tagEn: 'Satin steel', tagDe: 'Satinierter Stahl', body: '#bcc0c1', img: 'steel.jpg' },
+      { name: 'Onyx', tagEn: 'Matte black', tagDe: 'Mattschwarz', body: '#2b2d2e', img: 'onyx.jpg' }
     ];
-    const picker = document.getElementById('pickerObj');
+    // Fotos vorladen, damit der Wechsel sofort und ohne Flackern ist.
+    colours.forEach((c) => { const im = new Image(); im.src = '/assets/finishes/' + c.img; });
+    const pickerShot = document.getElementById('pickerShot');
     const dots = document.getElementById('dots');
     const nameEl = document.getElementById('cName');
     const ralEl = document.getElementById('cRal');
     let currentColour = 0, currentLang = 'en';
     const paintColour = () => {
       const c = colours[currentColour];
-      picker.style.setProperty('--c-body', c.body);
-      picker.style.setProperty('--c-shade', c.shade);
-      picker.style.setProperty('--c-rim', c.rim);
+      if (pickerShot) {
+        const url = '/assets/finishes/' + c.img;
+        pickerShot.style.opacity = '0';
+        const pre = new Image();
+        pre.onload = () => { pickerShot.src = url; requestAnimationFrame(() => { pickerShot.style.opacity = '1'; }); };
+        pre.src = url;
+        pickerShot.alt = 'MJØÅR Milchkännchen in ' + c.name;
+      }
       nameEl.textContent = c.name;
       ralEl.textContent = currentLang === 'de' ? c.tagDe : c.tagEn;
     };
