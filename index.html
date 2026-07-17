@@ -24,8 +24,8 @@
       <a href="#top" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="topnav">
         <a href="#story" data-i18n="nav.story">Philosophy</a>
-        <a href="#colour" data-i18n="nav.finishes">Colours</a>
         <a href="#craft" data-i18n="nav.craft">Quality</a>
+        <a href="#colour" data-i18n="nav.finishes">Colours</a>
         <a href="/latte-art/" data-i18n="nav.latteart">Latte Art</a>
       </nav>
       <div class="nav-right">
@@ -71,6 +71,8 @@
         <p class="eyebrow" data-reveal data-i18n="story.eyebrow">Philosophy</p>
         <p class="lede" data-reveal style="margin-top:22px" data-i18n="story.lede">Understated, by design.</p>
         <p class="sub d1" data-reveal data-i18n="story.sub">Nothing decorative, nothing loud. Honest materials, a heavier-than-standard steel body, and matte finishes chosen with restraint. Made to be used every day, for years.</p>
+        <p class="sub d1" data-reveal data-i18n="story.sub2">We are not reinventing the pitcher, and we are not a luxury brand. We wanted one that is simply better than average, in the places that actually matter: the wall, the spout, the handle, the colour.</p>
+        <p class="sub d2" data-reveal data-i18n="story.sub3">No secret engineering department, no big claims. Just a pitcher we specified carefully, tested on a real bar, and pour with ourselves every morning.</p>
       </div>
     </section>
 
@@ -114,29 +116,34 @@
       </div>
     </section>
 
-    <section id="colour" class="band">
-      <div class="picker center narrow">
-        <p class="eyebrow" data-reveal data-i18n="colour.eyebrow">The finishes</p>
-        <p class="lede" data-reveal style="margin-top:18px" data-i18n="colour.lede">Colour, considered.</p>
-        <p class="sub d1" data-reveal data-i18n="colour.sub">Mostly quiet tones, with Juniper as the one that speaks up.</p>
-        <div class="pickerframe" data-reveal>
-          <img class="pickershot" id="pickerShot" src="/assets/finishes/juniper.jpg?v=6" width="900" height="900" loading="lazy" alt="MJØÅR Milchkännchen in Juniper" />
-        </div>
-        <div class="cname" id="cName">Juniper</div>
-        <div class="cral" id="cRal">Sage green</div>
-        <div class="dots" id="dots" role="group" aria-label="Choose a finish"></div>
-      </div>
-    </section>
-
-    <section>
+    <section id="honest">
       <div class="wrap">
-        <div class="assurances" data-reveal>
+        <div class="center narrow" data-reveal>
+          <p class="eyebrow" data-i18n="honest.eyebrow">Made properly</p>
+          <h2 style="margin-top:16px" data-i18n="honest.h2">Honest, all the way through.</h2>
+          <p class="sub" style="margin-inline:auto" data-i18n="honest.sub">The steel is lab-tested, not just printed on the box. We are based in Germany, we are liable for what we sell, and a real person answers your email. Even the pouch and the box were thought about. That whole package is the brand.</p>
+        </div>
+        <div class="assurances" data-reveal style="margin-top:clamp(34px,5vw,58px)">
           <div class="item"><div class="k" data-i18n="assure.1.k">Food-safe</div><div class="v" data-i18n="assure.1.v">Lab-tested 304 steel, safe every day.</div></div>
           <div class="item"><div class="k" data-i18n="assure.2.k">Munich &amp; Vienna</div><div class="v" data-i18n="assure.2.v">From the specialty coffee scene of both cities.</div></div>
           <div class="item"><div class="k" data-i18n="assure.3.k">Barista-tested</div><div class="v" data-i18n="assure.3.v">Proven on a real bar, not on paper.</div></div>
           <div class="item"><div class="k" data-i18n="assure.4.k">Solidly built</div><div class="v" data-i18n="assure.4.v">0.9 mm wall, noticeably heavier than most.</div></div>
           <div class="item"><div class="k" data-i18n="assure.5.k">Packed with care</div><div class="v" data-i18n="assure.5.v">In a cotton pouch, ready to gift.</div></div>
         </div>
+      </div>
+    </section>
+
+    <section id="colour" class="band">
+      <div class="picker center narrow">
+        <p class="eyebrow" data-reveal data-i18n="colour.eyebrow">The finishes</p>
+        <p class="lede" data-reveal style="margin-top:18px" data-i18n="colour.lede">Colour, considered.</p>
+        <p class="sub d1" data-reveal data-i18n="colour.sub">Quiet, curated tones. Matte and restrained, chosen to still look right in a modern kitchen years from now.</p>
+        <div class="pickerframe" data-reveal>
+          <img class="pickershot" id="pickerShot" src="/assets/finishes/juniper.jpg?v=6" width="900" height="900" loading="lazy" alt="MJØÅR Milchkännchen in Juniper" />
+        </div>
+        <div class="cname" id="cName">Juniper</div>
+        <div class="cral" id="cRal">Sage green</div>
+        <div class="dots" id="dots" role="group" aria-label="Choose a finish"></div>
       </div>
     </section>
 
@@ -190,6 +197,7 @@
       <a href="#top" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="footnav">
         <a href="#story" data-i18n="nav.story">Philosophy</a>
+        <a href="#craft" data-i18n="nav.craft">Quality</a>
         <a href="#colour" data-i18n="nav.finishes">Colours</a>
         <a href="/latte-art/" data-i18n="nav.latteart">Latte Art</a>
         <a href="/#early" data-i18n="nav.shop">Shop</a>
@@ -317,6 +325,10 @@
         'object.eyebrow':'The ritual','object.lede':'The best moment of the day deserves the best tool.',
         'story.eyebrow':'Philosophy','story.lede':'Understated, by design.',
         'story.sub':'Honest materials, a heavier body than most, and quiet matte colours that look good on any counter. Made to be used every day, and to last for years.',
+        'story.sub2':'We are not reinventing the pitcher, and we are not a luxury brand. We wanted one that is simply better than average, in the places that actually matter: the wall, the spout, the handle, the colour.',
+        'story.sub3':'No secret engineering department, no big claims. Just a pitcher we specified carefully, tested on a real bar, and pour with ourselves every morning.',
+        'honest.eyebrow':'Made properly','honest.h2':'Honest, all the way through.',
+        'honest.sub':'The steel is lab-tested, not just printed on the box. We are based in Germany, we are liable for what we sell, and a real person answers your email. Even the pouch and the box were thought about. That whole package is the brand.',
         'craft.eyebrow':'In every detail','craft.h2':'For every day. For years.',
         'craft.promise':'We wanted a pitcher that looks as good as it pours. Matte, quiet, better made than the rest.',
         'feat.gauge.t':'Heavier gauge','feat.gauge.d':'A 0.9 mm wall, against the usual 0.6 mm. The extra mass steadies your hand and lets you feel the heat, so you stop before the milk breaks.',
@@ -328,7 +340,7 @@
         'trust.line':'Ships from Germany · 14-day right of return',
         'sustain.line':'Built not to be replaced. One pitcher for many years, not many pitchers.',
         'colour.eyebrow':'The finishes','colour.lede':'Colour, considered.',
-        'colour.sub':'Mostly quiet tones, with Juniper as the one that speaks up.',
+        'colour.sub':'Quiet, curated tones. Matte and restrained, chosen to still look right in a modern kitchen years from now.',
         'quote.text':'We didn’t want louder. We wanted considered. From satin steel to deep matte colour, every finish is made to last.','quote.attr':'',
         'founders.eyebrow':'The founders','founders.lede':'A father, a son, and two coffee cities.',
         'founders.p1':'MJØÅR started at home, around a portafilter, and behind a café counter in Vienna. We are a father and son: Thorsten in Munich, and Jonah, who studies international business in Vienna and has worked weekends at a café there for three years. One of us in tech, the other behind the counter, both hooked on the same cup.',
@@ -352,6 +364,10 @@
         'object.eyebrow':'Das Ritual','object.lede':'Der beste Moment des Tages verdient das beste Werkzeug.',
         'story.eyebrow':'Philosophie','story.lede':'Zurückhaltend. Mit Absicht.',
         'story.sub':'Ehrliche Materialien, ein kräftigerer Korpus als die meisten und ruhige, matte Farben, die auf jeder Theke gut aussehen. Für jeden Tag gemacht. Für viele Jahre.',
+        'story.sub2':'Wir erfinden das Kännchen nicht neu, und wir sind keine Luxusmarke. Wir wollten eines, das schlicht besser ist als der Durchschnitt, genau an den Stellen, auf die es ankommt: Wand, Ausguss, Griff, Farbe.',
+        'story.sub3':'Kein geheimes Ingenieursbüro, keine großen Versprechen. Nur ein Kännchen, das wir sorgfältig spezifiziert, an einer echten Theke getestet haben und mit dem wir selbst jeden Morgen gießen.',
+        'honest.eyebrow':'Ordentlich gemacht','honest.h2':'Ehrlich, bis ins Letzte.',
+        'honest.sub':'Der Stahl ist im Labor geprüft, nicht nur aufgedruckt. Wir sitzen in Deutschland, wir haften für das, was wir verkaufen, und beim Support antwortet ein echter Mensch. Auch über Säckchen und Karton haben wir nachgedacht. Genau dieses Gesamtpaket macht die Marke aus.',
         'craft.eyebrow':'Bis ins Detail','craft.h2':'Für jeden Tag. Für viele Jahre.',
         'craft.promise':'Wir wollten ein Kännchen, das so gut aussieht, wie es gießt. Matt, ruhig, besser gemacht als der Rest.',
         'feat.gauge.t':'Mehr Wandstärke','feat.gauge.d':'0,9 mm Wand statt der üblichen 0,6 mm. Die Masse beruhigt die Hand und lässt dich die Hitze spüren, damit du stoppst, bevor die Milch bricht.',
@@ -363,7 +379,7 @@
         'trust.line':'Versand aus Deutschland · 14 Tage Widerrufsrecht',
         'sustain.line':'Gebaut, um nicht ersetzt zu werden. Ein Kännchen für viele Jahre, statt vieler Kännchen.',
         'colour.eyebrow':'Die Farben','colour.lede':'Farbe, durchdacht.',
-        'colour.sub':'Überwiegend ruhige Töne. Und mit Juniper einer, der auffällt.',
+        'colour.sub':'Ruhige, kuratierte Töne. Matt und zurückhaltend, ausgesucht, damit sie auch in Jahren noch in eine moderne Küche passen.',
         'quote.text':'Wir wollten nicht lauter. Wir wollten durchdachter. Vom satinierten Stahl bis zur tiefmatten Farbe: jede Ausführung für die Dauer gewählt.','quote.attr':'',
         'founders.eyebrow':'Die Gründer','founders.lede':'Ein Vater, ein Sohn und zwei Kaffeestädte.',
         'founders.p1':'MJØÅR begann zu Hause am Siebträger und hinter der Theke eines Wiener Cafés. Wir sind Vater und Sohn: Thorsten in München, und Jonah, der in Wien International Business studiert und dort seit drei Jahren am Wochenende in einem Café arbeitet. Einer im Tech, der andere hinter der Theke, beide von derselben Tasse gepackt.',
