@@ -87,6 +87,7 @@ section[id]{scroll-margin-top:76px}
 .pickershot{width:100%;height:auto;display:block;opacity:1;transition:opacity .35s var(--ease)}
 
 .lede{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.32;color:var(--ink);max-width:24ch}
+.name-logo{display:inline-block;height:.68em;width:auto;vertical-align:-.02em}
 .center{text-align:center}
 .center .lede{margin-inline:auto}
 .sub{font-size:1.05rem;color:var(--text);margin-top:22px;max-width:52ch}
