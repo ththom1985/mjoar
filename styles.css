@@ -1,3 +1,17 @@
+@font-face{
+  font-family:'Cormorant Garamond';
+  font-style:normal;
+  font-weight:400 500;
+  font-display:swap;
+  src:url('/assets/fonts/cormorant-garamond-roman-latin.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Cormorant Garamond';
+  font-style:italic;
+  font-weight:400;
+  font-display:swap;
+  src:url('/assets/fonts/cormorant-garamond-italic-latin.woff2') format('woff2');
+}
 :root{
   --bg:#ffffff;
   --paper:#faf9f6;
