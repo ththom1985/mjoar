@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LUN Milk Pitcher in 304 Stainless Steel | MJØÅR</title>
-  <meta id="metaDescription" name="description" content="LUN milk pitcher with a 304 stainless steel body, matte finish and measurement scale inside. 350 ml in five colours, 600 ml in Steel. €24.90 incl. VAT." />
+  <meta id="metaDescription" name="description" content="LUN milk pitcher with a 304 stainless steel body, matte finish and measurement scale inside. 350 ml in four finishes, 600 ml in Steel. €24.90 incl. VAT." />
   <meta id="ogTitle" property="og:title" content="LUN Milk Pitcher in 304 Stainless Steel | MJØÅR" />
-  <meta id="ogDescription" property="og:description" content="LUN milk pitcher with a 304 stainless steel body, matte finish and measurement scale inside. 350 ml in five colours, 600 ml in Steel. €24.90 incl. VAT." />
+  <meta id="ogDescription" property="og:description" content="LUN milk pitcher with a 304 stainless steel body, matte finish and measurement scale inside. 350 ml in four finishes, 600 ml in Steel. €24.90 incl. VAT." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mjoar.com/" />
   <meta id="ogLocale" property="og:locale" content="en_GB" />
@@ -47,12 +47,7 @@
 
     <section class="hero" id="hero">
       <img class="brand" src="/assets/logo.png" alt="MJØÅR" />
-      <div class="hero-product">
-        <img src="/assets/hero.jpg" width="960" height="1200" alt="LUN Milchkännchen mit matter Oberfläche" data-i18n-alt="hero.imageAlt" />
-      </div>
-      <h1 class="hero-title" data-i18n="hero.title">LUN</h1>
-      <p class="hero-product-copy" data-i18n="hero.product">LUN. The milk pitcher for your daily coffee ritual. 304 stainless steel body, matte finish, laser-engraved measurement scale inside.</p>
-      <p class="hero-price" data-i18n="hero.price">350 ml · €24.90 incl. VAT</p>
+      <h1 class="sr-only">MJØÅR LUN Milchkännchen aus Edelstahl 304</h1>
       <p class="line" data-i18n="hero.line">Crafted to last. Designed for the moment.</p>
       <p class="origin">München · Wien</p>
       <p class="hero-launch"><span class="dot-pulse" aria-hidden="true"></span><span data-i18n="hero.launch">Product launch this autumn</span></p>
@@ -66,7 +61,7 @@
         <p class="lede" style="margin-top:16px" data-i18n="object.lede">The best moment of the day deserves the best tool.</p>
       </div>
       <figure class="hero-shot" data-reveal>
-        <img src="/assets/hero-collection.jpg" width="1448" height="815" loading="eager" alt="The LUN collection with Linen, Onyx, Juniper and Steel pictured; Clay completes the five-colour family" data-i18n-alt="object.imageAlt" />
+        <img src="/assets/hero-collection.jpg" width="1448" height="815" loading="eager" alt="The LUN collection in Linen, Onyx, Juniper and Steel on a kitchen counter" data-i18n-alt="object.imageAlt" />
       </figure>
     </section>
 
@@ -129,10 +124,7 @@
             <p data-i18n="feat.steel.d">Everything that touches your milk is genuine 304 stainless steel. Independently lab-tested to LFGB. Not just claimed.</p>
           </div>
         </div>
-        <div class="sizes-line" data-reveal>
-          <p data-i18n="feat.sizes350">LUN 350 ml in Onyx, Juniper, Linen, Clay and Steel · €24.90 incl. VAT</p>
-          <p data-i18n="feat.sizes600">LUN 600 ml in Steel · Price to follow</p>
-        </div>
+        <p class="sizes-line" data-reveal data-i18n="feat.sizes">LUN · 350 ml for one or two, 600 ml for a crowd · from €24.90</p>
         <p class="trust-line" data-reveal data-i18n="trust.line">Ships from Germany · 14-day right of return</p>
         <p class="sustain-line" data-reveal data-i18n="sustain.line">Made with care, for the ritual you return to every day.</p>
       </div>
@@ -163,9 +155,6 @@
         <p class="sub d1" data-reveal data-i18n="colour.sub">Quiet, curated tones. Matte and restrained, chosen to still look right in a modern kitchen years from now.</p>
         <div class="pickerframe" data-reveal>
           <img class="pickershot" id="pickerShot" src="/assets/finishes/juniper.jpg?v=6" width="900" height="900" loading="lazy" alt="MJØÅR Milchkännchen in Juniper" />
-          <div class="picker-placeholder" id="pickerPlaceholder" hidden>
-            <span data-i18n="colour.photoSoon">Photo to follow</span>
-          </div>
         </div>
         <div class="cname" id="cName">Juniper</div>
         <div class="cral" id="cRal">Sage green</div>
@@ -315,16 +304,14 @@
     const colours = [
       { name: 'Juniper', tagEn: 'Sage green', tagDe: 'Salbeigrün', body: '#8a927a', img: 'juniper.jpg' },
       { name: 'Linen', tagEn: 'Warm white', tagDe: 'Warmweiß', body: '#e9e3d6', img: 'linen.jpg' },
-      { name: 'Clay', tagEn: 'Photo to follow', tagDe: 'Foto folgt', body: '#b77b68', img: null },
       { name: 'Steel', tagEn: 'Satin steel', tagDe: 'Satinierter Stahl', body: '#bcc0c1', img: 'steel.jpg' },
       { name: 'Onyx', tagEn: 'Matte black', tagDe: 'Mattschwarz', body: '#2b2d2e', img: 'onyx.jpg' }
     ];
     // Cache-Bust: bei jeder neuen Bildversion hochzählen, damit Browser die neuen Fotos laden.
     const IMG_VER = '?v=6';
     // Fotos vorladen, damit der Wechsel sofort und ohne Flackern ist.
-    colours.filter((c) => c.img).forEach((c) => { const im = new Image(); im.src = '/assets/finishes/' + c.img + IMG_VER; });
+    colours.forEach((c) => { const im = new Image(); im.src = '/assets/finishes/' + c.img + IMG_VER; });
     const pickerShot = document.getElementById('pickerShot');
-    const pickerPlaceholder = document.getElementById('pickerPlaceholder');
     const dots = document.getElementById('dots');
     const nameEl = document.getElementById('cName');
     const ralEl = document.getElementById('cRal');
@@ -332,19 +319,12 @@
     const paintColour = () => {
       const c = colours[currentColour];
       if (pickerShot) {
-        if (!c.img) {
-          pickerShot.hidden = true;
-          if (pickerPlaceholder) pickerPlaceholder.hidden = false;
-        } else {
-          const url = '/assets/finishes/' + c.img + IMG_VER;
-          if (pickerPlaceholder) pickerPlaceholder.hidden = true;
-          pickerShot.hidden = false;
-          pickerShot.style.opacity = '0';
-          const pre = new Image();
-          pre.onload = () => { pickerShot.src = url; requestAnimationFrame(() => { pickerShot.style.opacity = '1'; }); };
-          pre.src = url;
-          pickerShot.alt = (currentLang === 'de' ? 'LUN Milchkännchen in ' : 'LUN milk pitcher in ') + c.name;
-        }
+        const url = '/assets/finishes/' + c.img + IMG_VER;
+        pickerShot.style.opacity = '0';
+        const pre = new Image();
+        pre.onload = () => { pickerShot.src = url; requestAnimationFrame(() => { pickerShot.style.opacity = '1'; }); };
+        pre.src = url;
+        pickerShot.alt = (currentLang === 'de' ? 'LUN Milchkännchen in ' : 'LUN milk pitcher in ') + c.name;
       }
       nameEl.textContent = c.name;
       ralEl.textContent = currentLang === 'de' ? c.tagDe : c.tagEn;
@@ -367,12 +347,11 @@
     const T = {
       en: {
         'nav.story':'Philosophy','nav.finishes':'Colours','nav.craft':'Quality','nav.latteart':'Latte Art','nav.shop':'Shop',
-        'hero.title':'LUN','hero.product':'LUN. The milk pitcher for your daily coffee ritual. 304 stainless steel body, matte finish, laser-engraved measurement scale inside.','hero.price':'350 ml · €24.90 incl. VAT','hero.imageAlt':'LUN milk pitcher with a matte finish',
         'hero.line':'Crafted to last. Designed for the moment.','hero.scroll':'',
         'hero.launch':'Product launch this autumn','hero.cta':'Get launch updates',
         'manifesto':'A cappuccino, a flat white, a matcha latte. Whatever you steam your milk for, dairy or oat, it always starts with the pitcher. So we made one worth reaching for, and keeping on show.',
         'object.eyebrow':'The ritual','object.lede':'The best moment of the day deserves the best tool.',
-        'object.imageAlt':'The LUN collection with Linen, Onyx, Juniper and Steel pictured; Clay completes the five-colour family',
+        'object.imageAlt':'The LUN collection in Linen, Onyx, Juniper and Steel on a kitchen counter',
         'story.eyebrow':'Philosophy','story.lede':'Honestly, the world was not waiting for another milk pitcher.',
         'story.sub':'But if you reach for it every morning, it should feel good and look good.',
         'story.sub2':'So we took our cues from the premium shelf. A 1 mm steel body instead of thin sheet metal: you feel it the moment you pick it up. A spout that draws precisely, and forgives the occasional restless morning. Quiet matte colours that become part of your kitchen instead of an accessory in a cupboard.',
@@ -389,13 +368,11 @@
         'feat.matte.t':'Matte finish','feat.matte.d':'Velvety matte, pleasant in the hand and forgiving of the small traces of everyday life. Hand-washed, the colour stays beautiful the longest.',
         'feat.spout.t':'Precision spout','feat.spout.d':'The part that matters most. Our spout is shaped so latte art actually works: not so fine that it takes years of practice, not so wide that drawing becomes impossible. Hearts and rosettas, within reach.',
         'feat.steel.t':'Lab-tested 304 steel','feat.steel.d':'Everything that touches your milk is genuine 304 stainless steel. Independently lab-tested to LFGB. Not just claimed.',
-        'feat.sizes350':'LUN 350 ml in Onyx, Juniper, Linen, Clay and Steel · €24.90 incl. VAT',
-        'feat.sizes600':'LUN 600 ml in Steel · Price to follow',
+        'feat.sizes':'LUN · 350 ml for one or two, 600 ml for a crowd · from €24.90',
         'trust.line':'Ships from Germany · 14-day right of return',
         'sustain.line':'Made with care, for the ritual you return to every day.',
         'colour.eyebrow':'The finishes','colour.lede':'Colour, considered.',
         'colour.sub':'Quiet, curated tones. Matte and restrained, chosen to still look right in a modern kitchen years from now.',
-        'colour.photoSoon':'Photo to follow',
         'quote.text':'We didn’t want louder. We wanted considered. From satin steel to deep matte colour, every finish is made to last.','quote.attr':'',
         'founders.eyebrow':'The founders','founders.lede':'A father, a son, and two coffee cities.',
         'founders.p1':'MJØÅR started at home, around a portafilter, and behind a café counter in Vienna. We are a father and son: Thorsten in Munich, and Jonah, who studies international business in Vienna and has worked weekends at a café there for three years. One of us in tech, the other behind the counter, both hooked on the same cup.',
@@ -413,12 +390,11 @@
       },
       de: {
         'nav.story':'Philosophie','nav.finishes':'Farben','nav.craft':'Qualität','nav.latteart':'Latte Art','nav.shop':'Shop',
-        'hero.title':'LUN','hero.product':'LUN. Das Milchkännchen für dein tägliches Kaffeeritual. Korpus aus Edelstahl 304, matte Oberfläche, lasergravierte Messskala innen.','hero.price':'350 ml · 24,90 € inkl. MwSt.','hero.imageAlt':'LUN Milchkännchen mit matter Oberfläche',
         'hero.line':'Crafted to last. Designed for the moment.','hero.scroll':'',
-        'hero.launch':'Produktlaunch im Herbst','hero.cta':'Zum Launch benachrichtigen',
+        'hero.launch':'Product Launch im Herbst','hero.cta':'Zum Launch benachrichtigen',
         'manifesto':'Ein Cappuccino, ein Flat White, ein Matcha Latte. Wofür auch immer du Milch aufschäumst, ob Kuh- oder Hafermilch: Es beginnt immer mit dem Kännchen. Also haben wir eins gebaut, nach dem du gern greifst und das du gar nicht mehr wegräumen willst.',
         'object.eyebrow':'Das Ritual','object.lede':'Der beste Moment des Tages verdient das beste Werkzeug.',
-        'object.imageAlt':'Die LUN Kollektion mit Linen, Onyx, Juniper und Steel im Bild; Clay ergänzt die Familie auf fünf Farben',
+        'object.imageAlt':'Die LUN Kollektion in Linen, Onyx, Juniper und Steel auf einer Küchenzeile',
         'story.eyebrow':'Philosophie','story.lede':'Ganz ehrlich: Die Welt hat nicht auf ein neues Milchkännchen gewartet.',
         'story.sub':'Aber wenn du jeden Morgen danach greifst, sollte es sich gut anfühlen und gut aussehen.',
         'story.sub2':'Deshalb haben wir uns bei allem am Premium-Regal orientiert. 1 Millimeter starker Edelstahl statt dünnem Blech: Das spürst du sofort, wenn du es in die Hand nimmst. Ein Ausguss, der präzise zeichnet und dir auch mal einen unruhigen Morgen verzeiht. Ruhige, matte Farben, die Teil deiner Küche werden statt Zubehör im Schrank.',
@@ -435,13 +411,11 @@
         'feat.matte.t':'Matte Oberfläche','feat.matte.d':'Samtig matt, angenehm in der Hand und nachsichtig gegenüber den kleinen Spuren des Alltags. Von Hand gespült bleibt die Farbe am längsten schön.',
         'feat.spout.t':'Präziser Ausguss','feat.spout.d':'Das Bauteil, auf das es am meisten ankommt. Unser Ausguss ist so geformt, dass Latte Art wirklich gelingt: nicht so fein, dass er jahrelange Übung erzwingt, nicht so breit, dass Zeichnen unmöglich wird. Herzen und Rosetten rücken in Reichweite.',
         'feat.steel.t':'Laborgeprüfter 304-Stahl','feat.steel.d':'Alles, was deine Milch berührt, ist echter 304-Edelstahl. Unabhängig im Labor geprüft nach LFGB. Nicht nur behauptet.',
-        'feat.sizes350':'LUN 350 ml in Onyx, Juniper, Linen, Clay und Steel · 24,90 € inkl. MwSt.',
-        'feat.sizes600':'LUN 600 ml in Steel · Preis folgt',
+        'feat.sizes':'LUN · 350 ml für ein bis zwei, 600 ml für die Runde · ab 24,90 €',
         'trust.line':'Versand aus Deutschland · 14 Tage Widerrufsrecht',
         'sustain.line':'Sorgfältig gemacht, für das Ritual, zu dem du jeden Tag zurückkehrst.',
         'colour.eyebrow':'Die Farben','colour.lede':'Farbe, durchdacht.',
         'colour.sub':'Ruhige, kuratierte Töne. Matt und zurückhaltend, ausgesucht, damit sie auch in Jahren noch in eine moderne Küche passen.',
-        'colour.photoSoon':'Foto folgt',
         'quote.text':'Wir wollten nicht lauter. Wir wollten durchdachter. Vom satinierten Stahl bis zur tiefmatten Farbe: jede Ausführung gemacht, um zu bleiben.','quote.attr':'',
         'founders.eyebrow':'Die Gründer','founders.lede':'Ein Vater, ein Sohn und zwei Kaffeestädte.',
         'founders.p1':'MJØÅR begann zu Hause am Siebträger und hinter der Theke eines Wiener Cafés. Wir sind Vater und Sohn: Thorsten in München, und Jonah, der in Wien International Business studiert und dort seit drei Jahren am Wochenende in einem Café arbeitet. Einer im Tech, der andere hinter der Theke, beide von derselben Tasse gepackt.',
@@ -462,12 +436,12 @@
     const META = {
       en: {
         title:'LUN Milk Pitcher in 304 Stainless Steel | MJØÅR',
-        description:'LUN milk pitcher with a 304 stainless steel body, matte finish and measurement scale inside. 350 ml in five colours, 600 ml in Steel. €24.90 incl. VAT.',
+        description:'LUN milk pitcher with a 304 stainless steel body, matte finish and measurement scale inside. 350 ml in four finishes, 600 ml in Steel. €24.90 incl. VAT.',
         locale:'en_GB'
       },
       de: {
         title:'LUN Milchkännchen aus Edelstahl 304 | MJØÅR',
-        description:'LUN Milchkännchen mit Korpus aus Edelstahl 304, matter Oberfläche und Messskala innen. 350 ml in fünf Farben, 600 ml in Steel. 24,90 € inkl. MwSt.',
+        description:'LUN Milchkännchen mit Korpus aus Edelstahl 304, matter Oberfläche und Messskala innen. 350 ml in vier Ausführungen, 600 ml in Steel. 24,90 € inkl. MwSt.',
         locale:'de_DE'
       }
     };
@@ -482,7 +456,7 @@
         description:META[lang].description,
         brand:{ '@type':'Brand', name:'MJØÅR' },
         material:isDe ? 'Korpus aus Edelstahl 304' : '304 stainless steel body',
-        color:['Onyx','Juniper','Linen','Clay','Steel'],
+        color:['Onyx','Juniper','Linen','Steel'],
         url:'https://mjoar.com/lun/',
         offers:{
           '@type':'Offer',
