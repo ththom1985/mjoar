@@ -3,16 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Latte Art Guide · MJØÅR</title>
-  <meta name="description" content="Learn latte art for free: milk, microfoam and four patterns (heart, rosetta, tulip, swan), explained step by step by a working barista. A guide by MJØÅR." />
-  <meta property="og:title" content="Latte Art Guide · MJØÅR" />
-  <meta property="og:description" content="Milk, microfoam and four patterns, explained step by step. Free." />
+  <title>Learn Latte Art: Milk, Microfoam and Patterns | MJØÅR</title>
+  <meta id="metaDescription" name="description" content="Learn the basics of latte art: milk, microfoam, heart, rosetta, tulip and swan, explained step by step in a free guide." />
+  <meta id="ogTitle" property="og:title" content="Learn Latte Art: Milk, Microfoam and Patterns | MJØÅR" />
+  <meta id="ogDescription" property="og:description" content="Learn the basics of latte art: milk, microfoam and four patterns, explained step by step." />
   <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://mjoar.com/latte-art/" />
+  <meta id="ogLocale" property="og:locale" content="en_GB" />
   <meta property="og:image" content="https://mjoar.com/assets/latte/heart.jpg" />
+  <link rel="canonical" href="https://mjoar.com/latte-art/" />
+  <link rel="alternate" hreflang="de" href="https://mjoar.com/latte-art/?lang=de" />
+  <link rel="alternate" hreflang="en" href="https://mjoar.com/latte-art/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://mjoar.com/latte-art/" />
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <link rel="stylesheet" href="/styles.css" />
+  <script id="guideSchema" type="application/ld+json"></script>
   <style>
     .guide section{padding-block:clamp(60px,11vh,110px)}
     .guide .wrap{width:min(90%,1000px)}
@@ -105,8 +112,8 @@
       <a href="/" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="topnav">
         <a href="/#story" data-i18n="nav.story">Philosophy</a>
-        <a href="/#colour" data-i18n="nav.finishes">Colours</a>
         <a href="/#craft" data-i18n="nav.craft">Quality</a>
+        <a href="/#colour" data-i18n="nav.finishes">Colours</a>
         <a href="/latte-art/" aria-current="page" data-i18n="nav.latteart">Latte Art</a>
       </nav>
       <div class="nav-right">
@@ -238,40 +245,40 @@
             <div class="milk-card">
               <div class="milk-ic" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 37 C 17 32 17 18 24 12 C 31 18 31 32 24 37 Z"/><path d="M24 16 L24 34"/><path d="M24 40 L24 37"/><path d="M24 13 L21 9"/><path d="M24 13 L27 9"/></svg></div>
               <p class="mn" data-i18n="m.oat.n">Oat, barista edition</p>
-              <p class="md" data-i18n="m.oat.d">The best plant option, closest to milk. Naturally lower in protein, but barista editions add a little oil and stabilisers, so they foam almost like milk. Naturally sweet and easy against espresso.</p>
+              <p class="md" data-i18n="m.oat.d">Barista-quality oat drinks often foam more consistently than standard versions. Results vary by product. They are naturally sweet and usually pair gently with espresso.</p>
               <div class="mfacts">
                 <div class="mf"><span class="mfl" data-i18n="lab.protein">Protein</span><span class="mfv" data-i18n="m.oat.pro">~1.0 g / 100 ml</span></div>
                 <div class="mf"><span class="mfl" data-i18n="lab.fat">Fat</span><span class="mfv" data-i18n="m.oat.fat">~1.5 to 3 g</span></div>
-                <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.oat.foam">Excellent (barista only)</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.oat.foam">Often stable, varies by product</span></div>
               </div>
-              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.oat.tip">Always the barista version. Steam a touch cooler. Plain oat barely foams.</span></p>
+              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.oat.tip">Barista versions are often easier to foam. Steam a touch cooler and adjust to the product.</span></p>
             </div>
             <div class="milk-card">
               <div class="milk-ic" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="20" cy="24" rx="4.5" ry="6.5" transform="rotate(-14 20 24)"/><ellipse cx="28" cy="26" rx="4.5" ry="6.5" transform="rotate(14 28 26)"/></svg></div>
               <p class="mn" data-i18n="m.soy.n">Soy</p>
-              <p class="md" data-i18n="m.soy.d">The highest-protein plant milk, so it foams well and holds its shape. The catch: the protein can curdle against hot, acidic espresso.</p>
+              <p class="md" data-i18n="m.soy.d">The highest-protein plant milk, so it often foams well and holds its shape. The protein can still curdle against hot, acidic espresso.</p>
               <div class="mfacts">
                 <div class="mf"><span class="mfl" data-i18n="lab.protein">Protein</span><span class="mfv" data-i18n="m.soy.pro">~3.3 g / 100 ml</span></div>
                 <div class="mf"><span class="mfl" data-i18n="lab.fat">Fat</span><span class="mfv" data-i18n="m.soy.fat">~1.8 g</span></div>
                 <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.soy.foam">Good, can curdle</span></div>
               </div>
-              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.soy.tip">Steam cooler (max 60 degrees) and pour promptly, then it will not split.</span></p>
+              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.soy.tip">Steam cooler (max 60 degrees) and pour promptly. Depending on the product and espresso acidity, it may still split.</span></p>
             </div>
             <div class="milk-card">
               <div class="milk-ic" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10 C 31 16 31 30 24 38 C 17 30 17 16 24 10 Z"/><path d="M24 15 C 27 20 27 30 24 35" stroke-opacity=".55"/></svg></div>
               <p class="mn" data-i18n="m.almond.n">Almond and the rest</p>
-              <p class="md" data-i18n="m.almond.d">Nutty and light, but the trickiest to foam: little protein means thin, airy foam that collapses fast and separates from the coffee.</p>
+              <p class="md" data-i18n="m.almond.d">Nutty and light, but often harder to foam: lower protein can mean airy foam that separates from the coffee sooner. Results vary by product.</p>
               <div class="mfacts">
                 <div class="mf"><span class="mfl" data-i18n="lab.protein">Protein</span><span class="mfv" data-i18n="m.almond.pro">~0.5 g / 100 ml</span></div>
                 <div class="mf"><span class="mfl" data-i18n="lab.fat">Fat</span><span class="mfv" data-i18n="m.almond.fat">~1.1 g</span></div>
-                <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.almond.foam">Thin, unstable</span></div>
+                <div class="mf"><span class="mfl" data-i18n="lab.foam">Foam</span><span class="mfv" data-i18n="m.almond.foam">Often light, varies by product</span></div>
               </div>
-              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.almond.tip">Barista edition only, low heat, pour straight away.</span></p>
+              <p class="mtip"><span class="mtl" data-i18n="lab.tip">Tip</span> <span data-i18n="m.almond.tip">A barista version can help. Use lower heat and pour promptly.</span></p>
             </div>
           </div>
           <div class="milk-notes">
             <p class="milk-note" data-i18n="milk.cow">Best cow's milk: whole, fresh and cold. Its protein and fat build the steadiest foam; low-fat froths bigger but drier and falls apart faster.</p>
-            <p class="milk-note" data-i18n="milk.plant">With any plant milk: use a barista edition, steam cooler (around 55 to 60 degrees), and wipe and purge the wand after, they scorch fast.</p>
+            <p class="milk-note" data-i18n="milk.plant">With plant drinks, barista versions are often easier to foam. Steam cooler (around 55 to 60 degrees), then wipe and purge the wand.</p>
           </div>
         </div>
 
@@ -387,7 +394,7 @@
           <a class="btn" href="/#early" data-i18n="cta.btn">See the pitchers</a>
           <p class="trust-line" data-i18n="cta.trust">Ships from Germany · 14-day right of return</p>
         </div>
-        <p class="disclaimer" data-i18n="disclaimer">Written by baristas, not a recipe set in stone. Every machine and milk is a little different; adjust as you go.</p>
+        <p class="disclaimer" data-i18n="disclaimer">Built from café practice, not a recipe set in stone. Every machine and milk is a little different; adjust as you go.</p>
       </div>
     </section>
 
@@ -398,6 +405,7 @@
       <a href="/" aria-label="MJØÅR"><img class="brand" src="/assets/logo.png" alt="MJØÅR" /></a>
       <nav class="footnav">
         <a href="/#story" data-i18n="nav.story">Philosophy</a>
+        <a href="/#craft" data-i18n="nav.craft">Quality</a>
         <a href="/#colour" data-i18n="nav.finishes">Colours</a>
         <a href="/latte-art/" data-i18n="nav.latteart">Latte Art</a>
         <a href="/#early" data-i18n="nav.shop">Shop</a>
@@ -405,7 +413,7 @@
         <a href="/datenschutz.html">Datenschutz</a>
         <a class="ig" href="https://instagram.com/mjoar.coffee" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" fill="currentColor" stroke="none"/></svg></a>
       </nav>
-      <span class="copyline">© <span id="year"></span> MJØÅR<img class="foot-smile" src="/assets/smile.png" alt="smile" /></span>
+      <span class="copyline">© <span id="year"></span> MJØÅR<img class="foot-smile" src="/assets/smile.png" alt="" /></span>
     </div>
   </footer>
 
@@ -504,11 +512,11 @@
         'milk.h':'Every milk, and how to foam it','milk.p':'Two things decide it. Protein builds the walls of the bubbles, so it sets structure and stability. Fat makes the foam creamy and rounds out the taste. More protein means a steadier foam; more fat means more creaminess. Barista editions are tuned for exactly this.',
         'lab.foam':'Foam','lab.protein':'Protein','lab.fat':'Fat','lab.tip':'Tip','lab.stab':'Stability',
         'm.whole.n':"Whole cow's milk",'m.whole.d':'The benchmark, and the most forgiving. Its high protein builds a fine, stable foam, and the fat makes it creamy and lightly sweet. Handles beginner mistakes best of all.','m.whole.pro':'3.4 g / 100 ml','m.whole.fat':'3.5 g','m.whole.foam':'Excellent, stable','m.whole.tip':'Cold and fresh from the fridge. The easiest choice for latte art.',
-        'm.oat.n':'Oat, barista edition','m.oat.d':'The best plant option, closest to milk. Naturally lower in protein, but barista editions add a little oil and stabilisers, so they foam almost like milk. Naturally sweet and easy against espresso.','m.oat.pro':'~1.0 g / 100 ml','m.oat.fat':'~1.5 to 3 g','m.oat.foam':'Excellent (barista only)','m.oat.tip':'Always the barista version. Steam a touch cooler. Plain oat barely foams.',
-        'm.soy.n':'Soy','m.soy.d':'The highest-protein plant milk, so it foams well and holds its shape. The catch: the protein can curdle against hot, acidic espresso.','m.soy.pro':'~3.3 g / 100 ml','m.soy.fat':'~1.8 g','m.soy.foam':'Good, can curdle','m.soy.tip':'Steam cooler (max 60 degrees) and pour promptly, then it will not split.',
-        'm.almond.n':'Almond and the rest','m.almond.d':'Nutty and light, but the trickiest to foam: little protein means thin, airy foam that collapses fast and separates from the coffee.','m.almond.pro':'~0.5 g / 100 ml','m.almond.fat':'~1.1 g','m.almond.foam':'Thin, unstable','m.almond.tip':'Barista edition only, low heat, pour straight away.',
+        'm.oat.n':'Oat, barista edition','m.oat.d':'Barista-quality oat drinks often foam more consistently than standard versions. Results vary by product. They are naturally sweet and usually pair gently with espresso.','m.oat.pro':'~1.0 g / 100 ml','m.oat.fat':'~1.5 to 3 g','m.oat.foam':'Often stable, varies by product','m.oat.tip':'Barista versions are often easier to foam. Steam a touch cooler and adjust to the product.',
+        'm.soy.n':'Soy','m.soy.d':'The highest-protein plant milk, so it often foams well and holds its shape. The protein can still curdle against hot, acidic espresso.','m.soy.pro':'~3.3 g / 100 ml','m.soy.fat':'~1.8 g','m.soy.foam':'Good, can curdle','m.soy.tip':'Steam cooler (max 60 degrees) and pour promptly. Depending on the product and espresso acidity, it may still split.',
+        'm.almond.n':'Almond and the rest','m.almond.d':'Nutty and light, but often harder to foam: lower protein can mean airy foam that separates from the coffee sooner. Results vary by product.','m.almond.pro':'~0.5 g / 100 ml','m.almond.fat':'~1.1 g','m.almond.foam':'Often light, varies by product','m.almond.tip':'A barista version can help. Use lower heat and pour promptly.',
         'milk.cow':'Best cow’s milk: whole, fresh and cold. Its protein and fat build the steadiest foam; low-fat froths bigger but drier and falls apart faster.',
-        'milk.plant':'With any plant milk: use a barista edition, steam cooler (around 55 to 60 degrees), and wipe and purge the wand after, they scorch fast.',
+        'milk.plant':'With plant drinks, barista versions are often easier to foam. Steam cooler (around 55 to 60 degrees), then wipe and purge the wand.',
         'figs.eyebrow':'The designs','figs.h':'Four designs, easy to hard.','figs.p':'Each builds on the last. Once the heart sits, the rest comes much easier.',
         'heart.t':'Heart','heart.lvl':'Beginner','heart.d':'The starting point for everything. You pour a round white pool into the centre, then slice through it to pull the tip.',
         'heart.s1':'Pour the textured milk in from a height into the tilted cup until it is about half full and still mostly brown.','heart.s2':'Lower the spout almost onto the surface and pour steadily into one spot. A white circle blooms and rises.','heart.s3':'When the circle nearly fills the cup, lift and cut a thin stream straight through its middle to the near edge. That pulls the point.',
@@ -524,8 +532,8 @@
         'fix2.q':'Big bubbles on top','fix2.a':'Too much air, or air added too late. Stretch only in the first seconds, then submerge the tip. Tap the jug and swirl to pop bubbles.',
         'fix3.q':'Foam too stiff to pour','fix3.a':'Over-stretched. You want wet paint, not meringue. Less air, more spinning.',
         'fix4.q':'No contrast, all pale','fix4.a':'The base was not blended in. Start higher and thinner to mix with the crema before you drop close.',
-        'cta.h':'A good pour needs a good spout.','cta.p':'Everything here is easier with a pitcher built for it: a sharp, precise spout and a balanced, heavier body. That is exactly what we make.','cta.btn':'See the pitchers','cta.trust':'Ships from Germany · 14-day right of return',
-        'disclaimer':'Written by baristas, not a recipe set in stone. Every machine and milk is a little different; adjust as you go.'
+        'cta.h':'A good pour needs a good spout.','cta.p':'Everything here is easier with a pitcher built for it: a precise spout and a balanced, heavier body. That is exactly what we make.','cta.btn':'See the pitchers','cta.trust':'Ships from Germany · 14-day right of return',
+        'disclaimer':'Built from café practice, not a recipe set in stone. Every machine and milk is a little different; adjust as you go.'
       },
       de: {
         'nav.story':'Philosophie','nav.finishes':'Farben','nav.craft':'Qualität','nav.latteart':'Latte Art','nav.shop':'Shop',
@@ -551,11 +559,11 @@
         'milk.h':'Jede Milch, und wie sie schäumt','milk.p':'Zwei Dinge entscheiden. Protein baut die Wände der Bläschen, es bestimmt also Struktur und Stabilität. Fett macht den Schaum cremig und rund im Geschmack. Mehr Protein heißt stabilerer Schaum, mehr Fett mehr Cremigkeit. Barista-Editionen sind genau darauf abgestimmt.',
         'lab.foam':'Schaum','lab.protein':'Protein','lab.fat':'Fett','lab.tip':'Tipp','lab.stab':'Stabilität',
         'm.whole.n':'Vollmilch (3,5%)','m.whole.d':'Der Maßstab und am gutmütigsten. Ihr hoher Proteingehalt baut einen feinen, stabilen Schaum, das Fett macht ihn cremig und leicht süßlich. Verzeiht Anfängerfehler am meisten.','m.whole.pro':'3,4 g / 100 ml','m.whole.fat':'3,5 g','m.whole.foam':'Sehr gut, stabil','m.whole.tip':'Kalt und frisch aus dem Kühlschrank. Für Latte Art die einfachste Wahl.',
-        'm.oat.n':'Hafer, Barista-Edition','m.oat.d':'Die beste pflanzliche Wahl, am nächsten an Milch. Von Natur aus proteinärmer, aber Barista-Editionen setzen etwas Öl und Stabilisatoren zu, so schäumen sie fast wie Milch. Von Natur aus süßlich und unkompliziert zum Espresso.','m.oat.pro':'~1,0 g / 100 ml','m.oat.fat':'~1,5 bis 3 g','m.oat.foam':'Sehr gut (nur Barista)','m.oat.tip':'Immer die Barista-Version. Etwas kühler schäumen. Normaler Hafer schäumt kaum.',
-        'm.soy.n':'Soja','m.soy.d':'Die proteinreichste Pflanzenmilch, schäumt gut und hält die Form. Der Haken: Das Eiweiß kann bei heißem, saurem Espresso ausflocken.','m.soy.pro':'~3,3 g / 100 ml','m.soy.fat':'~1,8 g','m.soy.foam':'Gut, kann flocken','m.soy.tip':'Kühler schäumen (max. 60 Grad) und zügig gießen, dann flockt nichts.',
-        'm.almond.n':'Mandel und der Rest','m.almond.d':'Nussig und leicht, aber am schwierigsten zu schäumen: wenig Protein heißt dünner, luftiger Schaum, der schnell zerfällt und sich vom Kaffee trennt.','m.almond.pro':'~0,5 g / 100 ml','m.almond.fat':'~1,1 g','m.almond.foam':'Dünn, instabil','m.almond.tip':'Nur Barista-Edition, niedrige Hitze, sofort gießen.',
+        'm.oat.n':'Hafer, Barista-Edition','m.oat.d':'Haferdrinks in Barista-Qualität lassen sich häufig stabiler aufschäumen als Standardvarianten. Das Ergebnis variiert je nach Produkt. Sie sind von Natur aus süßlich und meist mild zum Espresso.','m.oat.pro':'~1,0 g / 100 ml','m.oat.fat':'~1,5 bis 3 g','m.oat.foam':'Oft stabil, je nach Produkt','m.oat.tip':'Barista-Versionen lassen sich häufig leichter aufschäumen. Etwas kühler schäumen und an das Produkt anpassen.',
+        'm.soy.n':'Soja','m.soy.d':'Die proteinreichste Pflanzenmilch schäumt oft gut und hält die Form. Das Eiweiß kann bei heißem, saurem Espresso trotzdem ausflocken.','m.soy.pro':'~3,3 g / 100 ml','m.soy.fat':'~1,8 g','m.soy.foam':'Gut, kann flocken','m.soy.tip':'Kühler schäumen (max. 60 Grad) und zügig gießen. Je nach Produkt und Säure des Espressos kann sie trotzdem ausflocken.',
+        'm.almond.n':'Mandel und der Rest','m.almond.d':'Nussig und leicht, aber oft schwieriger zu schäumen: Weniger Protein kann zu luftigem Schaum führen, der sich früher vom Kaffee trennt. Das Ergebnis variiert je nach Produkt.','m.almond.pro':'~0,5 g / 100 ml','m.almond.fat':'~1,1 g','m.almond.foam':'Oft leicht, je nach Produkt','m.almond.tip':'Eine Barista-Version kann helfen. Niedrigere Hitze verwenden und zügig gießen.',
         'milk.cow':'Beste Kuhmilch: Vollmilch, frisch und kalt. Ihr Protein und Fett geben den stabilsten Schaum; fettarme schäumt voluminöser, aber trockener und fällt schneller zusammen.',
-        'milk.plant':'Bei jeder Pflanzenmilch: Barista-Edition nehmen, kühler schäumen (etwa 55 bis 60 Grad) und die Düse danach abwischen und abdampfen, sie brennt schnell an.',
+        'milk.plant':'Bei Pflanzendrinks lassen sich Barista-Versionen häufig leichter aufschäumen. Kühler schäumen (etwa 55 bis 60 Grad), danach die Düse abwischen und abdampfen.',
         'figs.eyebrow':'Die Motive','figs.h':'Vier Motive, von leicht bis schwer.','figs.p':'Eins baut auf dem anderen auf. Sitzt das Herz, fällt dir der Rest viel leichter.',
         'heart.t':'Herz','heart.lvl':'Einsteiger','heart.d':'Der Ausgangspunkt für alles. Du gießt einen runden weißen Punkt in die Mitte und ziehst dann gerade hindurch, um die Spitze zu formen.',
         'heart.s1':'Gieße die texturierte Milch aus etwas Höhe in die schräg gehaltene Tasse, bis sie etwa halb voll und noch überwiegend braun ist.','heart.s2':'Senke den Ausguss fast auf die Oberfläche und gieße gleichmäßig auf einen Punkt. Ein weißer Kreis wächst und steigt nach oben.','heart.s3':'Wenn der Kreis fast die Tasse füllt, heb ab und ziehe einen dünnen Strahl gerade durch die Mitte bis zum nahen Rand. Das formt die Spitze.',
@@ -571,9 +579,52 @@
         'fix2.q':'Große Blasen obenauf','fix2.a':'Zu viel Luft oder zu spät gezogen. Nur in den ersten Sekunden ziehen, dann Düse eintauchen. Kännchen aufklopfen und schwenken, um Blasen zu lösen.',
         'fix3.q':'Schaum zu steif zum Gießen','fix3.a':'Zu stark gezogen. Du willst nasse Farbe, kein Baiser. Weniger Luft, mehr Strudel.',
         'fix4.q':'Kein Kontrast, alles blass','fix4.a':'Die Basis wurde nicht eingemischt. Höher und dünner beginnen, um dich mit der Crema zu verbinden, bevor du dicht herangehst.',
-        'cta.h':'Ein guter Guss braucht einen guten Ausguss.','cta.p':'Alles hier gelingt leichter mit einem Kännchen, das dafür gebaut ist: ein scharfer, präziser Ausguss und ein ausgewogener, schwererer Korpus. Genau das machen wir.','cta.btn':'Zu den Kännchen','cta.trust':'Versand aus Deutschland · 14 Tage Widerrufsrecht',
-        'disclaimer':'Von Baristas geschrieben, kein in Stein gemeißeltes Rezept. Jede Maschine und jede Milch ist etwas anders, taste dich heran.'
+        'cta.h':'Ein guter Guss braucht einen guten Ausguss.','cta.p':'Alles hier gelingt leichter mit einem Kännchen, das dafür gebaut ist: ein präziser Ausguss und ein ausgewogener, schwererer Korpus. Genau das machen wir.','cta.btn':'Zu den Kännchen','cta.trust':'Versand aus Deutschland · 14 Tage Widerrufsrecht',
+        'disclaimer':'Aus der Café-Praxis, kein in Stein gemeißeltes Rezept. Jede Maschine und jede Milch ist etwas anders, taste dich heran.'
       }
+    };
+
+    const META = {
+      en:{
+        title:'Learn Latte Art: Milk, Microfoam and Patterns | MJØÅR',
+        description:'Learn the basics of latte art: milk, microfoam, heart, rosetta, tulip and swan, explained step by step in a free guide.',
+        locale:'en_GB'
+      },
+      de:{
+        title:'Latte Art lernen: Milch, Mikroschaum und Motive | MJØÅR',
+        description:'Lerne die Grundlagen der Latte Art: Milch, Mikroschaum, Herz, Rosetta, Tulpe und Schwan, Schritt für Schritt im kostenlosen Ratgeber.',
+        locale:'de_DE'
+      }
+    };
+
+    const updateGuideSchema = (lang) => {
+      const isDe = lang === 'de';
+      const schema = {
+        '@context':'https://schema.org',
+        '@graph':[
+          {
+            '@type':'Article',
+            headline:META[lang].title.replace(' | MJØÅR',''),
+            description:META[lang].description,
+            image:'https://mjoar.com/assets/latte/heart.jpg',
+            mainEntityOfPage:'https://mjoar.com/latte-art/',
+            dateModified:'2026-08-11',
+            publisher:{ '@type':'Organization', name:'MJØÅR', logo:{ '@type':'ImageObject', url:'https://mjoar.com/assets/logo.png' } }
+          },
+          {
+            '@type':'HowTo',
+            name:isDe ? 'Latte Art Grundlagen' : 'Latte Art Basics',
+            description:META[lang].description,
+            image:'https://mjoar.com/assets/latte/heart.jpg',
+            step:[
+              { '@type':'HowToStep', name:isDe ? 'Milch texturieren' : 'Texture the milk', text:isDe ? 'Milch zuerst ziehen, dann zu einem glatten Strudel rollen und bei etwa 60 bis 65 Grad stoppen.' : 'Stretch the milk first, then roll it into a smooth whirlpool and stop at around 60 to 65 degrees.' },
+              { '@type':'HowToStep', name:isDe ? 'Basis gießen' : 'Pour the base', text:isDe ? 'Die texturierte Milch aus etwas Höhe in die geneigte Tasse gießen, bis die Basis gleichmäßig ist.' : 'Pour the textured milk from a little height into the tilted cup until the base is even.' },
+              { '@type':'HowToStep', name:isDe ? 'Motiv zeichnen' : 'Draw the pattern', text:isDe ? 'Den Ausguss nah an die Oberfläche bringen und Herz, Rosetta, Tulpe oder Schwan Schritt für Schritt gießen.' : 'Bring the spout close to the surface and pour a heart, rosetta, tulip or swan step by step.' }
+            ]
+          }
+        ]
+      };
+      document.getElementById('guideSchema').textContent = JSON.stringify(schema);
     };
 
     const applyLang = (lang) => {
@@ -583,11 +634,17 @@
       document.querySelectorAll('[data-i18n]').forEach((el) => { const k = el.getAttribute('data-i18n'); if (dict[k] !== undefined) el.textContent = dict[k]; });
       document.querySelectorAll('.dspec').forEach((el) => { el.innerHTML = el.textContent.split('·').map((s) => `<span>${s.trim()}</span>`).join(''); });
       document.querySelectorAll('.langtoggle button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === cur ? 'true' : 'false'));
+      document.title = META[cur].title;
+      document.getElementById('metaDescription').content = META[cur].description;
+      document.getElementById('ogTitle').content = META[cur].title;
+      document.getElementById('ogDescription').content = META[cur].description;
+      document.getElementById('ogLocale').content = META[cur].locale;
+      updateGuideSchema(cur);
       try { localStorage.setItem('mjoar_lang', cur); } catch (e) {}
     };
     document.querySelectorAll('.langtoggle button').forEach((b) => b.addEventListener('click', () => applyLang(b.dataset.lang)));
-    let initial = 'en';
-    try { initial = localStorage.getItem('mjoar_lang') || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en'); } catch (e) {}
+    let initial = new URLSearchParams(location.search).get('lang') || 'en';
+    try { initial = new URLSearchParams(location.search).get('lang') || localStorage.getItem('mjoar_lang') || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en'); } catch (e) {}
     applyLang(initial);
   </script>
 </body>
