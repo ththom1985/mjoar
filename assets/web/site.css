@@ -289,7 +289,8 @@ img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
 .kopfzeile { display: block; max-width: var(--fluss); }
 .kopfzeile .neben { margin-top: 24px; }
 .hero-text { display: block; max-width: calc(var(--breit) + 2 * var(--rand)); }
-.hero-zeile, .hero-neben { max-width: var(--fluss); }
+.hero-neben { max-width: var(--fluss); }
+.hero-zeile { max-width: 1040px; }
 .hero-neben { padding-top: 24px; }
 .breit { max-width: var(--breit); margin: 0 auto; }
 .breit img { width: 100%; }
