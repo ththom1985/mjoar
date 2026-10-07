@@ -87,7 +87,7 @@ p { margin: 0 0 16px; }
   min-height: 50px; padding: 14px 40px;
   background: var(--knopf); color: #fff;
   font: 600 14px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase;
-  border: 0; border-radius: 0; text-decoration: none; cursor: pointer;
+  border: 0; border-radius: 999px; text-decoration: none; cursor: pointer;
   transition: background-color .25s ease;
 }
 .knopf:hover { background: #435854; color: #fff; }
@@ -117,10 +117,10 @@ p { margin: 0 0 16px; }
   display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
 }
 .menu-mobil summary::-webkit-details-marker { display: none; }
-.menu-mobil summary span { display: block; width: 22px; height: 1.5px; background: var(--schiefer); }
+.menu-mobil summary span { display: block; width: 22px; height: 2px; border-radius: 2px; background: var(--schiefer); }
 .menu-mobil nav {
   position: absolute; right: 0; top: 52px; min-width: 240px;
-  background: var(--creme); border: 1px solid var(--linie); padding: 12px 0;
+  background: var(--creme); border: 1px solid var(--linie); border-radius: 12px; padding: 12px 0; overflow: hidden;
   display: flex; flex-direction: column;
 }
 .menu-mobil nav a { padding: 12px 20px; font-size: 16px; }
@@ -150,7 +150,7 @@ main { display: block; }
 
 /* Farben: große Freisteller auf Creme */
 .farben { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 2vw, 32px); }
-.farbe { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.farbe { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
 .farbe img { width: 100%; margin-bottom: 6px; }
 .farbname { font-size: 16px; margin: 0 0 6px; }
 .farbname strong { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(28px, 2.4vw, 38px); line-height: 1.1; margin-bottom: 2px; }
@@ -181,7 +181,7 @@ img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
 .strecke > :nth-child(2) { margin-top: clamp(24px, 4vw, 56px); }
 
 /* Pflege: ruhige Textzeile ohne Bild */
-.ruhezeile { text-align: center; max-width: 900px; }
+.ruhezeile { text-align: left; max-width: 900px; }
 .ruhezeile p { max-width: 620px; margin: 0 auto; font-size: 18px; }
 
 /* Wer dahinter steht: Bild in voller Breite */
@@ -195,7 +195,7 @@ img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
 .v-gross { grid-column: 1 / span 6; }
 .v-text { grid-column: 8 / span 5; }
 .v-reihe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
-.ausblick { margin: clamp(40px, 6vw, 80px) 0 0; text-align: center; letter-spacing: .04em; }
+.ausblick { margin: clamp(40px, 6vw, 80px) 0 0; text-align: left; letter-spacing: .04em; }
 
 /* Produktseite */
 .produkt {
@@ -214,7 +214,7 @@ img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
 .wahl input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .wahl > span {
   display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px 10px;
-  border: 1px solid transparent; cursor: pointer; text-align: center;
+  border: 1px solid transparent; border-radius: 12px; cursor: pointer; text-align: center;
 }
 .wahl-bild { width: 100%; max-width: 92px; }
 .wahl-name { font-family: var(--serif); font-weight: 600; font-size: 22px; line-height: 1.1; }
@@ -238,7 +238,7 @@ img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
 .daten th { font-weight: 600; width: 46%; }
 .fragen dt { font-family: var(--serif); font-weight: 600; font-size: 25px; line-height: 1.2; margin-top: 32px; }
 .fragen dd { margin: 8px 0 0; }
-.schluss { text-align: center; }
+.schluss { text-align: left; }
 .schluss-zeile { font-family: var(--serif); font-size: clamp(36px, 4.4vw, 60px); line-height: 1.1; color: var(--siegel); margin-bottom: 8px; }
 .schluss-name { font-family: var(--serif); font-style: italic; font-size: 24px; }
 
@@ -261,9 +261,9 @@ img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
 /* Newsletter */
 .newsletter form { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
 .newsletter input[type="email"] {
-  flex: 1 1 200px; min-height: 50px; padding: 10px 14px;
+  flex: 1 1 200px; min-height: 50px; padding: 10px 22px;
   font: 16px var(--sans); color: var(--schiefer);
-  background: #fff; border: 1px solid #8A9494; border-radius: 0;
+  background: #fff; border: 1px solid #8A9494; border-radius: 999px;
 }
 
 /* Fuß: links Marke, Mitte Kontakt, rechts Newsletter, unten Recht */
@@ -327,6 +327,69 @@ img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
 .block.spalte, .schluss, .ruhezeile { max-width: calc(var(--breit) + 2 * var(--rand)); text-align: left; }
 .block.spalte > *, .schluss > *, .ruhezeile > *, .zweispaltig > * { max-width: var(--fluss); }
 .ruhezeile p { margin: 0; }
+
+/* Jonah 07.10. (über Fable): echtes Desktop-Layout ab 721 px. Raster bis 1280 px, alles linksbündig an einer Kante,
+   Text/Bild-Paare nebeneinander (asymmetrisch 7/5), Detailbilder und Farben als breite Strecke, Produktseite mit
+   Galerie links und Kaufbox rechts (sticky). Mobil bleibt, wie es ist. */
+@media (min-width: 721px) {
+  :root { --breite: 1280px; --breit: 1280px; }
+  .block, .block.spalte, .schluss, .ruhezeile { max-width: calc(var(--breite) + 2 * var(--rand)); }
+  .kopf-innen, .fuss-innen { max-width: var(--breite); }
+  /* Überschrift links (5), Text rechts (6) */
+  .kopfzeile { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; max-width: none; align-items: end; }
+  .kopfzeile .weit { grid-column: 1 / span 5; }
+  .kopfzeile .neben { grid-column: 7 / span 6; margin-top: 0; max-width: 620px; }
+  /* Hero: Zeile groß links, Satz und Knopf rechts */
+  .hero-text { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; max-width: calc(var(--breite) + 2 * var(--rand)); align-items: end; }
+  .hero-zeile { grid-column: 1 / span 8; max-width: none; }
+  .hero-zeile h1 { font-size: clamp(44px, 5.6vw, 84px); }
+  .hero-neben { grid-column: 9 / span 4; max-width: none; padding-top: 0; }
+  .hero-neben .kaufen { margin-bottom: 14px; }
+  /* Vier Dinge: breite Strecke, vier Spalten, leicht versetzt */
+  .nahstrecke { grid-template-columns: repeat(4, 1fr); column-gap: 24px; row-gap: 0; }
+  .nah-2, .nah-4 { margin-top: 64px; }
+  .nah figcaption { max-width: none; }
+  /* Bild links (7), Text rechts (5) */
+  .geteilt, .vollbreit.geteilt { display: grid; grid-template-columns: 7fr 5fr; column-gap: clamp(40px, 5vw, 88px); align-items: center;
+    max-width: calc(var(--breite) + 2 * var(--rand)); margin-left: auto; margin-right: auto; padding: 0 var(--rand); }
+  .geteilt-bild, #entstehung .geteilt-bild { max-width: none; }
+  .geteilt-text { margin-top: 0; max-width: 520px; }
+  /* Wer dahinter steht: Bild links, Text rechts */
+  #wer { display: grid; grid-template-columns: 7fr 5fr; column-gap: clamp(40px, 5vw, 88px); align-items: center;
+    max-width: calc(var(--breite) + 2 * var(--rand)); margin-left: auto; margin-right: auto; padding: 0 var(--rand); }
+  #wer .breit { padding: 0; max-width: none; margin: 0; }
+  #wer .wer-text { display: block; margin: 0; padding: 0; max-width: 520px; }
+  #wer .wer-text .neben { margin-top: 24px; }
+  /* Gebrauch: drei Bilder in voller Breite */
+  .strecke { max-width: none; }
+  /* Pflege: Überschrift links, Text rechts */
+  .ruhezeile { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; align-items: end; }
+  .ruhezeile > h2 { grid-column: 1 / span 5; max-width: none; margin: 0; }
+  .ruhezeile > p { grid-column: 7 / span 6; max-width: 620px; }
+  /* Ausgepackt: großes Bild links, Text rechts, zwei Bilder darunter */
+  .verpackung-raster { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 24px; align-items: center; }
+  .v-gross { grid-column: 1 / span 7; grid-row: 1; }
+  .v-gross img { aspect-ratio: 4 / 3; }
+  .v-text { grid-column: 9 / span 4; grid-row: 1 / span 2; margin-top: 0; max-width: none; }
+  .v-reihe { grid-column: 1 / span 7; grid-row: 2; margin-top: 0; }
+  /* Produktseite: Galerie links, Kaufbox rechts (sticky); Bilder als breite Strecke */
+  .produkt { max-width: var(--breite); padding-left: var(--rand); padding-right: var(--rand); box-sizing: content-box; }
+  .galerie { grid-template-columns: repeat(4, 1fr); }
+  .galerie img { aspect-ratio: 4 / 5; object-fit: cover; }
+  .im-detail { grid-template-columns: 7fr 5fr; column-gap: clamp(40px, 5vw, 88px); }
+  .im-detail.links { grid-template-columns: 5fr 7fr; }
+  .im-detail.links .im-bild { order: 2; }
+  .im-detail.links .im-text { order: 1; }
+  .im-text, .im-detail.links .im-text { max-width: 520px; }
+  .zweispaltig { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; align-items: start; }
+  .zweispaltig #daten { grid-column: 1 / span 6; max-width: none; }
+  .zweispaltig #box { grid-column: 8 / span 5; margin-top: 0; max-width: none; }
+  /* Fragen: Überschrift links, Antworten rechts */
+  #fragen.block.spalte { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; align-items: start; }
+  #fragen > h2 { grid-column: 1 / span 4; max-width: none; }
+  #fragen > .fragen { grid-column: 6 / span 7; max-width: none; margin-top: 0; }
+  #fragen .fragen dt:first-child { margin-top: 0; }
+}
 
 /* Tablet */
 @media (max-width: 1100px) {

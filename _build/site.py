@@ -15,7 +15,7 @@ from texte_v3 import ALT, T  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BILDER = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "bilder.json"), encoding="utf-8"))
 SITE = "https://mjoar.com"
-VERSION = "3"
+VERSION = "4"
 
 # ---------------------------------------------------------------------------------------------------------------
 # Kaufen: die eine zentrale Konstante. EN zeigt vorerst ebenfalls auf amazon.de (UK noch nicht kaufbar).
