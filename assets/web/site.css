@@ -154,7 +154,13 @@ main { display: block; }
 .farbe img { width: 100%; margin-bottom: 6px; }
 .farbname { font-size: 16px; margin: 0 0 6px; }
 .farbname strong { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(28px, 2.4vw, 38px); line-height: 1.1; margin-bottom: 2px; }
+.farbname .farbart { display: block; }
 .farbe .weiter { font-size: 15px; }
+
+/* Freisteller (auf Weiß geliefert) gehen per Multiplizieren randlos in das Creme der Seite auf. Die Behälter tragen
+   selbst Creme, damit das Multiplizieren auch in eigenen Ebenen (Reveal, Transform) gegen Creme rechnet. */
+img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
+.farbe, .galerie-haupt, .wahl > span, .nah, .im-bild, .galerie > div { background: var(--creme); }
 
 /* Vier Dinge: Detail-Close-ups als eigene Bildstrecke, versetzt */
 .nahstrecke { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: clamp(16px, 2vw, 32px); align-items: start; }
@@ -179,7 +185,8 @@ main { display: block; }
 .ruhezeile p { max-width: 620px; margin: 0 auto; font-size: 18px; }
 
 /* Wer dahinter steht: Bild in voller Breite */
-.vollbild img { width: 100%; height: min(68vh, 44vw); object-fit: cover; object-position: 50% 60%; }
+.vollbild img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 58%; }
+.recht-hinweis { margin-bottom: 8px; }
 .wer-text { margin-top: clamp(40px, 5vw, 72px); margin-bottom: 0; }
 
 /* Ausgepackt */
@@ -275,6 +282,51 @@ main { display: block; }
   .js [data-reveal].sichtbar { opacity: 1; transform: none; }
 }
 
+/* Thorsten 07.10.: Desktop näher an Mobil. Ein Lesefluss: schmale Textspalte (720 px), große ruhige Bilder bis 1120 px,
+   Überschrift und Text untereinander, weniger und größere Kacheln. */
+:root { --fluss: 720px; --breit: 1120px; }
+.block { max-width: calc(var(--breit) + 2 * var(--rand)); }
+.kopfzeile { display: block; max-width: var(--fluss); }
+.kopfzeile .neben { margin-top: 24px; }
+.hero-text { display: block; max-width: calc(var(--breit) + 2 * var(--rand)); }
+.hero-zeile, .hero-neben { max-width: var(--fluss); }
+.hero-neben { padding-top: 24px; }
+.breit { max-width: var(--breit); margin: 0 auto; }
+.breit img { width: 100%; }
+#wer .breit { padding: 0 var(--rand); max-width: calc(var(--breit) + 2 * var(--rand)); }
+.wer-text { margin-top: clamp(32px, 4vw, 56px); }
+/* Vier Dinge: zwei große Spalten statt vier kleiner */
+.nahstrecke { grid-template-columns: repeat(2, 1fr); column-gap: clamp(24px, 3vw, 48px); row-gap: clamp(48px, 6vw, 88px); }
+.nah-2, .nah-4 { margin-top: clamp(40px, 6vw, 96px); }
+.nah-3 { margin-top: 0; }
+.nah figcaption { max-width: 520px; }
+/* Bild über Text statt nebeneinander */
+.geteilt, .vollbreit.geteilt { display: block; max-width: calc(var(--breit) + 2 * var(--rand)); margin-left: auto; margin-right: auto; padding: 0 var(--rand); }
+.geteilt-bild { max-width: 760px; }
+.geteilt-bild img { max-height: none; }
+.geteilt-text { max-width: var(--fluss); margin-top: clamp(28px, 3vw, 44px); }
+#entstehung .geteilt-bild { max-width: var(--breit); }
+/* Gebrauch: drei große Bilder in der Breite */
+.strecke { max-width: var(--breit); }
+/* Ausgepackt: großes Bild, darunter zwei große, dann der Text */
+.verpackung-raster { display: block; }
+.v-gross img { aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 62%; }
+.v-reihe { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(12px, 2vw, 24px); margin-top: clamp(12px, 2vw, 24px); }
+.v-text { max-width: var(--fluss); margin-top: clamp(32px, 4vw, 56px); }
+.ausblick { text-align: left; }
+/* Produktseite: große Galerie in zwei Spalten, Im Detail mit großem Bild, Daten und Box untereinander */
+.galerie { grid-template-columns: repeat(2, 1fr); gap: clamp(12px, 2vw, 24px); }
+.galerie img { aspect-ratio: auto; }
+.im-detail { grid-template-columns: 1fr 1fr; column-gap: clamp(32px, 5vw, 80px); }
+.im-bild, .im-detail.links .im-bild { grid-column: auto; }
+.im-text, .im-detail.links .im-text { grid-column: auto; max-width: 520px; }
+.zweispaltig { display: block; }
+.zweispaltig #box { margin-top: clamp(56px, 7vw, 96px); }
+/* Alle Blöcke an derselben linken Kante der 1120-px-Fläche, nur die Textspalte ist schmal */
+.block.spalte, .schluss, .ruhezeile { max-width: calc(var(--breit) + 2 * var(--rand)); text-align: left; }
+.block.spalte > *, .schluss > *, .ruhezeile > *, .zweispaltig > * { max-width: var(--fluss); }
+.ruhezeile p { margin: 0; }
+
 /* Tablet */
 @media (max-width: 1100px) {
   .menu-desktop { gap: 20px; }
@@ -321,6 +373,10 @@ main { display: block; }
   .wahl-art { font-size: 11px; }
   .galerie { grid-template-columns: repeat(2, 1fr); }
   .im-detail { margin-bottom: 56px; }
+  .im-detail.links .im-bild { order: 0; }
+  .v-reihe { grid-template-columns: repeat(2, 1fr); }
+  .nahstrecke { grid-template-columns: 1fr; }
+  .nah-2, .nah-4 { margin-top: 0; }
   .im-bild { margin-bottom: 20px; max-width: 420px; }
   .zweispaltig #box { margin-top: 56px; }
   .reihe.vier { grid-template-columns: repeat(2, 1fr); }

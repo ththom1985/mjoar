@@ -13,6 +13,13 @@ from html.parser import HTMLParser
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from texte_v3 import ALT, NICHT_IN_COPY  # noqa: E402
+import importlib.util  # noqa: E402
+
+# _build/site.py heißt wie das Standardmodul „site“: über den Dateipfad laden.
+_spec = importlib.util.spec_from_file_location("mjoar_site", os.path.join(os.path.dirname(os.path.abspath(__file__)), "site.py"))
+_mjoar_site = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_mjoar_site)
+DATENSCHUTZ_ENTFAELLT = _mjoar_site.DATENSCHUTZ_ENTFAELLT
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COPY = r"C:/Users/ththomas/OneDrive/01_THOMAS_MERCANTILE_BUSINESS/01_Marke_MJOAR/03_Website_Landingpage/MJOAR_WEB_COPY_v3.md"
@@ -143,7 +150,8 @@ def main():
             sichtbar = " ".join(p.bloecke)
             for muster, grund in [(r"[\u2013\u2014]|\s-\s", "Gedankenstrich"), (r"Entworfen in|Designed in", "Entworfen/Designed in"),
                                   (r"€|EUR\b", "Preis"), (r"LFGB", "LFGB sichtbar"), (r"(?i)la marzocco", "Maschinen-Schriftzug genannt"),
-                                  (r"(?i)satin|seidenmatt|soft matt", "satiniert/satin/seidenmatt (Thorsten 07.10.: nicht mehr)")]:
+                                  (r"(?i)satin|seidenmatt|soft matt", "satiniert/satin/seidenmatt (Thorsten 07.10.: nicht mehr)"),
+                                  (r"Tülle", "Tülle (Thorsten 07.10.: überall Ausguss)")]:
                 if re.search(muster, sichtbar):
                     fehler.append((s, grund, re.search(muster, sichtbar).group(0)))
     # Rechtstexte byte-gleich
@@ -151,8 +159,15 @@ def main():
         neu = open(os.path.join(ROOT, s.replace("/", os.sep), "index.html"), encoding="utf-8").read()
         a = open(os.path.join(ROOT, "_build", "alt", alt), encoding="utf-8").read()
         art = a[a.index('<article class="legal-card">'):a.index("</article>") + 10]
+        if alt == "datenschutz.html":
+            # Einzige inhaltliche Änderung (Fable 07.10., im PR ausgewiesen): Absatz zu mjoar_lang entfällt.
+            art, n = DATENSCHUTZ_ENTFAELLT.subn("", art)
+            if n != 1:
+                fehler.append((s, "Datenschutz: Absatz mjoar_lang nicht genau einmal im Original", alt))
         if art not in neu.replace('<article class="legal-card" lang="de">', '<article class="legal-card">'):
             fehler.append((s, "Rechtstext weicht ab", alt))
+        if "mjoar_lang" in neu:
+            fehler.append((s, "mjoar_lang steht noch im Datenschutz", alt))
     # Links
     extern, kaputt, seiten_alle = set(), [], []
     for wurzel, _, dateien in os.walk(ROOT):
@@ -238,6 +253,11 @@ def main():
             if len(stueck) < 4 or stueck.startswith(regie) or stueck.endswith(":") or stueck in ("[LFGB]",):
                 continue
             verglichen += 1
+            # „**Juniper**: Grün, matt“ ist Listenschreibweise der Copy (Name, darunter die Beschreibung). Auf der Seite
+            # stehen beide ohne Doppelpunkt untereinander (Fable 07.10.): beide Teile einzeln prüfen.
+            farbe = re.match(r"^(Juniper|Linen|Onyx|Steel): (.+)$", stueck)
+            if farbe and all(x in seitentext[sp] for x in farbe.groups()):
+                continue
             if stueck.rstrip(".") not in seitentext[sp]:
                 fehlt.append((abschnitt, sp, stueck))
     print(f"Gegenrichtung Copy → Seiten: {verglichen} Copy-Stellen verglichen, {len(fehlt)} nicht gefunden")

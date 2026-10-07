@@ -6,6 +6,7 @@
 import html
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -31,9 +32,9 @@ KAUFEN = {
 KAUFEN["en"] = KAUFEN["de"]
 FARBEN = ["juniper", "linen", "onyx", "steel"]
 
-# Hero-Bild der Startseite (Thorsten wählt nach Screenshot): "0420" an der Maschine (Standard) oder "0284" Familie.
-# Zum Vergleich ohne Codeänderung: Umgebungsvariable MJOAR_HERO=0284 beim Bauen.
-HERO_BILD = os.environ.get("MJOAR_HERO", "0420")
+# Hero-Bild der Startseite: "0284" Familie (Thorsten 07.10. nach Screenshot), Alternative "0420" an der Maschine.
+# Zum Vergleich ohne Codeänderung: Umgebungsvariable MJOAR_HERO=0420 beim Bauen.
+HERO_BILD = os.environ.get("MJOAR_HERO", "0284")
 HERO_VARIANTEN = {"0420": ("hero-d", "hero-m", "hero"), "0284": ("familie-d", "familie-m", "hero_0284")}
 PDF = "/assets/docs/MJOAR_LUN350_Sicherheitshinweise_GPSR.pdf"
 
@@ -193,7 +194,7 @@ def farb_kacheln(lang, link=True):
     for i, f in enumerate(FARBEN):
         name, art = t["farben"][f]
         kopf_ = (f'{bild("farbe-" + f, a["farbe"].format(name), "(max-width: 720px) 72vw, 25vw")}'
-                 f'<p class="farbname"><strong>{e(name)}</strong>: {e(art)}</p>')
+                 f'<p class="farbname"><strong>{e(name)}</strong><span class="farbart">{e(art)}</span></p>')
         weiter = f'<a class="weiter" href="{PFADE["lun"][lang]}#{f}">{e(t["farbe_link"].format(name))}</a>' if link else ""
         out.append(f'<div class="farbe" data-reveal style="--i:{i}">{kopf_}{weiter}</div>')
     return f'<div class="farben">{"".join(out)}</div>'
@@ -210,9 +211,11 @@ def vier_dinge(lang):
 
 def start(lang):
     t, a = T[lang], ALT[lang]
-    v = [bild(f"verpackung-{nr}", a["verpackung"].format(farbe), "(max-width: 720px) 100vw, 58vw" if i == 0 else "(max-width: 720px) 33vw, 12vw")
+    v = [bild(f"verpackung-{nr}", a["verpackung"].format(farbe), "(max-width: 720px) 100vw, 1120px" if i == 0 else "(max-width: 720px) 50vw, 560px")
          for i, (nr, farbe) in enumerate(VERPACKUNG)]
     hd, hm, halt = HERO_VARIANTEN[HERO_BILD]
+    # Über „Wer dahinter steht“ 0239 (Thorsten 07.10.), nie dasselbe Bild wie der Hero.
+    wer_bild = f'<div class="breit" data-reveal>{bild_mobil("wer-d", "wer-m", a["wer"], "(max-width: 720px) 100vw, 1120px")}</div>'
     return f"""<section class="hero">
   <div class="hero-bild">{bild_mobil(hd, hm, a[halt], '100vw', lazy=False)}</div>
   <div class="hero-text raster">
@@ -269,7 +272,7 @@ def start(lang):
 </section>
 
 <section class="vollbreit" id="wer">
-  <div class="vollbild" data-reveal>{bild_mobil('familie-d', 'familie-m', a['familie'], '100vw')}</div>
+  {wer_bild}
   <div class="block raster kopfzeile wer-text">
     <div class="weit" data-reveal>
       <p class="dach">{e(t['wer_dach'])}</p>
@@ -285,11 +288,11 @@ def start(lang):
 <section class="block" id="ausgepackt">
   <div class="verpackung-raster">
     <div class="v-gross" data-reveal>{v[0]}</div>
+    <div class="v-reihe" data-reveal>{''.join(v[1:3])}</div>
     <div class="v-text" data-reveal>
       <h2>{e(t['aus_h'])}</h2>
       <p>{e(t['aus_p'])}</p>
       {kaufen(lang)}
-      <div class="v-reihe">{''.join(v[1:])}</div>
     </div>
   </div>
   <p class="ausblick klein" data-reveal>{e(t['ausblick'])}</p>
@@ -303,8 +306,9 @@ def produkt(lang):
         bild(f"farbe-{f}", a["farbe"].format(t["farben"][f][0]), "(max-width: 720px) 100vw, 55vw",
              klasse="farbbild" + (" aktiv" if f == "juniper" else ""), lazy=f != "juniper", attr=f' data-farbe="{f}"')
         for f in FARBEN)
-    galerie = "".join(f'<div data-reveal>{bild(n, a[n] if n in a else a["verpackung"].format("Juniper"), "(max-width: 720px) 50vw, 25vw")}</div>'
-                      for n in ["groesse", "gebrauch-tasse", "gebrauch-giessen", "detail-ausguss", "detail-skala", "detail-griff", "detail-wand", "verpackung-0307"])
+    # Thorsten 07.10.: weniger kleine Kacheln, größere ruhigere Bilder. Die Details stehen ohnehin unter „Im Detail“.
+    galerie = "".join(f'<div data-reveal>{bild(n, a[n] if n in a else a["verpackung"].format("Juniper"), "(max-width: 720px) 100vw, 560px")}</div>'
+                      for n in ["groesse", "gebrauch-tasse", "gebrauch-giessen", "verpackung-0307"])
     wahl = "".join(
         f'<label class="wahl"><input type="radio" name="farbe" value="{f}" data-kaufen="{k[f]}">'
         f'<span>{bild("farbe-" + f, "", "88px", klasse="wahl-bild")}<span class="wahl-name">{e(t["farben"][f][0])}</span>'
@@ -424,12 +428,25 @@ def recht_aus_altdatei(datei):
     return roh[a:b]
 
 
+# Inhaltliche Änderung am Datenschutz (Fable 07.10., im PR gesondert ausgewiesen): Die neue Seite speichert keine
+# Sprachwahl mehr im Browser (eigene URLs je Sprache), der Absatz zu mjoar_lang entfällt. Sonst unverändert.
+DATENSCHUTZ_ENTFAELLT = re.compile(r"\s*<p>\s*Für die Sprachwahl zwischen Deutsch und Englisch speichert diese Website den Eintrag "
+                                   r"<em>mjoar_lang</em>.*?</p>", re.S)
+EN_HINWEIS = '<p class="klein recht-hinweis">Legal text in German.</p>'
+
+
 def rechtsseite(lang, datei):
     inhalt = recht_aus_altdatei(datei)
+    if datei == "datenschutz.html":
+        inhalt, n = DATENSCHUTZ_ENTFAELLT.subn("", inhalt)
+        if n != 1:
+            raise SystemExit("Datenschutz: Absatz mjoar_lang nicht genau einmal gefunden")
+    hinweis = ""
     if lang == "en":
-        # Rechtstext gibt es nur auf Deutsch; unverändert, als deutscher Abschnitt ausgezeichnet.
+        # Rechtstext gibt es nur auf Deutsch; unverändert, als deutscher Abschnitt ausgezeichnet, mit Hinweis oben.
         inhalt = inhalt.replace('<article class="legal-card">', '<article class="legal-card" lang="de">', 1)
-    return f'<section class="block spalte erste recht-text">\n{inhalt}\n</section>'
+        hinweis = EN_HINWEIS + "\n"
+    return f'<section class="block spalte erste recht-text">\n{hinweis}{inhalt}\n</section>'
 
 
 # Alte Anker der One-Page-Seite. #farben gibt es auf der neuen Startseite wieder, dort genügt der Anker selbst.
