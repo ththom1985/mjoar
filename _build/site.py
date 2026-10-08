@@ -328,22 +328,19 @@ def latte(lang):
                  f'<ol class="schritte">{liste(s[:3])}</ol>', klasse="la-paar")
     zweite = paar(1, bild("gebrauch-giessen", a["gebrauch-giessen"], "(max-width: 860px) 100vw, 520px", klasse="b45"),
                   f'<ol class="schritte" start="4">{liste(s[3:])}</ol>', klasse="la-paar")
-    motive = "".join(f'<div data-reveal style="--i:{i}">{bild(f"latte-{m}", a["latte"][m], "(max-width: 860px) 50vw, 300px", klasse="b11")}</div>'
-                     for i, m in enumerate(["heart", "rosetta", "tulip", "swan"]))
+    # Latte-Art-Motive vorerst ausgeblendet, bis eigene Fotos da sind (Thorsten 08.10.).
     return f"""<section class="abschnitt innen" id="latte-art">
   {kopfzeile(t['dach'], t['h'], t['intro'])}
   {erste}
   {zweite}
-  <div class="motive">{motive}</div>
   <div class="raster la-unten">
     <div class="la-fehler" data-reveal>
       <h3>{e(t['fehler_h'])}</h3>
       <ul class="liste">{liste(t['fehler'])}</ul>
-      <p class="la-schluss">{e(t['schluss'])}</p>
     </div>
     <div class="la-passt" data-reveal>
       <h3>{e(t['passt_h'])}</h3>
-      <ul class="liste">{liste(t['passt'])}</ul>
+      <p>{e(t['passt_p'])}</p>
     </div>
   </div>
 </section>"""

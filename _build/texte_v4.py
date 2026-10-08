@@ -90,13 +90,8 @@ T = {
                 ("Die Milch geht in der Tasse unter und es entsteht kein Muster:", "Dann ist der Ausguss beim Eingießen noch zu weit von der Oberfläche entfernt. Geh mit der Kanne näher an die Tasse heran."),
                 ("Das Muster zerläuft:", "Die Milch war zu flüssig. Lass beim nächsten Mal etwas länger Luft hinein."),
             ],
-            "schluss": "Am Anfang gelingt nicht jedes Muster, das geht allen so. Mit etwas Übung wird es schnell besser.",
-            "passt_h": "Was in die LUN passt",
-            "passt": [
-                ("Flat White:", "doppelter Espresso mit wenig, sehr feiner Milch. Eine Füllung reicht für zwei."),
-                ("Cappuccino:", "etwas mehr Schaum als beim Flat White. Eine Füllung reicht für einen."),
-                ("Matcha Latte:", "Matcha mit wenig heißem Wasser glatt rühren und die aufgeschäumte Milch dazugießen. Mit Kakao geht es genauso."),
-            ],
+            "passt_h": "Auch für Matcha und Kakao",
+            "passt_p": "Für einen Matcha Latte rührst du Matcha mit wenig heißem Wasser glatt und gießt die aufgeschäumte Milch dazu. Mit Kakao geht es genauso.",
         },
         # 7 Über uns
         "ueber": {
@@ -205,13 +200,8 @@ T = {
                 ("The milk sinks in the cup and no pattern appears:", "The spout is still too far from the surface while you pour. Bring the jug closer to the cup."),
                 ("The pattern spreads out:", "The milk was too thin. Let in a little more air next time."),
             ],
-            "schluss": "Not every pattern works at the start, that's the same for everyone. With a bit of practice it gets better quickly.",
-            "passt_h": "What fits in the LUN",
-            "passt": [
-                ("Flat white:", "double espresso with a little very fine milk. One fill is enough for two."),
-                ("Cappuccino:", "a bit more foam than a flat white. One fill is enough for one."),
-                ("Matcha latte:", "whisk matcha smooth with a little hot water and pour the steamed milk in. Works the same way with cocoa."),
-            ],
+            "passt_h": "Matcha and cocoa too",
+            "passt_p": "For a matcha latte, whisk matcha smooth with a little hot water and pour the steamed milk in. Works the same way with cocoa.",
         },
         "ueber": {
             "id": "about",
