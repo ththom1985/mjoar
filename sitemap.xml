@@ -3,10 +3,4 @@
   <url><loc>https://mjoar.com/</loc></url>
   <url><loc>https://mjoar.com/de/</loc><xhtml:link rel="alternate" hreflang="de" href="https://mjoar.com/de/"/><xhtml:link rel="alternate" hreflang="en" href="https://mjoar.com/en/"/></url>
   <url><loc>https://mjoar.com/en/</loc><xhtml:link rel="alternate" hreflang="de" href="https://mjoar.com/de/"/><xhtml:link rel="alternate" hreflang="en" href="https://mjoar.com/en/"/></url>
-  <url><loc>https://mjoar.com/de/lun-350/</loc><xhtml:link rel="alternate" hreflang="de" href="https://mjoar.com/de/lun-350/"/><xhtml:link rel="alternate" hreflang="en" href="https://mjoar.com/en/lun-350/"/></url>
-  <url><loc>https://mjoar.com/en/lun-350/</loc><xhtml:link rel="alternate" hreflang="de" href="https://mjoar.com/de/lun-350/"/><xhtml:link rel="alternate" hreflang="en" href="https://mjoar.com/en/lun-350/"/></url>
-  <url><loc>https://mjoar.com/de/milch-und-latte-art/</loc><xhtml:link rel="alternate" hreflang="de" href="https://mjoar.com/de/milch-und-latte-art/"/><xhtml:link rel="alternate" hreflang="en" href="https://mjoar.com/en/milk-and-latte-art/"/></url>
-  <url><loc>https://mjoar.com/en/milk-and-latte-art/</loc><xhtml:link rel="alternate" hreflang="de" href="https://mjoar.com/de/milch-und-latte-art/"/><xhtml:link rel="alternate" hreflang="en" href="https://mjoar.com/en/milk-and-latte-art/"/></url>
-  <url><loc>https://mjoar.com/de/ueber-uns/</loc><xhtml:link rel="alternate" hreflang="de" href="https://mjoar.com/de/ueber-uns/"/><xhtml:link rel="alternate" hreflang="en" href="https://mjoar.com/en/about/"/></url>
-  <url><loc>https://mjoar.com/en/about/</loc><xhtml:link rel="alternate" hreflang="de" href="https://mjoar.com/de/ueber-uns/"/><xhtml:link rel="alternate" hreflang="en" href="https://mjoar.com/en/about/"/></url>
 </urlset>
