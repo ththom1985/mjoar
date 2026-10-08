@@ -11,8 +11,8 @@ T = {
         # 1 Hero
         "hero": {
             "dach": "LUN 350 · Milchkännchen",
-            "h": "Ein Milchkännchen, das stehen bleiben darf",
-            "satz": "Aus einem Millimeter Edelstahl, mit einem Ausguss für Latte Art und in vier matten Farben.",
+            "h": "Ein Milchkännchen, das du gern stehen lässt",
+            "satz": "Die LUN ist unser erstes Produkt: ein Milchkännchen für deinen Kaffee zu Hause.",
             "link": "Zur LUN",
         },
         # 2 Einstieg
@@ -132,8 +132,8 @@ T = {
         "kaufen": "Buy",
         "hero": {
             "dach": "LUN 350 · Milk jug",
-            "h": "A milk jug you'll want to leave out",
-            "satz": "Made from one millimetre of stainless steel, with a spout for latte art and in four matt colours.",
+            "h": "A milk jug you're happy to leave out",
+            "satz": "The LUN is our first product: a milk jug for your coffee at home.",
             "link": "See the LUN",
         },
         "einstieg": {
