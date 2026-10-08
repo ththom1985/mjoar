@@ -110,6 +110,7 @@ T = {
         # Fuß
         "fuss": {
             "links": ("MJØÅR", "Ein kleines Unternehmen aus München und Wien."),
+            "kontakt": "Kontakt:",
             "nl": "Neues von MJØÅR per Mail. Wir schreiben nur, wenn es etwas Neues gibt, zum Beispiel ein neues Produkt oder eine Anleitung.",
             "nl_feld": "E-Mail",
             "nl_knopf": "Eintragen",
@@ -218,6 +219,7 @@ T = {
         },
         "fuss": {
             "links": ("MJØÅR", "A small company from Munich and Vienna."),
+            "kontakt": "Contact:",
             "nl": "News from MJØÅR by email. We only write when there's something new, like a new product or a guide.",
             "nl_feld": "Email",
             "nl_knopf": "Sign up",
