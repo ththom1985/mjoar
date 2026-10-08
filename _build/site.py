@@ -350,7 +350,7 @@ def ueber(lang):
     t, a = T[lang]["ueber"], ALT[lang]
     absaetze = "".join(f"<p>{e(p)}</p>" for p in t["text"])
     text = (f"<h2>{e(t['h'])}</h2>{absaetze}<p class=\"unterschrift\">{e(t['unterschrift'])}</p>"
-            f"<p>{fett(t['kontakt'])}</p><p class=\"ausblick\">{e(t['ausblick'])}</p>")
+            f"<p>{fett(t['kontakt'])}</p>" + (f"<p class=\"ausblick\">{e(t['ausblick'])}</p>" if t.get("ausblick") else ""))
     return f"""<section class="abschnitt innen" id="{t['id']}">
   {paar(0, bild('wer-m', a['wer'], '(max-width: 860px) 100vw, 520px', klasse='b45'), text, klasse='ueber')}
 </section>"""

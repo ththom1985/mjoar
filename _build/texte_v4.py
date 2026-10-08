@@ -101,11 +101,11 @@ T = {
                 "Wir sind Thorsten und Jonah. Vater und Sohn, der eine in München, der andere in Wien. Thorsten arbeitet in der Tech-Branche und ist leidenschaftlicher Home-Barista. Jonah studiert und steht seit über drei Jahren hinter der Theke eines Wiener Cafés.",
                 "Während Thorsten zu Hause an seinem Cappuccino feilt und immer noch ein bisschen mehr aus seinem Setup herausholen möchte, erlebt Jonah Kaffee aus einer ganz anderen Perspektive. Hunderte Kaffees gehen täglich über die Café-Theke. Unterschiedliche Erfahrungen, die sich ziemlich gut ergänzen und unseren gemeinsamen Blick auf Kaffee prägen.",
                 "Auch wenn unser Alltag nicht immer nur aus Kaffee besteht, lässt uns das Thema in unserer Freizeit selten los. Irgendwann entstand daraus die Idee, gemeinsam etwas Eigenes auf die Beine zu stellen. Statt nur darüber zu sprechen, wie wir uns gutes Coffee-Equipment vorstellen, wollten wir unsere Ideen selbst umsetzen und unseren eigenen Beitrag zur Coffee-Szene leisten.",
-                "So wurde aus unserer gemeinsamen Leidenschaft MJØÅR, und damit die Möglichkeit, unsere Begeisterung für guten Kaffee und alles, was dazugehört, mit anderen zu teilen. Vielleicht ja bald auch mit dir.",
+                "So wurde aus unserer gemeinsamen Leidenschaft MJØÅR. Nicht einfach nur eine Marke, sondern unsere Möglichkeit, die Begeisterung für guten Kaffee und alles, was dazugehört, mit anderen zu teilen. Vielleicht ja bald auch mit dir.",
             ],
             "unterschrift": "Thorsten & Jonah, Gründer von MJØÅR",
             "kontakt": "Wenn du Fragen zu deiner LUN hast, schreib uns an info@mjoar.com. Die Antwort kommt von uns selbst.",
-            "ausblick": "Als Nächstes arbeiten wir an Gläsern und Tassen.",
+            "ausblick": None,  # gestrichen (Thorsten 08.10.)
         },
         # Fuß
         "fuss": {
@@ -210,11 +210,11 @@ T = {
                 "We're Thorsten and Jonah. Father and son, one in Munich, the other in Vienna. Thorsten works in tech and is a passionate home barista. Jonah is a student and has been working behind the counter of a Viennese café for more than three years.",
                 "While Thorsten fine-tunes his cappuccino at home and always wants to get a bit more out of his setup, Jonah sees coffee from a completely different angle, with hundreds of coffees going over the café counter every day. Two different experiences that complement each other pretty well and shape how we both look at coffee.",
                 "Even though our days aren't only about coffee, the topic rarely leaves us alone in our free time. At some point that turned into the idea of building something of our own. Instead of just talking about what good coffee equipment should be like, we wanted to make our ideas real and add something of our own to the coffee scene.",
-                "That's how our shared passion became MJØÅR, and with it a way to share our enthusiasm for good coffee and everything that goes with it. Maybe soon with you too.",
+                "That's how our shared passion became MJØÅR. Not just a brand, but our way of sharing our enthusiasm for good coffee and everything that goes with it with others. Maybe soon with you too.",
             ],
             "unterschrift": "Thorsten & Jonah, founders of MJØÅR",
             "kontakt": "If you have questions about your LUN, write to us at info@mjoar.com. You'll get an answer from us.",
-            "ausblick": "Next, we're working on glasses and cups.",
+            "ausblick": None,  # gestrichen (Thorsten 08.10.)
         },
         "fuss": {
             "links": ("MJØÅR", "A small company from Munich and Vienna."),
