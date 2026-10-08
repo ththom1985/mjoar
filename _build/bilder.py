@@ -91,15 +91,16 @@ export("hero-m", crop_cover(h, 4, 5, cx=0.6, cy=0.5))
 for farbe in ["Juniper", "Linen", "Onyx", "Steel"]:
     export(f"farbe-{farbe.lower()}", freisteller(farbe))
 
-# Details: Mittelpunkte und Zoom wie A+ 03a–d, Format 4:5 (Copy v3 B3: „Detail-Close-up 4:5“)
-# 0215 ist auf Weiß fotografiert: per Multiplizieren auf Creme, keine weißen Kästen.
-d = on_creme(weiss_anheben(quelle("MJOAR0215")))
-export("detail-ausguss", crop_cover(d, 4, 5, cx=0.24, cy=0.33, zoom=2.4))
-export("detail-wand", crop_cover(quelle("MJOAR0307"), 4, 5, cx=0.347, cy=0.523, zoom=4.6))
-export("detail-skala", crop_cover(d, 4, 5, cx=0.72, cy=0.27, zoom=2.0))
-# Griffansatz (Fable 07.10.): eng auf den oberen Übergang Griff → Korpus, der Übergang liegt mittig (ca. x 650, y 440 im
-# 2000-px-Freisteller); auf Weiß, Multiplizieren per CSS wie die Farb-Freisteller.
-export("detail-griff", weiss_anheben(Image.open(FREI.format("Linen")).convert("RGB")).crop((410, 140, 410 + 480, 140 + 600)))
+# Details (Fable 08.10., Nachbesserung PR #4): kein eingerechnetes Creme mehr. Nahaufnahmen auf Weiß werden auf Weiß
+# geliefert, die Seite multipliziert sie per CSS (mix-blend-mode) randlos ins Creme, wie die Farb-Freisteller.
+# Ausguss und Skala: 0215 ist das einzige Nahfoto von Ausguss und Skala im Shooting, das Original hat nur 1284 px;
+# die Ausschnitte bleiben deshalb unter 1600 px (kein Hochrechnen). Wand und Griff aus Originalen mit 1600 x 2000.
+d = weiss_anheben(quelle("MJOAR0215"))
+export("detail-ausguss", d.crop((0, 100, 680, 950)))
+export("detail-skala", d.crop((500, 90, 1284, 1070)))
+export("detail-wand", crop_cover(quelle("MJOAR0307"), 4, 5, cx=0.30, cy=0.523, zoom=3779 / 2000))
+# Griff 0182 (Juniper, Freisteller auf Weiß): ganzer Griff mit beiden Ansätzen am Korpus, 1600 x 2000.
+export("detail-griff", weiss_anheben(quelle("MJOAR0182")).crop((150, 380, 1750, 2380)))
 
 # Größe 0021 1 (Hand), 4:5 wie A+ 06
 export("groesse", crop_cover(quelle("Mjoar_0021 1"), 4, 5, cx=0.42, cy=0.45))
@@ -117,6 +118,9 @@ for nr in ["0307", "0310", "0321", "0332"]:
 f = quelle("MJOAR0284")
 export("familie-d", crop_cover(f, 3, 2, cx=0.55, cy=0.58))
 export("familie-m", crop_cover(f, 4, 5, cx=0.5, cy=0.55))
+# Hero Desktop (Fable 08.10., Nachbesserung PR #4): ganzes Original 1:1, keine Kanne angeschnitten. Ein 3:2- oder
+# 4:5-Ausschnitt schneidet unten bzw. seitlich an (die Kannen reichen von x 0,12 bis 0,91 und y 0,12 bis 0,93).
+export("familie-q", f)
 
 # „Wer dahinter steht“ (Thorsten 07.10.): Hero ist jetzt 0284, hier deshalb 0239 (Steel auf Karton mit Beutel), keine Dopplung
 w = quelle("MJOAR0239")

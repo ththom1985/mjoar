@@ -6,8 +6,8 @@
    - Raster: 12 Spalten, Inhalt höchstens 1280 px, Spaltenabstand --spalt. Textblöcke beginnen auf Spalte 1 oder 7.
    - Zwei Lesebreiten: --lese (36em) für Fließtext, --weit (60em) für Tabelle und Fragen.
    - Ausrichtung: alles linksbündig (Bedienelemente wie Knöpfe und Farbkacheln zentrieren nur ihren eigenen Inhalt).
-   - Bildformate: 4:5 für alle Bild/Text-Paare (und den Hero mobil), 3:2 für breite Bilder (Hero, ganz, ohne Anschnitt),
-     1:1 für Farbkacheln und Latte-Art-Motive.
+   - Bildformate: 4:5 für alle Bild/Text-Paare (und den Hero mobil), 3:2 für breite Bilder (Hero 721–860 px),
+     1:1 für Farbkacheln, Latte-Art-Motive und den Hero ab 861 px (ganzes Original, keine Kanne angeschnitten).
    - Bild/Text-Paare: erstes Paar je Abschnitt Bild rechts, dann abwechselnd. Bild 5 Spalten, Text 6 Spalten.
    - Formen: Knöpfe und Eingabefeld als Pille, Kacheln, Menü und Fotos mit 12 px Radius. */
 @import url("/assets/fonts/fonts.css");
@@ -156,12 +156,12 @@ h3 {
 .k-text { grid-column: 7 / span 6; max-width: var(--lese); margin: 0; }
 
 /* Hero: Bild in voller Breite 3:2, Zeile darunter (kein Text auf dem Bild) */
-.hero-bild { padding-top: clamp(16px, 2vw, 32px); }
-.hero-bild img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); }
-.hero-text { padding-top: clamp(32px, 4vw, 64px); align-items: end; }
-.hero-zeile { grid-column: 1 / span 6; }
-.hero-zeile h1 { margin: 0; }
-.hero-neben { grid-column: 7 / span 6; max-width: var(--lese); }
+.hero { padding-top: clamp(16px, 2.4vw, 40px); align-items: center; }
+.hero-bild { grid-column: 7 / span 6; grid-row: 1; }
+.hero-bild img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); }
+.hero-text { grid-column: 1 / span 5; grid-row: 1; }
+.hero-zeile h1 { font-size: clamp(40px, 4.4vw, 64px); margin: 0; }
+.hero-neben { margin-top: 28px; max-width: var(--lese); }
 .hero-neben p:last-child { margin-bottom: 0; }
 
 /* Einstieg: erster Absatz groß auf Spalte 1, der Rest auf Spalte 7 */
@@ -193,15 +193,15 @@ h3 {
 .wahl input:checked + span { border-color: var(--schiefer); }
 .wahl input:focus-visible + span { outline: 2px solid var(--knopf); outline-offset: 2px; }
 
-/* Freisteller (auf Weiß geliefert) gehen per Multiplizieren randlos in das Creme der Seite auf. Die Behälter tragen
+/* Freisteller und Nahaufnahmen auf Weiß gehen per Multiplizieren randlos in das Creme der Seite auf. Die Behälter tragen
    selbst Creme, damit das Multiplizieren auch in eigenen Ebenen (Reveal, Transform) gegen Creme rechnet. */
-img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
+img[src*="/farbe-"], img[src*="/detail-griff-"], img[src*="/detail-ausguss-"], img[src*="/detail-skala-"] { mix-blend-mode: multiply; }
 .galerie-haupt, .wahl > span, .paar-bild { background: var(--creme); }
 
 /* Bild/Text-Paare 4:5 (Details, Milch und Latte Art, Über uns) */
 .paar { align-items: center; margin-top: var(--abstand-innen); }
 .kopfzeile + .paar { margin-top: 0; }
-.paar-bild, .paar-text { grid-row: 1; }
+.paar-bild, .paar-text { grid-row: 1; align-self: center; }
 .bild-rechts .paar-text { grid-column: 1 / span 6; }
 .bild-rechts .paar-bild { grid-column: 8 / span 5; }
 .bild-links .paar-bild { grid-column: 1 / span 5; }
@@ -210,7 +210,6 @@ img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
 .paar-text > :last-child { margin-bottom: 0; }
 .b45 { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
 .b11 { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); }
-img.b45[src*="/detail-griff-"] { border-radius: 0; }
 
 /* Gut zu wissen: drei Absätze auf Spalte 1, Daten auf Spalte 7, Fragen in zwei Spalten */
 .gzw { align-items: start; }
@@ -296,8 +295,11 @@ img.b45[src*="/detail-griff-"] { border-radius: 0; }
   .gross { font-size: 17px; }
   .raster { display: block; }
   .kopf-innen { padding-top: 10px; padding-bottom: 10px; }
-  .hero-bild { padding: 0; }
-  .hero-bild img { border-radius: 0; }
+  .hero { padding-top: 0; }
+  .hero-bild { margin: 0 calc(-1 * var(--rand)); }
+  .hero-bild img { aspect-ratio: 3 / 2; border-radius: 0; }
+  .hero-text { padding-top: 32px; }
+  .hero-zeile h1 { font-size: clamp(44px, 5.4vw, 80px); }
   .hero-neben, .k-text { margin-top: 20px; }
   .e-lead { font-size: 25px; margin-bottom: 24px; }
   .abgesetzt { font-size: 25px; }
@@ -321,6 +323,15 @@ img.b45[src*="/detail-griff-"] { border-radius: 0; }
 @media (max-width: 720px) {
   .hero-bild img { aspect-ratio: 4 / 5; }
 }
+/* Kopf auf schmalen Telefonen: alles muss in die Breite passen (kein waagerechter Überlauf) */
+@media (max-width: 480px) {
+  .kopf-innen { gap: 8px; }
+  .kopf-rechts { gap: 8px; }
+  .sprachen { gap: 4px; }
+  .sprachen a { padding: 8px 0; }
+  .knopf-klein { padding: 8px 12px; letter-spacing: .06em; }
+}
 @media (max-width: 380px) {
   .sprachen span { display: none; }
+  .logo-svg { width: 76px; }
 }

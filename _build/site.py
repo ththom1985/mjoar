@@ -219,12 +219,25 @@ def paar(i, bild_html, text_html, klasse=""):
             f'<div class="paar-bild">{bild_html}</div><div class="paar-text">{text_html}</div></div>')
 
 
+def hero_bild(name_d, name_m, alt):
+    """Hero: bis 720 px eigener 4:5-Ausschnitt, bis 860 px 3:2 (beides wie bisher), darüber das ganze Original 1:1."""
+    if HERO_BILD != "0284":
+        return bild_mobil(name_d, name_m, alt, "100vw", lazy=False)
+    hm = round(BILDER[name_m]["h"] * 960 / BILDER[name_m]["w"])
+    hd = round(BILDER[name_d]["h"] * 960 / BILDER[name_d]["w"])
+    return (f'<picture><source media="(max-width: 720px)" srcset="{srcset(name_m)}" sizes="100vw" width="960" height="{hm}">'
+            f'<source media="(max-width: 860px)" srcset="{srcset(name_d)}" sizes="100vw" width="960" height="{hd}">'
+            f'{bild("familie-q", alt, "640px", lazy=False)}</picture>')
+
+
 def hero(lang):
     t, a = T[lang]["hero"], ALT[lang]
     hd, hm, halt = HERO_VARIANTEN[HERO_BILD]
-    return f"""<section class="hero">
-  <div class="innen hero-bild">{bild_mobil(hd, hm, a[halt], '100vw', lazy=False)}</div>
-  <div class="innen raster hero-text">
+    # Desktop: Text links (Spalten 1–5), Familienbild rechts (7–12, ganzes Original 1:1), beides im ersten Schirm.
+    # Mobil wie bisher: Bild randlos (4:5) über dem Text.
+    return f"""<section class="hero innen raster">
+  <div class="hero-bild">{hero_bild(hd, hm, a[halt])}</div>
+  <div class="hero-text">
     <div class="hero-zeile">
       <p class="dach">{e(t['dach'])}</p>
       <h1>{e(t['h'])}</h1>
