@@ -30,8 +30,8 @@ T = {
         "produkt": {
             "dach": "LUN · Milchkännchen · 350 ml",
             "titel": "LUN 350",
-            "absatz": "Ein Milchkännchen aus einem Millimeter Edelstahl, mit schmalem Ausguss für Latte Art und einer Skala innen.",
-            "punkte": ["Ausguss für Herz, Tulpe und Rosetta", "Skala innen in ml und oz, lasergraviert", "Spülmaschinengeeignet"],
+            "absatz": "Unser Milchkännchen aus einem Millimeter Edelstahl, für Milchschaum und Latte Art zu Hause.",
+            "punkte": ["Ausguss für Herz, Tulpe und Rosetta", "Skala innen in ml und oz", "Spülmaschinengeeignet"],
             "farbe": "Farbe",
             "farben": {"juniper": "Juniper", "linen": "Linen", "onyx": "Onyx", "steel": "Steel"},
             "knopf": "Kaufen",
@@ -149,8 +149,8 @@ T = {
         "produkt": {
             "dach": "LUN · Milk jug · 350 ml",
             "titel": "LUN 350",
-            "absatz": "A milk jug made from one millimetre of stainless steel, with a narrow spout for latte art and a scale inside.",
-            "punkte": ["Spout for hearts, tulips and rosettas", "Scale inside in ml and oz, laser engraved", "Dishwasher safe"],
+            "absatz": "Our milk jug made from one millimetre of stainless steel, for milk foam and latte art at home.",
+            "punkte": ["Spout for hearts, tulips and rosettas", "Scale inside in ml and oz", "Dishwasher safe"],
             "farbe": "Colour",
             "farben": {"juniper": "Juniper", "linen": "Linen", "onyx": "Onyx", "steel": "Steel"},
             "knopf": "Buy",
