@@ -43,11 +43,11 @@ T = {
             "h": "Für jeden Tag, für viele Jahre",
             "intro": "Damit sie dich möglichst lange begleitet, haben wir bei der LUN auch auf die Dinge geachtet, die man nicht auf den ersten Blick sieht.",
             "punkte": [
-                ("Der Ausguss", "Beim Ausguss haben wir uns für eine ausgewogene Form entschieden, nicht zu schmal und nicht zu breit. So hast du Spielraum für verschiedene Muster, vom Herz bis zur Rosetta. Vorne ist er rund gezogen, dadurch läuft die Milch gleichmäßig und reißt am Ende sauber ab.", "detail-ausguss"),
+                ("Der Ausguss", "Wir haben uns bewusst für eine ausgewogene Ausgussform entschieden, nicht zu schmal und nicht zu breit. Sie lässt dir möglichst viel Spielraum für unterschiedliche Latte-Art-Muster.", "detail-ausguss"),
                 ("Die Wand", "Die LUN ist aus einem Millimeter Edelstahl 304 gefertigt, die ganze Kanne einschließlich Griff. Viele Kannen in dieser Größe sind dünner. Das zusätzliche Gewicht liegt gut in der Hand und macht das Gießen ruhiger.", "detail-wand"),
                 ("Die Wärme", "Edelstahl leitet Wärme gut. Beim Aufschäumen kannst du deshalb am Korpus fühlen, wie warm die Milch gerade ist, und mit etwas Übung bekommst du dafür schnell ein Gefühl. Wird er zu heiß zum Anfassen, ist die Milch fertig. Der Griff bleibt dabei angenehm.", "gebrauch-aufschaeumen"),
                 ("Die Skala", "Innen ist eine Skala in Milliliter und Unzen lasergraviert. So kannst du jeden Morgen die gleiche Menge Milch nehmen, ohne zu schätzen. Weil sie im Stahl sitzt, hält sie auch in der Spülmaschine.", "detail-skala"),
-                ("Der Griff", "Der Griff ist nahtlos angesetzt, ohne sichtbare Schweißpunkte. Das sieht ruhiger aus, lässt sich leichter sauber halten, und die Kanne lässt sich beim Eingießen gut führen.", "detail-griff"),
+                ("Der Griff", "Der Griff ist nahtlos angesetzt, ohne sichtbare Schweißpunkte, und so ausbalanciert, dass sich die Kanne beim Eingießen gut führen lässt.", "detail-griff"),
             ],
         },
         # 5 Gut zu wissen
@@ -161,11 +161,11 @@ T = {
             "h": "For every day, for many years",
             "intro": "So that it stays with you for a long time, we also paid attention to the things you don't see at first glance.",
             "punkte": [
-                ("The spout", "We chose a balanced spout, neither too narrow nor too wide. That gives you room for different patterns, from a heart to a rosetta. The tip is rounded, so the milk flows evenly and stops cleanly at the end.", "detail-ausguss"),
+                ("The spout", "We deliberately chose a balanced spout, neither too narrow nor too wide. It leaves you as much room as possible for different latte art patterns.", "detail-ausguss"),
                 ("The wall", "The LUN is made from one millimetre of 304 stainless steel, the whole jug including the handle. Many jugs this size are thinner. The extra weight sits well in the hand and makes pouring steadier.", "detail-wand"),
                 ("The warmth", "Stainless steel conducts heat well, so while you steam you can feel on the body how warm the milk is, and with a little practice you quickly get a feel for it. When it gets too hot to touch, the milk is ready. The handle stays comfortable.", "gebrauch-aufschaeumen"),
                 ("The scale", "A scale in millilitres and ounces is laser engraved inside. That way you can use the same amount of milk every morning without guessing. Because it's in the steel, it lasts in the dishwasher too.", "detail-skala"),
-                ("The handle", "The handle is joined without a seam or visible weld points. It looks calmer, is easier to keep clean, and helps you guide the jug as you pour.", "detail-griff"),
+                ("The handle", "The handle is joined without a seam or visible weld points, and balanced so the jug is easy to guide as you pour.", "detail-griff"),
             ],
         },
         "gut": {

@@ -99,8 +99,9 @@ d = weiss_anheben(quelle("MJOAR0215"))
 export("detail-ausguss", d.crop((0, 100, 680, 950)))
 export("detail-skala", d.crop((500, 90, 1284, 1070)))
 export("detail-wand", crop_cover(quelle("MJOAR0307"), 4, 5, cx=0.30, cy=0.523, zoom=3779 / 2000))
-# Griff 0182 (Juniper, Freisteller auf Weiß): ganzer Griff mit beiden Ansätzen am Korpus, 1600 x 2000.
-export("detail-griff", weiss_anheben(quelle("MJOAR0182")).crop((150, 380, 1750, 2380)))
+# Griff 0182 (Juniper, Freisteller auf Weiß): ganzer Griff mit beiden Ansätzen am Korpus, 1060 x 1325 (4:5),
+# rechts vor dem Schriftzug abgeschnitten, damit er nicht angeschnitten erscheint (Thorsten 08.10.).
+export("detail-griff", weiss_anheben(quelle("MJOAR0182")).crop((230, 760, 1290, 2085)))
 
 # Größe 0021 1 (Hand), 4:5 wie A+ 06
 export("groesse", crop_cover(quelle("Mjoar_0021 1"), 4, 5, cx=0.42, cy=0.45))
