@@ -264,7 +264,9 @@ img[src*="/farbe-"], img[src*="/detail-griff-"], img[src*="/detail-ausguss-"], i
 /* Fuß: Marke auf Spalte 1, Newsletter auf Spalte 7, Recht darunter */
 .fuss { margin-top: var(--abstand); background: var(--hell); }
 .fuss-innen { padding-top: 72px; padding-bottom: 44px; align-items: start; }
-.fuss-marke { grid-column: 1 / span 5; font-family: var(--serif); font-size: clamp(26px, 2.3vw, 32px); line-height: 1.25; margin: 0; }
+.fuss-links { grid-column: 1 / span 5; }
+.fuss-kontakt { margin: 18px 0 0; }
+.fuss-marke { font-family: var(--serif); font-size: clamp(26px, 2.3vw, 32px); line-height: 1.25; margin: 0; }
 .fuss-marke strong { font-weight: 600; }
 .newsletter { grid-column: 7 / span 6; max-width: var(--lese); }
 .recht { grid-column: 1 / -1; margin: 40px 0 0; padding-top: 22px; border-top: 1px solid var(--linie); font-size: 14px; }

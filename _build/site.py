@@ -158,7 +158,10 @@ def fuss(lang):
     marke, satz = f["links"]
     return f"""<footer class="fuss">
   <div class="innen raster fuss-innen">
-    <p class="fuss-marke"><strong>{e(marke)}</strong> · {e(satz)}</p>
+    <div class="fuss-links">
+      <p class="fuss-marke"><strong>{e(marke)}</strong> · {e(satz)}</p>
+      <p class="fuss-kontakt">{e(f['kontakt'])} <a href="mailto:info@mjoar.com">info@mjoar.com</a></p>
+    </div>
     {newsletter(lang)}
     <p class="recht"><a href="{PFADE['impressum'][lang]}">{e(u[0])}</a> · <a href="{PFADE['datenschutz'][lang]}">{e(u[1])}</a> · <a href="{PDF}">{e(u[2])}</a></p>
   </div>
