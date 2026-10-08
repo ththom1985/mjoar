@@ -1,6 +1,15 @@
-/* mjoar.com v2 · editorial nach MJOAR_WEB_GUIDANCE.md Teil 2 bis 4 und 7.
-   Creme #F4EFE6, Text #3F4842, große Überschriften #6E7A7B nur ab 24 px, Knopf #506864 als einzige Knopffarbe.
-   Cormorant Garamond und Inter selbst gehostet (WOFF2). Kein Text auf Bildern, kein Karussell, keine Pop-ups. */
+/* mjoar.com v4 · One-Pager (Copy v4, Jonah 08.10.2026). Farben und Schriften unverändert:
+   Creme #F4EFE6, Text #3F4842, große Überschriften #6E7A7B nur ab 24 px, Knopf #506864 als einzige Knopffarbe,
+   Cormorant Garamond und Inter selbst gehostet (WOFF2). Kein Text auf Bildern, kein Karussell, keine Pop-ups.
+
+   Ein System statt Einzelwerte:
+   - Raster: 12 Spalten, Inhalt höchstens 1280 px, Spaltenabstand --spalt. Textblöcke beginnen auf Spalte 1 oder 7.
+   - Zwei Lesebreiten: --lese (36em) für Fließtext, --weit (60em) für Tabelle und Fragen.
+   - Ausrichtung: alles linksbündig (Bedienelemente wie Knöpfe und Farbkacheln zentrieren nur ihren eigenen Inhalt).
+   - Bildformate: 4:5 für alle Bild/Text-Paare (und den Hero mobil), 3:2 für breite Bilder (Hero 721–860 px),
+     1:1 für Farbkacheln, Latte-Art-Motive und den Hero ab 861 px (ganzes Original, keine Kanne angeschnitten).
+   - Bild/Text-Paare: erstes Paar je Abschnitt Bild rechts, dann abwechselnd. Bild 5 Spalten, Text 6 Spalten.
+   - Formen: Knöpfe und Eingabefeld als Pille, Kacheln, Menü und Fotos mit 12 px Radius. */
 @import url("/assets/fonts/fonts.css");
 
 @font-face {
@@ -29,13 +38,23 @@
   --hell: #E9EDEC;
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --rand: clamp(16px, 4.5vw, 64px);
-  --abstand: clamp(72px, 8vw, 120px);
-  --breite: 1440px;
+  --breite: 1280px;
+  --rand: clamp(16px, 4vw, 56px);
+  --spalt: clamp(16px, 2.2vw, 32px);
+  --abstand: clamp(88px, 10vw, 152px);
+  --abstand-innen: clamp(56px, 6.5vw, 104px);
+  --lese: 36em;
+  --weit: 60em;
+  --radius: 12px;
+  --kopf-h: 72px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: 96px; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+[id] { scroll-margin-top: calc(var(--kopf-h) + 24px); }
 body {
   margin: 0;
   background: var(--creme);
@@ -50,27 +69,26 @@ a { color: var(--schiefer); text-decoration-thickness: 1px; text-underline-offse
 a:hover { color: var(--knopf); }
 :focus-visible { outline: 2px solid var(--knopf); outline-offset: 3px; }
 strong { font-weight: 600; }
-figure { margin: 0; }
+p { margin: 0 0 16px; }
 
 h1, h2 {
   font-family: var(--serif);
   font-weight: 400;
   color: var(--siegel);
-  line-height: 1.04;
+  line-height: 1.05;
   margin: 0 0 24px;
   letter-spacing: -0.01em;
 }
-h1 { font-size: clamp(44px, 6.6vw, 104px); }
-h2 { font-size: clamp(36px, 4.4vw, 66px); }
+h1 { font-size: clamp(44px, 5.4vw, 80px); }
+h2 { font-size: clamp(36px, 4.2vw, 60px); }
 h3 {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: 28px;
+  font-size: clamp(26px, 2.2vw, 30px);
   line-height: 1.15;
   color: var(--schiefer);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
-p { margin: 0 0 16px; }
 .gross { font-size: 19px; line-height: 1.55; }
 .klein { font-size: 14px; line-height: 1.5; }
 .unsichtbar { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -81,32 +99,37 @@ p { margin: 0 0 16px; }
   letter-spacing: .2em; text-transform: uppercase; margin: 0 0 18px; color: var(--schiefer);
 }
 
-/* Knopf: eine Farbe auf der ganzen Seite */
+/* Knopf: eine Farbe auf der ganzen Seite, Pillenform */
 .knopf {
   display: inline-flex; align-items: center; justify-content: center;
   min-height: 50px; padding: 14px 40px;
   background: var(--knopf); color: #fff;
   font: 600 14px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase;
-  border: 0; border-radius: 0; text-decoration: none; cursor: pointer;
+  border: 0; border-radius: 999px; text-decoration: none; cursor: pointer;
   transition: background-color .25s ease;
 }
 .knopf:hover { background: #435854; color: #fff; }
-.knopf-klein { min-height: 40px; padding: 10px 20px; font-size: 12px; }
-.kaufen { margin: 30px 0 22px; }
-.kaufen .klein { margin: 10px 0 0; }
+.knopf-klein { min-height: 40px; padding: 10px 22px; font-size: 12px; }
+.kaufen { margin: 32px 0 0; }
+.kaufen .klein { margin: 12px 0 0; }
 .weiter { font-weight: 600; }
 
-/* Kopf */
+/* Raster */
+.innen { max-width: calc(var(--breite) + 2 * var(--rand)); margin-left: auto; margin-right: auto; padding-left: var(--rand); padding-right: var(--rand); }
+.raster { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--spalt); }
+.abschnitt { margin-top: var(--abstand); }
+
+/* Kopf: sticky, Ankerlinks, Sprachen, Kaufen */
 .kopf { position: sticky; top: 0; z-index: 10; background: rgba(244, 239, 230, .97); border-bottom: 1px solid var(--hell); }
 .kopf-innen {
-  max-width: var(--breite); margin: 0 auto; padding: 14px var(--rand);
+  max-width: calc(var(--breite) + 2 * var(--rand)); margin: 0 auto; padding: 14px var(--rand); min-height: var(--kopf-h);
   display: flex; align-items: center; gap: 40px;
 }
 .logo { color: var(--knopf); display: inline-flex; padding: 6px 0; }
 .logo-svg { width: 112px; height: auto; }
-.menu-desktop { display: flex; gap: 32px; margin-right: auto; }
+.menu-desktop { display: flex; gap: 28px; margin-right: auto; }
 .menu-desktop a, .menu-mobil a { text-decoration: none; font-size: 15px; letter-spacing: .02em; }
-.menu-desktop a[aria-current="page"] { text-decoration: underline; }
+.menu-desktop a[aria-current="true"] { text-decoration: underline; }
 .kopf-rechts { display: flex; align-items: center; gap: 22px; }
 .sprachen { display: flex; align-items: center; gap: 8px; font-size: 14px; }
 .sprachen a { text-decoration: none; padding: 8px 2px; }
@@ -117,276 +140,198 @@ p { margin: 0 0 16px; }
   display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;
 }
 .menu-mobil summary::-webkit-details-marker { display: none; }
-.menu-mobil summary span { display: block; width: 22px; height: 1.5px; background: var(--schiefer); }
+.menu-mobil summary span { display: block; width: 22px; height: 2px; border-radius: 2px; background: var(--schiefer); }
 .menu-mobil nav {
   position: absolute; right: 0; top: 52px; min-width: 240px;
-  background: var(--creme); border: 1px solid var(--linie); padding: 12px 0;
+  background: var(--creme); border: 1px solid var(--linie); border-radius: var(--radius); padding: 12px 0; overflow: hidden;
   display: flex; flex-direction: column;
 }
 .menu-mobil nav a { padding: 12px 20px; font-size: 16px; }
+.menu-mobil nav a[aria-current="true"] { font-weight: 600; }
 
-/* Raster */
-main { display: block; }
-.block { max-width: var(--breite); margin: var(--abstand) auto 0; padding: 0 var(--rand); }
-.vollbreit { margin-top: var(--abstand); }
-.raster { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; }
-.kopfzeile { align-items: end; margin-bottom: clamp(40px, 6vw, 80px); }
-.kopfzeile .weit { grid-column: 1 / span 7; margin: 0; }
-.kopfzeile .neben { grid-column: 9 / span 4; margin: 0; }
-.kopf-schmal { max-width: 900px; margin-bottom: clamp(40px, 5vw, 72px); }
-.spalte { max-width: 720px; }
-.block.spalte { max-width: calc(720px + 2 * var(--rand)); }
-.erste { margin-top: clamp(40px, 6vw, 88px); }
+/* Abschnittskopf: Dach und Überschrift auf Spalte 1, Einleitung auf Spalte 7 */
+.kopfzeile { align-items: end; margin-bottom: var(--abstand-innen); }
+.k-titel { grid-column: 1 / span 6; }
+.k-titel h2 { margin: 0; }
+.k-text { grid-column: 7 / span 6; max-width: var(--lese); margin: 0; }
 
-/* Hero: Bild in voller Breite, Zeile darunter (kein Text auf dem Bild) */
-.hero-bild img { width: 100%; height: min(76vh, 52vw); object-fit: cover; object-position: 50% 55%; }
-.hero-text { max-width: var(--breite); margin: 0 auto; padding: clamp(36px, 5vw, 72px) var(--rand) 0; align-items: start; }
-.hero-zeile { grid-column: 1 / span 7; }
-.hero-zeile h1 { margin: 0; }
-.hero-neben { grid-column: 9 / span 4; padding-top: 34px; }
+/* Hero: Bild in voller Breite 3:2, Zeile darunter (kein Text auf dem Bild) */
+.hero { padding-top: clamp(16px, 2.4vw, 40px); align-items: center; }
+.hero-bild { grid-column: 7 / span 6; grid-row: 1; }
+.hero-bild img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); }
+.hero-text { grid-column: 1 / span 5; grid-row: 1; }
+.hero-zeile h1 { font-size: clamp(40px, 4.4vw, 64px); margin: 0; }
+.hero-neben { margin-top: 28px; max-width: var(--lese); }
+.hero-neben p:last-child { margin-bottom: 0; }
 
-.unterzeile { font-family: var(--serif); font-style: italic; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.2; margin: 0; }
-.kopfzeile .weit h2 { margin-bottom: 10px; }
+/* Einstieg: erster Absatz groß auf Spalte 1, der Rest auf Spalte 7 */
+.einstieg { align-items: start; }
+.e-lead { grid-column: 1 / span 5; font-family: var(--serif); font-size: clamp(26px, 2.3vw, 32px); line-height: 1.3; margin: 0; }
+.e-text { grid-column: 7 / span 6; max-width: var(--lese); }
+.abgesetzt { font-family: var(--serif); font-style: italic; font-size: clamp(26px, 2.3vw, 32px); line-height: 1.25; color: var(--siegel); margin: 32px 0 0; }
 
-/* Farben: große Freisteller auf Creme */
-.farben { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 2vw, 32px); }
-.farbe { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.farbe img { width: 100%; margin-bottom: 6px; }
-.farbname { font-size: 16px; margin: 0 0 6px; }
-.farbname strong { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(28px, 2.4vw, 38px); line-height: 1.1; margin-bottom: 2px; }
-.farbname .farbart { display: block; }
-.farbe .weiter { font-size: 15px; }
-
-/* Freisteller (auf Weiß geliefert) gehen per Multiplizieren randlos in das Creme der Seite auf. Die Behälter tragen
-   selbst Creme, damit das Multiplizieren auch in eigenen Ebenen (Reveal, Transform) gegen Creme rechnet. */
-img[src*="/farbe-"], img[src*="/detail-griff-"] { mix-blend-mode: multiply; }
-.farbe, .galerie-haupt, .wahl > span, .nah, .im-bild, .galerie > div { background: var(--creme); }
-
-/* Vier Dinge: Detail-Close-ups als eigene Bildstrecke, versetzt */
-.nahstrecke { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: clamp(16px, 2vw, 32px); align-items: start; }
-.nah img { width: 100%; margin-bottom: 22px; }
-.nah figcaption { max-width: 460px; }
-.nah figcaption p { font-size: 16px; }
-.nah-2, .nah-4 { margin-top: clamp(32px, 5vw, 72px); }
-
-/* Bild und Text nebeneinander, Bild bis an den Rand */
-.geteilt { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
-.vollbreit.geteilt { padding-right: var(--rand); }
-.geteilt-bild img { width: 100%; max-height: 680px; object-fit: cover; }
-.geteilt-text { max-width: 560px; }
-
-/* Gebrauch */
-.strecke { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 2vw, 24px); }
-.strecke img { width: 100%; }
-.strecke > :nth-child(2) { margin-top: clamp(24px, 4vw, 56px); }
-
-/* Pflege: ruhige Textzeile ohne Bild */
-.ruhezeile { text-align: center; max-width: 900px; }
-.ruhezeile p { max-width: 620px; margin: 0 auto; font-size: 18px; }
-
-/* Wer dahinter steht: Bild in voller Breite */
-.vollbild img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 58%; }
-.recht-hinweis { margin-bottom: 8px; }
-.wer-text { margin-top: clamp(40px, 5vw, 72px); margin-bottom: 0; }
-
-/* Ausgepackt */
-.verpackung-raster { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; row-gap: 24px; align-items: center; }
-.verpackung-raster img { width: 100%; }
-.v-gross { grid-column: 1 / span 6; }
-.v-text { grid-column: 8 / span 5; }
-.v-reihe { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
-.ausblick { margin: clamp(40px, 6vw, 80px) 0 0; text-align: center; letter-spacing: .04em; }
-
-/* Produktseite */
-.produkt {
-  max-width: var(--breite); margin: 0 auto; padding: clamp(24px, 4vw, 56px) var(--rand) 0;
-  display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 6vw, 96px); align-items: start;
-}
-.farbbild { display: none; width: 100%; }
+/* Produkt (#lun): wie im Live-Stand, großes Produktbild links, Infos, Farbwahl und Kaufen rechts */
+.produkt { align-items: start; }
+.galerie-haupt { grid-column: 1 / span 7; }
+.kaufbox { grid-column: 8 / span 5; position: sticky; top: calc(var(--kopf-h) + 24px); padding-top: 24px; max-width: var(--lese); }
+.kaufbox .titel { font-size: clamp(48px, 5.4vw, 80px); margin-bottom: 20px; }
+.farbbild { display: none; width: 100%; aspect-ratio: 1 / 1; object-fit: contain; }
 .farbbild.aktiv { display: block; }
-.kaufbox { position: sticky; top: 104px; padding-top: 24px; }
-.kaufbox h1 { margin-bottom: 20px; }
-.punkte { list-style: none; padding: 0; margin: 0 0 32px; border-top: 1px solid var(--linie); }
+.punkte { list-style: none; padding: 0; margin: 8px 0 32px; border-top: 1px solid var(--linie); }
 .punkte li { padding: 12px 0; border-bottom: 1px solid var(--linie); }
-.farbwahl { border: 0; padding: 0; margin: 0 0 4px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; min-width: 0; }
+.farbwahl { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; min-width: 0; }
 .farbwahl legend { font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px; padding: 0; }
 .wahl { display: block; min-width: 0; }
 .wahl input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .wahl > span {
-  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 4px 10px;
-  border: 1px solid transparent; cursor: pointer; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 4px 12px;
+  border: 1px solid transparent; border-radius: var(--radius); cursor: pointer; text-align: center;
 }
-.wahl-bild { width: 100%; max-width: 92px; }
+.wahl-bild { width: 100%; max-width: 92px; aspect-ratio: 1 / 1; object-fit: contain; }
 .wahl-name { font-family: var(--serif); font-weight: 600; font-size: 22px; line-height: 1.1; }
-.wahl-art { font-size: 12px; line-height: 1.3; }
 .wahl > span:hover { border-color: var(--linie); }
 .wahl input:checked + span { border-color: var(--schiefer); }
 .wahl input:focus-visible + span { outline: 2px solid var(--knopf); outline-offset: 2px; }
-.galerie { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(8px, 1.6vw, 24px); }
-.galerie img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.im-detail { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; align-items: center; margin-bottom: clamp(48px, 6vw, 96px); }
-.im-bild { grid-column: 2 / span 4; }
-.im-text { grid-column: 7 / span 5; }
-.im-detail.links .im-bild { grid-column: 8 / span 4; order: 2; }
-.im-detail.links .im-text { grid-column: 2 / span 5; order: 1; }
-.im-bild img { width: 100%; }
-.zweispaltig { align-items: start; row-gap: 64px; }
-.zweispaltig #daten { grid-column: 1 / span 6; }
-.zweispaltig #box { grid-column: 8 / span 5; }
-.daten { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 16px; }
-.daten th, .daten td { text-align: left; vertical-align: top; padding: 14px 12px 14px 0; border-bottom: 1px solid var(--linie); }
-.daten th { font-weight: 600; width: 46%; }
-.fragen dt { font-family: var(--serif); font-weight: 600; font-size: 25px; line-height: 1.2; margin-top: 32px; }
-.fragen dd { margin: 8px 0 0; }
-.schluss { text-align: center; }
-.schluss-zeile { font-family: var(--serif); font-size: clamp(36px, 4.4vw, 60px); line-height: 1.1; color: var(--siegel); margin-bottom: 8px; }
-.schluss-name { font-family: var(--serif); font-style: italic; font-size: 24px; }
 
-/* Anleitung */
-.schritte { padding-left: 0; margin: 0 0 48px; list-style: none; counter-reset: schritt; }
-.schritte li { counter-increment: schritt; position: relative; padding: 0 0 24px 72px; margin-bottom: 24px; border-bottom: 1px solid var(--linie); }
-.schritte li::before { content: counter(schritt); position: absolute; left: 0; top: -14px; font-family: var(--serif); font-size: 52px; line-height: 1; color: var(--siegel); }
-.klein-h { font-size: 32px; margin-bottom: 14px; }
-.fehler, .drei { padding-left: 20px; margin: 0 0 28px; }
-.fehler li, .drei li { margin-bottom: 10px; }
-.la-schluss { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.3; }
-.reihe { display: grid; gap: clamp(8px, 2vw, 24px); }
-.reihe.vier { grid-template-columns: repeat(4, 1fr); }
-.reihe img { width: 100%; }
+/* Freisteller und Nahaufnahmen auf Weiß gehen per Multiplizieren randlos in das Creme der Seite auf. Die Behälter tragen
+   selbst Creme, damit das Multiplizieren auch in eigenen Ebenen (Reveal, Transform) gegen Creme rechnet. */
+img[src*="/farbe-"], img[src*="/detail-griff-"], img[src*="/detail-ausguss-"], img[src*="/detail-skala-"] { mix-blend-mode: multiply; }
+.galerie-haupt, .wahl > span, .paar-bild { background: var(--creme); }
+
+/* Bild/Text-Paare 4:5 (Details, Milch und Latte Art, Über uns) */
+.paar { align-items: center; margin-top: var(--abstand-innen); }
+.kopfzeile + .paar { margin-top: 0; }
+.paar-bild, .paar-text { grid-row: 1; align-self: center; }
+.bild-rechts .paar-text { grid-column: 1 / span 6; }
+.bild-rechts .paar-bild { grid-column: 8 / span 5; }
+.bild-links .paar-bild { grid-column: 1 / span 5; }
+.bild-links .paar-text { grid-column: 7 / span 6; }
+.paar-text { max-width: var(--lese); }
+.paar-text > :last-child { margin-bottom: 0; }
+.b45 { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+.b11 { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); }
+
+/* Gut zu wissen: drei Absätze auf Spalte 1, Daten auf Spalte 7, Fragen in zwei Spalten */
+.gzw { align-items: start; }
+.gzw-text { grid-column: 1 / span 5; max-width: var(--lese); }
+.gzw-daten { grid-column: 7 / span 6; max-width: var(--weit); }
+.daten { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; border-top: 1px solid var(--linie); }
+.daten th, .daten td { text-align: left; vertical-align: top; padding: 13px 12px 13px 0; border-bottom: 1px solid var(--linie); }
+.daten th { font-weight: 600; width: 46%; }
+.fragen {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--spalt); row-gap: 40px;
+  margin: var(--abstand-innen) 0 0; padding-top: 40px; border-top: 1px solid var(--linie);
+}
+.frage { max-width: var(--lese); }
+.fragen dt { font-family: var(--serif); font-weight: 600; font-size: clamp(24px, 2vw, 27px); line-height: 1.2; }
+.fragen dd { margin: 8px 0 0; }
+
+/* Milch und Latte Art */
+.schritte { padding-left: 0; margin: 0; list-style: none; counter-reset: schritt; }
+.schritte[start="4"] { counter-reset: schritt 3; }
+.schritte li { counter-increment: schritt; position: relative; padding: 0 0 20px 64px; margin-bottom: 20px; border-bottom: 1px solid var(--linie); }
+.schritte li:last-child { margin-bottom: 0; }
+.schritte li::before { content: counter(schritt); position: absolute; left: 0; top: -12px; font-family: var(--serif); font-size: 52px; line-height: 1; color: var(--siegel); }
+.motive { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--spalt); margin-top: var(--abstand-innen); }
+.la-unten { margin-top: var(--abstand-innen); align-items: start; }
+.la-fehler { grid-column: 1 / span 6; max-width: var(--lese); }
+.la-passt { grid-column: 7 / span 6; max-width: var(--lese); }
+.liste { padding-left: 20px; margin: 0 0 24px; }
+.liste li { margin-bottom: 12px; }
+.la-schluss, .unterschrift { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.3; }
+
+/* Über uns: Text auf Spalte 1, Bild rechts */
+.ueber { align-items: start; }
+.unterschrift { margin: 28px 0 24px; }
+.ausblick { letter-spacing: .02em; }
 
 /* Rechtstexte (Inhalt unverändert aus der bisherigen Seite) */
+.recht-text { margin-top: clamp(40px, 6vw, 88px); }
+.recht-text .legal-card { max-width: var(--weit); }
+.recht-text p { max-width: var(--lese); }
 .recht-text h1 { margin-bottom: 28px; }
 .recht-text h2 { font-size: 26px; color: var(--schiefer); font-weight: 600; margin: 32px 0 10px; }
+.recht-hinweis { margin-bottom: 8px; }
 
 /* Newsletter */
 .newsletter form { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0; }
 .newsletter input[type="email"] {
-  flex: 1 1 200px; min-height: 50px; padding: 10px 14px;
+  flex: 1 1 200px; min-height: 50px; padding: 10px 22px;
   font: 16px var(--sans); color: var(--schiefer);
-  background: #fff; border: 1px solid #8A9494; border-radius: 0;
+  background: #fff; border: 1px solid #8A9494; border-radius: 999px;
 }
 
-/* Fuß: links Marke, Mitte Kontakt, rechts Newsletter, unten Recht */
+/* Fuß: Marke auf Spalte 1, Newsletter auf Spalte 7, Recht darunter */
 .fuss { margin-top: var(--abstand); background: var(--hell); }
-.fuss-innen {
-  max-width: var(--breite); margin: 0 auto; padding: 72px var(--rand) 44px;
-  display: grid; grid-template-columns: 4fr 3fr 5fr; gap: 48px; align-items: start;
-}
-.fuss-marke p { font-family: var(--serif); font-size: clamp(26px, 2.4vw, 34px); line-height: 1.2; }
+.fuss-innen { padding-top: 72px; padding-bottom: 44px; align-items: start; }
+.fuss-marke { grid-column: 1 / span 5; font-family: var(--serif); font-size: clamp(26px, 2.3vw, 32px); line-height: 1.25; margin: 0; }
 .fuss-marke strong { font-weight: 600; }
-.recht { grid-column: 1 / -1; margin: 24px 0 0; padding-top: 22px; border-top: 1px solid var(--linie); font-size: 14px; }
+.newsletter { grid-column: 7 / span 6; max-width: var(--lese); }
+.recht { grid-column: 1 / -1; margin: 40px 0 0; padding-top: 22px; border-top: 1px solid var(--linie); font-size: 14px; }
 
-/* Ruhige Reveals, nur mit JavaScript und ohne reduzierte Bewegung */
+/* Ruhige Reveals, nur mit JavaScript und ohne reduzierte Bewegung (unverändert) */
 @media (prefers-reduced-motion: no-preference) {
   .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 90ms); }
   .js [data-reveal].sichtbar { opacity: 1; transform: none; }
 }
 
-/* Thorsten 07.10.: Desktop näher an Mobil. Ein Lesefluss: schmale Textspalte (720 px), große ruhige Bilder bis 1120 px,
-   Überschrift und Text untereinander, weniger und größere Kacheln. */
-:root { --fluss: 720px; --breit: 1120px; }
-.block { max-width: calc(var(--breit) + 2 * var(--rand)); }
-.kopfzeile { display: block; max-width: var(--fluss); }
-.kopfzeile .neben { margin-top: 24px; }
-.hero-text { display: block; max-width: calc(var(--breit) + 2 * var(--rand)); }
-.hero-neben { max-width: var(--fluss); }
-.hero-zeile { max-width: 1040px; }
-.hero-neben { padding-top: 24px; }
-.breit { max-width: var(--breit); margin: 0 auto; }
-.breit img { width: 100%; }
-#wer .breit { padding: 0 var(--rand); max-width: calc(var(--breit) + 2 * var(--rand)); }
-.wer-text { margin-top: clamp(32px, 4vw, 56px); }
-/* Vier Dinge: zwei große Spalten statt vier kleiner */
-.nahstrecke { grid-template-columns: repeat(2, 1fr); column-gap: clamp(24px, 3vw, 48px); row-gap: clamp(48px, 6vw, 88px); }
-.nah-2, .nah-4 { margin-top: clamp(40px, 6vw, 96px); }
-.nah-3 { margin-top: 0; }
-.nah figcaption { max-width: 520px; }
-/* Bild über Text statt nebeneinander */
-.geteilt, .vollbreit.geteilt { display: block; max-width: calc(var(--breit) + 2 * var(--rand)); margin-left: auto; margin-right: auto; padding: 0 var(--rand); }
-.geteilt-bild { max-width: 760px; }
-.geteilt-bild img { max-height: none; }
-.geteilt-text { max-width: var(--fluss); margin-top: clamp(28px, 3vw, 44px); }
-#entstehung .geteilt-bild { max-width: var(--breit); }
-/* Gebrauch: drei große Bilder in der Breite */
-.strecke { max-width: var(--breit); }
-/* Ausgepackt: großes Bild, darunter zwei große, dann der Text */
-.verpackung-raster { display: block; }
-.v-gross img { aspect-ratio: 3 / 2; object-fit: cover; object-position: 50% 62%; }
-.v-reihe { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(12px, 2vw, 24px); margin-top: clamp(12px, 2vw, 24px); }
-.v-text { max-width: var(--fluss); margin-top: clamp(32px, 4vw, 56px); }
-.ausblick { text-align: left; }
-/* Produktseite: große Galerie in zwei Spalten, Im Detail mit großem Bild, Daten und Box untereinander */
-.galerie { grid-template-columns: repeat(2, 1fr); gap: clamp(12px, 2vw, 24px); }
-.galerie img { aspect-ratio: auto; }
-.im-detail { grid-template-columns: 1fr 1fr; column-gap: clamp(32px, 5vw, 80px); }
-.im-bild, .im-detail.links .im-bild { grid-column: auto; }
-.im-text, .im-detail.links .im-text { grid-column: auto; max-width: 520px; }
-.zweispaltig { display: block; }
-.zweispaltig #box { margin-top: clamp(56px, 7vw, 96px); }
-/* Alle Blöcke an derselben linken Kante der 1120-px-Fläche, nur die Textspalte ist schmal */
-.block.spalte, .schluss, .ruhezeile { max-width: calc(var(--breit) + 2 * var(--rand)); text-align: left; }
-.block.spalte > *, .schluss > *, .ruhezeile > *, .zweispaltig > * { max-width: var(--fluss); }
-.ruhezeile p { margin: 0; }
-
-/* Tablet */
+/* Mittlere Breiten: Raster bleibt, Kopf und Fragen einspaltig */
 @media (max-width: 1100px) {
   .menu-desktop { gap: 20px; }
   .kopf-innen { gap: 24px; }
-  .kopfzeile .weit, .hero-zeile { grid-column: 1 / span 12; }
-  .kopfzeile .neben, .hero-neben { grid-column: 1 / span 9; margin-top: 24px; padding-top: 0; }
-  .fuss-innen { grid-template-columns: 1fr 1fr; }
-  .nahstrecke { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
-  .nah-4 { margin-top: clamp(32px, 5vw, 72px); }
-  .nah-3 { margin-top: 0; }
-  .fuss-innen > :nth-child(3) { grid-column: 1 / -1; }
+  .fragen { grid-template-columns: 1fr; max-width: var(--weit); }
 }
-
-/* Mobil */
-@media (max-width: 860px) {
+@media (max-width: 1000px) {
   .menu-desktop { display: none; }
   .menu-mobil { display: block; }
   .kopf-innen { justify-content: space-between; gap: 12px; }
-  .kopf-rechts { gap: 10px; }
+  .kopf-rechts { gap: 12px; }
 }
-@media (max-width: 720px) {
+
+/* Schmal: eine Spalte, Bild immer über dem Text */
+@media (max-width: 860px) {
+  :root { --kopf-h: 64px; }
   body { font-size: 16px; }
   .gross { font-size: 17px; }
-  .raster, .verpackung-raster, .im-detail { display: block; }
-  .nahstrecke { grid-template-columns: 1fr; row-gap: 48px; }
-  .nah-2, .nah-4 { margin-top: 0; }
-  .strecke { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(-1 * var(--rand)); padding: 0 var(--rand) 8px; }
-  .strecke > div { flex: 0 0 78%; scroll-snap-align: center; }
-  .strecke > :nth-child(2) { margin-top: 0; }
-  .kopfzeile .neben, .hero-neben { margin-top: 20px; }
-  .hero-bild img, .vollbild img { height: auto; }
-  /* Farben mobil wischbar, ohne Automatik (Copy v3 B2) */
-  .farben { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 0 calc(-1 * var(--rand)); padding: 0 var(--rand) 8px; }
-  .farbe { flex: 0 0 72%; scroll-snap-align: center; }
-  .geteilt { grid-template-columns: 1fr; }
-  .vollbreit.geteilt { padding: 0; }
-  .vollbreit.geteilt .geteilt-text { padding: 0 var(--rand); }
-  .v-gross, .v-text { margin-bottom: 28px; }
-  .v-reihe { gap: 8px; }
-  .geteilt-bild img { max-height: none; }
-  .produkt { grid-template-columns: 1fr; gap: 20px; padding-top: 12px; }
-  .kaufbox { position: static; padding-top: 0; }
+  .raster { display: block; }
+  .kopf-innen { padding-top: 10px; padding-bottom: 10px; }
+  .hero { padding-top: 0; }
+  .hero-bild { margin: 0 calc(-1 * var(--rand)); }
+  .hero-bild img { aspect-ratio: 3 / 2; border-radius: 0; }
+  .hero-text { padding-top: 32px; }
+  .hero-zeile h1 { font-size: clamp(44px, 5.4vw, 80px); }
+  .hero-neben, .k-text { margin-top: 20px; }
+  .e-lead { font-size: 25px; margin-bottom: 24px; }
+  .abgesetzt { font-size: 25px; }
+  .kaufbox { position: static; padding-top: 20px; max-width: none; }
+  .paar-bild { margin-bottom: 24px; }
+  .paar-text { max-width: none; }
+  .gzw-daten { margin-top: 32px; }
+  .fragen { row-gap: 28px; }
+  .motive { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .la-passt { margin-top: 40px; }
   .wahl-name { font-size: 18px; }
-  .wahl-art { font-size: 11px; }
-  .galerie { grid-template-columns: repeat(2, 1fr); }
-  .im-detail { margin-bottom: 56px; }
-  .im-detail.links .im-bild { order: 0; }
-  .v-reihe { grid-template-columns: repeat(2, 1fr); }
-  .nahstrecke { grid-template-columns: 1fr; }
-  .nah-2, .nah-4 { margin-top: 0; }
-  .im-bild { margin-bottom: 20px; max-width: 420px; }
-  .zweispaltig #box { margin-top: 56px; }
-  .reihe.vier { grid-template-columns: repeat(2, 1fr); }
-  .fuss-innen { grid-template-columns: 1fr; gap: 28px; padding-top: 56px; }
+  .fuss-innen { padding-top: 56px; }
+  .newsletter { margin-top: 28px; }
   .logo-svg { width: 88px; }
   .sprachen { font-size: 13px; gap: 6px; }
-  .knopf-klein { padding: 8px 12px; min-height: 40px; }
-  .schritte li { padding-left: 56px; }
+  .knopf-klein { padding: 8px 14px; min-height: 40px; }
+  .schritte li { padding-left: 52px; }
+  .schritte li::before { font-size: 44px; top: -8px; }
+}
+/* Eigener 4:5-Ausschnitt des Hero (picture-Quelle bis 720 px) */
+@media (max-width: 720px) {
+  .hero-bild img { aspect-ratio: 4 / 5; }
+}
+/* Kopf auf schmalen Telefonen: alles muss in die Breite passen (kein waagerechter Überlauf) */
+@media (max-width: 480px) {
+  .kopf-innen { gap: 8px; }
+  .kopf-rechts { gap: 8px; }
+  .sprachen { gap: 4px; }
+  .sprachen a { padding: 8px 0; }
+  .knopf-klein { padding: 8px 12px; letter-spacing: .06em; }
 }
 @media (max-width: 380px) {
   .sprachen span { display: none; }
+  .logo-svg { width: 76px; }
 }

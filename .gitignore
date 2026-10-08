@@ -1,0 +1,3 @@
+# Python-Zwischendateien des Seitenbaus (_build/)
+__pycache__/
+*.pyc
