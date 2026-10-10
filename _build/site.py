@@ -15,7 +15,7 @@ from texte_v4 import ALT, EN_HINWEIS, RECHT_TITEL, T  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BILDER = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "bilder.json"), encoding="utf-8"))
 SITE = "https://mjoar.com"
-VERSION = "5"
+VERSION = "6"
 
 # ---------------------------------------------------------------------------------------------------------------
 # Kaufen: die eine zentrale Konstante. DE auf amazon.de, EN auf amazon.co.uk (UK kaufbar seit 08.10.2026),
@@ -155,11 +155,12 @@ def newsletter(lang):
 def fuss(lang):
     f = T[lang]["fuss"]
     u = f["unten"]
-    marke, satz = f["links"]
+    _, satz = f["links"]
     return f"""<footer class="fuss">
   <div class="innen raster fuss-innen">
     <div class="fuss-links">
-      <p class="fuss-marke"><strong>{e(marke)}</strong> · {e(satz)}</p>
+      <div class="fuss-logo" role="img" aria-label="{e(ALT[lang]['marke'])}">{LOGO}</div>
+      <p class="fuss-marke">{e(satz)}</p>
       <p class="fuss-kontakt">{e(f['kontakt'])} <a href="mailto:info@mjoar.com">info@mjoar.com</a></p>
     </div>
     {newsletter(lang)}
@@ -306,6 +307,7 @@ def gut(lang):
         f'<tr><th scope="row">{e(n)}</th><td>{e(v) if v is not None else "<!-- [LFGB] Platzhalter: erst nach bestandenem Eurofins-Bericht freischalten -->" + e(t["lfgb_platzhalter"])}</td></tr>'
         for n, v in t["daten"])
     fragen = "".join(f'<div class="frage"><dt>{e(f)}</dt><dd>{e(x)}</dd></div>' for f, x in t["fragen"])
+    fragen = f'\n  <dl class="fragen" data-reveal>{fragen}</dl>' if fragen else ""
     return f"""<section class="abschnitt innen" id="{t['id']}">
   {kopfzeile(None, t['h'], None)}
   <div class="raster gzw">
@@ -315,8 +317,7 @@ def gut(lang):
       <p class="klein">{e(t['klein'])}</p>
       <p><a class="weiter" href="{PDF}">{e(t['pdf'])}</a></p>
     </div>
-  </div>
-  <dl class="fragen" data-reveal>{fragen}</dl>
+  </div>{fragen}
 </section>"""
 
 

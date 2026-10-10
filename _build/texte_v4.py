@@ -66,11 +66,7 @@ T = {
             "lfgb_platzhalter": "folgt",  # Zeile Lebensmittelkontakt ausgeblendet bis LFGB-Bericht (Thorsten 08.10.)
             "klein": "Von Hand gemessen, kleine Abweichungen sind möglich.",
             "pdf": "Sicherheitshinweise (PDF)",
-            "fragen": [
-                ("Funktioniert das auch mit Haferdrink?", "Ja. Am besten schäumen die Barista-Varianten von Hafer- oder Sojadrink."),
-                ("Warum gibt es kein Blau?", "Wir hatten ein blaues Muster, aber die Farbe hat unsere Spülmaschinentests nicht gut überstanden. Deshalb haben wir sie weggelassen."),
-                ("Woher kommt der Name?", "MJØÅR ist inspiriert von den schwedischen Wörtern „mjölk“ (Milch) und „å“ (kleiner Fluss). Wer schon mal Latte Art gegossen hat, versteht vielleicht, warum."),
-            ],
+            "fragen": [],  # Haferdrink und Blau gestrichen, Name nach Über uns (Thorsten 10.10.)
         },
         # 6 Milch und Latte Art
         "latte": {
@@ -102,6 +98,7 @@ T = {
                 "Während Thorsten zu Hause an seinem Cappuccino feilt und immer noch ein bisschen mehr aus seinem Setup herausholen möchte, erlebt Jonah Kaffee aus einer ganz anderen Perspektive. Hunderte Kaffees gehen täglich über die Café-Theke. Unterschiedliche Erfahrungen, die sich ziemlich gut ergänzen und unseren gemeinsamen Blick auf Kaffee prägen.",
                 "Auch wenn unser Alltag nicht immer nur aus Kaffee besteht, lässt uns das Thema in unserer Freizeit selten los. Irgendwann entstand daraus die Idee, gemeinsam etwas Eigenes auf die Beine zu stellen. Statt nur darüber zu sprechen, wie wir uns gutes Coffee-Equipment vorstellen, wollten wir unsere Ideen selbst umsetzen und unseren eigenen Beitrag zur Coffee-Szene leisten.",
                 "So wurde aus unserer gemeinsamen Leidenschaft MJØÅR. Nicht einfach nur eine Marke, sondern unsere Möglichkeit, die Begeisterung für guten Kaffee und alles, was dazugehört, mit anderen zu teilen. Vielleicht ja bald auch mit dir.",
+                "MJØÅR ist inspiriert von den schwedischen Wörtern „mjölk“ (Milch) und „å“ (kleiner Fluss). Wer schon mal Latte Art gegossen hat, versteht vielleicht, warum.",
             ],
             "unterschrift": "Thorsten & Jonah, Gründer von MJØÅR",
             "kontakt": "Wenn du Fragen zu deiner LUN hast, schreib uns an info@mjoar.com. Die Antwort kommt von uns selbst.",
@@ -109,7 +106,7 @@ T = {
         },
         # Fuß
         "fuss": {
-            "links": ("MJØÅR", "Ein kleines Unternehmen aus München und Wien."),
+            "links": ("MJØÅR", "Ein kleines Unternehmen aus München und Wien."),  # Marke als Logo (Thorsten 10.10.)
             "kontakt": "Kontakt:",
             "nl": "Neues von MJØÅR per Mail. Wir schreiben nur, wenn es etwas Neues gibt, zum Beispiel ein neues Produkt oder eine Anleitung.",
             "nl_feld": "E-Mail",
@@ -178,11 +175,7 @@ T = {
             "lfgb_platzhalter": "to follow",
             "klein": "Measured by hand, small deviations are possible.",
             "pdf": "Safety information (PDF)",
-            "fragen": [
-                ("Does it work with oat drink?", "Yes. Barista versions of oat or soy drink foam best."),
-                ("Why is there no blue?", "We had a blue sample, but the colour didn't hold up well in our dishwasher tests, so we left it out."),
-                ("Where does the name come from?", "MJØÅR is inspired by the Swedish words \"mjölk\" (milk) and \"å\" (small river). If you've ever poured latte art, you might see why."),
-            ],
+            "fragen": [],
         },
         "latte": {
             "dach": "Milk and latte art",
@@ -212,6 +205,7 @@ T = {
                 "While Thorsten fine-tunes his cappuccino at home and always wants to get a bit more out of his setup, Jonah sees coffee from a completely different angle, with hundreds of coffees going over the café counter every day. Two different experiences that complement each other pretty well and shape how we both look at coffee.",
                 "Even though our days aren't only about coffee, the topic rarely leaves us alone in our free time. At some point that turned into the idea of building something of our own. Instead of just talking about what good coffee equipment should be like, we wanted to make our ideas real and add something of our own to the coffee scene.",
                 "That's how our shared passion became MJØÅR. Not just a brand, but our way of sharing our enthusiasm for good coffee and everything that goes with it with others. Maybe soon with you too.",
+                "MJØÅR is inspired by the Swedish words \"mjölk\" (milk) and \"å\" (small river). If you've ever poured latte art, you might see why.",
             ],
             "unterschrift": "Thorsten & Jonah, founders of MJØÅR",
             "kontakt": "If you have questions about your LUN, write to us at info@mjoar.com. You'll get an answer from us.",
@@ -243,7 +237,7 @@ ALT = {
         "detail-griff": "Griff und Oberfläche der LUN in Linen",
         "gebrauch-aufschaeumen": "Milch aufschäumen mit der LUN in Juniper", "gebrauch-giessen": "Gießen mit der LUN in Onyx",
         "latte": {"heart": "Latte Art Herz", "rosetta": "Latte Art Rosetta", "tulip": "Latte Art Tulpe", "swan": "Latte Art Schwan"},
-        "menu": "Menü", "start": "MJØÅR Startseite", "sprache": "Sprache",
+        "menu": "Menü", "start": "MJØÅR Startseite", "sprache": "Sprache", "marke": "MJØÅR",
     },
     "en": {
         "hero": "LUN 350 in Juniper at an espresso machine",
@@ -254,7 +248,7 @@ ALT = {
         "detail-griff": "Handle and finish of the LUN in Linen",
         "gebrauch-aufschaeumen": "Steaming milk with the LUN in Juniper", "gebrauch-giessen": "Pouring with the LUN in Onyx",
         "latte": {"heart": "Latte art heart", "rosetta": "Latte art rosetta", "tulip": "Latte art tulip", "swan": "Latte art swan"},
-        "menu": "Menu", "start": "MJØÅR home", "sprache": "Language",
+        "menu": "Menu", "start": "MJØÅR home", "sprache": "Language", "marke": "MJØÅR",
     },
 }
 
