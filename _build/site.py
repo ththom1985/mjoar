@@ -15,7 +15,7 @@ from texte_v4 import ALT, EN_HINWEIS, RECHT_TITEL, T  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BILDER = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "bilder.json"), encoding="utf-8"))
 SITE = "https://mjoar.com"
-VERSION = "6"
+VERSION = "7"
 
 # ---------------------------------------------------------------------------------------------------------------
 # Kaufen: die eine zentrale Konstante. DE auf amazon.de, EN auf amazon.co.uk (UK kaufbar seit 08.10.2026),
@@ -353,7 +353,11 @@ def latte(lang):
 def ueber(lang):
     t, a = T[lang]["ueber"], ALT[lang]
     absaetze = "".join(f"<p>{e(p)}</p>" for p in t["text"])
-    text = (f"<h2>{e(t['h'])}</h2>{absaetze}<p class=\"unterschrift\">{e(t['unterschrift'])}</p>"
+    # Marke in prominenter Stellung als Logo statt Schriftzug (Thorsten 11.10.), im Fließtext bleibt MJØÅR als Text.
+    vor = t["unterschrift"].removesuffix("MJØÅR")
+    unterschrift = (f'{e(vor)}<span class="logo-inline" role="img" aria-label="{e(a["marke"])}">{LOGO}</span>'
+                    if vor != t["unterschrift"] else e(t["unterschrift"]))
+    text = (f"<h2>{e(t['h'])}</h2>{absaetze}<p class=\"unterschrift\">{unterschrift}</p>"
             f"<p>{fett(t['kontakt'])}</p>" + (f"<p class=\"ausblick\">{e(t['ausblick'])}</p>" if t.get("ausblick") else ""))
     return f"""<section class="abschnitt innen" id="{t['id']}">
   {paar(0, bild('wer-m', a['wer'], '(max-width: 860px) 100vw, 520px', klasse='b45'), text, klasse='ueber')}

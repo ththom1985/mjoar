@@ -243,6 +243,9 @@ img[src*="/farbe-"], img[src*="/detail-griff-"], img[src*="/detail-ausguss-"], i
 /* Über uns: Text auf Spalte 1, Bild rechts */
 .ueber { align-items: start; }
 .unterschrift { margin: 28px 0 24px; }
+/* Logo statt Schriftzug in der Unterschrift (Thorsten 11.10.): Höhe an die Versalien der Schrift angeglichen */
+.logo-inline { display: inline-block; color: var(--knopf); margin-left: .18em; }
+.unterschrift .logo-inline .logo-svg { width: auto; height: .82em; vertical-align: -0.02em; }
 .ausblick { letter-spacing: .02em; }
 
 /* Rechtstexte (Inhalt unverändert aus der bisherigen Seite) */
