@@ -259,7 +259,7 @@ def einstieg(lang):
     erst, *rest = t["text"]
     return f"""<section class="abschnitt innen raster einstieg" id="{t['id']}">
   <p class="e-lead" data-reveal>{e(erst)}</p>
-  <div class="e-text" data-reveal>{''.join(f'<p>{e(p)}</p>' for p in rest)}<p class="abgesetzt">{e(t['abgesetzt'])}</p></div>
+  <div class="e-text" data-reveal>{''.join(f'<p>{e(p)}</p>' for p in rest)}{f'<p class="abgesetzt">{e(t["abgesetzt"])}</p>' if t['abgesetzt'] else ''}</div>
 </section>"""
 
 

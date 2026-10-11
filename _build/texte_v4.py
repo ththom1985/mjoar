@@ -11,20 +11,20 @@ T = {
         # 1 Hero
         "hero": {
             "dach": "LUN 350 · Milchkännchen",
-            "h": "Ein Milchkännchen, das du stehen lässt",
-            "satz": "Die LUN ist unser erstes Produkt: ein Milchkännchen für deinen Kaffee zu Hause.",
+            "h": "Ein Milchkännchen, das neben deiner Maschine gut aussieht",
+            "satz": "Die LUN ist unser erstes Produkt. Weitere Dinge für den Kaffee zu Hause sind schon in Arbeit.",
             "link": "Zur LUN",
         },
         # 2 Einstieg
         "einstieg": {
             "id": "einstieg",
             "text": [
-                "Ein Cappuccino, ein Flat White, ein Matcha Latte. Wofür auch immer du Milch aufschäumst, ob Kuh- oder Hafermilch: Es beginnt immer mit dem Kännchen. Da dachten wir uns: Warum nicht eines, nach dem du auch jeden Morgen gerne greifst?",
-                "Wer sich einmal richtig für Kaffee begeistert, weiß: Irgendwann achtet man auch auf die kleinsten Details. Mit der LUN wollten wir ein Kännchen schaffen, bei dem für uns alles zusammenpasst. Gemacht für deinen persönlichen Kaffee-Moment zu Hause, auf die Probe gestellt im turbulenten Café-Alltag.",
-                "Genauso wichtig wie die Funktion war uns das Design. Die LUN soll nicht nur beim Zubereiten Freude machen, sondern auch optisch einen festen Platz in deiner Kaffee-Ecke finden.",
-                "Und das hört beim Kännchen nicht auf: Auch unsere Verpackung ist reduziert gestaltet, mit Karton und Baumwollsäckchen statt unnötigem Plastik.",
+                "Cappuccino, Flat White oder Matcha Latte, mit Kuh- oder Hafermilch: Zum Aufschäumen brauchst du ein Kännchen. Wir wollten eines, das wir jeden Morgen gern in die Hand nehmen und das danach nicht in den Schrank muss.",
+                "Ausprobiert haben wir die LUN zu Hause und im Café-Alltag in Wien.",
+                "Das Aussehen war uns genauso wichtig wie die Funktion. Bei den meisten steht das Milchkännchen ja ohnehin neben der Maschine.",
+                "Verpackt ist die LUN in einem Karton und einem Baumwollsäckchen, ohne Plastik.",
             ],
-            "abgesetzt": "Unser erstes Produkt. Aber ganz sicher nicht unsere letzte Idee.",
+            "abgesetzt": "",
         },
         # 3 Produkt
         "produkt": {
@@ -124,19 +124,19 @@ T = {
         "kaufen": "Buy",
         "hero": {
             "dach": "LUN 350 · Milk jug",
-            "h": "A milk jug you can leave out",
-            "satz": "The LUN is our first product: a milk jug for your coffee at home.",
+            "h": "A milk jug that looks good next to your machine",
+            "satz": "The LUN is our first product. More things for coffee at home are already in the works.",
             "link": "See the LUN",
         },
         "einstieg": {
             "id": "intro",
             "text": [
-                "A cappuccino, a flat white, a matcha latte. Whatever you steam milk for, dairy or oat: it always starts with the jug. So we thought: why not make one you're happy to reach for every morning?",
-                "Anyone who gets properly into coffee knows that at some point you start noticing the smallest details. With the LUN we wanted a jug where everything fits together for us. Made for your own coffee moment at home, and put to the test in the rush of a busy café.",
-                "Design mattered to us just as much as function. The LUN should be a pleasure to use, and it should also have a proper place in your coffee corner.",
-                "And it doesn't stop at the jug: our packaging is kept simple too, with cardboard and a cotton bag instead of unnecessary plastic.",
+                "Cappuccino, flat white or matcha latte, with dairy or oat milk: to froth milk you need a jug. We wanted one we'd be happy to pick up every morning, and one that doesn't have to go back in the cupboard afterwards.",
+                "We tried the LUN at home and in the day-to-day of a café in Vienna.",
+                "How it looks mattered to us as much as how it works. For most people the milk jug sits next to the machine anyway.",
+                "The LUN comes in a cardboard box and a cotton bag, without plastic.",
             ],
-            "abgesetzt": "Our first product. Certainly not our last idea.",
+            "abgesetzt": "",
         },
         "produkt": {
             "dach": "LUN · Milk jug · 350 ml",
