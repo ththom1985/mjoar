@@ -11,7 +11,7 @@ T = {
         # 1 Hero
         "hero": {
             "dach": "LUN 350 · Milchkännchen",
-            "h": "Ein Milchkännchen, das du gern stehen lässt",
+            "h": "Ein Milchkännchen, das du stehen lässt",
             "satz": "Die LUN ist unser erstes Produkt: ein Milchkännchen für deinen Kaffee zu Hause.",
             "link": "Zur LUN",
         },
@@ -44,16 +44,16 @@ T = {
             "intro": "Damit sie dich möglichst lange begleitet, haben wir bei der LUN auch auf die Dinge geachtet, die man nicht auf den ersten Blick sieht.",
             "punkte": [
                 ("Der Ausguss", "Wir haben uns bewusst für eine ausgewogene Ausgussform entschieden, nicht zu schmal und nicht zu breit. Sie lässt dir möglichst viel Spielraum für unterschiedliche Latte-Art-Muster.", "detail-ausguss"),
-                ("Die Wand", "Die LUN ist aus einem Millimeter Edelstahl 304 gefertigt, die ganze Kanne einschließlich Griff. Viele Kannen in dieser Größe sind dünner. Das zusätzliche Gewicht liegt gut in der Hand und macht das Gießen ruhiger.", "detail-wand"),
-                ("Die Wärme", "Edelstahl leitet Wärme gut. Beim Aufschäumen kannst du deshalb am Korpus fühlen, wie warm die Milch gerade ist, und mit etwas Übung bekommst du dafür schnell ein Gefühl. Wird er zu heiß zum Anfassen, ist die Milch fertig. Der Griff bleibt dabei angenehm.", "gebrauch-aufschaeumen"),
-                ("Die Skala", "Innen ist eine Skala in Milliliter und Unzen lasergraviert. So kannst du jeden Morgen die gleiche Menge Milch nehmen, ohne zu schätzen. Weil sie im Stahl sitzt, hält sie auch in der Spülmaschine.", "detail-skala"),
+                ("Der Korpus", "Die LUN ist aus einem Millimeter Edelstahl 304 gefertigt, die ganze Kanne einschließlich Griff. Viele Kannen in dieser Größe sind dünner. Das zusätzliche Gewicht liegt gut in der Hand und macht das Gießen ruhiger.", "detail-wand"),
+                ("Temperatur kontrollieren", "Edelstahl leitet Wärme gut. Beim Aufschäumen kannst du deshalb am Korpus fühlen, wie warm die Milch gerade ist, und mit etwas Übung bekommst du dafür schnell ein Gefühl. Wird er zu heiß zum Anfassen, ist die Milch fertig. Der Griff bleibt dabei angenehm.", "gebrauch-aufschaeumen"),
+                ("Die richtige Menge Milch", "Innen ist eine Skala in Milliliter und Unzen lasergraviert. So kannst du jeden Morgen die gleiche Menge Milch nehmen, ohne zu schätzen. Weil sie im Stahl sitzt, hält sie auch in der Spülmaschine.", "detail-skala"),
                 ("Der Griff", "Der Griff ist nahtlos angesetzt, ohne sichtbare Schweißpunkte, und so ausbalanciert, dass sich die Kanne beim Eingießen gut führen lässt.", "detail-griff"),
             ],
         },
         # 5 Gut zu wissen
         "gut": {
             "id": "gut-zu-wissen",
-            "h": "Gut zu wissen",
+            "h": "Technische Daten der LUN",
             "punkte": [
                 ("Größe:", "Die LUN fasst 350 ml. Weil Milch beim Aufschäumen an Volumen gewinnt, reicht das für einen Cappuccino oder Latte, zwei Flat Whites oder einen Matcha Latte."),
                 ("Pflege:", "Die LUN darf in allen vier Farben in die Spülmaschine. Wenn du sie von Hand spülst und kurz abtrocknest, bleibt die Oberfläche am längsten ohne Wasserflecken. Bitte keine Scheuermittel und keine Stahlwolle."),
@@ -124,7 +124,7 @@ T = {
         "kaufen": "Buy",
         "hero": {
             "dach": "LUN 350 · Milk jug",
-            "h": "A milk jug you're happy to leave out",
+            "h": "A milk jug you can leave out",
             "satz": "The LUN is our first product: a milk jug for your coffee at home.",
             "link": "See the LUN",
         },
@@ -154,15 +154,15 @@ T = {
             "intro": "So that it stays with you for a long time, we also paid attention to the things you don't see at first glance.",
             "punkte": [
                 ("The spout", "We deliberately chose a balanced spout, neither too narrow nor too wide. It leaves you as much room as possible for different latte art patterns.", "detail-ausguss"),
-                ("The wall", "The LUN is made from one millimetre of 304 stainless steel, the whole jug including the handle. Many jugs this size are thinner. The extra weight sits well in the hand and makes pouring steadier.", "detail-wand"),
-                ("The warmth", "Stainless steel conducts heat well, so while you steam you can feel on the body how warm the milk is, and with a little practice you quickly get a feel for it. When it gets too hot to touch, the milk is ready. The handle stays comfortable.", "gebrauch-aufschaeumen"),
-                ("The scale", "A scale in millilitres and ounces is laser engraved inside. That way you can use the same amount of milk every morning without guessing. Because it's in the steel, it lasts in the dishwasher too.", "detail-skala"),
+                ("The body", "The LUN is made from one millimetre of 304 stainless steel, the whole jug including the handle. Many jugs this size are thinner. The extra weight sits well in the hand and makes pouring steadier.", "detail-wand"),
+                ("Checking the temperature", "Stainless steel conducts heat well, so while you steam you can feel on the body how warm the milk is, and with a little practice you quickly get a feel for it. When it gets too hot to touch, the milk is ready. The handle stays comfortable.", "gebrauch-aufschaeumen"),
+                ("The right amount of milk", "A scale in millilitres and ounces is laser engraved inside. That way you can use the same amount of milk every morning without guessing. Because it's in the steel, it lasts in the dishwasher too.", "detail-skala"),
                 ("The handle", "The handle is joined without a seam or visible weld points, and balanced so the jug is easy to guide as you pour.", "detail-griff"),
             ],
         },
         "gut": {
             "id": "good-to-know",
-            "h": "Good to know",
+            "h": "LUN specifications",
             "punkte": [
                 ("Size:", "The LUN holds 350 ml. Milk gains volume when you steam it, so that's enough for one cappuccino or latte, two flat whites or one matcha latte."),
                 ("Care:", "All four colours can go in the dishwasher. If you wash it by hand and dry it quickly, the finish stays free of water marks for longest. Please no abrasive cleaners or steel wool."),
