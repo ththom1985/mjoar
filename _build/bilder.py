@@ -56,7 +56,9 @@ def weiss_anheben(im, ab=244):
 
 def freisteller(farbe):
     """Freisteller eng auf das Objekt, quadratisch auf Creme (wie A+ 04 Farben)."""
-    im = weiss_anheben(Image.open(FREI.format(farbe)).convert("RGB"))
+    # Juniper: retuschierte Griffansätze (Thorsten 11.10., Skript Produktbilder/Retusche/fugen_ziel_amazon.py)
+    pfad = PB + "Retusche/LUN350_Juniper_Hauptbild_Julia_2000_logo_retusche.png" if farbe == "Juniper" else FREI.format(farbe)
+    im = weiss_anheben(Image.open(pfad).convert("RGB"))
     g = np.asarray(im.convert("L"))
     ys, xs = np.where(g < 246)
     x0, x1, y0, y1 = xs.min(), xs.max(), ys.min(), ys.max()
