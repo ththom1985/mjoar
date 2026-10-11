@@ -267,7 +267,9 @@ img[src*="/farbe-"], img[src*="/detail-griff-"], img[src*="/detail-ausguss-"], i
 .fuss-links { grid-column: 1 / span 5; }
 .fuss-kontakt { margin: 18px 0 0; }
 .fuss-marke { font-family: var(--serif); font-size: clamp(26px, 2.3vw, 32px); line-height: 1.25; margin: 0; }
-.fuss-marke strong { font-weight: 600; }
+/* Marke im Fuß als Logo statt Schriftzug (Thorsten 10.10.), Satz darunter */
+.fuss-logo { color: var(--knopf); line-height: 0; margin: 0 0 18px; }
+.fuss .fuss-logo .logo-svg { width: 168px; height: auto; }
 .newsletter { grid-column: 7 / span 6; max-width: var(--lese); }
 .recht { grid-column: 1 / -1; margin: 40px 0 0; padding-top: 22px; border-top: 1px solid var(--linie); font-size: 14px; }
 
@@ -315,6 +317,7 @@ img[src*="/farbe-"], img[src*="/detail-griff-"], img[src*="/detail-ausguss-"], i
   .wahl-name { font-size: 18px; }
   .fuss-innen { padding-top: 56px; }
   .newsletter { margin-top: 28px; }
+  .fuss .fuss-logo .logo-svg { width: 136px; }
   .logo-svg { width: 88px; }
   .sprachen { font-size: 13px; gap: 6px; }
   .knopf-klein { padding: 8px 14px; min-height: 40px; }
