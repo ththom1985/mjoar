@@ -53,7 +53,7 @@ T = {
         # 5 Gut zu wissen
         "gut": {
             "id": "gut-zu-wissen",
-            "h": "Technische Daten der LUN",
+            "h": "Die LUN im Überblick",
             "punkte": [
                 ("Größe:", "Die LUN fasst 350 ml. Weil Milch beim Aufschäumen an Volumen gewinnt, reicht das für einen Cappuccino oder Latte, zwei Flat Whites oder einen Matcha Latte."),
                 ("Pflege:", "Die LUN darf in allen vier Farben in die Spülmaschine. Wenn du sie von Hand spülst und kurz abtrocknest, bleibt die Oberfläche am längsten ohne Wasserflecken. Bitte keine Scheuermittel und keine Stahlwolle."),
@@ -162,7 +162,7 @@ T = {
         },
         "gut": {
             "id": "good-to-know",
-            "h": "LUN specifications",
+            "h": "The LUN at a glance",
             "punkte": [
                 ("Size:", "The LUN holds 350 ml. Milk gains volume when you steam it, so that's enough for one cappuccino or latte, two flat whites or one matcha latte."),
                 ("Care:", "All four colours can go in the dishwasher. If you wash it by hand and dry it quickly, the finish stays free of water marks for longest. Please no abrasive cleaners or steel wool."),
