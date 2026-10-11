@@ -53,7 +53,7 @@ T = {
         # 5 Gut zu wissen
         "gut": {
             "id": "gut-zu-wissen",
-            "h": "Die LUN im Überblick",
+            "h": "Die LUN auf einen Blick",
             "punkte": [
                 ("Größe:", "Die LUN fasst 350 ml. Weil Milch beim Aufschäumen an Volumen gewinnt, reicht das für einen Cappuccino oder Latte, zwei Flat Whites oder einen Matcha Latte."),
                 ("Pflege:", "Die LUN darf in allen vier Farben in die Spülmaschine. Wenn du sie von Hand spülst und kurz abtrocknest, bleibt die Oberfläche am längsten ohne Wasserflecken. Bitte keine Scheuermittel und keine Stahlwolle."),
