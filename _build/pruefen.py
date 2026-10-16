@@ -6,7 +6,7 @@
 #     Regie bleibt draußen: [J], [J*], Klammerhinweise nach [J*]-Zeilen, [BILD …], Bildschlüssel, Feldbezeichnungen.
 #  3. Rechtstexte: Artikel von Impressum/Datenschutz byte-gleich mit den bisherigen Dateien.
 #  4. Keine Überschrift (h1–h4) endet mit „.“.
-#  5. Verbotsliste: Gedankenstriche, „Entworfen in“, Preis, sichtbares „LFGB“, Farb-Unterzeilen, satin, Tülle.
+#  5. Verbotsliste: Gedankenstriche, „Entworfen in“, Preis, Farb-Unterzeilen, satin, Tülle.
 #  6. Links: interne Ziele existieren (Dateien und Anker), Kaufen DE → amazon.de, EN → amazon.co.uk; externe Ziele gelistet.
 #   python _build/pruefen.py        (aus dem Worktree, nach site.py)
 import html
@@ -223,7 +223,7 @@ def main():
                 fehler.append((s, f"{k} unbekannt", v))
         sichtbar = " ".join(p.bloecke)
         for muster, grund in [(r"[\u2013\u2014]|\s-\s", "Gedankenstrich"), (r"Entworfen in|Designed in", "Entworfen/Designed in"),
-                              (r"€|EUR\b|£", "Preis"), (r"LFGB", "LFGB sichtbar"), (r"(?i)la marzocco", "Maschinen-Schriftzug genannt"),
+                              (r"€|EUR\b|£", "Preis"), (r"(?i)la marzocco", "Maschinen-Schriftzug genannt"),
                               (r"(?i)satin|seidenmatt|soft matt", "satiniert/satin/seidenmatt"), (r"Tülle", "Tülle (überall Ausguss)"),
                               (r"(?i)grün, matt|cremeweiß|schwarz, matt|edelstahl, gebürstet|green, matt|cream, matt|black, matt|brushed stainless steel",
                                "Farb-Unterzeile (Jonah 08.10.: nur Namen)")]:
