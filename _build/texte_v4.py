@@ -62,8 +62,8 @@ T = {
             "daten": [("Inhalt", "350 ml"), ("Material", "Edelstahl 304, ganze Kanne"), ("Wandstärke", "1 mm"),
                       ("Oberfläche", "Juniper, Linen und Onyx matt beschichtet, Steel gebürstet"), ("Skala", "innen, lasergraviert, ml und oz"),
                       ("Höhe / Ø oben / Ø unten", "9,3 / 6,4 / 7,5 cm"), ("Gewicht", "198 g"), ("Spülmaschine", "ja, alle Farben"),
-                      ("Herd, Induktion, Mikrowelle", "nein")],
-            "lfgb_platzhalter": "folgt",  # Zeile Lebensmittelkontakt ausgeblendet bis LFGB-Bericht (Thorsten 08.10.)
+                      ("Herd, Induktion, Mikrowelle", "nein"), ("Lebensmittelkontakt", "geprüft nach LFGB (Eurofins, Oktober 2026)")],
+            "lfgb_platzhalter": "folgt",  # seit 16.10. Zeile Lebensmittelkontakt sichtbar (Eurofins EFHZ26094401-CG-01, Go Thorsten)
             "klein": "Von Hand gemessen, kleine Abweichungen sind möglich.",
             "pdf": "Sicherheitshinweise (PDF)",
             "fragen": [],  # Haferdrink und Blau gestrichen, Name nach Über uns (Thorsten 10.10.)
@@ -171,7 +171,7 @@ T = {
             "daten": [("Capacity", "350 ml"), ("Material", "304 stainless steel, whole jug"), ("Wall", "1 mm"),
                       ("Finish", "Juniper, Linen and Onyx matt coated, Steel brushed"), ("Scale", "inside, laser engraved, ml and oz"),
                       ("Height / top / base", "9.3 / 6.4 / 7.5 cm"), ("Weight", "198 g"), ("Dishwasher", "yes, all colours"),
-                      ("Hob, induction, microwave", "no")],
+                      ("Hob, induction, microwave", "no"), ("Food contact", "tested to LFGB (Eurofins, October 2026)")],
             "lfgb_platzhalter": "to follow",
             "klein": "Measured by hand, small deviations are possible.",
             "pdf": "Safety information (PDF)",
