@@ -299,7 +299,7 @@ def main():
             fehler.append((s, "Kaufen-Link auf falschem Marktplatz", ", ".join(falsch)))
     for lang, links in KAUFEN.items():
         for farbe, url in links.items():
-            if url.rsplit("/", 1)[1] != KAUFEN["de"][farbe].rsplit("/", 1)[1]:
+            if url.rsplit("/", 1)[1].split("?")[0] != KAUFEN["de"][farbe].rsplit("/", 1)[1].split("?")[0]:
                 fehler.append(("site.py", f"ASIN {lang}/{farbe} weicht von DE ab", url))
 
     print(f"Copy → Seite: {len(stellen)} Copy-Stellen (DE {sum(1 for l, _ in stellen if l == 'de')}, EN {sum(1 for l, _ in stellen if l == 'en')}) verglichen, {len(fehlt)} nicht gefunden")
