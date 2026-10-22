@@ -19,14 +19,14 @@ VERSION = "11"
 
 # ---------------------------------------------------------------------------------------------------------------
 # Kaufen: die eine zentrale Konstante. DE auf amazon.de, EN auf amazon.co.uk (UK kaufbar seit 08.10.2026),
-# gleiche ASIN je Farbe. "ohne" = Kanne ohne Farbwahl (Knopf, solange keine Farbe gewählt ist).
+# gleiche ASIN je Farbe; DE-Links mit Amazon-Attribution-Tag (Kampagne Website mjoar.com DE, 22.10.2026). "ohne" = Kanne ohne Farbwahl (Knopf, solange keine Farbe gewählt ist).
 KAUFEN = {
     "de": {
-        "juniper": "https://www.amazon.de/dp/B0HB116F83",
-        "linen": "https://www.amazon.de/dp/B0HB16137F",
-        "onyx": "https://www.amazon.de/dp/B0H9ZWMGWR",
-        "steel": "https://www.amazon.de/dp/B0HB15MCKJ",
-        "ohne": "https://www.amazon.de/dp/B0H9ZS73SW",
+        "juniper": "https://www.amazon.de/dp/B0HB116F83?maas=maas_adg_FEA56D9EA32C439D4BBBF6D72EA46D7A_afap_abs&ref_=aa_maas&tag=maas",
+        "linen": "https://www.amazon.de/dp/B0HB16137F?maas=maas_adg_EF864ED8531FD89BDAEC4153DDB0C37A_afap_abs&ref_=aa_maas&tag=maas",
+        "onyx": "https://www.amazon.de/dp/B0H9ZWMGWR?maas=maas_adg_B3CBB3AD96387F4F2894A9EF3F220F14_afap_abs&ref_=aa_maas&tag=maas",
+        "steel": "https://www.amazon.de/dp/B0HB15MCKJ?maas=maas_adg_00DEC5090B791208EBE9EBA077008C3E_afap_abs&ref_=aa_maas&tag=maas",
+        "ohne": "https://www.amazon.de/dp/B0H9ZS73SW?maas=maas_adg_E3BE5165C9E1C96682CC16F557CAAF91_afap_abs&ref_=aa_maas&tag=maas",
     },
     "en": {
         "juniper": "https://www.amazon.co.uk/dp/B0HB116F83",
@@ -192,6 +192,7 @@ def seite(lang, key, titel, beschreibung, inhalt, kanonisch=None):
   <link rel="preload" href="/assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/web/site.css?v={VERSION}">
   <script>document.documentElement.classList.add('js');</script>
+  <script data-goatcounter="https://mjoar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body id="top">
 {kopf(lang, key)}
