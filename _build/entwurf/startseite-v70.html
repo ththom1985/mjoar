@@ -1,0 +1,383 @@
+<title>MJØÅR Startseite neu</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Manrope:wght@400;500;600&display=swap">
+<style>
+/* Startseite neu, Abschnitt für Abschnitt. Farben aus dem Startbild (Kalkputz, Travertin, Schatten); Grün nur Logo + Hauptknopf. */
+:root{
+  --kalk:#F4EEE5; --travertin:#E6D9C6; --text:#3A332D; --taupe:#8C7F70; --linie:#DCCFBD; --gruen:#506864;
+  --display:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--kalk);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--kalk)}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto}
+a{color:inherit}
+/* Kopfzeile */
+header{position:absolute;inset:0 0 auto;z-index:3}
+header .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+header svg{width:132px;color:var(--gruen);display:block}
+header nav{display:flex;gap:26px;align-items:center;font-size:14px}
+header nav a{text-decoration:none;color:var(--text)}
+header nav .sprache{color:var(--taupe)}
+.knopf{display:inline-flex;align-items:center;gap:8px;background:var(--gruen);color:#F4EEE5;font:600 14px var(--body);padding:12px 22px;border-radius:999px;text-decoration:none;letter-spacing:.01em}
+.knopf.klein{padding:9px 16px;font-size:13px}
+.link{font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+/* Markenlink: Logo als Schriftzug in Textfarbe, ohne Unterstrich */
+.link-marke{display:inline-flex;align-items:baseline;gap:.5em;color:var(--text);text-decoration:none;font:600 15px var(--body);letter-spacing:.01em}
+/* Logo-Versalhöhe (58 % der Logo-Fläche) = Versalhöhe „A“ von Amazon (Manrope ≈ 0,72 em) → 1,24 em; M-Grundlinie auf Textgrundlinie (unterer Rand 14 %) */
+.link-marke svg{height:1.24em;width:auto;display:block;color:var(--text);transform:translateY(.175em)}
+.link-marke:hover{opacity:.75}
+/* Startbereich */
+.hero{position:relative;overflow:hidden;background:#F1E9DC;min-height:clamp(560px,86vh,860px);display:grid;align-items:center}
+.hero video,.hero img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,238,229,.62) 0%,rgba(244,238,229,.3) 42%,rgba(244,238,229,.05) 100%)}
+/* weicher Übergang Startbild -> Seite: unten in denselben Ton auslaufen lassen, den die Abschnitte darunter haben */
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(244,238,229,0) 0%,rgba(244,238,229,.6) 50%,rgba(244,238,229,.96) 100%)}
+.hero .txt{z-index:2}
+.hero .txt{position:relative;z-index:1;display:grid;gap:22px;padding-block:120px 160px}
+.eyebrow{font-family:var(--display);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)}
+.hero h1{font-family:var(--display);font-weight:300;font-size:clamp(34px,4.6vw,66px);line-height:1.06;letter-spacing:-.01em;margin:0;white-space:nowrap}
+.hero h1 .umbruch{display:none}
+@media (max-width:760px){.hero h1{white-space:normal;font-size:clamp(34px,9vw,46px)}.hero h1 .umbruch{display:inline}}
+.hero p{margin:0;max-width:40ch;font-size:17px;color:#4A423B}
+.hero p.fakt{font-size:14px;color:var(--taupe);margin-top:-12px;letter-spacing:.02em}
+.hero .aktion{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.hinweis{max-width:1240px;margin:0 auto;padding-block:28px 60px;color:var(--taupe);font-size:13px}
+/* Schattenspiel aus dem Startbild läuft hinter der ganzen Seite weiter (feste Ebene, Abschnitte leicht durchscheinend) */
+.schattenlage{position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--kalk)}
+/* Hintergrund unten: gespiegelter, vergrößerter Blätterausschnitt aus dem Startvideo (schatten_blaetter.mp4, ffmpeg, 0 $) */
+.schattenlage .lage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.durch{background:rgba(244,238,229,var(--deck,.8))}
+body>p.hinweis{background:rgba(244,238,229,.8);max-width:none}
+/* Kollektion */
+.kollektion{padding-block:88px 40px}
+/* oben fast deckend wie das Startbild-Ende, darunter erst den Blätterschatten durchlassen: keine sichtbare Kante */
+.kollektion.durch{background:linear-gradient(180deg,rgba(244,238,229,.96) 0,rgba(244,238,229,.8) 220px)}
+.kollektion .kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;margin-bottom:36px}
+.kollektion h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:0}
+.kollektion .kopf p{margin:0;color:#5A5148;max-width:44ch;justify-self:end}
+/* feiner Rahmen um Produkt- und Detailbilder */
+.karte .bild,.detail .bild{box-shadow:inset 0 0 0 1px rgba(140,127,112,.3)}
+/* Sortiment nach Kategorien: links Kategorie, rechts Stücke; 4 feste Plätze je Reihe, damit alle Karten gleich groß bleiben */
+.reihe{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:32px;padding-block:30px;border-top:1px solid var(--linie)}
+.reihe:last-child{border-bottom:1px solid var(--linie)}
+.kat{display:grid;align-content:start;gap:6px}
+.kat .nr{font-family:var(--display);font-size:12px;letter-spacing:.22em;color:var(--taupe)}
+.kat h3{font-family:var(--display);font-weight:300;font-size:clamp(24px,2.4vw,30px);line-height:1.1;margin:0}
+.kat p{margin:0;font-size:14px;color:var(--taupe);max-width:26ch}
+.stuecke{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.karte{display:grid;gap:14px;align-content:start}
+.karte .bild{position:relative;aspect-ratio:4/5;background:rgba(230,217,198,.62);display:grid;place-items:center;overflow:hidden}
+.karte.da .bild{background:rgba(239,229,214,.8)}
+.karte .bild img.zeichnung{width:100%;height:100%;object-fit:contain;mix-blend-mode:normal}
+.karte .bild img.skizze{mix-blend-mode:multiply;opacity:.9}
+/* echte Größenverhältnisse: gleiche Form, 450 ml linear ×1,09, 600 ml ×1,20 gegenüber 350 ml (Foto 96 %, Produkt füllt 77 % des Fotos) */
+.karte.da .bild img{width:96%}
+.karte .bild img.s450{width:91%;height:91%}.karte .bild img.s600{width:100%;height:100%}
+.karte .bild img.sglas{width:80%;height:80%}
+.karte .bild img{width:88%;mix-blend-mode:multiply}
+.karte .bild img.schemen{filter:grayscale(1) blur(5px) opacity(.42)}
+.karte .bild img.s450{width:94%}.karte .bild img.s600{width:100%}
+.karte .schema{width:78%;fill:none;stroke:var(--taupe);stroke-width:2;opacity:.55;filter:blur(1.2px)}
+.chip{position:absolute;left:12px;top:12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:rgba(244,238,229,.85);color:var(--taupe);padding:6px 10px;border-radius:999px}
+.karte h3{font-family:var(--display);font-weight:400;font-size:19px;margin:0;letter-spacing:.02em}
+.karte p{margin:2px 0 8px;font-size:14px;color:var(--taupe)}
+.karte.bald h3{color:#6B6157}
+.karte .link{font-size:14px}
+/* LUN */
+.lun{background:rgba(242,235,224,.78);padding-block:88px}
+.lun .in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+.lun{overflow:hidden}
+.lun .buehne{margin:0;position:relative;aspect-ratio:1/1;max-width:100%}
+.lun .buehne::before{content:"";position:absolute;left:55%;top:52%;width:150%;height:135%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.5) 0%,rgba(255,255,255,.32) 35%,rgba(255,255,255,.12) 65%,rgba(255,255,255,0) 100%);z-index:0;pointer-events:none}
+.lun .riesig{position:absolute;left:57.5%;top:-6%;transform:translate(-50%,-50%);font-family:var(--display);font-weight:500;font-size:clamp(84px,12vw,170px);letter-spacing:.12em;color:rgba(140,127,112,.16);line-height:1;pointer-events:none;will-change:transform;z-index:0}
+/* Rahmenform hinter der Kanne: hell, dick, leicht unregelmäßig */
+.lun .form{position:absolute;inset:2% 4% 6% 4%;width:92%;height:92%;z-index:1;overflow:visible}
+.lun .form path{fill:none;stroke:#E9DFCF;stroke-width:3.2;stroke-linejoin:round;display:none}
+.lun .form .f-pinsel{filter:url(#pinsel);stroke-width:4.2;stroke-linecap:round}
+.lun .form[data-form="pinsel"] .f-pinsel,.lun .form[data-form="okta"] .f-okta,.lun .form[data-form="bogen"] .f-bogen{display:block}
+.lun .form .f-okta,.lun .form .f-bogen{fill:#EEE5D7;stroke:none}
+.formwahl{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:8px;font-size:13px;color:var(--taupe);flex-wrap:wrap}
+.formwahl button{font:500 13px var(--body);padding:6px 12px;border-radius:999px;border:1px solid var(--linie);background:transparent;color:var(--text);cursor:pointer}
+.formwahl button[aria-pressed="true"]{background:var(--text);color:var(--kalk);border-color:var(--text)}
+.lun .bodenschatten{position:absolute;left:30%;right:13%;top:73.5%;height:5%;z-index:2;border-radius:50%;background:radial-gradient(closest-side,rgba(58,51,45,.22),rgba(58,51,45,0));filter:blur(4px)}
+.lun .kanne{position:absolute;left:11%;width:78%;top:10%;aspect-ratio:1/1;z-index:3}
+.lun .kanne img{width:100%;height:100%;display:block;transition:opacity .3s ease}
+.lun .mass{position:absolute;inset:0;width:100%;height:100%;z-index:4;fill:none;stroke:var(--taupe);stroke-width:1;overflow:visible}
+.lun .mass path{vector-effect:non-scaling-stroke;stroke-dasharray:120;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s ease}
+.lun .buehne.warten .mass path{stroke-dashoffset:120}
+.lun .mlabel{position:absolute;z-index:4;font-size:12px;letter-spacing:.08em;color:var(--taupe);transition:opacity 1s ease .6s}
+.lun .buehne.warten .mlabel{opacity:0}
+.lun .mlabel.hoehe{left:86.5%;top:48.9%;transform:translateY(-50%)}
+.lun .mlabel.durchm{left:57.5%;top:95.5%;transform:translateX(-50%)}
+.lun h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.2vw,54px);line-height:1.05;margin:10px 0 18px}
+.lun .text>p{margin:0;max-width:52ch;color:#4A423B}
+.lun .farben{display:flex;gap:12px;margin-top:26px}
+.lun .farben button{width:42px;height:42px;border-radius:50%;background:var(--c);border:2px solid transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);cursor:pointer}
+.lun .farben button[aria-pressed="true"]{border-color:var(--text)}
+.lun .farben button:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.lun .farbname{font-size:14px;color:var(--taupe);margin:10px 0 0}
+.lun .merkmale{margin:34px 0 0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,.85fr) minmax(0,1.3fr);gap:22px 32px;border-top:1px solid var(--linie);padding-top:26px}
+.lun .merkmale div{min-width:0}
+.lun .merkmale dt{font-family:var(--display);font-weight:400;font-size:16px;color:var(--text)}
+.lun .merkmale dd{margin:3px 0 0;font-size:13px;color:var(--taupe);line-height:1.5}
+.lun .kauf{margin-top:36px}
+/* Über uns */
+.uns{padding-block:96px 88px}
+.uns-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.uns h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:8px 0 22px}
+.uns-text p{margin:0 0 14px;max-width:46ch;color:#4A423B}
+.uns-text .uns-kontakt{margin-top:18px;font-size:14px;color:var(--taupe)}
+.uns-text .unterschrift{margin-top:22px;font-family:var(--display);font-size:18px;color:var(--text)}
+.uns-bild{margin:0;aspect-ratio:4/5;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(140,127,112,.3)}
+.uns-bild img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:760px){.uns-in{grid-template-columns:minmax(0,1fr);gap:32px}}
+/* Fuß */
+.fuss{background:rgba(236,227,213,.94);border-top:1px solid var(--linie);padding-block:56px 28px;font-size:14px;color:#5A5148}
+.fuss-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.2fr) minmax(0,.8fr);gap:40px}
+.fuss svg[data-logo]{width:110px;color:var(--text);display:block;margin-bottom:14px}
+svg.logo-text{display:inline-block;height:1.24em;width:auto;color:currentColor;vertical-align:baseline;transform:translateY(.175em);margin:0 .08em}
+.uns h2.eyebrow{font-family:var(--display);font-weight:400;font-size:12px;line-height:1.5;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);margin:0 0 14px}
+.uns-text .uns-erster{font-weight:600;color:var(--text)}
+.fuss svg.logo-text{width:auto;display:inline-block;margin:0;height:1.2em;transform:translateY(.167em)}
+.fuss p{margin:0 0 8px}
+.fuss a{color:var(--text)}
+.fuss-klein{font-size:12.5px;color:var(--taupe)}
+.fuss-titel{font-family:var(--display);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)}
+.fuss-form{display:flex;gap:8px;margin:10px 0 8px;flex-wrap:wrap}
+.fuss-form input{flex:1 1 180px;min-width:0;padding:11px 14px;border:1px solid var(--linie);border-radius:999px;background:rgba(255,255,255,.6);font:14px var(--body);color:var(--text)}
+.fuss-links{display:grid;gap:10px;align-content:start}
+.fuss-links a{text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.fuss-links a:hover{text-decoration:underline}
+.fuss .ig{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.fuss-recht{margin-top:40px;padding-top:18px;border-top:1px solid var(--linie);font-size:12.5px;color:var(--taupe)}
+.fuss-recht a{color:var(--taupe)}
+.unsichtbar{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:760px){.fuss-in{grid-template-columns:minmax(0,1fr);gap:28px}}
+/* Im Detail */
+.details{padding-block:88px 40px}
+.details .kopf{margin-bottom:32px}
+.details h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:8px 0 0}
+.detailreihe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.detail{margin:0;display:grid;gap:14px;align-content:start}
+.detail .bild{aspect-ratio:4/5;overflow:hidden;background:rgba(239,229,214,.85)}
+.detail img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease;mix-blend-mode:multiply}
+.detail:hover img{transform:scale(1.04)}
+.detail figcaption strong{display:block;font-family:var(--display);font-weight:400;font-size:18px;letter-spacing:.02em}
+.detail figcaption span{display:block;margin-top:4px;font-size:14px;color:var(--taupe);line-height:1.55;max-width:32ch}
+@media (max-width:1000px){.detailreihe{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.lun .merkmale{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.lun .in{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){.reihe{grid-template-columns:minmax(0,1fr);gap:18px}}
+@media (max-width:760px){.kollektion .kopf{grid-template-columns:minmax(0,1fr)}.kollektion .kopf p{justify-self:start}.stuecke{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){header nav a:not(.knopf):not(.sprache){display:none}.hero .txt{padding-block:110px 140px}.hero video{object-position:72% 50%}}
+@media (prefers-reduced-motion: reduce){.hero video,.schattenlage video{display:none}}
+</style>
+
+<div class="schattenlage" aria-hidden="true"><img class="lage" src="schatten_blaetter_poster.jpg" alt=""><video class="lage" src="schatten_blaetter.mp4" poster="schatten_blaetter_poster.jpg" autoplay muted loop playsinline></video></div>
+
+<header class="gut"><div class="wrap in">
+  <svg data-logo aria-label="MJØÅR" viewBox="0 0 10 2"></svg>
+  <nav><a href="#produkte">Produkte</a><a href="#uns">Über uns</a><a class="sprache" href="#">DE · EN</a><a class="knopf klein" href="https://www.amazon.de/mjoar" target="_blank" rel="noopener">Kaufen</a></nav>
+</div></header>
+
+<section class="hero gut" aria-label="Startbereich">
+  <img class="poster" src="schatten_poster.jpg" alt="">
+  <video src="schatten.mp4" poster="schatten_poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="wrap txt">
+    <h1>Schöne Dinge<br class="umbruch"> für deine Kaffee-Ecke.</h1>
+    <p>Klares Design, ruhige Farben, kunststofffrei verpackt.</p>
+    <div class="aktion"><a class="knopf" href="#produkte">Produkte ansehen</a><a class="link-marke" href="https://www.amazon.de/mjoar" target="_blank" rel="noopener" aria-label="MJØÅR bei Amazon"><svg data-logo aria-hidden="true" viewBox="0 0 10 2"></svg><span>bei Amazon</span></a></div>
+  </div>
+</section>
+
+<!-- Schritt 2 · Produkte -->
+<section class="kollektion gut durch" id="produkte" aria-label="Produkte">
+  <div class="wrap">
+    <div class="kopf">
+      <h2>Produkte</h2>
+    </div>
+    <div class="sortiment">
+      <section class="reihe" aria-label="Milchkännchen">
+        <div class="kat"><h3>Milchkännchen</h3><p>Edelstahl</p></div>
+        <div class="stuecke">
+          <article class="karte da">
+            <div class="bild"><img src="farbe-onyx-960.webp" alt="LUN 350 in Onyx"></div>
+            <div class="info"><h3>LUN 350</h3><p>Onyx</p><a class="link" href="https://www.amazon.de/dp/B0H9ZWMGWR" target="_blank" rel="noopener">Bei Amazon</a></div>
+          </article>
+          <article class="karte da">
+            <div class="bild"><img src="farbe-linen-960.webp" alt="LUN 350 in Linen"></div>
+            <div class="info"><h3>LUN 350</h3><p>Linen</p><a class="link" href="https://www.amazon.de/dp/B0HB16137F" target="_blank" rel="noopener">Bei Amazon</a></div>
+          </article>
+          <article class="karte da">
+            <div class="bild"><img src="farbe-steel-960.webp" alt="LUN 350 in Steel"></div>
+            <div class="info"><h3>LUN 350</h3><p>Steel</p><a class="link" href="https://www.amazon.de/dp/B0HB15MCKJ" target="_blank" rel="noopener">Bei Amazon</a></div>
+          </article>
+          <article class="karte da">
+            <div class="bild"><img src="farbe-juniper-960.webp" alt="LUN 350 in Juniper"></div>
+            <div class="info"><h3>LUN 350</h3><p>Juniper</p><a class="link" href="https://www.amazon.de/dp/B0HB116F83" target="_blank" rel="noopener">Bei Amazon</a></div>
+          </article>
+          <article class="karte bald">
+            <div class="bild"><img src="skizze-lun.webp" alt="Skizze LUN 450" class="zeichnung skizze s450"><span class="chip">Bald</span></div>
+            <div class="info"><h3>LUN 450</h3></div>
+          </article>
+          <article class="karte bald">
+            <div class="bild"><img src="skizze-lun.webp" alt="Skizze LUN 600" class="zeichnung skizze s600"><span class="chip">Bald</span></div>
+            <div class="info"><h3>LUN 600</h3></div>
+          </article>
+        </div>
+      </section>
+      <section class="reihe" aria-label="Gläser">
+        <div class="kat"><h3>Gläser</h3><p>Doppelwandiges Glas</p></div>
+        <div class="stuecke">
+          <article class="karte bald">
+            <div class="bild"><img src="skizze-valo.webp" alt="Skizze VALO 350" class="zeichnung skizze sglas"><span class="chip">Bald</span></div>
+            <div class="info"><h3>VALO 350</h3></div>
+          </article>
+          <article class="karte bald">
+            <div class="bild"><img src="skizze-solva.webp" alt="Skizze SOLVA 350" class="zeichnung skizze sglas"><span class="chip">Bald</span></div>
+            <div class="info"><h3>SOLVA 350</h3></div>
+          </article>
+          <article class="karte bald">
+            <div class="bild"><img src="skizze-veya.webp" alt="Skizze VEYA 400" class="zeichnung skizze sglas"><span class="chip">Bald</span></div>
+            <div class="info"><h3>VEYA 400</h3></div>
+          </article>
+        </div>
+      </section>
+      <section class="reihe" aria-label="Tampermatten">
+        <div class="kat"><h3>Tampermatten</h3><p>Silikon</p></div>
+        <div class="stuecke">
+          <article class="karte bald">
+            <div class="bild"><img src="zeichnung-aora-210.svg" alt="Zeichnung AORA 210" class="zeichnung"><span class="chip">Bald</span></div>
+            <div class="info"><h3>AORA 210</h3><p>Tampermatte</p></div>
+          </article>
+        </div>
+      </section>
+      <section class="reihe" aria-label="Trinkhalme">
+        <div class="kat"><h3>Trinkhalme</h3><p>Glas</p></div>
+        <div class="stuecke">
+          <article class="karte bald">
+            <div class="bild"><img src="skizze-nila.webp" alt="Skizze NILA Trinkhalme" class="zeichnung skizze sglas"><span class="chip">Bald</span></div>
+            <div class="info"><h3>NILA</h3><p>12er-Set · klar und grau</p></div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- Schritt 3 · LUN -->
+<section class="lun gut" id="lun" aria-label="LUN 350">
+  <div class="wrap in">
+    <div class="bildspalte">
+    <figure class="buehne" id="buehne">
+      <span class="riesig" id="riesig" aria-hidden="true">LUN</span>
+      <i class="bodenschatten" aria-hidden="true"></i>
+      <div class="kanne"><img id="lun-bild" src="frei-juniper-1600.webp" alt="LUN 350 in Juniper"></div>
+    </figure>
+    </div>
+    <div class="text">
+      <p class="eyebrow">LUN 350 · Milchkännchen</p>
+      <h2>Eine Kanne,<br>vier Farben.</h2>
+      <p>Die LUN macht nicht nur beim Milchaufschäumen eine gute Figur. In jeder der vier Farben macht sie deine Kaffee-Ecke ein Stück schöner. Durch den Korpus aus 1 mm dickem Edelstahl 304 liegt sie gut in der Hand und fühlt sich richtig wertig an. Die präzise Tülle ist für Latte Art gemacht, damit Herz und Rosetta gelingen.</p>
+      <div class="farben" role="group" aria-label="Farbe wählen">
+        <button type="button" aria-pressed="true" data-f="juniper" data-n="Juniper · mattes Salbeigrün" data-a="B0HB116F83" style="--c:#8FA382" aria-label="Juniper"></button>
+        <button type="button" aria-pressed="false" data-f="linen" data-n="Linen · mattes Cremeweiß" data-a="B0HB16137F" style="--c:#E9E1D2" aria-label="Linen"></button>
+        <button type="button" aria-pressed="false" data-f="onyx" data-n="Onyx · mattes Schwarz" data-a="B0H9ZWMGWR" style="--c:#1D1E1D" aria-label="Onyx"></button>
+        <button type="button" aria-pressed="false" data-f="steel" data-n="Steel · gebürsteter Edelstahl" data-a="B0HB15MCKJ" style="--c:linear-gradient(135deg,#E3E5E6,#9EA3A6)" aria-label="Steel"></button>
+      </div>
+      <p class="farbname" id="lun-name">Juniper · mattes Salbeigrün</p>
+      <dl class="merkmale">
+        <div><dt>350 ml</dt><dd>Genug Milch für zwei Flat White oder einen Cappuccino.</dd></div>
+        <div><dt>Maße</dt><dd>93&nbsp;mm hoch, Ø&nbsp;75&nbsp;mm.</dd></div>
+        <div><dt>Spülmaschinengeeignet</dt><dd>Von Hand gespült bleibt sie am längsten schön.</dd></div>
+      </dl>
+      <div class="kauf"><a class="knopf" id="lun-kauf" href="https://www.amazon.de/dp/B0HB116F83" target="_blank" rel="noopener">Bei Amazon kaufen</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- Schritt 4 · Im Detail -->
+<section class="details gut durch" id="details" aria-label="LUN im Detail">
+  <div class="wrap">
+    <div class="kopf"><p class="eyebrow">LUN 350</p><h2>Im Detail.</h2></div>
+    <div class="detailreihe">
+      <figure class="detail"><div class="bild"><img src="detail-ausguss-680.webp" alt="Tülle der LUN aus der Nähe" loading="lazy"></div>
+        <figcaption><strong>Tülle</strong><span>Geformt für Latte Art. Nicht zu breit, damit du den Milchstrahl genau führen kannst.</span></figcaption></figure>
+      <figure class="detail"><div class="bild"><img src="detail-skala-784.webp" alt="Innenskala in ml und oz" loading="lazy"></div>
+        <figcaption><strong>Skala innen</strong><span>In ml und oz graviert. Du siehst die Menge schon beim Einfüllen.</span></figcaption></figure>
+      <figure class="detail"><div class="bild"><img src="detail-griff-960.webp" alt="Griff der LUN in Juniper" loading="lazy"></div>
+        <figcaption><strong>Nahtloser Griff</strong><span>Er geht ohne Schweißpunkt in den Korpus über. Da bleiben keine Milchreste hängen, und die Kanne ist schnell wieder sauber.</span></figcaption></figure>
+      <figure class="detail"><div class="bild"><img src="detail-wand-960.webp" alt="LUN im Baumwollbeutel vor dem Naturkarton" loading="lazy"></div>
+        <figcaption><strong>Kunststofffrei verpackt</strong><span>Im Baumwollbeutel und Naturkarton, bereit zum Verschenken.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- Schritt 5 · Über uns -->
+<section class="uns gut durch" id="uns" aria-label="Über uns">
+  <div class="wrap uns-in">
+    <div class="uns-text">
+      <h2 class="eyebrow">Über uns</h2>
+      <p class="uns-erster">Wir sind Thorsten und Jonah, Vater und Sohn und die Gründer von <svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="0 0 10 2"></svg>.</p>
+      <p>Die Idee entstand bei einem Flat White in Wien. Jonah studiert dort und arbeitet seit über drei Jahren nebenbei in einem Café. Diese Erfahrung bringt er auch bei uns ein: Er testet unsere Produkte im Alltag und kümmert sich ums Marketing. Thorsten ist für Design, Materialien und Produktentwicklung verantwortlich, vom ersten Entwurf bis zum fertigen Produkt.</p>
+      <p>Unser Morgen beginnt am Siebträger. Bei Thorsten in München, bei Jonah in Wien. Die Latte Art klappt nicht jeden Tag, der Kaffee schon.</p>
+      <p>Inspiriert haben uns die vielen schönen Specialty-Cafés in München und Wien. Dort stimmt oft einfach alles: die Atmosphäre, die Materialien und die kleinen Details, vom Milchkännchen bis zur Tasse. Genau dieses Gefühl wollten wir auch in unsere eigene Kaffee-Ecke bringen.</p>
+      <p>So entstand <svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="0 0 10 2"></svg>.</p>
+      <p>Wir entwickeln Produkte für die Kaffee-Ecke, die im Alltag funktionieren und dabei auch schön aussehen. In matten Farben, die man nicht überall findet. Dabei achten wir auf die kleinen Details, bis hin zur Verpackung: Unsere Produkte kommen ganz ohne Plastik aus.</p>
+      <p>Übrigens: <svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="0 0 10 2"></svg> ist inspiriert von den skandinavischen Wörtern „mjölk“ (Milch) und „å“ (kleiner Fluss). Wer schon mal Latte Art gegossen hat, versteht vielleicht, warum.</p>
+      <p class="unterschrift">Thorsten &amp; Jonah</p>
+      <p class="uns-kontakt">Du hast Fragen zu unseren Produkten? Schreib uns einfach an <a href="mailto:info@mjoar.com">info@mjoar.com</a>. Die Antwort kommt von uns persönlich.</p>
+    </div>
+    <figure class="uns-bild"><img src="gebrauch-giessen-960.webp" alt="Milch wird aus der LUN in eine Tasse gegossen" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- Schritt 6 · Fuß -->
+<footer class="fuss gut" aria-label="Fußbereich">
+  <div class="wrap fuss-in">
+    <div class="fuss-marke">
+      <svg data-logo aria-label="MJØÅR" viewBox="0 0 10 2"></svg>
+      <p>Designed in München und Wien.</p>
+      <p>Kontakt: <a href="mailto:info@mjoar.com">info@mjoar.com</a></p>
+      <p class="fuss-klein">Für Cafés und Fachhandel: die LUN mit eigenem Logo, auf Anfrage an <a href="mailto:info@mjoar.com?subject=Co-Branding%20LUN">info@mjoar.com</a></p>
+    </div>
+    <div class="fuss-news">
+      <p class="fuss-titel">Newsletter</p>
+      <p>Wir schreiben nur, wenn es etwas Neues gibt, zum Beispiel ein neues Produkt.</p>
+      <!-- Entwurf: Formular ohne Ziel, damit hier niemand versehentlich eingetragen wird. Live: Brevo-Formular aus _build/site.py (Double-Opt-in) -->
+      <form class="fuss-form" action="#" onsubmit="return false">
+        <label class="unsichtbar" for="nl">E-Mail</label>
+        <input id="nl" type="email" placeholder="E-Mail" autocomplete="email">
+        <button class="knopf" type="submit">Eintragen</button>
+      </form>
+      <p class="fuss-klein">Erst kommt eine Bestätigungsmail, abmelden geht mit einem Klick.</p>
+    </div>
+    <div class="fuss-links">
+      <p class="fuss-titel"><svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="0 0 10 2"></svg></p>
+      <a href="https://www.amazon.de/mjoar" target="_blank" rel="noopener">Markenshop bei Amazon</a>
+      <a href="https://www.instagram.com/mjoar.coffee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="ig"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>Instagram</a>
+    </div>
+  </div>
+  <div class="wrap fuss-recht"><a href="#">Impressum</a> · <a href="#">Datenschutz</a> · <a href="#">Sicherheitshinweise (PDF)</a></div>
+</footer>
+
+<script>
+fetch('logo.svg').then(r=>r.text()).then(svg=>{
+  const m=svg.match(/viewBox="([^"]+)"/), inner=svg.replace(/^[\s\S]*?<svg[^>]*>/,'').replace(/<\/svg>\s*$/,'');
+  document.querySelectorAll('svg[data-logo]').forEach(el=>{ if(m) el.setAttribute('viewBox',m[1]); el.innerHTML=inner; });
+}).catch(()=>{});
+// Bühne: Bemaßung zeichnet sich ein, großes LUN bewegt sich langsamer (Parallaxe)
+const bu=document.getElementById('buehne'), rz=document.getElementById('riesig');
+const ruhig=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!ruhig) addEventListener('scroll',()=>{const r=bu.getBoundingClientRect(); const off=(r.top+r.height/2-innerHeight/2)*0.18; rz.style.transform='translate(-50%,calc(-50% + '+off.toFixed(1)+'px))';},{passive:true});
+const lb=document.getElementById('lun-bild');
+document.querySelectorAll('.lun .farben button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.lun .farben button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  lb.style.opacity=0; setTimeout(()=>{lb.src='frei-'+b.dataset.f+'-1600.webp'; lb.alt='LUN 350 in '+b.getAttribute('aria-label'); lb.style.opacity=1;},220);
+  document.getElementById('lun-name').textContent=b.dataset.n;
+  document.getElementById('lun-kauf').href='https://www.amazon.de/dp/'+b.dataset.a;
+}));
+</script>
