@@ -24,6 +24,13 @@ def quelle(name):
     return Image.open(SHOOT.format(name)).convert("RGB")
 
 
+LOGO_R1 = PB + "Retusche_Logos_2026-11-12/web/2026_10_02_{}_logo_r1.png"   # 13.11.: Logo-Retusche 12.11. auf das Original übertragen
+
+
+def quelle_logo(name):
+    return Image.open(LOGO_R1.format(name)).convert("RGB")
+
+
 def retusche(name):
     """Retuschierte Fassung aus _build/retusche.py (Thorsten 11.10.: Griffansätze, Ausguss-Kante)."""
     return Image.open(PB + f"Retusche/2026_10_02_{name}_retusche.png").convert("RGB")
@@ -57,7 +64,8 @@ def weiss_anheben(im, ab=244):
 def freisteller(farbe):
     """Freisteller eng auf das Objekt, quadratisch auf Creme (wie A+ 04 Farben)."""
     # Juniper: retuschierte Griffansätze (Thorsten 11.10., Skript Produktbilder/Retusche/fugen_ziel_amazon.py)
-    pfad = PB + "Retusche/LUN350_Juniper_Hauptbild_Julia_2000_logo_retusche.png" if farbe == "Juniper" else FREI.format(farbe)
+    # 13.11. (Thorsten): Logo nachgeschärft wie Amazon r2 (12.11.); Juniper r2 enthält auch die Griffansätze-Retusche
+    pfad = os.path.join(ROOT, "assets", "amazon", f"LUN350_{farbe}_Hauptbild_Julia_Logo_2000_r2.png")
     im = weiss_anheben(Image.open(pfad).convert("RGB"))
     g = np.asarray(im.convert("L"))
     ys, xs = np.where(g < 246)
@@ -116,14 +124,14 @@ export("groesse", crop_cover(quelle("Mjoar_0021 1"), 4, 5, cx=0.42, cy=0.45))
 # Gebrauch 0428 1, 0455 1, 0026 2 (4:5, Mittelpunkte wie A+ 05)
 export("gebrauch-aufschaeumen", crop_cover(quelle("MJOAR0428 1"), 4, 5, cx=0.52, cy=0.5))
 export("gebrauch-giessen", crop_cover(quelle("MJOAR0455 1"), 4, 5, cx=0.47, cy=0.5))
-export("gebrauch-tasse", crop_cover(quelle("Mjoar_0026 2"), 4, 5, cx=0.465, cy=0.5))
+export("gebrauch-tasse", crop_cover(quelle_logo("Mjoar_0026 2"), 4, 5, cx=0.465, cy=0.5))
 
 # Verpackung 0307, 0310, 0321, 0332 (1:1, etwas enger auf Karton und Beutel)
 for nr in ["0307", "0310", "0321", "0332"]:
     export(f"verpackung-{nr}", crop_cover(quelle(f"MJOAR{nr}"), 1, 1, cx=0.5, cy=0.6, zoom=1.25))
 
 # Über uns 0284 (Familie): Desktop 3:2, mobil 4:5
-f = quelle("MJOAR0284")
+f = quelle_logo("MJOAR0284")
 export("familie-d", crop_cover(f, 3, 2, cx=0.55, cy=0.58))
 export("familie-m", crop_cover(f, 4, 5, cx=0.5, cy=0.55))
 # Hero Desktop (Fable 08.10., Nachbesserung PR #4): ganzes Original 1:1, keine Kanne angeschnitten. Ein 3:2- oder
