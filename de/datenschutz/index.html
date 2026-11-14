@@ -47,8 +47,8 @@ header nav .sprache{color:var(--taupe)}
 .link-marke svg{height:1.24em;width:auto;display:block;color:var(--text);transform:translateY(.175em)}
 .link-marke:hover{opacity:.75}
 /* Startbereich */
-.hero{position:relative;overflow:hidden;background:#F1E9DC;min-height:clamp(560px,86vh,860px);display:grid;align-items:center}
-.hero video,.hero img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero{position:relative;overflow:hidden;background:#F1E9DC;min-height:clamp(560px,100vh,1200px);display:grid;align-items:center}
+.hero video,.hero img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 100%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,238,229,.62) 0%,rgba(244,238,229,.3) 42%,rgba(244,238,229,.05) 100%)}
 /* weicher Übergang Startbild -> Seite: unten in denselben Ton auslaufen lassen, den die Abschnitte darunter haben */
 .hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:5%;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(244,238,229,0) 0%,rgba(244,238,229,.55) 55%,rgba(244,238,229,.96) 100%)}
@@ -91,7 +91,8 @@ body>p.hinweis{background:rgba(244,238,229,.8);max-width:none}
 .karte .bild img.zeichnung{width:100%;height:100%;object-fit:contain;mix-blend-mode:normal}
 .karte .bild img.skizze{mix-blend-mode:multiply;opacity:.9}
 /* echte Größenverhältnisse: gleiche Form, 450 ml linear ×1,09, 600 ml ×1,20 gegenüber 350 ml (Foto 96 %, Produkt füllt 77 % des Fotos) */
-.karte.da .bild img{width:96%}
+.karte.da .bild::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 62% 50% at 50% 50%,rgba(255,255,255,.62) 0%,rgba(255,255,255,.32) 45%,rgba(255,255,255,0) 100%);pointer-events:none}
+.karte.da .bild img{width:96%;position:relative;mix-blend-mode:normal}
 .karte .bild img.s450{width:91%;height:91%}.karte .bild img.s600{width:100%;height:100%}
 .karte .bild img.sglas{width:80%;height:80%}
 .karte .bild img{width:88%;mix-blend-mode:multiply}
