@@ -8,6 +8,14 @@
 #  4. Keine Überschrift (h1–h4) endet mit „.“.
 #  5. Verbotsliste: Gedankenstriche, „Entworfen in“, Preis, Farb-Unterzeilen, satin, Tülle.
 #  6. Links: interne Ziele existieren (Dateien und Anker), Kaufen DE → amazon.de, EN → amazon.co.uk; externe Ziele gelistet.
+# Seit der neuen DE-Startseite (Entwurf v70, Thorsten 13.11.2026) gelten 1, 2, 4 und 5 für EN, die Rechtsseiten und die
+# Weiterleitungen. Die DE-Startseite (/ und /de/) prüft Abschnitt 7 gegen den abgenommenen Entwurf:
+#  7. Wortgleichheit Startseite ↔ Entwurf (_build/entwurf/startseite-v70.html): sichtbarer Text in derselben Reihenfolge,
+#     Alt-Texte, aria-label und Platzhalter gleich (Abweichungen nur laut ENTWURF_ATTR_ERLAUBT); Titel und Beschreibung
+#     nur aus Sätzen des Entwurfs. Marke nie als geschriebenes Wort im sichtbaren Text (immer Logo), kein „Barista“.
+#  8. Technik: kein Google-Fonts-Abruf, Schriften lokal vorhanden, jedes svg[data-logo] mit eingebettetem Logo (kein fetch),
+#     DE-Kauflinks mit Amazon-Attribution, echtes Brevo-Formular, GoatCounter, Videos nur ohne reduzierte Bewegung und
+#     mobil < 1,5 MB, Weiterleitung /latte-art/ → / und nicht in der Sitemap.
 #   python _build/pruefen.py        (aus dem Worktree, nach site.py)
 import html
 import importlib.util
@@ -26,10 +34,17 @@ _spec.loader.exec_module(_mjoar_site)
 DATENSCHUTZ_ENTFAELLT = _mjoar_site.DATENSCHUTZ_ENTFAELLT
 KAUFEN = _mjoar_site.KAUFEN
 WEITERLEITUNGEN = _mjoar_site.WEITERLEITUNGEN
+BREVO = _mjoar_site.BREVO
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COPY = r"C:/Users/ththomas/OneDrive/01_THOMAS_MERCANTILE_BUSINESS/01_Marke_MJOAR/03_Website_Landingpage/MJOAR_WEB_COPY_v4.md"
-ONEPAGER = {"de": ["de/index.html", "index.html"], "en": ["en/index.html"]}
+ONEPAGER = {"en": ["en/index.html"]}
+START_DE = ["index.html", "de/index.html"]
+ENTWURF = os.path.join(ROOT, "_build", "entwurf", "startseite-v70.html")
+# Bewusste Abweichungen der Attribute vom Entwurf (Zahl = Mehr (+) oder Weniger (−) auf der gebauten Seite):
+# Kopf-Logo ist jetzt ein Link zur Startseite (aria-label am Link statt am Logo), das Menü hat eine Beschriftung.
+ENTWURF_ATTR_ERLAUBT = {("aria-label", "MJØÅR"): -1, ("aria-label", "MJØÅR Startseite"): 1, ("aria-label", "Menü"): 1}
+MOBIL_VIDEO_MAX = 1_500_000
 RECHT = {"de/impressum/index.html": "impressum.html", "de/datenschutz/index.html": "datenschutz.html",
          "en/imprint/index.html": "impressum.html", "en/privacy/index.html": "datenschutz.html"}
 UMLEITUNG = [w[0].strip("/") + "/index.html" for w in WEITERLEITUNGEN] + ["impressum.html", "datenschutz.html"]
@@ -121,6 +136,21 @@ def parse(rel):
     return p
 
 
+def parse_body(roh):
+    """Nur der sichtbare Teil ab <body> (der Entwurf hat keinen <head>)."""
+    i = roh.find("<body")
+    if i < 0:
+        i = roh.index("</style>") + len("</style>")
+    p = Text()
+    p.feed(roh[i:])
+    p.flush()
+    return p
+
+
+def entwurf_parse():
+    return parse_body(open(ENTWURF, encoding="utf-8").read())
+
+
 def korpus():
     roh = open(COPY, encoding="utf-8").read().replace("**", "")
     teile = [re.sub(r"^\s*(?:[-*]|\d+\.)\s+", "", z) for z in roh.splitlines()]
@@ -189,7 +219,9 @@ def main():
         return s in erlaubt_alt or any(re.fullmatch(re.escape(f).replace(re.escape("{}"), r"\w+"), s) for f in alt_formate)
 
     alle = [s for l in ONEPAGER.values() for s in l] + list(RECHT) + UMLEITUNG
-    geparst = {s: parse(s) for s in alle}
+    geparst = {s: parse(s) for s in alle + START_DE}
+    entwurf = entwurf_parse()
+    entwurf_text = norm(" \n ".join(entwurf.bloecke))
 
     # 1. Seite → Copy
     gepruefte = 0
@@ -207,6 +239,9 @@ def main():
                 continue
             if b in recht_titel:
                 ausnahmen.append((s, "Titel Rechtsseite", b))
+                continue
+            if not s.startswith("en/") and b in entwurf.bloecke:
+                ausnahmen.append((s, "aus Entwurf v70 (Navigation DE)", b))
                 continue
             fehler.append((s, "nicht in Copy v4", b))
         for k, v in p.attrs:
@@ -239,11 +274,107 @@ def main():
     for lang, seiten in ONEPAGER.items():
         p = geparst[seiten[0]]
         seitentext[lang] = norm(" \n ".join(p.bloecke + [v for _, v in p.attrs]))
-    stellen = copy_stellen()
+    # DE-Stellen der Copy v4 stehen seit der neuen Startseite nicht mehr auf /de/ (Inhalt jetzt Entwurf v70, Abschnitt 7).
+    stellen = [(l, x) for l, x in copy_stellen() if l in ONEPAGER]
     fehlt = [(l, x) for l, x in stellen if x not in seitentext[l]]
-    # Root "/" ist der deutsche One-Pager: gleicher Inhalt wie /de/
-    if geparst["index.html"].bloecke != geparst["de/index.html"].bloecke:
-        fehler.append(("index.html", "Startseite / weicht vom deutschen One-Pager ab", ""))
+    # Root "/" ist die deutsche Startseite: gleicher Inhalt wie /de/
+    if geparst["index.html"].bloecke != geparst["de/index.html"].bloecke or geparst["index.html"].attrs != geparst["de/index.html"].attrs:
+        fehler.append(("index.html", "Startseite / weicht von /de/ ab", ""))
+
+    # 7. Startseite DE ↔ Entwurf v70
+    hinweise = []
+    for s in START_DE:
+        roh = lesen(s)
+        p = parse_body(roh)
+        if norm(" ".join(p.bloecke)) != norm(" ".join(entwurf.bloecke)):
+            a_, b_ = norm(" ".join(entwurf.bloecke)), norm(" ".join(p.bloecke))
+            i = next((i for i, (x, y) in enumerate(zip(a_, b_)) if x != y), min(len(a_), len(b_)))
+            fehler.append((s, "Text weicht vom Entwurf ab", f"Entwurf …{a_[max(0, i - 40):i + 40]}… / Seite …{b_[max(0, i - 40):i + 40]}…"))
+        zaehl = {}
+        for k, v in entwurf.attrs:
+            zaehl[(k, v)] = zaehl.get((k, v), 0) - 1
+        for k, v in p.attrs:
+            zaehl[(k, v)] = zaehl.get((k, v), 0) + 1
+        for kv, n in zaehl.items():
+            if n and ENTWURF_ATTR_ERLAUBT.get(kv) != n:
+                fehler.append((s, "Attribut weicht vom Entwurf ab", f"{kv[0]}={kv[1]!r} ({n:+d})"))
+        for kv, n in ENTWURF_ATTR_ERLAUBT.items():
+            if zaehl.get(kv, 0) == n:
+                ausnahmen.append((s, f"{kv[0]} ({n:+d} ggü. Entwurf)", kv[1]))
+        titel = re.search(r"<title>(.*?)</title>", roh).group(1)
+        beschreibung = re.search(r'<meta name="description" content="([^"]+)"', roh).group(1)
+        for teil in norm(titel).split(" · "):
+            if teil != "MJØÅR" and teil not in entwurf_text:
+                fehler.append((s, "Titel nicht aus dem Entwurf", teil))
+        for satz in re.findall(r"[^.]+\.", norm(beschreibung)):
+            if satz.strip() not in entwurf_text:
+                fehler.append((s, "Beschreibung nicht aus dem Entwurf", satz.strip()))
+        for k in ('<link rel="canonical"', 'hreflang="de"', 'hreflang="en"', 'hreflang="x-default"', 'property="og:image"',
+                  'name="twitter:card"', '<html lang="de">'):
+            if k not in roh:
+                fehler.append((s, "Kopf unvollständig", k))
+        sichtbar = " ".join(p.bloecke)
+        for muster, grund in [(r"[–—]|\s-\s", "Gedankenstrich"), (r"€|EUR\b|£", "Preis"),
+                              (r"(?i)la marzocco", "Maschinen-Schriftzug genannt"), (r"(?i)(?<![@\w.])MJ[ØO][ÅA]R(?![\w]|\.[a-z])", "Marke als Wort statt Logo"),
+                              (r"(?i)barista", "„Barista“")]:
+            if re.search(muster, sichtbar):
+                fehler.append((s, grund, re.search(muster, sichtbar).group(0)))
+        # Nach der Verbotsliste v4 gesperrt, im abgenommenen Entwurf aber so gewollt: nur melden, nicht ändern.
+        if s == "index.html":
+            for muster, grund in [(r"Tülle", "„Tülle“ (v4: überall Ausguss)"), (r"Designed in", "„Designed in“ (Thorsten 06.10.: kein „Entworfen in“)"),
+                                  (r"mattes Cremeweiß|mattes Salbeigrün|mattes Schwarz|gebürsteter Edelstahl", "Farb-Unterzeile (Jonah 08.10.: nur Namen)")]:
+                for treffer in sorted(set(re.findall(muster, sichtbar))):
+                    hinweise.append((grund, treffer))
+            for tag, text in p.ueberschriften:
+                if text.endswith("."):
+                    hinweise.append((f"{tag} endet mit Punkt (v4-Regel)", text))
+
+    # 8. Technik
+    for s in alle + START_DE:
+        q = lesen(s)
+        if re.search(r"fonts\.(googleapis|gstatic)\.com", q):
+            fehler.append((s, "Google Fonts eingebunden", ""))
+        if re.search(r"<meta http-equiv=\"refresh\"", q):
+            continue
+        for amz in re.findall(r'https://www\.amazon\.de/dp/[^"\s]+', html.unescape(q)):
+            if "maas=" not in amz:
+                fehler.append((s, "DE-Kauflink ohne Amazon-Attribution", amz))
+        if "gc.zgo.at/count.js" not in q:
+            fehler.append((s, "GoatCounter fehlt", ""))
+    for s in START_DE:
+        q = lesen(s)
+        for url in re.findall(r"url\('(/[^']+)'\)", q):
+            if not os.path.exists(os.path.join(ROOT, url.strip("/").replace("/", os.sep))):
+                fehler.append((s, "Schrift/CSS-Datei fehlt", url))
+        if "fetch(" in q:
+            fehler.append((s, "fetch() im Skript (Logo muss eingebettet sein)", ""))
+        for svg in re.findall(r"<svg data-logo[^>]*>(.*?)</svg>", q, re.S):
+            if "<path" not in svg:
+                fehler.append((s, "svg[data-logo] ohne eingebettetes Logo", svg[:40]))
+        if f'action="{html.escape(BREVO)}"' not in q or 'name="EMAIL"' not in q or 'name="email_address_check"' not in q:
+            fehler.append((s, "Brevo-Formular fehlt oder unvollständig", ""))
+        if 'onsubmit="return false"' in q:
+            fehler.append((s, "Newsletter-Formular abgeschaltet", ""))
+        for video in re.findall(r"<video[^>]*>(.*?)</video>", q, re.S):
+            quellen = re.findall(r'<source src="([^"]+)" type="video/mp4" media="([^"]+)"', video)
+            if not quellen or len(quellen) != video.count("<source"):
+                fehler.append((s, "Video ohne media-gesteuerte Quellen", video[:60]))
+            for src, media in quellen:
+                if "prefers-reduced-motion: no-preference" not in media:
+                    fehler.append((s, "Video lädt auch bei reduzierter Bewegung", src))
+                groesse = os.path.getsize(os.path.join(ROOT, src.strip("/").replace("/", os.sep)))
+                if "max-width: 760px" in media and groesse >= MOBIL_VIDEO_MAX:
+                    fehler.append((s, "Mobil-Video zu groß", f"{src} {groesse} B"))
+        if not re.search(r"@media \(prefers-reduced-motion: reduce\)\{[^}]*video\{display:none\}", q):
+            fehler.append((s, "CSS blendet Video bei reduzierter Bewegung nicht aus", ""))
+    la = lesen("latte-art/index.html")
+    if '<link rel="canonical" href="https://mjoar.com/">' not in la or 'content="0; url=/"' not in la:
+        fehler.append(("latte-art/index.html", "Weiterleitung nicht auf die Startseite", ""))
+    if "latte-art" in lesen("sitemap.xml"):
+        fehler.append(("sitemap.xml", "latte-art steht in der Sitemap", ""))
+    for s in START_DE + [x for x in RECHT if x.startswith("de/")]:
+        if re.search(r'href="[^"]*#latte-art"|href="/latte-art/', lesen(s)):
+            fehler.append((s, "interner Link auf Latte Art", ""))
 
     # 3. Rechtstexte byte-gleich
     for s, alt in RECHT.items():
@@ -262,7 +393,7 @@ def main():
 
     # 6. Links, Anker, Kaufen
     extern, kaputt = set(), []
-    for s in alle:
+    for s in alle + START_DE:
         q = lesen(s)
         ziele = re.findall(r'(?:href|src|content|action|data-kaufen)="([^"]+)"', q)
         ziele += [u.split(" ")[0] for s_ in re.findall(r'srcset="([^"]+)"', q) for u in s_.split(", ")]
@@ -302,10 +433,11 @@ def main():
             if url.rsplit("/", 1)[1].split("?")[0] != KAUFEN["de"][farbe].rsplit("/", 1)[1].split("?")[0]:
                 fehler.append(("site.py", f"ASIN {lang}/{farbe} weicht von DE ab", url))
 
-    print(f"Copy → Seite: {len(stellen)} Copy-Stellen (DE {sum(1 for l, _ in stellen if l == 'de')}, EN {sum(1 for l, _ in stellen if l == 'en')}) verglichen, {len(fehlt)} nicht gefunden")
+    print(f"Copy → Seite: {len(stellen)} Copy-Stellen (EN; DE-Startseite jetzt aus Entwurf v70) verglichen, {len(fehlt)} nicht gefunden")
     for f in fehlt:
         print("  FEHLT", f)
-    print(f"Seite → Copy: {gepruefte} Textblöcke auf {len(alle)} Seiten geprüft, {len(fehler)} Abweichungen")
+    print(f"Seite → Copy: {gepruefte} Textblöcke auf {len(alle)} Seiten geprüft; Startseite ↔ Entwurf v70: {len(entwurf.bloecke)} Textblöcke, "
+          f"{len(entwurf.attrs)} Attribute auf {len(START_DE)} Seiten; Technik geprüft. {len(fehler)} Abweichungen")
     for f in fehler:
         print("  ABWEICHUNG", f)
     h_anzahl = sum(len(geparst[s].ueberschriften) for s in alle)
@@ -314,7 +446,10 @@ def main():
     print(f"Bewusst nicht aus der Copy ({len(set((k, v) for _, k, v in ausnahmen))} verschiedene):")
     for k, v in sorted(set((k, v) for _, k, v in ausnahmen)):
         print(f"  {k}: {v}")
-    print(f"Links: {len(alle)} Seiten, {len(kaputt)} kaputte interne Ziele oder Anker")
+    print(f"Hinweise Startseite (aus dem abgenommenen Entwurf übernommen, nach Regeln v4 gesperrt; nicht geändert, zur Freigabe):")
+    for h in hinweise:
+        print(f"  {h[0]}: {h[1]}")
+    print(f"Links: {len(alle) + len(START_DE)} Seiten, {len(kaputt)} kaputte interne Ziele oder Anker")
     for k in kaputt:
         print("  KAPUTT", k)
     print("Externe Ziele:")

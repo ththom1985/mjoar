@@ -108,6 +108,8 @@ T = {
         "fuss": {
             "links": ("MJØÅR", "Ein kleines Unternehmen aus München und Wien."),  # Marke als Logo (Thorsten 10.10.)
             "kontakt": "Kontakt:",
+            # Co-Branding-Hinweis (Thorsten 10.11., PR #23 direkt im HTML; hier in den Seitenbau übernommen)
+            "b2b": ("Für Cafés und Fachhandel: die LUN mit eigenem Logo, auf Anfrage an ", "Co-Branding%20LUN"),
             "nl": "Neues von MJØÅR per Mail. Wir schreiben nur, wenn es etwas Neues gibt, zum Beispiel ein neues Produkt oder eine Anleitung.",
             "nl_feld": "E-Mail",
             "nl_knopf": "Eintragen",
@@ -214,6 +216,7 @@ T = {
         "fuss": {
             "links": ("MJØÅR", "A small company from Munich and Vienna."),
             "kontakt": "Contact:",
+            "b2b": ("For cafés and retailers: the LUN with your own logo, on request via ", "Co-branding%20LUN"),
             "nl": "News from MJØÅR by email. We only write when there's something new, like a new product or a guide.",
             "nl_feld": "Email",
             "nl_knopf": "Sign up",
@@ -261,6 +264,10 @@ EN_HINWEIS = "Legal text in German."
 
 # Für den Wortgleichheits-Diff: sichtbarer Seitentext, der bewusst nicht aus der Copy stammt.
 NICHT_IN_COPY = {
-    "de": [],
-    "en": [EN_HINWEIS],
+    "de": ["Für Cafés und Fachhandel: die LUN mit eigenem Logo, auf Anfrage an info@mjoar.com"],
+    "en": [EN_HINWEIS, "For cafés and retailers: the LUN with your own logo, on request via info@mjoar.com"],
 }
+
+# Navigation der deutschen Rechtsseiten (alter Seitenkopf) auf die Anker der neuen Startseite (Entwurf v70, 13.11.2026):
+# Produkte und Über uns wie im Kopf der Startseite, dazu LUN 350 und Details aus Copy v4. Milch und Latte Art entfällt.
+NAV_RECHT_DE = [("produkte", "Produkte"), ("lun", "LUN 350"), ("details", "Details"), ("uns", "Über uns")]

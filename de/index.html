@@ -2,131 +2,421 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MJØÅR · LUN Milchkännchen aus Edelstahl</title>
-  <meta name="description" content="Die LUN 350 von MJØÅR: ein Milchkännchen aus einem Millimeter Edelstahl, mit Ausguss für Latte Art, in vier matten Farben. Von Thorsten und Jonah aus München und Wien.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MJØÅR · Schöne Dinge für deine Kaffee-Ecke</title>
+  <meta name="description" content="Schöne Dinge für deine Kaffee-Ecke. Klares Design, ruhige Farben, kunststofffrei verpackt.">
   <link rel="canonical" href="https://mjoar.com/de/">
   <link rel="alternate" hreflang="de" href="https://mjoar.com/de/">
   <link rel="alternate" hreflang="en" href="https://mjoar.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://mjoar.com/">
-  <meta property="og:title" content="MJØÅR · LUN Milchkännchen aus Edelstahl">
-  <meta property="og:description" content="Die LUN 350 von MJØÅR: ein Milchkännchen aus einem Millimeter Edelstahl, mit Ausguss für Latte Art, in vier matten Farben. Von Thorsten und Jonah aus München und Wien.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MJØÅR">
+  <meta property="og:title" content="MJØÅR · Schöne Dinge für deine Kaffee-Ecke">
+  <meta property="og:description" content="Schöne Dinge für deine Kaffee-Ecke. Klares Design, ruhige Farben, kunststofffrei verpackt.">
   <meta property="og:url" content="https://mjoar.com/de/">
   <meta property="og:image" content="https://mjoar.com/assets/web/og-familie.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Die LUN in vier Farben">
   <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MJØÅR · Schöne Dinge für deine Kaffee-Ecke">
+  <meta name="twitter:description" content="Schöne Dinge für deine Kaffee-Ecke. Klares Design, ruhige Farben, kunststofffrei verpackt.">
+  <meta name="twitter:image" content="https://mjoar.com/assets/web/og-familie.jpg">
+  <meta name="twitter:image:alt" content="Die LUN in vier Farben">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/web/site.css?v=12">
-  <script>document.documentElement.classList.add('js');</script>
-  <script data-goatcounter="https://mjoar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <link rel="preload" href="/assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Schriften selbst gehostet (Datenschutz, kein Google-Fonts-Abruf): Jost 300–500, Manrope 400–600, Subset latin.
+   Variable WOFF2, Gewichtsachse auf die genutzten Schnitte gekürzt (_build/README.md). Lizenz SIL OFL 1.1, assets/fonts/OFL.txt */
+@font-face{font-family:'Jost';font-style:normal;font-weight:300 500;font-display:swap;src:url('/assets/fonts/jost-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 600;font-display:swap;src:url('/assets/fonts/manrope-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* Startseite neu, Abschnitt für Abschnitt. Farben aus dem Startbild (Kalkputz, Travertin, Schatten); Grün nur Logo + Hauptknopf. */
+:root{
+  --kalk:#F4EEE5; --travertin:#E6D9C6; --text:#3A332D; --taupe:#8C7F70; --linie:#DCCFBD; --gruen:#506864;
+  --display:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--kalk);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--kalk)}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto}
+a{color:inherit}
+/* Kopfzeile */
+header{position:absolute;inset:0 0 auto;z-index:3}
+header .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+header svg{width:132px;color:var(--gruen);display:block}
+header nav{display:flex;gap:26px;align-items:center;font-size:14px}
+header nav a{text-decoration:none;color:var(--text)}
+header nav .sprache{color:var(--taupe)}
+.knopf{display:inline-flex;align-items:center;gap:8px;background:var(--gruen);color:#F4EEE5;font:600 14px var(--body);padding:12px 22px;border-radius:999px;text-decoration:none;letter-spacing:.01em}
+.knopf.klein{padding:9px 16px;font-size:13px}
+.link{font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+/* Markenlink: Logo als Schriftzug in Textfarbe, ohne Unterstrich */
+.link-marke{display:inline-flex;align-items:baseline;gap:.5em;color:var(--text);text-decoration:none;font:600 15px var(--body);letter-spacing:.01em}
+/* Logo-Versalhöhe (58 % der Logo-Fläche) = Versalhöhe „A“ von Amazon (Manrope ≈ 0,72 em) → 1,24 em; M-Grundlinie auf Textgrundlinie (unterer Rand 14 %) */
+.link-marke svg{height:1.24em;width:auto;display:block;color:var(--text);transform:translateY(.175em)}
+.link-marke:hover{opacity:.75}
+/* Startbereich */
+.hero{position:relative;overflow:hidden;background:#F1E9DC;min-height:clamp(560px,86vh,860px);display:grid;align-items:center}
+.hero video,.hero img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,238,229,.62) 0%,rgba(244,238,229,.3) 42%,rgba(244,238,229,.05) 100%)}
+/* weicher Übergang Startbild -> Seite: unten in denselben Ton auslaufen lassen, den die Abschnitte darunter haben */
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(244,238,229,0) 0%,rgba(244,238,229,.6) 50%,rgba(244,238,229,.96) 100%)}
+.hero .txt{z-index:2}
+.hero .txt{position:relative;z-index:1;display:grid;gap:22px;padding-block:120px 160px}
+.eyebrow{font-family:var(--display);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)}
+.hero h1{font-family:var(--display);font-weight:300;font-size:clamp(34px,4.6vw,66px);line-height:1.06;letter-spacing:-.01em;margin:0;white-space:nowrap}
+.hero h1 .umbruch{display:none}
+@media (max-width:760px){.hero h1{white-space:normal;font-size:clamp(34px,9vw,46px)}.hero h1 .umbruch{display:inline}}
+.hero p{margin:0;max-width:40ch;font-size:17px;color:#4A423B}
+.hero p.fakt{font-size:14px;color:var(--taupe);margin-top:-12px;letter-spacing:.02em}
+.hero .aktion{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.hinweis{max-width:1240px;margin:0 auto;padding-block:28px 60px;color:var(--taupe);font-size:13px}
+/* Schattenspiel aus dem Startbild läuft hinter der ganzen Seite weiter (feste Ebene, Abschnitte leicht durchscheinend) */
+.schattenlage{position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--kalk)}
+/* Hintergrund unten: gespiegelter, vergrößerter Blätterausschnitt aus dem Startvideo (schatten_blaetter.mp4, ffmpeg, 0 $) */
+.schattenlage .lage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.durch{background:rgba(244,238,229,var(--deck,.8))}
+body>p.hinweis{background:rgba(244,238,229,.8);max-width:none}
+/* Kollektion */
+.kollektion{padding-block:88px 40px}
+/* oben fast deckend wie das Startbild-Ende, darunter erst den Blätterschatten durchlassen: keine sichtbare Kante */
+.kollektion.durch{background:linear-gradient(180deg,rgba(244,238,229,.96) 0,rgba(244,238,229,.8) 220px)}
+.kollektion .kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;margin-bottom:36px}
+.kollektion h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:0}
+.kollektion .kopf p{margin:0;color:#5A5148;max-width:44ch;justify-self:end}
+/* feiner Rahmen um Produkt- und Detailbilder */
+.karte .bild,.detail .bild{box-shadow:inset 0 0 0 1px rgba(140,127,112,.3)}
+/* Sortiment nach Kategorien: links Kategorie, rechts Stücke; 4 feste Plätze je Reihe, damit alle Karten gleich groß bleiben */
+.reihe{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:32px;padding-block:30px;border-top:1px solid var(--linie)}
+.reihe:last-child{border-bottom:1px solid var(--linie)}
+.kat{display:grid;align-content:start;gap:6px}
+.kat .nr{font-family:var(--display);font-size:12px;letter-spacing:.22em;color:var(--taupe)}
+.kat h3{font-family:var(--display);font-weight:300;font-size:clamp(24px,2.4vw,30px);line-height:1.1;margin:0}
+.kat p{margin:0;font-size:14px;color:var(--taupe);max-width:26ch}
+.stuecke{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.karte{display:grid;gap:14px;align-content:start}
+.karte .bild{position:relative;aspect-ratio:4/5;background:rgba(230,217,198,.62);display:grid;place-items:center;overflow:hidden}
+.karte.da .bild{background:rgba(239,229,214,.8)}
+.karte .bild img.zeichnung{width:100%;height:100%;object-fit:contain;mix-blend-mode:normal}
+.karte .bild img.skizze{mix-blend-mode:multiply;opacity:.9}
+/* echte Größenverhältnisse: gleiche Form, 450 ml linear ×1,09, 600 ml ×1,20 gegenüber 350 ml (Foto 96 %, Produkt füllt 77 % des Fotos) */
+.karte.da .bild img{width:96%}
+.karte .bild img.s450{width:91%;height:91%}.karte .bild img.s600{width:100%;height:100%}
+.karte .bild img.sglas{width:80%;height:80%}
+.karte .bild img{width:88%;mix-blend-mode:multiply}
+.karte .bild img.schemen{filter:grayscale(1) blur(5px) opacity(.42)}
+.karte .bild img.s450{width:94%}.karte .bild img.s600{width:100%}
+.karte .schema{width:78%;fill:none;stroke:var(--taupe);stroke-width:2;opacity:.55;filter:blur(1.2px)}
+.chip{position:absolute;left:12px;top:12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:rgba(244,238,229,.85);color:var(--taupe);padding:6px 10px;border-radius:999px}
+.karte h3{font-family:var(--display);font-weight:400;font-size:19px;margin:0;letter-spacing:.02em}
+.karte p{margin:2px 0 8px;font-size:14px;color:var(--taupe)}
+.karte.bald h3{color:#6B6157}
+.karte .link{font-size:14px}
+/* LUN */
+.lun{background:rgba(242,235,224,.78);padding-block:88px}
+.lun .in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+.lun{overflow:hidden}
+.lun .buehne{margin:0;position:relative;aspect-ratio:1/1;max-width:100%}
+.lun .buehne::before{content:"";position:absolute;left:55%;top:52%;width:150%;height:135%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.5) 0%,rgba(255,255,255,.32) 35%,rgba(255,255,255,.12) 65%,rgba(255,255,255,0) 100%);z-index:0;pointer-events:none}
+.lun .riesig{position:absolute;left:57.5%;top:-6%;transform:translate(-50%,-50%);font-family:var(--display);font-weight:500;font-size:clamp(84px,12vw,170px);letter-spacing:.12em;color:rgba(140,127,112,.16);line-height:1;pointer-events:none;will-change:transform;z-index:0}
+/* Rahmenform hinter der Kanne: hell, dick, leicht unregelmäßig */
+.lun .form{position:absolute;inset:2% 4% 6% 4%;width:92%;height:92%;z-index:1;overflow:visible}
+.lun .form path{fill:none;stroke:#E9DFCF;stroke-width:3.2;stroke-linejoin:round;display:none}
+.lun .form .f-pinsel{filter:url(#pinsel);stroke-width:4.2;stroke-linecap:round}
+.lun .form[data-form="pinsel"] .f-pinsel,.lun .form[data-form="okta"] .f-okta,.lun .form[data-form="bogen"] .f-bogen{display:block}
+.lun .form .f-okta,.lun .form .f-bogen{fill:#EEE5D7;stroke:none}
+.formwahl{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:8px;font-size:13px;color:var(--taupe);flex-wrap:wrap}
+.formwahl button{font:500 13px var(--body);padding:6px 12px;border-radius:999px;border:1px solid var(--linie);background:transparent;color:var(--text);cursor:pointer}
+.formwahl button[aria-pressed="true"]{background:var(--text);color:var(--kalk);border-color:var(--text)}
+.lun .bodenschatten{position:absolute;left:30%;right:13%;top:73.5%;height:5%;z-index:2;border-radius:50%;background:radial-gradient(closest-side,rgba(58,51,45,.22),rgba(58,51,45,0));filter:blur(4px)}
+.lun .kanne{position:absolute;left:11%;width:78%;top:10%;aspect-ratio:1/1;z-index:3}
+.lun .kanne img{width:100%;height:100%;display:block;transition:opacity .3s ease}
+.lun .mass{position:absolute;inset:0;width:100%;height:100%;z-index:4;fill:none;stroke:var(--taupe);stroke-width:1;overflow:visible}
+.lun .mass path{vector-effect:non-scaling-stroke;stroke-dasharray:120;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s ease}
+.lun .buehne.warten .mass path{stroke-dashoffset:120}
+.lun .mlabel{position:absolute;z-index:4;font-size:12px;letter-spacing:.08em;color:var(--taupe);transition:opacity 1s ease .6s}
+.lun .buehne.warten .mlabel{opacity:0}
+.lun .mlabel.hoehe{left:86.5%;top:48.9%;transform:translateY(-50%)}
+.lun .mlabel.durchm{left:57.5%;top:95.5%;transform:translateX(-50%)}
+.lun h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.2vw,54px);line-height:1.05;margin:10px 0 18px}
+.lun .text>p{margin:0;max-width:52ch;color:#4A423B}
+.lun .farben{display:flex;gap:12px;margin-top:26px}
+.lun .farben button{width:42px;height:42px;border-radius:50%;background:var(--c);border:2px solid transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);cursor:pointer}
+.lun .farben button[aria-pressed="true"]{border-color:var(--text)}
+.lun .farben button:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.lun .farbname{font-size:14px;color:var(--taupe);margin:10px 0 0}
+.lun .merkmale{margin:34px 0 0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,.85fr) minmax(0,1.3fr);gap:22px 32px;border-top:1px solid var(--linie);padding-top:26px}
+.lun .merkmale div{min-width:0}
+.lun .merkmale dt{font-family:var(--display);font-weight:400;font-size:16px;color:var(--text)}
+.lun .merkmale dd{margin:3px 0 0;font-size:13px;color:var(--taupe);line-height:1.5}
+.lun .kauf{margin-top:36px}
+/* Über uns */
+.uns{padding-block:96px 88px}
+.uns-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.uns h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:8px 0 22px}
+.uns-text p{margin:0 0 14px;max-width:46ch;color:#4A423B}
+.uns-text .uns-kontakt{margin-top:18px;font-size:14px;color:var(--taupe)}
+.uns-text .unterschrift{margin-top:22px;font-family:var(--display);font-size:18px;color:var(--text)}
+.uns-bild{margin:0;aspect-ratio:4/5;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(140,127,112,.3)}
+.uns-bild img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:760px){.uns-in{grid-template-columns:minmax(0,1fr);gap:32px}}
+/* Fuß */
+.fuss{background:rgba(236,227,213,.94);border-top:1px solid var(--linie);padding-block:56px 28px;font-size:14px;color:#5A5148}
+.fuss-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.2fr) minmax(0,.8fr);gap:40px}
+.fuss svg[data-logo]{width:110px;color:var(--text);display:block;margin-bottom:14px}
+svg.logo-text{display:inline-block;height:1.24em;width:auto;color:currentColor;vertical-align:baseline;transform:translateY(.175em);margin:0 .08em}
+.uns h2.eyebrow{font-family:var(--display);font-weight:400;font-size:12px;line-height:1.5;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);margin:0 0 14px}
+.uns-text .uns-erster{font-weight:600;color:var(--text)}
+.fuss svg.logo-text{width:auto;display:inline-block;margin:0;height:1.2em;transform:translateY(.167em)}
+.fuss p{margin:0 0 8px}
+.fuss a{color:var(--text)}
+.fuss-klein{font-size:12.5px;color:var(--taupe)}
+.fuss-titel{font-family:var(--display);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)}
+.fuss-form{display:flex;gap:8px;margin:10px 0 8px;flex-wrap:wrap}
+.fuss-form input{flex:1 1 180px;min-width:0;padding:11px 14px;border:1px solid var(--linie);border-radius:999px;background:rgba(255,255,255,.6);font:14px var(--body);color:var(--text)}
+.fuss-links{display:grid;gap:10px;align-content:start}
+.fuss-links a{text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.fuss-links a:hover{text-decoration:underline}
+.fuss .ig{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.fuss-recht{margin-top:40px;padding-top:18px;border-top:1px solid var(--linie);font-size:12.5px;color:var(--taupe)}
+.fuss-recht a{color:var(--taupe)}
+.unsichtbar{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:760px){.fuss-in{grid-template-columns:minmax(0,1fr);gap:28px}}
+/* Im Detail */
+.details{padding-block:88px 40px}
+.details .kopf{margin-bottom:32px}
+.details h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:8px 0 0}
+.detailreihe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.detail{margin:0;display:grid;gap:14px;align-content:start}
+.detail .bild{aspect-ratio:4/5;overflow:hidden;background:rgba(239,229,214,.85)}
+.detail img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease;mix-blend-mode:multiply}
+.detail:hover img{transform:scale(1.04)}
+.detail figcaption strong{display:block;font-family:var(--display);font-weight:400;font-size:18px;letter-spacing:.02em}
+.detail figcaption span{display:block;margin-top:4px;font-size:14px;color:var(--taupe);line-height:1.55;max-width:32ch}
+@media (max-width:1000px){.detailreihe{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.lun .merkmale{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.lun .in{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){.reihe{grid-template-columns:minmax(0,1fr);gap:18px}}
+@media (max-width:760px){.kollektion .kopf{grid-template-columns:minmax(0,1fr)}.kollektion .kopf p{justify-self:start}.stuecke{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){header nav a:not(.knopf):not(.sprache){display:none}.hero .txt{padding-block:110px 140px}.hero video{object-position:72% 50%}}
+@media (prefers-reduced-motion: reduce){.hero video,.schattenlage video{display:none}}
+/* Seitenbau: ohne Browser-Standardrand (Startbild randlos wie in der Vorschau), Logo im Kopf verlinkt */
+html,body{margin:0}
+header .kopf-logo{display:block;color:var(--gruen)}
+</style>
+<script data-goatcounter="https://mjoar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body id="top">
-<header class="kopf">
-  <div class="kopf-innen">
-    <a class="logo" href="#top" aria-label="MJØÅR Startseite"><svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="75.6 78.15 33.4 8.4" width="96" height="24" aria-hidden="true" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></a>
-    <nav class="menu-desktop" aria-label="Menü"><a href="#lun">LUN 350</a><a href="#details">Details</a><a href="#latte-art">Milch und Latte Art</a><a href="#ueber-uns">Über uns</a></nav>
-    <div class="kopf-rechts">
-      <nav class="sprachen" aria-label="Sprache"><a href="/de/" lang="de" hreflang="de" aria-current="true">Deutsch</a><span aria-hidden="true">|</span><a href="/en/" lang="en" hreflang="en">English</a></nav>
-      <a class="knopf knopf-klein" href="#lun">Kaufen</a>
-      <details class="menu-mobil"><summary aria-label="Menü"><span></span><span></span><span></span></summary><nav aria-label="Menü"><a href="#lun">LUN 350</a><a href="#details">Details</a><a href="#latte-art">Milch und Latte Art</a><a href="#ueber-uns">Über uns</a></nav></details>
-    </div>
-  </div>
-</header>
-<main id="inhalt">
-<section class="hero innen raster">
-  <div class="hero-bild"><picture><source media="(max-width: 720px)" srcset="/assets/web/familie-m-480.webp 480w, /assets/web/familie-m-960.webp 960w, /assets/web/familie-m-1600.webp 1600w, /assets/web/familie-m-2400.webp 2400w" sizes="100vw" width="960" height="1200"><source media="(max-width: 860px)" srcset="/assets/web/familie-d-480.webp 480w, /assets/web/familie-d-960.webp 960w, /assets/web/familie-d-1600.webp 1600w, /assets/web/familie-d-2400.webp 2400w" sizes="100vw" width="960" height="640"><img src="/assets/web/familie-q-960.webp" srcset="/assets/web/familie-q-480.webp 480w, /assets/web/familie-q-960.webp 960w, /assets/web/familie-q-1600.webp 1600w, /assets/web/familie-q-2400.webp 2400w" sizes="640px" width="960" height="960" alt="Die LUN in vier Farben" fetchpriority="high" decoding="async"></picture></div>
-  <div class="hero-text">
-    <div class="hero-zeile">
-      <p class="dach">LUN 350 · Milchkännchen</p>
-      <h1>Ein Milchkännchen, das neben deiner Maschine gut aussieht</h1>
-    </div>
-    <div class="hero-neben">
-      <p class="gross">Die LUN ist unser erstes Produkt. Weitere Dinge für den Kaffee zu Hause sind schon in Arbeit.</p>
-      <p><a class="weiter" href="#lun">Zur LUN</a></p>
-    </div>
+
+<div class="schattenlage" aria-hidden="true"><img class="lage" src="/assets/start/schatten_blaetter_poster.jpg" alt=""><video class="lage" poster="/assets/start/schatten_blaetter_poster.jpg" autoplay muted loop playsinline><source src="/assets/start/schatten_blaetter_mobil.mp4" type="video/mp4" media="(max-width: 760px) and (prefers-reduced-motion: no-preference)"><source src="/assets/start/schatten_blaetter.mp4" type="video/mp4" media="(prefers-reduced-motion: no-preference)"></video></div>
+
+<header class="gut"><div class="wrap in">
+  <a class="kopf-logo" href="/" aria-label="MJØÅR Startseite"><svg data-logo aria-hidden="true" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></a>
+  <nav aria-label="Menü"><a href="#produkte">Produkte</a><a href="#uns">Über uns</a><span class="sprache"><a class="sprache" href="/de/" lang="de" hreflang="de" aria-current="page">DE</a> · <a class="sprache" href="/en/" lang="en" hreflang="en">EN</a></span><a class="knopf klein" href="https://www.amazon.de/mjoar" target="_blank" rel="noopener">Kaufen</a></nav>
+</div></header>
+
+<section class="hero gut" aria-label="Startbereich">
+  <img class="poster" src="/assets/start/schatten_poster.jpg" alt="" fetchpriority="high">
+  <video poster="/assets/start/schatten_poster.jpg" autoplay muted loop playsinline aria-hidden="true"><source src="/assets/start/schatten_mobil.mp4" type="video/mp4" media="(max-width: 760px) and (prefers-reduced-motion: no-preference)"><source src="/assets/start/schatten.mp4" type="video/mp4" media="(prefers-reduced-motion: no-preference)"></video>
+  <div class="wrap txt">
+    <h1>Schöne Dinge<br class="umbruch"> für deine Kaffee-Ecke.</h1>
+    <p>Klares Design, ruhige Farben, kunststofffrei verpackt.</p>
+    <div class="aktion"><a class="knopf" href="#produkte">Produkte ansehen</a><a class="link-marke" href="https://www.amazon.de/mjoar" target="_blank" rel="noopener" aria-label="MJØÅR bei Amazon"><svg data-logo aria-hidden="true" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg><span>bei Amazon</span></a></div>
   </div>
 </section>
 
-<section class="abschnitt innen raster einstieg" id="einstieg">
-  <p class="e-lead" data-reveal>Cappuccino, Flat White oder Matcha Latte, mit Kuh- oder Hafermilch: Zum Aufschäumen brauchst du ein Kännchen. Wir wollten eines, das wir jeden Morgen gern in die Hand nehmen und das danach nicht in den Schrank muss.</p>
-  <div class="e-text" data-reveal><p>Ausprobiert haben wir die LUN zu Hause und im Café-Alltag in Wien.</p><p>Das Aussehen war uns genauso wichtig wie die Funktion. Bei den meisten steht das Milchkännchen ja ohnehin neben der Maschine.</p><p>Verpackt ist die LUN in einem Karton und einem Baumwollsäckchen, ohne Plastik.</p></div>
-</section>
-
-<section class="abschnitt innen raster produkt" id="lun">
-  <div class="galerie-haupt"><img class="farbbild aktiv" src="/assets/web/farbe-juniper-960.webp" srcset="/assets/web/farbe-juniper-480.webp 480w, /assets/web/farbe-juniper-960.webp 960w, /assets/web/farbe-juniper-1600.webp 1600w, /assets/web/farbe-juniper-2256.webp 2256w" sizes="(max-width: 860px) 100vw, 740px" width="960" height="960" alt="LUN 350 in Juniper" loading="lazy" decoding="async" data-farbe="juniper"><img class="farbbild" src="/assets/web/farbe-linen-960.webp" srcset="/assets/web/farbe-linen-480.webp 480w, /assets/web/farbe-linen-960.webp 960w, /assets/web/farbe-linen-1600.webp 1600w, /assets/web/farbe-linen-2259.webp 2259w" sizes="(max-width: 860px) 100vw, 740px" width="960" height="960" alt="LUN 350 in Linen" loading="lazy" decoding="async" data-farbe="linen"><img class="farbbild" src="/assets/web/farbe-onyx-960.webp" srcset="/assets/web/farbe-onyx-480.webp 480w, /assets/web/farbe-onyx-960.webp 960w, /assets/web/farbe-onyx-1600.webp 1600w, /assets/web/farbe-onyx-2239.webp 2239w" sizes="(max-width: 860px) 100vw, 740px" width="960" height="960" alt="LUN 350 in Onyx" loading="lazy" decoding="async" data-farbe="onyx"><img class="farbbild" src="/assets/web/farbe-steel-960.webp" srcset="/assets/web/farbe-steel-480.webp 480w, /assets/web/farbe-steel-960.webp 960w, /assets/web/farbe-steel-1600.webp 1600w, /assets/web/farbe-steel-2260.webp 2260w" sizes="(max-width: 860px) 100vw, 740px" width="960" height="960" alt="LUN 350 in Steel" loading="lazy" decoding="async" data-farbe="steel"></div>
-  <div class="kaufbox">
-    <p class="dach">LUN · Milchkännchen · 350 ml</p>
-    <h2 class="titel">LUN 350</h2>
-    <p>Unser Milchkännchen aus einem Millimeter Edelstahl, für Milchschaum und Latte Art zu Hause.</p>
-    <ul class="punkte"><li>Ausguss für Herz, Tulpe und Rosetta</li><li>Skala innen in ml und oz</li><li>Spülmaschinengeeignet</li></ul>
-    <fieldset class="farbwahl"><legend>Farbe</legend><label class="wahl"><input type="radio" name="farbe" value="juniper" data-kaufen="https://www.amazon.de/dp/B0HB116F83?maas=maas_adg_FEA56D9EA32C439D4BBBF6D72EA46D7A_afap_abs&ref_=aa_maas&tag=maas"><span><img class="wahl-bild" src="/assets/web/farbe-juniper-960.webp" srcset="/assets/web/farbe-juniper-480.webp 480w, /assets/web/farbe-juniper-960.webp 960w, /assets/web/farbe-juniper-1600.webp 1600w, /assets/web/farbe-juniper-2256.webp 2256w" sizes="88px" width="960" height="960" alt="" loading="lazy" decoding="async"><span class="wahl-name">Juniper</span></span></label><label class="wahl"><input type="radio" name="farbe" value="linen" data-kaufen="https://www.amazon.de/dp/B0HB16137F?maas=maas_adg_EF864ED8531FD89BDAEC4153DDB0C37A_afap_abs&ref_=aa_maas&tag=maas"><span><img class="wahl-bild" src="/assets/web/farbe-linen-960.webp" srcset="/assets/web/farbe-linen-480.webp 480w, /assets/web/farbe-linen-960.webp 960w, /assets/web/farbe-linen-1600.webp 1600w, /assets/web/farbe-linen-2259.webp 2259w" sizes="88px" width="960" height="960" alt="" loading="lazy" decoding="async"><span class="wahl-name">Linen</span></span></label><label class="wahl"><input type="radio" name="farbe" value="onyx" data-kaufen="https://www.amazon.de/dp/B0H9ZWMGWR?maas=maas_adg_B3CBB3AD96387F4F2894A9EF3F220F14_afap_abs&ref_=aa_maas&tag=maas"><span><img class="wahl-bild" src="/assets/web/farbe-onyx-960.webp" srcset="/assets/web/farbe-onyx-480.webp 480w, /assets/web/farbe-onyx-960.webp 960w, /assets/web/farbe-onyx-1600.webp 1600w, /assets/web/farbe-onyx-2239.webp 2239w" sizes="88px" width="960" height="960" alt="" loading="lazy" decoding="async"><span class="wahl-name">Onyx</span></span></label><label class="wahl"><input type="radio" name="farbe" value="steel" data-kaufen="https://www.amazon.de/dp/B0HB15MCKJ?maas=maas_adg_00DEC5090B791208EBE9EBA077008C3E_afap_abs&ref_=aa_maas&tag=maas"><span><img class="wahl-bild" src="/assets/web/farbe-steel-960.webp" srcset="/assets/web/farbe-steel-480.webp 480w, /assets/web/farbe-steel-960.webp 960w, /assets/web/farbe-steel-1600.webp 1600w, /assets/web/farbe-steel-2260.webp 2260w" sizes="88px" width="960" height="960" alt="" loading="lazy" decoding="async"><span class="wahl-name">Steel</span></span></label></fieldset>
-    <div class="kaufen"><a class="knopf" id="kaufen" href="https://www.amazon.de/dp/B0H9ZS73SW?maas=maas_adg_E3BE5165C9E1C96682CC16F557CAAF91_afap_abs&ref_=aa_maas&tag=maas" rel="noopener">Kaufen</a><p class="klein">Bestellung und Versand über Amazon.</p></div>
-  </div>
-</section>
-
-<section class="abschnitt innen" id="details">
-  <div class="raster kopfzeile" data-reveal><div class="k-titel"><p class="dach">Bis ins Detail</p><h2>Für jeden Tag, für viele Jahre</h2></div><p class="k-text">Damit sie dich möglichst lange begleitet, haben wir bei der LUN auch auf die Dinge geachtet, die man nicht auf den ersten Blick sieht.</p></div>
-  <div class="raster paar bild-rechts" data-reveal><div class="paar-bild"><img class="b45" src="/assets/web/detail-ausguss-680.webp" srcset="/assets/web/detail-ausguss-480.webp 480w, /assets/web/detail-ausguss-680.webp 680w" sizes="(max-width: 860px) 100vw, 520px" width="960" height="1200" alt="Ausguss der LUN" loading="lazy" decoding="async"></div><div class="paar-text"><h3>Der Ausguss</h3><p>Wir haben uns bewusst für eine ausgewogene Ausgussform entschieden, nicht zu schmal und nicht zu breit. Sie lässt dir möglichst viel Spielraum für unterschiedliche Latte-Art-Muster.</p></div></div><div class="raster paar bild-links" data-reveal><div class="paar-bild"><img class="b45" src="/assets/web/detail-wand-960.webp" srcset="/assets/web/detail-wand-480.webp 480w, /assets/web/detail-wand-960.webp 960w, /assets/web/detail-wand-1600.webp 1600w" sizes="(max-width: 860px) 100vw, 520px" width="960" height="1200" alt="Rand der LUN in Juniper" loading="lazy" decoding="async"></div><div class="paar-text"><h3>Der Korpus</h3><p>Die LUN ist aus einem Millimeter Edelstahl 304 gefertigt, die ganze Kanne einschließlich Griff. Viele Kannen in dieser Größe sind dünner. Das zusätzliche Gewicht liegt gut in der Hand und macht das Gießen ruhiger.</p></div></div><div class="raster paar bild-rechts" data-reveal><div class="paar-bild"><img class="b45" src="/assets/web/gebrauch-aufschaeumen-960.webp" srcset="/assets/web/gebrauch-aufschaeumen-480.webp 480w, /assets/web/gebrauch-aufschaeumen-960.webp 960w, /assets/web/gebrauch-aufschaeumen-1600.webp 1600w, /assets/web/gebrauch-aufschaeumen-2400.webp 2400w" sizes="(max-width: 860px) 100vw, 520px" width="960" height="1200" alt="Milch aufschäumen mit der LUN in Juniper" loading="lazy" decoding="async"></div><div class="paar-text"><h3>Temperatur kontrollieren</h3><p>Edelstahl leitet Wärme gut. Beim Aufschäumen kannst du deshalb am Korpus fühlen, wie warm die Milch gerade ist, und mit etwas Übung bekommst du dafür schnell ein Gefühl. Wird er zu heiß zum Anfassen, ist die Milch fertig. Der Griff bleibt dabei angenehm.</p></div></div><div class="raster paar bild-links" data-reveal><div class="paar-bild"><img class="b45" src="/assets/web/detail-skala-784.webp" srcset="/assets/web/detail-skala-480.webp 480w, /assets/web/detail-skala-784.webp 784w" sizes="(max-width: 860px) 100vw, 520px" width="960" height="1200" alt="Skala innen in ml und oz" loading="lazy" decoding="async"></div><div class="paar-text"><h3>Die richtige Menge Milch</h3><p>Innen ist eine Skala in Milliliter und Unzen lasergraviert. So kannst du jeden Morgen die gleiche Menge Milch nehmen, ohne zu schätzen. Weil sie im Stahl sitzt, hält sie auch in der Spülmaschine.</p></div></div><div class="raster paar bild-rechts" data-reveal><div class="paar-bild"><img class="b45" src="/assets/web/detail-griff-960.webp" srcset="/assets/web/detail-griff-480.webp 480w, /assets/web/detail-griff-960.webp 960w" sizes="(max-width: 860px) 100vw, 520px" width="960" height="1200" alt="Griff und Oberfläche der LUN in Linen" loading="lazy" decoding="async"></div><div class="paar-text"><h3>Der Griff</h3><p>Der Griff ist nahtlos angesetzt, ohne sichtbare Schweißpunkte, und so ausbalanciert, dass sich die Kanne beim Eingießen gut führen lässt.</p></div></div>
-</section>
-
-<section class="abschnitt innen" id="gut-zu-wissen">
-  <div class="raster kopfzeile" data-reveal><div class="k-titel"><h2>Die LUN auf einen Blick</h2></div></div>
-  <div class="raster gzw">
-    <div class="gzw-text" data-reveal><p><strong>Größe:</strong> Die LUN fasst 350 ml. Weil Milch beim Aufschäumen an Volumen gewinnt, reicht das für einen Cappuccino oder Latte, zwei Flat Whites oder einen Matcha Latte.</p><p><strong>Pflege:</strong> Die LUN darf in allen vier Farben in die Spülmaschine. Wenn du sie von Hand spülst und kurz abtrocknest, bleibt die Oberfläche am längsten ohne Wasserflecken. Bitte keine Scheuermittel und keine Stahlwolle.</p><p><strong>Verpackung:</strong> Das Baumwollsäckchen, in dem die LUN kommt, kannst du danach weiter benutzen. So verpackt eignet sie sich auch gut als Geschenk.</p></div>
-    <div class="gzw-daten" data-reveal>
-      <table class="daten"><tbody><tr><th scope="row">Inhalt</th><td>350 ml</td></tr><tr><th scope="row">Material</th><td>Edelstahl 304, ganze Kanne</td></tr><tr><th scope="row">Wandstärke</th><td>1 mm</td></tr><tr><th scope="row">Oberfläche</th><td>Juniper, Linen und Onyx matt beschichtet, Steel gebürstet</td></tr><tr><th scope="row">Skala</th><td>innen, lasergraviert, ml und oz</td></tr><tr><th scope="row">Höhe / Ø oben / Ø unten</th><td>9,3 / 6,4 / 7,5 cm</td></tr><tr><th scope="row">Gewicht</th><td>198 g</td></tr><tr><th scope="row">Spülmaschine</th><td>ja, alle Farben</td></tr><tr><th scope="row">Herd, Induktion, Mikrowelle</th><td>nein</td></tr><tr><th scope="row">Lebensmittelkontakt</th><td>geprüft nach LFGB (Eurofins, Oktober 2026)</td></tr></tbody></table>
-      <p class="klein">Von Hand gemessen, kleine Abweichungen sind möglich.</p>
-      <p><a class="weiter" href="/assets/docs/MJOAR_LUN350_Sicherheitshinweise_GPSR.pdf">Sicherheitshinweise (PDF)</a></p>
+<!-- Schritt 2 · Produkte -->
+<section class="kollektion gut durch" id="produkte" aria-label="Produkte">
+  <div class="wrap">
+    <div class="kopf">
+      <h2>Produkte</h2>
+    </div>
+    <div class="sortiment">
+      <section class="reihe" aria-label="Milchkännchen">
+        <div class="kat"><h3>Milchkännchen</h3><p>Edelstahl</p></div>
+        <div class="stuecke">
+          <article class="karte da">
+            <div class="bild"><img src="/assets/web/farbe-onyx-960.webp" loading="lazy" decoding="async" alt="LUN 350 in Onyx"></div>
+            <div class="info"><h3>LUN 350</h3><p>Onyx</p><a class="link" href="https://www.amazon.de/dp/B0H9ZWMGWR?maas=maas_adg_B3CBB3AD96387F4F2894A9EF3F220F14_afap_abs&amp;ref_=aa_maas&amp;tag=maas" target="_blank" rel="noopener">Bei Amazon</a></div>
+          </article>
+          <article class="karte da">
+            <div class="bild"><img src="/assets/web/farbe-linen-960.webp" loading="lazy" decoding="async" alt="LUN 350 in Linen"></div>
+            <div class="info"><h3>LUN 350</h3><p>Linen</p><a class="link" href="https://www.amazon.de/dp/B0HB16137F?maas=maas_adg_EF864ED8531FD89BDAEC4153DDB0C37A_afap_abs&amp;ref_=aa_maas&amp;tag=maas" target="_blank" rel="noopener">Bei Amazon</a></div>
+          </article>
+          <article class="karte da">
+            <div class="bild"><img src="/assets/web/farbe-steel-960.webp" loading="lazy" decoding="async" alt="LUN 350 in Steel"></div>
+            <div class="info"><h3>LUN 350</h3><p>Steel</p><a class="link" href="https://www.amazon.de/dp/B0HB15MCKJ?maas=maas_adg_00DEC5090B791208EBE9EBA077008C3E_afap_abs&amp;ref_=aa_maas&amp;tag=maas" target="_blank" rel="noopener">Bei Amazon</a></div>
+          </article>
+          <article class="karte da">
+            <div class="bild"><img src="/assets/web/farbe-juniper-960.webp" loading="lazy" decoding="async" alt="LUN 350 in Juniper"></div>
+            <div class="info"><h3>LUN 350</h3><p>Juniper</p><a class="link" href="https://www.amazon.de/dp/B0HB116F83?maas=maas_adg_FEA56D9EA32C439D4BBBF6D72EA46D7A_afap_abs&amp;ref_=aa_maas&amp;tag=maas" target="_blank" rel="noopener">Bei Amazon</a></div>
+          </article>
+          <article class="karte bald">
+            <div class="bild"><img src="/assets/start/skizze-lun.webp" loading="lazy" decoding="async" alt="Skizze LUN 450" class="zeichnung skizze s450"><span class="chip">Bald</span></div>
+            <div class="info"><h3>LUN 450</h3></div>
+          </article>
+          <article class="karte bald">
+            <div class="bild"><img src="/assets/start/skizze-lun.webp" loading="lazy" decoding="async" alt="Skizze LUN 600" class="zeichnung skizze s600"><span class="chip">Bald</span></div>
+            <div class="info"><h3>LUN 600</h3></div>
+          </article>
+        </div>
+      </section>
+      <section class="reihe" aria-label="Gläser">
+        <div class="kat"><h3>Gläser</h3><p>Doppelwandiges Glas</p></div>
+        <div class="stuecke">
+          <article class="karte bald">
+            <div class="bild"><img src="/assets/start/skizze-valo.webp" loading="lazy" decoding="async" alt="Skizze VALO 350" class="zeichnung skizze sglas"><span class="chip">Bald</span></div>
+            <div class="info"><h3>VALO 350</h3></div>
+          </article>
+          <article class="karte bald">
+            <div class="bild"><img src="/assets/start/skizze-solva.webp" loading="lazy" decoding="async" alt="Skizze SOLVA 350" class="zeichnung skizze sglas"><span class="chip">Bald</span></div>
+            <div class="info"><h3>SOLVA 350</h3></div>
+          </article>
+          <article class="karte bald">
+            <div class="bild"><img src="/assets/start/skizze-veya.webp" loading="lazy" decoding="async" alt="Skizze VEYA 400" class="zeichnung skizze sglas"><span class="chip">Bald</span></div>
+            <div class="info"><h3>VEYA 400</h3></div>
+          </article>
+        </div>
+      </section>
+      <section class="reihe" aria-label="Tampermatten">
+        <div class="kat"><h3>Tampermatten</h3><p>Silikon</p></div>
+        <div class="stuecke">
+          <article class="karte bald">
+            <div class="bild"><img src="/assets/start/zeichnung-aora-210.svg" loading="lazy" decoding="async" alt="Zeichnung AORA 210" class="zeichnung"><span class="chip">Bald</span></div>
+            <div class="info"><h3>AORA 210</h3><p>Tampermatte</p></div>
+          </article>
+        </div>
+      </section>
+      <section class="reihe" aria-label="Trinkhalme">
+        <div class="kat"><h3>Trinkhalme</h3><p>Glas</p></div>
+        <div class="stuecke">
+          <article class="karte bald">
+            <div class="bild"><img src="/assets/start/skizze-nila.webp" loading="lazy" decoding="async" alt="Skizze NILA Trinkhalme" class="zeichnung skizze sglas"><span class="chip">Bald</span></div>
+            <div class="info"><h3>NILA</h3><p>12er-Set · klar und grau</p></div>
+          </article>
+        </div>
+      </section>
     </div>
   </div>
 </section>
 
-<section class="abschnitt innen" id="latte-art">
-  <div class="raster kopfzeile" data-reveal><div class="k-titel"><p class="dach">Milch und Latte Art</p><h2>Milch aufschäumen, Schritt für Schritt</h2></div><p class="k-text">Für Latte Art brauchst du Milch mit sehr feinem Schaum. Sie glänzt, sieht fast aus wie flüssige Farbe und hat keine sichtbaren Blasen. So gehen wir dabei vor.</p></div>
-  <div class="raster paar bild-rechts la-paar" data-reveal><div class="paar-bild"><img class="b45" src="/assets/web/gebrauch-aufschaeumen-960.webp" srcset="/assets/web/gebrauch-aufschaeumen-480.webp 480w, /assets/web/gebrauch-aufschaeumen-960.webp 960w, /assets/web/gebrauch-aufschaeumen-1600.webp 1600w, /assets/web/gebrauch-aufschaeumen-2400.webp 2400w" sizes="(max-width: 860px) 100vw, 520px" width="960" height="1200" alt="Milch aufschäumen mit der LUN in Juniper" loading="lazy" decoding="async"></div><div class="paar-text"><ol class="schritte"><li><strong>Kalt anfangen:</strong> Nimm Milch direkt aus dem Kühlschrank. Je kälter sie ist, desto mehr Zeit hast du beim Aufschäumen, und desto feiner wird der Schaum. Füll die Kanne nicht zu voll, denn die Milch braucht nach oben Platz.</li><li><strong>Luft einziehen:</strong> Halte die Dampflanze knapp unter die Oberfläche und dreh den Dampf auf. Jetzt kommt Luft in die Milch, und du hörst ein leises, gleichmäßiges Geräusch. Das dauert nur ein paar Sekunden. Wird es laut und spritzt die Milch, ist die Lanze zu weit oben.</li><li><strong>Die Milch in Bewegung bringen:</strong> Schieb die Lanze danach etwas tiefer in die Milch und halte die Kanne leicht schräg. Die Milch fängt an, sich im Kreis zu drehen. Dieser Wirbel verteilt den Schaum gleichmäßig und macht große Blasen klein. Leg dabei eine Hand an die Kanne. Sobald sie zu heiß zum Anfassen wird, drehst du den Dampf ab.</li></ol></div></div>
-  <div class="raster paar bild-links la-paar" data-reveal><div class="paar-bild"><img class="b45" src="/assets/web/gebrauch-giessen-960.webp" srcset="/assets/web/gebrauch-giessen-480.webp 480w, /assets/web/gebrauch-giessen-960.webp 960w, /assets/web/gebrauch-giessen-1600.webp 1600w, /assets/web/gebrauch-giessen-2400.webp 2400w" sizes="(max-width: 860px) 100vw, 520px" width="960" height="1200" alt="Gießen mit der LUN in Onyx" loading="lazy" decoding="async"></div><div class="paar-text"><ol class="schritte" start="4"><li><strong>Klopfen und schwenken:</strong> Klopf die Kanne einmal kurz auf die Arbeitsplatte, damit übrig gebliebene Blasen platzen. Danach schwenkst du die Milch ein paar Mal im Kreis, bis die Oberfläche gleichmäßig glänzt.</li><li><strong>Eingießen:</strong> Gieß zuerst aus etwas Höhe in die Mitte der Tasse, damit sich Milch und Espresso verbinden. Wenn die Tasse etwa halb voll ist, gehst du mit dem Ausguss ganz nah an die Oberfläche. Jetzt bleibt die Milch oben, und das Muster entsteht. Zum Schluss hebst du die Kanne etwas an und ziehst einmal durch das Muster.</li></ol></div></div>
-  <div class="raster la-unten">
-    <div class="la-fehler" data-reveal>
-      <h3>Wenn es noch nicht klappt</h3>
-      <ul class="liste"><li><strong>Der Schaum hat große Blasen:</strong> Meist ist zu viel Luft in die Milch gekommen, oder die Lanze war zu lange an der Oberfläche. Schieb sie beim nächsten Mal etwas früher tiefer, damit sich die Milch dreht.</li><li><strong>Die Milch geht in der Tasse unter und es entsteht kein Muster:</strong> Dann ist der Ausguss beim Eingießen noch zu weit von der Oberfläche entfernt. Geh mit der Kanne näher an die Tasse heran.</li><li><strong>Das Muster zerläuft:</strong> Die Milch war zu flüssig. Lass beim nächsten Mal etwas länger Luft hinein.</li></ul>
+<!-- Schritt 3 · LUN -->
+<section class="lun gut" id="lun" aria-label="LUN 350">
+  <div class="wrap in">
+    <div class="bildspalte">
+    <figure class="buehne" id="buehne">
+      <span class="riesig" id="riesig" aria-hidden="true">LUN</span>
+      <i class="bodenschatten" aria-hidden="true"></i>
+      <div class="kanne"><img id="lun-bild" src="/assets/start/frei-juniper-1600.webp" loading="lazy" decoding="async" alt="LUN 350 in Juniper"></div>
+    </figure>
     </div>
-    <div class="la-passt" data-reveal>
-      <h3>Auch für Matcha und Kakao</h3>
-      <p>Für einen Matcha Latte rührst du Matcha mit wenig heißem Wasser glatt und gießt die aufgeschäumte Milch dazu. Mit Kakao geht es genauso.</p>
+    <div class="text">
+      <p class="eyebrow">LUN 350 · Milchkännchen</p>
+      <h2>Eine Kanne,<br>vier Farben.</h2>
+      <p>Die LUN macht nicht nur beim Milchaufschäumen eine gute Figur. In jeder der vier Farben macht sie deine Kaffee-Ecke ein Stück schöner. Durch den Korpus aus 1 mm dickem Edelstahl 304 liegt sie gut in der Hand und fühlt sich richtig wertig an. Die präzise Tülle ist für Latte Art gemacht, damit Herz und Rosetta gelingen.</p>
+      <div class="farben" role="group" aria-label="Farbe wählen">
+        <button type="button" aria-pressed="true" data-f="juniper" data-n="Juniper · mattes Salbeigrün" data-kaufen="https://www.amazon.de/dp/B0HB116F83?maas=maas_adg_FEA56D9EA32C439D4BBBF6D72EA46D7A_afap_abs&amp;ref_=aa_maas&amp;tag=maas" style="--c:#8FA382" aria-label="Juniper"></button>
+        <button type="button" aria-pressed="false" data-f="linen" data-n="Linen · mattes Cremeweiß" data-kaufen="https://www.amazon.de/dp/B0HB16137F?maas=maas_adg_EF864ED8531FD89BDAEC4153DDB0C37A_afap_abs&amp;ref_=aa_maas&amp;tag=maas" style="--c:#E9E1D2" aria-label="Linen"></button>
+        <button type="button" aria-pressed="false" data-f="onyx" data-n="Onyx · mattes Schwarz" data-kaufen="https://www.amazon.de/dp/B0H9ZWMGWR?maas=maas_adg_B3CBB3AD96387F4F2894A9EF3F220F14_afap_abs&amp;ref_=aa_maas&amp;tag=maas" style="--c:#1D1E1D" aria-label="Onyx"></button>
+        <button type="button" aria-pressed="false" data-f="steel" data-n="Steel · gebürsteter Edelstahl" data-kaufen="https://www.amazon.de/dp/B0HB15MCKJ?maas=maas_adg_00DEC5090B791208EBE9EBA077008C3E_afap_abs&amp;ref_=aa_maas&amp;tag=maas" style="--c:linear-gradient(135deg,#E3E5E6,#9EA3A6)" aria-label="Steel"></button>
+      </div>
+      <p class="farbname" id="lun-name">Juniper · mattes Salbeigrün</p>
+      <dl class="merkmale">
+        <div><dt>350 ml</dt><dd>Genug Milch für zwei Flat White oder einen Cappuccino.</dd></div>
+        <div><dt>Maße</dt><dd>93&nbsp;mm hoch, Ø&nbsp;75&nbsp;mm.</dd></div>
+        <div><dt>Spülmaschinengeeignet</dt><dd>Von Hand gespült bleibt sie am längsten schön.</dd></div>
+      </dl>
+      <div class="kauf"><a class="knopf" id="lun-kauf" href="https://www.amazon.de/dp/B0HB116F83?maas=maas_adg_FEA56D9EA32C439D4BBBF6D72EA46D7A_afap_abs&amp;ref_=aa_maas&amp;tag=maas" target="_blank" rel="noopener">Bei Amazon kaufen</a></div>
     </div>
   </div>
 </section>
 
-<section class="abschnitt innen" id="ueber-uns">
-  <div class="raster paar bild-rechts ueber" data-reveal><div class="paar-bild"><img class="b45" src="/assets/web/wer-m-960.webp" srcset="/assets/web/wer-m-480.webp 480w, /assets/web/wer-m-960.webp 960w, /assets/web/wer-m-1600.webp 1600w, /assets/web/wer-m-2400.webp 2400w" sizes="(max-width: 860px) 100vw, 520px" width="960" height="1200" alt="LUN in Steel auf dem Naturkarton, daneben der Baumwollbeutel" loading="lazy" decoding="async"></div><div class="paar-text"><h2>Ein Vater, ein Sohn, zwei Kaffeestädte</h2><p>Wir sind Thorsten und Jonah. Vater und Sohn, der eine in München, der andere in Wien. Thorsten arbeitet in der Tech-Branche und ist leidenschaftlicher Home-Barista. Jonah studiert und steht seit über drei Jahren hinter der Theke eines Wiener Cafés.</p><p>Während Thorsten zu Hause an seinem Cappuccino feilt und immer noch ein bisschen mehr aus seinem Setup herausholen möchte, erlebt Jonah Kaffee aus einer ganz anderen Perspektive. Hunderte Kaffees gehen täglich über die Café-Theke. Unterschiedliche Erfahrungen, die sich ziemlich gut ergänzen und unseren gemeinsamen Blick auf Kaffee prägen.</p><p>Auch wenn unser Alltag nicht immer nur aus Kaffee besteht, lässt uns das Thema in unserer Freizeit selten los. Irgendwann entstand daraus die Idee, gemeinsam etwas Eigenes auf die Beine zu stellen. Statt nur darüber zu sprechen, wie wir uns gutes Coffee-Equipment vorstellen, wollten wir unsere Ideen selbst umsetzen und unseren eigenen Beitrag zur Coffee-Szene leisten.</p><p>So wurde aus unserer gemeinsamen Leidenschaft MJØÅR. Nicht einfach nur eine Marke, sondern unsere Möglichkeit, die Begeisterung für guten Kaffee und alles, was dazugehört, mit anderen zu teilen. Vielleicht ja bald auch mit dir.</p><p>MJØÅR ist inspiriert von den schwedischen Wörtern „mjölk“ (Milch) und „å“ (kleiner Fluss). Wer schon mal Latte Art gegossen hat, versteht vielleicht, warum.</p><p class="unterschrift">Thorsten &amp; Jonah, Gründer von <span class="logo-inline" role="img" aria-label="MJØÅR"><svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="75.6 78.15 33.4 8.4" width="96" height="24" aria-hidden="true" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></span></p><p>Wenn du Fragen zu deiner LUN hast, schreib uns an <a href="mailto:info@mjoar.com">info@mjoar.com</a>. Die Antwort kommt von uns selbst.</p></div></div>
-</section>
-</main>
-<footer class="fuss">
-  <div class="innen raster fuss-innen">
-    <div class="fuss-links">
-      <div class="fuss-logo" role="img" aria-label="MJØÅR"><svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="75.6 78.15 33.4 8.4" width="96" height="24" aria-hidden="true" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></div>
-      <p class="fuss-marke">Ein kleines Unternehmen aus München und Wien.</p>
-      <p class="fuss-kontakt">Kontakt: <a href="mailto:info@mjoar.com">info@mjoar.com</a></p>
-      <p class="fuss-b2b">Für Cafés und Fachhandel: die LUN mit eigenem Logo, auf Anfrage an <a href="mailto:info@mjoar.com?subject=Co-Branding%20LUN">info@mjoar.com</a></p>
+<!-- Schritt 4 · Im Detail -->
+<section class="details gut durch" id="details" aria-label="LUN im Detail">
+  <div class="wrap">
+    <div class="kopf"><p class="eyebrow">LUN 350</p><h2>Im Detail.</h2></div>
+    <div class="detailreihe">
+      <figure class="detail"><div class="bild"><img src="/assets/web/detail-ausguss-680.webp" decoding="async" alt="Tülle der LUN aus der Nähe" loading="lazy"></div>
+        <figcaption><strong>Tülle</strong><span>Geformt für Latte Art. Nicht zu breit, damit du den Milchstrahl genau führen kannst.</span></figcaption></figure>
+      <figure class="detail"><div class="bild"><img src="/assets/web/detail-skala-784.webp" decoding="async" alt="Innenskala in ml und oz" loading="lazy"></div>
+        <figcaption><strong>Skala innen</strong><span>In ml und oz graviert. Du siehst die Menge schon beim Einfüllen.</span></figcaption></figure>
+      <figure class="detail"><div class="bild"><img src="/assets/web/detail-griff-960.webp" decoding="async" alt="Griff der LUN in Juniper" loading="lazy"></div>
+        <figcaption><strong>Nahtloser Griff</strong><span>Er geht ohne Schweißpunkt in den Korpus über. Da bleiben keine Milchreste hängen, und die Kanne ist schnell wieder sauber.</span></figcaption></figure>
+      <figure class="detail"><div class="bild"><img src="/assets/web/detail-wand-960.webp" decoding="async" alt="LUN im Baumwollbeutel vor dem Naturkarton" loading="lazy"></div>
+        <figcaption><strong>Kunststofffrei verpackt</strong><span>Im Baumwollbeutel und Naturkarton, bereit zum Verschenken.</span></figcaption></figure>
     </div>
-    <div class="newsletter">
-      <p>Neues von MJØÅR per Mail. Wir schreiben nur, wenn es etwas Neues gibt, zum Beispiel ein neues Produkt oder eine Anleitung.</p>
-      <form method="POST" action="https://d3c20ae3.sibforms.com/serve/MUIFAJzjIZxfPKrfySr11g9GS6FoIFy8Hf1FJUUtNteGWoC1pQTypKM_fGkiPmSmH3fNQt-S0QhFMnKht-sU9mNEjMYv96tRuEYFTdQdqRRnmTJgS5l1kR402BulG2FacudUzQDDTpNfegGB-z88HKXQK3AENdrkUadGALIvMKzcjBBD_YooeWVD9a7Mem3rWsTYv6KGRAxlMiuvXA==">
-        <label class="unsichtbar" for="nl-fuss">E-Mail</label>
-        <input id="nl-fuss" type="email" name="EMAIL" required placeholder="E-Mail" autocomplete="email">
+  </div>
+</section>
+
+<!-- Schritt 5 · Über uns -->
+<section class="uns gut durch" id="uns" aria-label="Über uns">
+  <div class="wrap uns-in">
+    <div class="uns-text">
+      <h2 class="eyebrow">Über uns</h2>
+      <p class="uns-erster">Wir sind Thorsten und Jonah, Vater und Sohn und die Gründer von <svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg>.</p>
+      <p>Die Idee entstand bei einem Flat White in Wien. Jonah studiert dort und arbeitet seit über drei Jahren nebenbei in einem Café. Diese Erfahrung bringt er auch bei uns ein: Er testet unsere Produkte im Alltag und kümmert sich ums Marketing. Thorsten ist für Design, Materialien und Produktentwicklung verantwortlich, vom ersten Entwurf bis zum fertigen Produkt.</p>
+      <p>Unser Morgen beginnt am Siebträger. Bei Thorsten in München, bei Jonah in Wien. Die Latte Art klappt nicht jeden Tag, der Kaffee schon.</p>
+      <p>Inspiriert haben uns die vielen schönen Specialty-Cafés in München und Wien. Dort stimmt oft einfach alles: die Atmosphäre, die Materialien und die kleinen Details, vom Milchkännchen bis zur Tasse. Genau dieses Gefühl wollten wir auch in unsere eigene Kaffee-Ecke bringen.</p>
+      <p>So entstand <svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg>.</p>
+      <p>Wir entwickeln Produkte für die Kaffee-Ecke, die im Alltag funktionieren und dabei auch schön aussehen. In matten Farben, die man nicht überall findet. Dabei achten wir auf die kleinen Details, bis hin zur Verpackung: Unsere Produkte kommen ganz ohne Plastik aus.</p>
+      <p>Übrigens: <svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg> ist inspiriert von den skandinavischen Wörtern „mjölk“ (Milch) und „å“ (kleiner Fluss). Wer schon mal Latte Art gegossen hat, versteht vielleicht, warum.</p>
+      <p class="unterschrift">Thorsten &amp; Jonah</p>
+      <p class="uns-kontakt">Du hast Fragen zu unseren Produkten? Schreib uns einfach an <a href="mailto:info@mjoar.com">info@mjoar.com</a>. Die Antwort kommt von uns persönlich.</p>
+    </div>
+    <figure class="uns-bild"><img src="/assets/web/gebrauch-giessen-960.webp" decoding="async" alt="Milch wird aus der LUN in eine Tasse gegossen" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- Schritt 6 · Fuß -->
+<footer class="fuss gut" aria-label="Fußbereich">
+  <div class="wrap fuss-in">
+    <div class="fuss-marke">
+      <svg data-logo aria-label="MJØÅR" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg>
+      <p>Zu Hause in München &amp; Wien</p>
+      <p>Kontakt: <a href="mailto:info@mjoar.com">info@mjoar.com</a></p>
+      <p class="fuss-klein">Für Cafés und Fachhandel: die LUN mit eigenem Logo, auf Anfrage an <a href="mailto:info@mjoar.com?subject=Co-Branding%20LUN">info@mjoar.com</a></p>
+    </div>
+    <div class="fuss-news">
+      <p class="fuss-titel">Newsletter</p>
+      <p>Wir schreiben nur, wenn es etwas Neues gibt, zum Beispiel ein neues Produkt.</p>
+      <!-- Brevo-Formular (Double-Opt-in, Datenschutz Abschnitt 3), Ziel aus _build/site.py BREVO -->
+      <form class="fuss-form" method="POST" action="https://d3c20ae3.sibforms.com/serve/MUIFAJzjIZxfPKrfySr11g9GS6FoIFy8Hf1FJUUtNteGWoC1pQTypKM_fGkiPmSmH3fNQt-S0QhFMnKht-sU9mNEjMYv96tRuEYFTdQdqRRnmTJgS5l1kR402BulG2FacudUzQDDTpNfegGB-z88HKXQK3AENdrkUadGALIvMKzcjBBD_YooeWVD9a7Mem3rWsTYv6KGRAxlMiuvXA==">
+        <label class="unsichtbar" for="nl">E-Mail</label>
+        <input id="nl" type="email" name="EMAIL" required placeholder="E-Mail" autocomplete="email">
         <input type="text" name="email_address_check" value="" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0" tabindex="-1" aria-hidden="true" autocomplete="off">
         <input type="hidden" name="locale" value="de">
         <button class="knopf" type="submit">Eintragen</button>
       </form>
-      <p class="klein">Erst kommt eine Bestätigungsmail, abmelden kannst du dich mit einem Klick. Details im <a href="/de/datenschutz/">Datenschutz</a>.</p>
+      <p class="fuss-klein">Erst kommt eine Bestätigungsmail, abmelden geht mit einem Klick. Mehr dazu in der <a href="/de/datenschutz/">Datenschutzerklärung</a>.</p>
     </div>
-    <p class="recht"><a href="/de/impressum/">Impressum</a> · <a href="/de/datenschutz/">Datenschutz</a> · <a href="/assets/docs/MJOAR_LUN350_Sicherheitshinweise_GPSR.pdf">Sicherheitshinweise (PDF)</a></p>
+    <div class="fuss-links">
+      <p class="fuss-titel"><svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></p>
+      <a href="https://www.amazon.de/mjoar" target="_blank" rel="noopener">Markenshop bei Amazon</a>
+      <a href="https://www.instagram.com/mjoar.coffee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="ig"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>Instagram</a>
+    </div>
   </div>
+  <div class="wrap fuss-recht"><a href="/de/impressum/">Impressum</a> · <a href="/de/datenschutz/">Datenschutz</a> · <a href="/assets/docs/MJOAR_LUN350_Sicherheitshinweise_GPSR.pdf">Sicherheitshinweise (PDF)</a></div>
 </footer>
-<script src="/assets/web/site.js?v=11" defer></script>
+
+<script>
+// Bühne: Bemaßung zeichnet sich ein, großes LUN bewegt sich langsamer (Parallaxe)
+const bu=document.getElementById('buehne'), rz=document.getElementById('riesig');
+const ruhig=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!ruhig) addEventListener('scroll',()=>{const r=bu.getBoundingClientRect(); const off=(r.top+r.height/2-innerHeight/2)*0.18; rz.style.transform='translate(-50%,calc(-50% + '+off.toFixed(1)+'px))';},{passive:true});
+const lb=document.getElementById('lun-bild');
+document.querySelectorAll('.lun .farben button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.lun .farben button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+  lb.style.opacity=0; setTimeout(()=>{lb.src='/assets/start/frei-'+b.dataset.f+'-1600.webp'; lb.alt='LUN 350 in '+b.getAttribute('aria-label'); lb.style.opacity=1;},220);
+  document.getElementById('lun-name').textContent=b.dataset.n;
+  document.getElementById('lun-kauf').href=b.dataset.kaufen;
+}));
+</script>
 </body>
 </html>

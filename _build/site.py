@@ -1,4 +1,6 @@
-# mjoar.com v4: One-Pager je Sprache (/de/, /en/), Texte wortgleich aus MJOAR_WEB_COPY_v4.md (_build/texte_v4.py).
+# mjoar.com: DE-Startseite (/ und /de/) aus der Vorlage _build/vorlagen/startseite-de.html (Entwurf v70, von Thorsten
+# abgenommen 13.11.2026, Referenz _build/entwurf/startseite-v70.html). EN-One-Pager (/en/) und die Rechtsseiten weiter v4:
+# Texte wortgleich aus MJOAR_WEB_COPY_v4.md (_build/texte_v4.py).
 # Aufbau nach Jonahs Feedback vom 08.10.2026 (One-Pager, Ankernavigation, Design-Feinschliff), Auftrag Fable 08.10.
 # Impressum und Datenschutz inhaltlich unverändert aus den bisherigen Dateien (_build/alt/). Die alten Unterseiten
 # bleiben als schlanke Weiterleitungen auf den passenden Anker. Bilder aus _build/bilder.py (assets/web/).
@@ -10,12 +12,13 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from texte_v4 import ALT, EN_HINWEIS, RECHT_TITEL, T  # noqa: E402
+from texte_v4 import ALT, EN_HINWEIS, NAV_RECHT_DE, RECHT_TITEL, T  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BILDER = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "bilder.json"), encoding="utf-8"))
 SITE = "https://mjoar.com"
-VERSION = "11"
+VERSION = "12"  # site.css (PR #23 hat nur das CSS hochgezählt)
+VERSION_JS = "11"
 
 # ---------------------------------------------------------------------------------------------------------------
 # Kaufen: die eine zentrale Konstante. DE auf amazon.de, EN auf amazon.co.uk (UK kaufbar seit 08.10.2026),
@@ -59,22 +62,25 @@ ANKER = {
     "en": {"einstieg": "intro", "lun": "lun", "details": "details", "gut": "good-to-know", "latte": "latte-art", "ueber": "about"},
 }
 
-# Alte Unterseiten → Anker auf dem One-Pager. Alte Anker der Produktseite werden mitgenommen (Farbe wählt vor).
-_LUN_ALT = {"de": {"#im-detail": "#details", "#daten": "#gut-zu-wissen", "#box": "#gut-zu-wissen", "#fragen": "#gut-zu-wissen",
-                   "#entstehung": "#ueber-uns", "#kaufen": "#lun"},
+# Alte Unterseiten → Anker auf dem One-Pager. Alte Anker der Produktseite werden mitgenommen (EN: Farbe wählt vor).
+# DE zeigt seit der neuen Startseite (Entwurf v70) auf deren Anker: #produkte, #lun, #details, #uns. Milch und Latte Art
+# gibt es dort nicht mehr; die alten Latte-Art-Adressen leiten auf die Startseite.
+_LUN_ALT = {"de": {"#im-detail": "#details", "#daten": "#lun", "#box": "#details", "#fragen": "#lun",
+                   "#entstehung": "#uns", "#kaufen": "#lun"},
             "en": {"#im-detail": "#details", "#daten": "#good-to-know", "#box": "#good-to-know", "#fragen": "#good-to-know",
                    "#entstehung": "#about", "#kaufen": "#lun"}}
-for _l in _LUN_ALT:
-    _LUN_ALT[_l].update({f"#{f}": f"#{f}" for f in FARBEN})
+_LUN_ALT["de"].update({f"#{f}": "#lun" for f in FARBEN})
+_LUN_ALT["en"].update({f"#{f}": f"#{f}" for f in FARBEN})
 WEITERLEITUNGEN = [
-    # (alter Pfad, Sprache, Ziel-Anker, Titel aus der Navigation der Copy, Ankerzuordnung)
-    ("/de/lun-350/", "de", "#lun", T["de"]["nav"][0][1], _LUN_ALT["de"]),
-    ("/de/milch-und-latte-art/", "de", "#latte-art", T["de"]["nav"][2][1], {}),
-    ("/de/ueber-uns/", "de", "#ueber-uns", T["de"]["nav"][3][1], {}),
-    ("/en/lun-350/", "en", "#lun", T["en"]["nav"][0][1], _LUN_ALT["en"]),
-    ("/en/milk-and-latte-art/", "en", "#latte-art", T["en"]["nav"][2][1], {}),
-    ("/en/about/", "en", "#about", T["en"]["nav"][3][1], {}),
-    ("/latte-art/", "de", "#latte-art", T["de"]["nav"][2][1], {}),
+    # (alter Pfad, Sprache, Ziel (Pfad + Anker), Titel aus der Navigation der Copy, Ankerzuordnung)
+    ("/de/lun-350/", "de", "/de/#lun", T["de"]["nav"][0][1], _LUN_ALT["de"]),
+    ("/de/milch-und-latte-art/", "de", "/de/", T["de"]["nav"][2][1], {}),
+    ("/de/ueber-uns/", "de", "/de/#uns", T["de"]["nav"][3][1], {}),
+    ("/en/lun-350/", "en", "/en/#lun", T["en"]["nav"][0][1], _LUN_ALT["en"]),
+    ("/en/milk-and-latte-art/", "en", "/en/#latte-art", T["en"]["nav"][2][1], {}),
+    ("/en/about/", "en", "/en/#about", T["en"]["nav"][3][1], {}),
+    # Latte-Art-Unterseite entfernt (Auftrag 13.11.): statische Weiterleitung auf die Startseite, kanonisch auf /
+    ("/latte-art/", "de", "/", T["de"]["nav"][2][1], {}),
 ]
 
 e = html.escape
@@ -117,7 +123,9 @@ def kopf(lang, seite):
     Anker auf den One-Pager der Sprache."""
     t, a = T[lang], ALT[lang]
     basis = "" if seite == "start" else PFADE["start"][lang]
-    menu = "".join(f'<a href="{basis}#{k}">{e(n)}</a>' for k, n in t["nav"])
+    # DE: Rechtsseiten zeigen auf die Anker der neuen Startseite (NAV_RECHT_DE), EN unverändert (Copy v4)
+    nav = NAV_RECHT_DE if lang == "de" else t["nav"]
+    menu = "".join(f'<a href="{basis}#{k}">{e(n)}</a>' for k, n in nav)
     sprachen = (f'<nav class="sprachen" aria-label="{e(a["sprache"])}">'
                 f'<a href="{PFADE[seite]["de"]}" lang="de" hreflang="de"{" aria-current=\"true\"" if lang == "de" else ""}>{t["sprachen"][0]}</a>'
                 f'<span aria-hidden="true">|</span>'
@@ -162,6 +170,7 @@ def fuss(lang):
       <div class="fuss-logo" role="img" aria-label="{e(ALT[lang]['marke'])}">{LOGO}</div>
       <p class="fuss-marke">{e(satz)}</p>
       <p class="fuss-kontakt">{e(f['kontakt'])} <a href="mailto:info@mjoar.com">info@mjoar.com</a></p>
+      <p class="fuss-b2b">{e(f['b2b'][0])}<a href="mailto:info@mjoar.com?subject={f['b2b'][1]}">info@mjoar.com</a></p>
     </div>
     {newsletter(lang)}
     <p class="recht"><a href="{PFADE['impressum'][lang]}">{e(u[0])}</a> · <a href="{PFADE['datenschutz'][lang]}">{e(u[1])}</a> · <a href="{PDF}">{e(u[2])}</a></p>
@@ -200,7 +209,7 @@ def seite(lang, key, titel, beschreibung, inhalt, kanonisch=None):
 {inhalt}
 </main>
 {fuss(lang)}
-<script src="/assets/web/site.js?v={VERSION}" defer></script>
+<script src="/assets/web/site.js?v={VERSION_JS}" defer></script>
 </body>
 </html>
 """
@@ -370,6 +379,81 @@ def onepager(lang):
 
 
 # ---------------------------------------------------------------------------------------------------------------
+# Neue DE-Startseite (Entwurf v70). Die Vorlage ist der abgenommene Entwurf mit Technik-Anpassungen (Asset-Pfade,
+# Attribution-Links, Brevo, Videos mobil/ruhig, eigene Schriften); Texte und Gestaltung stehen dort unverändert.
+# Begründung eigene Vorlage statt texte_v4/Abschnittsfunktionen: Aufbau, Stil und Texte sind komplett neu und stammen
+# nicht aus Copy v4; ein Port in die v4-Funktionen hätte jeden Abschnitt neu geschrieben, ohne Gewinn für EN.
+
+VORLAGE_START_DE = os.path.join(ROOT, "_build", "vorlagen", "startseite-de.html")
+# Titel und Beschreibung: nur Sätze aus dem Hero des Entwurfs (Thorsten 14.11.: LUN-Satz raus).
+START_DE_META = ("MJØÅR · Schöne Dinge für deine Kaffee-Ecke",
+                 "Schöne Dinge für deine Kaffee-Ecke. Klares Design, ruhige Farben, kunststofffrei verpackt.")
+# Teilen-Bild: vorhandenes Produktbild (Familie 0284, alle vier Farben), 1200 × 630
+OG_BILD = ("/assets/web/og-familie.jpg", 1200, 630, ALT["de"]["hero_0284"])
+ZAEHLER = '<script data-goatcounter="https://mjoar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+
+_LOGO_VIEWBOX = re.search(r'viewBox="([^"]+)"', LOGO).group(1)
+_LOGO_INNEN = re.sub(r"^<svg[^>]*>|</svg>$", "", LOGO)
+
+
+def logos_einbetten(seite_html):
+    """Jedes leere svg[data-logo] der Vorlage bekommt das Logo eingebettet (statt fetch('logo.svg') im Entwurf).
+    Farbe kommt über currentColor aus dem CSS (Kopf grün, sonst Schriftfarbe)."""
+    def setzen(m):
+        return (f'<svg data-logo{m.group(1)} viewBox="{_LOGO_VIEWBOX}" xmlns="http://www.w3.org/2000/svg" focusable="false">'
+                f"{_LOGO_INNEN}</svg>")
+    neu, n = re.subn(r'<svg data-logo([^>]*?) viewBox="0 0 10 2"></svg>', setzen, seite_html)
+    if n == 0:
+        raise SystemExit("Startseite: kein svg[data-logo] in der Vorlage gefunden")
+    return neu
+
+
+def startseite_de(kanonisch):
+    titel, beschreibung = START_DE_META
+    url = SITE + kanonisch
+    og_pfad, og_b, og_h, og_alt = OG_BILD
+    alternates = "".join(f'\n  <link rel="alternate" hreflang="{l}" href="{SITE}{PFADE["start"][l]}">' for l in ["de", "en"])
+    kopf_html = f"""  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{e(titel)}</title>
+  <meta name="description" content="{e(beschreibung)}">
+  <link rel="canonical" href="{url}">{alternates}
+  <link rel="alternate" hreflang="x-default" href="{SITE}/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MJØÅR">
+  <meta property="og:title" content="{e(titel)}">
+  <meta property="og:description" content="{e(beschreibung)}">
+  <meta property="og:url" content="{url}">
+  <meta property="og:image" content="{SITE}{og_pfad}">
+  <meta property="og:image:width" content="{og_b}">
+  <meta property="og:image:height" content="{og_h}">
+  <meta property="og:image:alt" content="{e(og_alt)}">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{e(titel)}">
+  <meta name="twitter:description" content="{e(beschreibung)}">
+  <meta name="twitter:image" content="{SITE}{og_pfad}">
+  <meta name="twitter:image:alt" content="{e(og_alt)}">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>"""
+    werte = {"KOPF": kopf_html, "ZAEHLER": ZAEHLER, "BREVO": e(BREVO), "PDF": PDF,
+             "IMPRESSUM": PFADE["impressum"]["de"], "DATENSCHUTZ": PFADE["datenschutz"]["de"]}
+    werte.update({f"KAUFEN_{f}": e(KAUFEN["de"][f]) for f in FARBEN})
+    seite_html = open(VORLAGE_START_DE, encoding="utf-8").read()
+    for k, v in werte.items():
+        if "{{" + k + "}}" not in seite_html:
+            raise SystemExit(f"Startseite: Platzhalter {{{{{k}}}}} fehlt in der Vorlage")
+        seite_html = seite_html.replace("{{" + k + "}}", v)
+    if "{{" in seite_html:
+        raise SystemExit("Startseite: offener Platzhalter " + re.search(r"\{\{[^}]*\}\}", seite_html).group(0))
+    return logos_einbetten(seite_html)
+
+
+# ---------------------------------------------------------------------------------------------------------------
 # Rechtsseiten (Inhalt unverändert)
 
 def recht_aus_altdatei(datei):
@@ -443,15 +527,17 @@ def schreiben(pfad, inhalt):
 def main():
     geschrieben = []
     for lang in ["de", "en"]:
-        titel, beschreibung = T[lang]["meta"]
-        geschrieben.append(schreiben(PFADE["start"][lang], seite(lang, "start", titel, beschreibung, onepager(lang))))
+        if lang == "en":
+            titel, beschreibung = T[lang]["meta"]
+            geschrieben.append(schreiben(PFADE["start"][lang], seite(lang, "start", titel, beschreibung, onepager(lang))))
+        else:
+            geschrieben.append(schreiben(PFADE["start"][lang], startseite_de(PFADE["start"][lang])))
         for key, datei in [("impressum", "impressum.html"), ("datenschutz", "datenschutz.html")]:
             geschrieben.append(schreiben(PFADE[key][lang], seite(lang, key, RECHT_TITEL[lang][key], None, rechtsseite(lang, datei))))
-    # "/" = deutscher One-Pager ohne Weiterleitung (wie bisher), kanonisch auf "/".
-    titel, beschreibung = T["de"]["meta"]
-    geschrieben.append(schreiben("/index.html", seite("de", "start", titel, beschreibung, onepager("de"), kanonisch="/")))
-    for alt, lang, anker, titel_, zuordnung in WEITERLEITUNGEN:
-        geschrieben.append(schreiben(alt, weiterleitung(PFADE["start"][lang] + anker, titel_, lang, zuordnung)))
+    # "/" = deutsche Startseite ohne Weiterleitung (wie bisher), kanonisch auf "/".
+    geschrieben.append(schreiben("/index.html", startseite_de("/")))
+    for alt, lang, ziel, titel_, zuordnung in WEITERLEITUNGEN:
+        geschrieben.append(schreiben(alt, weiterleitung(ziel, titel_, lang, zuordnung)))
     geschrieben.append(schreiben("/impressum.html", weiterleitung("/de/impressum/", T["de"]["fuss"]["unten"][0])))
     geschrieben.append(schreiben("/datenschutz.html", weiterleitung("/de/datenschutz/", T["de"]["fuss"]["unten"][1])))
     urls = "".join(
