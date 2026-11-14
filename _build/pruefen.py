@@ -281,7 +281,7 @@ def en_startseite(entwurf):
     n_logo, n_logo_de = uns.count('class="logo-text"'), block(de, r'<section class="uns[^"]*" id="uns".*?</section>').count('class="logo-text"')
     if not uns or n_logo > 3 or n_logo != n_logo_de:
         f.append((s, "Über uns: Logo im Text nicht wie DE (höchstens dreimal)", f"EN {n_logo} / DE {n_logo_de}"))
-    for pflicht in ["At home in Munich & Vienna", "350 ml · 12 oz"]:
+    for pflicht in ["At home in Vienna & Munich", "350 ml · 12 oz"]:
         if pflicht not in p.bloecke:
             f.append((s, "Pflichtzeile fehlt", pflicht))
     # Titel und Beschreibung nur aus Sätzen der Seite
