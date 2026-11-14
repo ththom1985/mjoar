@@ -67,7 +67,7 @@ header nav .sprache{color:var(--taupe)}
 .hero video,.hero img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,238,229,.62) 0%,rgba(244,238,229,.3) 42%,rgba(244,238,229,.05) 100%)}
 /* weicher Übergang Startbild -> Seite: unten in denselben Ton auslaufen lassen, den die Abschnitte darunter haben */
-.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(244,238,229,0) 0%,rgba(244,238,229,.6) 50%,rgba(244,238,229,.96) 100%)}
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:5%;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(244,238,229,0) 0%,rgba(244,238,229,.55) 55%,rgba(244,238,229,.96) 100%)}
 .hero .txt{z-index:2}
 .hero .txt{position:relative;z-index:1;display:grid;gap:22px;padding-block:120px 160px}
 .eyebrow{font-family:var(--display);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)}
@@ -205,7 +205,7 @@ svg.logo-text{display:inline-block;height:1.24em;width:auto;color:currentColor;v
 @media (max-width:760px){.lun .in{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:900px){.reihe{grid-template-columns:minmax(0,1fr);gap:18px}}
 @media (max-width:760px){.kollektion .kopf{grid-template-columns:minmax(0,1fr)}.kollektion .kopf p{justify-self:start}.stuecke{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:760px){header .in{flex-wrap:wrap;row-gap:10px;padding-block:16px}header nav{width:100%;gap:16px;font-size:13px}header nav .knopf{margin-left:auto}.hero .txt{padding-block:150px 140px}.hero video{object-position:72% 50%}}
+@media (max-width:760px){header .in{gap:12px;padding-block:16px}header .kopf-logo svg,header svg{width:84px}header nav{gap:10px;font-size:12px}header nav .knopf.klein{padding:7px 11px;font-size:12px}.hero .txt{padding-block:110px 140px}.hero video{object-position:72% 50%}}
 @media (prefers-reduced-motion: reduce){.hero video,.schattenlage video{display:none}}
 /* Seitenbau: ohne Browser-Standardrand (Startbild randlos wie in der Vorschau), Logo im Kopf verlinkt */
 html,body{margin:0}
