@@ -130,6 +130,7 @@ def kopf_meta(lang, key, titel, beschreibung, kanonisch):
   <link rel="canonical" href="{url}">{alternates}
   <link rel="alternate" hreflang="x-default" href="{x_default}">
   <meta property="og:type" content="website">
+  <meta name="p:domain_verify" content="a9879c5ef5fd9a2b14fa6ac4ca45da7b">
   <meta property="og:site_name" content="MJØÅR">
   <meta property="og:title" content="{e(titel)}">
   <meta property="og:description" content="{e(beschreibung)}">
