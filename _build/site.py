@@ -385,10 +385,9 @@ def onepager(lang):
 # nicht aus Copy v4; ein Port in die v4-Funktionen hätte jeden Abschnitt neu geschrieben, ohne Gewinn für EN.
 
 VORLAGE_START_DE = os.path.join(ROOT, "_build", "vorlagen", "startseite-de.html")
-# Titel und Beschreibung: nur Sätze aus dem Entwurf (Hero und LUN-Abschnitt), nichts neu formuliert.
+# Titel und Beschreibung: nur Sätze aus dem Hero des Entwurfs (Thorsten 14.11.: LUN-Satz raus).
 START_DE_META = ("MJØÅR · Schöne Dinge für deine Kaffee-Ecke",
-                 "Schöne Dinge für deine Kaffee-Ecke. Klares Design, ruhige Farben, kunststofffrei verpackt. "
-                 "Die LUN macht nicht nur beim Milchaufschäumen eine gute Figur.")
+                 "Schöne Dinge für deine Kaffee-Ecke. Klares Design, ruhige Farben, kunststofffrei verpackt.")
 # Teilen-Bild: vorhandenes Produktbild (Familie 0284, alle vier Farben), 1200 × 630
 OG_BILD = ("/assets/web/og-familie.jpg", 1200, 630, ALT["de"]["hero_0284"])
 ZAEHLER = '<script data-goatcounter="https://mjoar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
