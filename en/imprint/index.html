@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Imprint · MJØÅR</title>
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://mjoar.com/en/imprint/">
@@ -12,27 +12,214 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/web/site.css?v=12">
-  <script>document.documentElement.classList.add('js');</script>
-  <script data-goatcounter="https://mjoar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  <link rel="preload" href="/assets/fonts/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Schriften selbst gehostet (Datenschutz, kein Google-Fonts-Abruf): Jost 300–500, Manrope 400–600, Subset latin.
+   Variable WOFF2, Gewichtsachse auf die genutzten Schnitte gekürzt (_build/README.md). Lizenz SIL OFL 1.1, assets/fonts/OFL.txt */
+@font-face{font-family:'Jost';font-style:normal;font-weight:300 500;font-display:swap;src:url('/assets/fonts/jost-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400 600;font-display:swap;src:url('/assets/fonts/manrope-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* Startseite neu, Abschnitt für Abschnitt. Farben aus dem Startbild (Kalkputz, Travertin, Schatten); Grün nur Logo + Hauptknopf. */
+:root{
+  --kalk:#F4EEE5; --travertin:#E6D9C6; --text:#3A332D; --taupe:#8C7F70; --linie:#DCCFBD; --gruen:#506864;
+  --display:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--kalk);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--kalk)}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto}
+a{color:inherit}
+/* Kopfzeile */
+header{position:absolute;inset:0 0 auto;z-index:3}
+header .in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+header svg{width:132px;color:var(--gruen);display:block}
+header nav{display:flex;gap:26px;align-items:center;font-size:14px}
+header nav a{text-decoration:none;color:var(--text)}
+header nav .sprache{color:var(--taupe)}
+.knopf{display:inline-flex;align-items:center;gap:8px;background:var(--gruen);color:#F4EEE5;font:600 14px var(--body);padding:12px 22px;border-radius:999px;text-decoration:none;letter-spacing:.01em}
+.knopf.klein{padding:9px 16px;font-size:13px}
+.link{font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+/* Markenlink: Logo als Schriftzug in Textfarbe, ohne Unterstrich */
+.link-marke{display:inline-flex;align-items:baseline;gap:.5em;color:var(--text);text-decoration:none;font:600 15px var(--body);letter-spacing:.01em}
+/* Logo-Versalhöhe (58 % der Logo-Fläche) = Versalhöhe „A“ von Amazon (Manrope ≈ 0,72 em) → 1,24 em; M-Grundlinie auf Textgrundlinie (unterer Rand 14 %) */
+.link-marke svg{height:1.24em;width:auto;display:block;color:var(--text);transform:translateY(.175em)}
+.link-marke:hover{opacity:.75}
+/* Startbereich */
+.hero{position:relative;overflow:hidden;background:#F1E9DC;min-height:clamp(560px,86vh,860px);display:grid;align-items:center}
+.hero video,.hero img.poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,238,229,.62) 0%,rgba(244,238,229,.3) 42%,rgba(244,238,229,.05) 100%)}
+/* weicher Übergang Startbild -> Seite: unten in denselben Ton auslaufen lassen, den die Abschnitte darunter haben */
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:32%;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(244,238,229,0) 0%,rgba(244,238,229,.6) 50%,rgba(244,238,229,.96) 100%)}
+.hero .txt{z-index:2}
+.hero .txt{position:relative;z-index:1;display:grid;gap:22px;padding-block:120px 160px}
+.eyebrow{font-family:var(--display);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)}
+.hero h1{font-family:var(--display);font-weight:300;font-size:clamp(34px,4.6vw,66px);line-height:1.06;letter-spacing:-.01em;margin:0;white-space:nowrap}
+.hero h1 .umbruch{display:none}
+@media (max-width:760px){.hero h1{white-space:normal;font-size:clamp(34px,9vw,46px)}.hero h1 .umbruch{display:inline}}
+.hero p{margin:0;max-width:40ch;font-size:17px;color:#4A423B}
+.hero p.fakt{font-size:14px;color:var(--taupe);margin-top:-12px;letter-spacing:.02em}
+.hero .aktion{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.hinweis{max-width:1240px;margin:0 auto;padding-block:28px 60px;color:var(--taupe);font-size:13px}
+/* Schattenspiel aus dem Startbild läuft hinter der ganzen Seite weiter (feste Ebene, Abschnitte leicht durchscheinend) */
+.schattenlage{position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--kalk)}
+/* Hintergrund unten: gespiegelter, vergrößerter Blätterausschnitt aus dem Startvideo (schatten_blaetter.mp4, ffmpeg, 0 $) */
+.schattenlage .lage{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.durch{background:rgba(244,238,229,var(--deck,.8))}
+body>p.hinweis{background:rgba(244,238,229,.8);max-width:none}
+/* Kollektion */
+.kollektion{padding-block:88px 40px}
+/* oben fast deckend wie das Startbild-Ende, darunter erst den Blätterschatten durchlassen: keine sichtbare Kante */
+.kollektion.durch{background:linear-gradient(180deg,rgba(244,238,229,.96) 0,rgba(244,238,229,.8) 220px)}
+.kollektion .kopf{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:end;margin-bottom:36px}
+.kollektion h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:0}
+.kollektion .kopf p{margin:0;color:#5A5148;max-width:44ch;justify-self:end}
+/* feiner Rahmen um Produkt- und Detailbilder */
+.karte .bild,.detail .bild{box-shadow:inset 0 0 0 1px rgba(140,127,112,.3)}
+/* Sortiment nach Kategorien: links Kategorie, rechts Stücke; 4 feste Plätze je Reihe, damit alle Karten gleich groß bleiben */
+.reihe{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:32px;padding-block:30px;border-top:1px solid var(--linie)}
+.reihe:last-child{border-bottom:1px solid var(--linie)}
+.kat{display:grid;align-content:start;gap:6px}
+.kat .nr{font-family:var(--display);font-size:12px;letter-spacing:.22em;color:var(--taupe)}
+.kat h3{font-family:var(--display);font-weight:300;font-size:clamp(24px,2.4vw,30px);line-height:1.1;margin:0}
+.kat p{margin:0;font-size:14px;color:var(--taupe);max-width:26ch}
+.stuecke{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.karte{display:grid;gap:14px;align-content:start}
+.karte .bild{position:relative;aspect-ratio:4/5;background:rgba(230,217,198,.62);display:grid;place-items:center;overflow:hidden}
+.karte.da .bild{background:rgba(239,229,214,.8)}
+.karte .bild img.zeichnung{width:100%;height:100%;object-fit:contain;mix-blend-mode:normal}
+.karte .bild img.skizze{mix-blend-mode:multiply;opacity:.9}
+/* echte Größenverhältnisse: gleiche Form, 450 ml linear ×1,09, 600 ml ×1,20 gegenüber 350 ml (Foto 96 %, Produkt füllt 77 % des Fotos) */
+.karte.da .bild img{width:96%}
+.karte .bild img.s450{width:91%;height:91%}.karte .bild img.s600{width:100%;height:100%}
+.karte .bild img.sglas{width:80%;height:80%}
+.karte .bild img{width:88%;mix-blend-mode:multiply}
+.karte .bild img.schemen{filter:grayscale(1) blur(5px) opacity(.42)}
+.karte .bild img.s450{width:94%}.karte .bild img.s600{width:100%}
+.karte .schema{width:78%;fill:none;stroke:var(--taupe);stroke-width:2;opacity:.55;filter:blur(1.2px)}
+.chip{position:absolute;left:12px;top:12px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:rgba(244,238,229,.85);color:var(--taupe);padding:6px 10px;border-radius:999px}
+.karte h3{font-family:var(--display);font-weight:400;font-size:19px;margin:0;letter-spacing:.02em}
+.karte p{margin:2px 0 8px;font-size:14px;color:var(--taupe)}
+.karte.bald h3{color:#6B6157}
+.karte .link{font-size:14px}
+/* LUN */
+.lun{background:rgba(242,235,224,.78);padding-block:88px}
+.lun .in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+.lun{overflow:hidden}
+.lun .buehne{margin:0;position:relative;aspect-ratio:1/1;max-width:100%}
+.lun .buehne::before{content:"";position:absolute;left:55%;top:52%;width:150%;height:135%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.5) 0%,rgba(255,255,255,.32) 35%,rgba(255,255,255,.12) 65%,rgba(255,255,255,0) 100%);z-index:0;pointer-events:none}
+.lun .riesig{position:absolute;left:57.5%;top:-6%;transform:translate(-50%,-50%);font-family:var(--display);font-weight:500;font-size:clamp(84px,12vw,170px);letter-spacing:.12em;color:rgba(140,127,112,.16);line-height:1;pointer-events:none;will-change:transform;z-index:0}
+/* Rahmenform hinter der Kanne: hell, dick, leicht unregelmäßig */
+.lun .form{position:absolute;inset:2% 4% 6% 4%;width:92%;height:92%;z-index:1;overflow:visible}
+.lun .form path{fill:none;stroke:#E9DFCF;stroke-width:3.2;stroke-linejoin:round;display:none}
+.lun .form .f-pinsel{filter:url(#pinsel);stroke-width:4.2;stroke-linecap:round}
+.lun .form[data-form="pinsel"] .f-pinsel,.lun .form[data-form="okta"] .f-okta,.lun .form[data-form="bogen"] .f-bogen{display:block}
+.lun .form .f-okta,.lun .form .f-bogen{fill:#EEE5D7;stroke:none}
+.formwahl{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:8px;font-size:13px;color:var(--taupe);flex-wrap:wrap}
+.formwahl button{font:500 13px var(--body);padding:6px 12px;border-radius:999px;border:1px solid var(--linie);background:transparent;color:var(--text);cursor:pointer}
+.formwahl button[aria-pressed="true"]{background:var(--text);color:var(--kalk);border-color:var(--text)}
+.lun .bodenschatten{position:absolute;left:30%;right:13%;top:73.5%;height:5%;z-index:2;border-radius:50%;background:radial-gradient(closest-side,rgba(58,51,45,.22),rgba(58,51,45,0));filter:blur(4px)}
+.lun .kanne{position:absolute;left:11%;width:78%;top:10%;aspect-ratio:1/1;z-index:3}
+.lun .kanne img{width:100%;height:100%;display:block;transition:opacity .3s ease}
+.lun .mass{position:absolute;inset:0;width:100%;height:100%;z-index:4;fill:none;stroke:var(--taupe);stroke-width:1;overflow:visible}
+.lun .mass path{vector-effect:non-scaling-stroke;stroke-dasharray:120;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s ease}
+.lun .buehne.warten .mass path{stroke-dashoffset:120}
+.lun .mlabel{position:absolute;z-index:4;font-size:12px;letter-spacing:.08em;color:var(--taupe);transition:opacity 1s ease .6s}
+.lun .buehne.warten .mlabel{opacity:0}
+.lun .mlabel.hoehe{left:86.5%;top:48.9%;transform:translateY(-50%)}
+.lun .mlabel.durchm{left:57.5%;top:95.5%;transform:translateX(-50%)}
+.lun h2{font-family:var(--display);font-weight:300;font-size:clamp(32px,4.2vw,54px);line-height:1.05;margin:10px 0 18px}
+.lun .text>p{margin:0;max-width:52ch;color:#4A423B}
+.lun .farben{display:flex;gap:12px;margin-top:26px}
+.lun .farben button{width:42px;height:42px;border-radius:50%;background:var(--c);border:2px solid transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);cursor:pointer}
+.lun .farben button[aria-pressed="true"]{border-color:var(--text)}
+.lun .farben button:focus-visible{outline:2px solid var(--text);outline-offset:3px}
+.lun .farbname{font-size:14px;color:var(--taupe);margin:10px 0 0}
+.lun .merkmale{margin:34px 0 0;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,.85fr) minmax(0,1.3fr);gap:22px 32px;border-top:1px solid var(--linie);padding-top:26px}
+.lun .merkmale div{min-width:0}
+.lun .merkmale dt{font-family:var(--display);font-weight:400;font-size:16px;color:var(--text)}
+.lun .merkmale dd{margin:3px 0 0;font-size:13px;color:var(--taupe);line-height:1.5}
+.lun .kauf{margin-top:36px}
+/* Über uns */
+.uns{padding-block:96px 88px}
+.uns-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.uns h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:8px 0 22px}
+.uns-text p{margin:0 0 14px;max-width:46ch;color:#4A423B}
+.uns-text .uns-kontakt{margin-top:18px;font-size:14px;color:var(--taupe)}
+.uns-text .unterschrift{margin-top:22px;font-family:var(--display);font-size:18px;color:var(--text)}
+.uns-bild{margin:0;aspect-ratio:4/5;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(140,127,112,.3)}
+.uns-bild img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:760px){.uns-in{grid-template-columns:minmax(0,1fr);gap:32px}}
+/* Fuß */
+.fuss{background:rgba(236,227,213,.94);border-top:1px solid var(--linie);padding-block:56px 28px;font-size:14px;color:#5A5148}
+.fuss-in{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.2fr) minmax(0,.8fr);gap:40px}
+.fuss svg[data-logo]{width:110px;color:var(--text);display:block;margin-bottom:14px}
+svg.logo-text{display:inline-block;height:1.24em;width:auto;color:currentColor;vertical-align:baseline;transform:translateY(.175em);margin:0 .08em}
+.uns h2.eyebrow{font-family:var(--display);font-weight:400;font-size:12px;line-height:1.5;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);margin:0 0 14px}
+.uns-text .uns-erster{font-weight:600;color:var(--text)}
+.fuss svg.logo-text{width:auto;display:inline-block;margin:0;height:1.2em;transform:translateY(.167em)}
+.fuss p{margin:0 0 8px}
+.fuss a{color:var(--text)}
+.fuss-klein{font-size:12.5px;color:var(--taupe)}
+.fuss-titel{font-family:var(--display);font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--taupe)}
+.fuss-form{display:flex;gap:8px;margin:10px 0 8px;flex-wrap:wrap}
+.fuss-form input{flex:1 1 180px;min-width:0;padding:11px 14px;border:1px solid var(--linie);border-radius:999px;background:rgba(255,255,255,.6);font:14px var(--body);color:var(--text)}
+.fuss-links{display:grid;gap:10px;align-content:start}
+.fuss-links a{text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.fuss-links a:hover{text-decoration:underline}
+.fuss .ig{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.fuss-recht{margin-top:40px;padding-top:18px;border-top:1px solid var(--linie);font-size:12.5px;color:var(--taupe)}
+.fuss-recht a{color:var(--taupe)}
+.unsichtbar{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:760px){.fuss-in{grid-template-columns:minmax(0,1fr);gap:28px}}
+/* Im Detail */
+.details{padding-block:88px 40px}
+.details .kopf{margin-bottom:32px}
+.details h2{font-family:var(--display);font-weight:300;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin:8px 0 0}
+.detailreihe{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.detail{margin:0;display:grid;gap:14px;align-content:start}
+.detail .bild{aspect-ratio:4/5;overflow:hidden;background:rgba(239,229,214,.85)}
+.detail img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease;mix-blend-mode:multiply}
+.detail:hover img{transform:scale(1.04)}
+.detail figcaption strong{display:block;font-family:var(--display);font-weight:400;font-size:18px;letter-spacing:.02em}
+.detail figcaption span{display:block;margin-top:4px;font-size:14px;color:var(--taupe);line-height:1.55;max-width:32ch}
+@media (max-width:1000px){.detailreihe{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.lun .merkmale{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.lun .in{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){.reihe{grid-template-columns:minmax(0,1fr);gap:18px}}
+@media (max-width:760px){.kollektion .kopf{grid-template-columns:minmax(0,1fr)}.kollektion .kopf p{justify-self:start}.stuecke{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){header .in{flex-wrap:wrap;row-gap:10px;padding-block:16px}header nav{width:100%;gap:16px;font-size:13px}header nav .knopf{margin-left:auto}.hero .txt{padding-block:150px 140px}.hero video{object-position:72% 50%}}
+@media (prefers-reduced-motion: reduce){.hero video,.schattenlage video{display:none}}
+/* Seitenbau: ohne Browser-Standardrand (Startbild randlos wie in der Vorschau), Logo im Kopf verlinkt */
+html,body{margin:0}
+header .kopf-logo{display:block;color:var(--gruen)}
+/* Rechtsseiten: Kopf im Fluss statt über dem Startbild, ruhige Textspalte (max. 68 Zeichen) */
+body.recht header{position:relative}
+.recht-haupt{padding-block:24px 96px}
+.recht-spalte{max-width:68ch}
+.recht-hinweis{margin:16px 0 0}
+.legal-card h1{font-family:var(--display);font-weight:300;font-size:clamp(34px,4.2vw,54px);line-height:1.06;letter-spacing:-.01em;margin:28px 0 36px}
+.legal-block{border-top:1px solid var(--linie);padding-block:26px 12px}
+.legal-block:last-child{border-bottom:1px solid var(--linie)}
+.legal-block h2{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.3;letter-spacing:.01em;margin:0 0 12px;color:var(--text)}
+.legal-block p{margin:0 0 14px;color:#4A423B;line-height:1.7;overflow-wrap:break-word}
+.legal-card a{color:var(--text);text-decoration-color:var(--taupe);text-underline-offset:3px}
+.legal-note p{font-size:14px;color:var(--taupe)}
+@media (max-width:760px){.recht-haupt{padding-block:8px 72px}.legal-block{padding-block:22px 8px}}
+</style>
+<script data-goatcounter="https://mjoar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
-<body id="top">
-<header class="kopf">
-  <div class="kopf-innen">
-    <a class="logo" href="/en/" aria-label="MJØÅR home"><svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="75.6 78.15 33.4 8.4" width="96" height="24" aria-hidden="true" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></a>
-    <nav class="menu-desktop" aria-label="Menu"><a href="/en/#lun">LUN 350</a><a href="/en/#details">Details</a><a href="/en/#latte-art">Milk and latte art</a><a href="/en/#about">About</a></nav>
-    <div class="kopf-rechts">
-      <nav class="sprachen" aria-label="Language"><a href="/de/impressum/" lang="de" hreflang="de">Deutsch</a><span aria-hidden="true">|</span><a href="/en/imprint/" lang="en" hreflang="en" aria-current="true">English</a></nav>
-      <a class="knopf knopf-klein" href="/en/#lun">Buy</a>
-      <details class="menu-mobil"><summary aria-label="Menu"><span></span><span></span><span></span></summary><nav aria-label="Menu"><a href="/en/#lun">LUN 350</a><a href="/en/#details">Details</a><a href="/en/#latte-art">Milk and latte art</a><a href="/en/#about">About</a></nav></details>
-    </div>
-  </div>
-</header>
-<main id="inhalt">
-<section class="innen recht-text">
-<p class="klein recht-hinweis">Legal text in German.</p>
+<body id="top" class="recht">
+
+<header class="gut"><div class="wrap in">
+  <a class="kopf-logo" href="/en/" aria-label="MJØÅR home"><svg data-logo aria-hidden="true" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></a>
+  <nav aria-label="Menu"><a href="/en/#products">Products</a><a href="/en/#about">About us</a><span class="sprache"><a class="sprache" href="/de/impressum/" lang="de" hreflang="de">DE</a> · <a class="sprache" href="/en/imprint/" lang="en" hreflang="en" aria-current="page">EN</a></span><a class="knopf klein" href="https://www.amazon.co.uk/dp/B0HLWVCFC3" target="_blank" rel="noopener">Buy</a></nav>
+</div></header>
+
+<main class="recht-haupt gut" id="inhalt">
+  <div class="wrap recht-spalte">
+<p class="eyebrow recht-hinweis">Legal text in German.</p>
 <article class="legal-card" lang="de">
       <h1>Impressum</h1>
 
@@ -69,30 +256,37 @@
         </p>
       </section>
     </article>
-</section>
+  </div>
 </main>
-<footer class="fuss">
-  <div class="innen raster fuss-innen">
-    <div class="fuss-links">
-      <div class="fuss-logo" role="img" aria-label="MJØÅR"><svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="75.6 78.15 33.4 8.4" width="96" height="24" aria-hidden="true" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></div>
-      <p class="fuss-marke">A small company from Munich and Vienna.</p>
-      <p class="fuss-kontakt">Contact: <a href="mailto:info@mjoar.com">info@mjoar.com</a></p>
-      <p class="fuss-b2b">For cafés and retailers: the LUN with your own logo, on request via <a href="mailto:info@mjoar.com?subject=Co-branding%20LUN">info@mjoar.com</a></p>
+
+<footer class="fuss gut" aria-label="Footer">
+  <div class="wrap fuss-in">
+    <div class="fuss-marke">
+      <svg data-logo aria-label="MJØÅR" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg>
+      <p>At home in Munich &amp; Vienna</p>
+      <p>Contact: <a href="mailto:info@mjoar.com">info@mjoar.com</a></p>
+      <p class="fuss-klein">For cafés and retailers: the LUN with your own logo, on request via <a href="mailto:info@mjoar.com?subject=Co-branding%20LUN">info@mjoar.com</a></p>
     </div>
-    <div class="newsletter">
-      <p>News from MJØÅR by email. We only write when there&#x27;s something new, like a new product or a guide.</p>
-      <form method="POST" action="https://d3c20ae3.sibforms.com/serve/MUIFAJzjIZxfPKrfySr11g9GS6FoIFy8Hf1FJUUtNteGWoC1pQTypKM_fGkiPmSmH3fNQt-S0QhFMnKht-sU9mNEjMYv96tRuEYFTdQdqRRnmTJgS5l1kR402BulG2FacudUzQDDTpNfegGB-z88HKXQK3AENdrkUadGALIvMKzcjBBD_YooeWVD9a7Mem3rWsTYv6KGRAxlMiuvXA==">
-        <label class="unsichtbar" for="nl-fuss">Email</label>
-        <input id="nl-fuss" type="email" name="EMAIL" required placeholder="Email" autocomplete="email">
+    <div class="fuss-news">
+      <p class="fuss-titel">Newsletter</p>
+      <p>We only write when there’s something new, like a new product.</p>
+      <!-- Brevo-Formular (Double-Opt-in, Datenschutz Abschnitt 3), Ziel aus _build/site.py BREVO -->
+      <form class="fuss-form" method="POST" action="https://d3c20ae3.sibforms.com/serve/MUIFAJzjIZxfPKrfySr11g9GS6FoIFy8Hf1FJUUtNteGWoC1pQTypKM_fGkiPmSmH3fNQt-S0QhFMnKht-sU9mNEjMYv96tRuEYFTdQdqRRnmTJgS5l1kR402BulG2FacudUzQDDTpNfegGB-z88HKXQK3AENdrkUadGALIvMKzcjBBD_YooeWVD9a7Mem3rWsTYv6KGRAxlMiuvXA==">
+        <label class="unsichtbar" for="nl">Email</label>
+        <input id="nl" type="email" name="EMAIL" required placeholder="Email" autocomplete="email">
         <input type="text" name="email_address_check" value="" style="position:absolute;left:-9999px;height:0;width:0;border:0;padding:0" tabindex="-1" aria-hidden="true" autocomplete="off">
         <input type="hidden" name="locale" value="de">
         <button class="knopf" type="submit">Sign up</button>
       </form>
-      <p class="klein">A confirmation email comes first, and you can unsubscribe with one click. Details in our <a href="/en/privacy/">privacy policy</a>.</p>
+      <p class="fuss-klein">A confirmation email comes first, and you can unsubscribe with one click. More in our <a href="/en/privacy/">privacy policy</a>.</p>
     </div>
-    <p class="recht"><a href="/en/imprint/">Imprint</a> · <a href="/en/privacy/">Privacy</a> · <a href="/assets/docs/MJOAR_LUN350_Sicherheitshinweise_GPSR.pdf">Safety information (PDF)</a></p>
+    <div class="fuss-links">
+      <p class="fuss-titel"><svg data-logo class="logo-text" role="img" aria-label="MJØÅR" viewBox="75.6 78.15 33.4 8.4" xmlns="http://www.w3.org/2000/svg" focusable="false"><g transform="matrix(1.0000099,0,0,1.0000099,-11.113348,-1.8528659)"><path fill="currentColor" d="m 94.029062,88.090599 c 0,-0.0624 0.05193,-0.0781 0.260325,-0.0781 1.344435,0 2.021555,-0.4473 2.182945,-1.44203 0.067,-0.41246 0.0679,-4.00007 0.001,-4.12484 -0.0478,-0.0894 -0.0282,-0.0928 0.52761,-0.0928 h 0.57723 v 1.95767 c 0,2.73351 -0.0847,3.04296 -0.95328,3.4831 -0.60112,0.30462 -2.595974,0.53273 -2.595974,0.29686 z m 6.152648,-1.02657 0.32257,-0.32506 -0.351,-0.3584 c -2.080478,-2.12443 1.08451,-5.0375 4.17098,-3.83901 l 0.34515,0.13402 0.22974,-0.23323 c 0.22534,-0.2288 0.23526,-0.23321 0.51931,-0.23096 l 0.28958,0.002 -0.35972,0.33534 c -0.28429,0.265 -0.34463,0.3441 -0.28778,0.3771 1.00806,0.58515 1.42398,1.91185 0.93216,2.97339 -0.60754,1.31131 -3.00067,1.89765 -4.81515,1.17977 l -0.30975,-0.12253 -0.21949,0.21617 c -0.21054,0.20737 -0.23111,0.21619 -0.50433,0.21619 h -0.284848 z m 3.25499,0.064 c 1.41433,-0.29976 2.08334,-2.12811 1.29533,-3.53995 -0.16313,-0.29227 -0.0503,-0.3601 -1.11748,0.67144 -0.51173,0.49461 -1.25273,1.21001 -1.64666,1.58977 l -0.71624,0.69047 0.16579,0.1392 c 0.51391,0.43152 1.28893,0.60387 2.01926,0.44907 z m -0.47064,-2.68623 c 1.5646,-1.51994 1.49459,-1.37327 0.81648,-1.7106 -1.94145,-0.9658 -3.938268,1.34513 -2.86546,3.31622 l 0.1296,0.2382 0.26825,-0.25022 c 0.14754,-0.1376 0.89054,-0.85473 1.6511,-1.5936 z m -16.052639,2.71948 c 0.02259,-0.0462 0.04689,-1.14692 0.05398,-2.44612 l 0.01294,-2.36218 0.466756,10e-5 c 0.446076,8e-5 0.469944,0.006 0.5387,0.11946 0.112013,0.18591 2.323209,3.13892 2.350186,3.13861 0.0132,-1.3e-4 0.269873,-0.36097 0.570406,-0.80186 0.300533,-0.44088 0.80665,-1.17391 1.124707,-1.62898 l 0.578284,-0.82736 h 0.518711 0.51871 l -0.0023,2.44612 -0.0023,2.44611 H 93.11669 92.591152 l -0.01254,-2.13868 -0.01254,-2.13871 -0.24376,0.35208 c -0.134068,0.19363 -0.691231,0.99958 -1.23814,1.79096 -0.546909,0.79139 -1.022458,1.46759 -1.056774,1.50266 -0.05153,0.0527 -0.284302,-0.23252 -1.336995,-1.63812 -0.701031,-0.93604 -1.297956,-1.71634 -1.326502,-1.73397 -0.06351,-0.0392 -0.04855,3.78944 0.0153,3.91984 0.0367,0.075 0.01174,0.084 -0.232956,0.084 -0.244691,0 -0.269655,-0.009 -0.232955,-0.084 z m 20.211569,0 c 0.001,-0.0198 0.53808,-1.05039 1.19326,-2.29024 1.15556,-2.1868 1.1892,-2.2582 1.12385,-2.38614 -0.0673,-0.13188 -0.0673,-0.13188 0.57034,-0.13188 h 0.63771 l 0.27326,0.53958 c 0.15028,0.29678 0.52857,1.02522 0.84064,1.61877 0.31205,0.59354 0.75678,1.44068 0.98828,1.88253 l 0.4209,0.80339 -0.59102,-0.005 -0.59102,-0.005 -0.35972,-0.72764 -0.35972,-0.72762 -1.48734,-0.012 -1.48735,-0.012 -0.32326,0.64863 c -0.17779,0.35673 -0.32326,0.69157 -0.32326,0.74409 0,0.0838 -0.0325,0.0954 -0.26379,0.0954 -0.1451,0 -0.26288,-0.0161 -0.26176,-0.036 z m 3.94519,-1.72095 c 0.0167,-0.0167 -0.1064,-0.29183 -0.27344,-0.61154 -0.82967,-1.588 -0.99862,-1.90019 -1.02798,-1.89944 -0.0914,0.002 -1.29802,2.48734 -1.21783,2.50837 0.12987,0.0341 2.48538,0.0365 2.51925,0.002 z m 3.38,-0.56496 c 0.0103,-2.02423 0.005,-2.33123 -0.06,-2.39474 -0.04,-0.04 -0.0728,-0.0877 -0.0728,-0.10571 0,-0.0834 3.23018,0.0143 3.67144,0.1112 1.92428,0.42258 1.9706,2.36849 0.0617,2.59288 l -0.27174,0.032 0.91924,0.94502 c 0.54545,0.56072 0.99726,0.98408 1.1111,1.04106 0.19186,0.096 0.19186,0.096 -0.52759,0.0998 l -0.71944,0.005 -0.98857,-1.00881 -0.98858,-1.0088 h -0.53694 -0.53694 l 0.0146,1.00727 0.0146,1.00728 -0.55156,-4e-5 -0.55157,-4e-5 z m 3.27258,-0.0866 c 0.87487,-0.40039 0.85377,-1.53201 -0.0362,-1.9459 -0.26372,-0.12266 -0.31594,-0.12892 -1.22274,-0.14609 l -0.94727,-0.0179 v 1.11227 1.11227 l 1.0192,-0.0187 c 0.80257,-0.0149 1.05489,-0.0352 1.18709,-0.0958 z m -8.128,-3.12779 c -0.45669,-0.126 -0.70792,-0.59055 -0.53858,-0.99583 0.33456,-0.80072 1.7692,-0.5263 1.70092,0.32536 -0.0445,0.5544 -0.54236,0.84161 -1.16234,0.67047 z m 0.62901,-0.24352 c 0.26518,-0.17375 0.27661,-0.66882 0.0208,-0.89743 -0.47674,-0.42598 -1.12809,0.20089 -0.81556,0.78489 0.11854,0.2215 0.53791,0.28087 0.79483,0.11257 z"/></g></svg></p>
+      <a href="https://www.amazon.co.uk/dp/B0HLWVCFC3" target="_blank" rel="noopener">Shop on Amazon</a>
+      <a href="https://www.instagram.com/mjoar.coffee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="ig"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1"/></svg>Instagram</a>
+    </div>
   </div>
+  <div class="wrap fuss-recht"><a href="/en/imprint/">Imprint</a> · <a href="/en/privacy/">Privacy</a> · <a href="/assets/docs/MJOAR_LUN350_Sicherheitshinweise_GPSR.pdf">Safety information (PDF)</a></div>
 </footer>
-<script src="/assets/web/site.js?v=11" defer></script>
 </body>
 </html>
