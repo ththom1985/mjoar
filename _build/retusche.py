@@ -38,8 +38,26 @@ def kante(img, roi):
     return out
 
 
+def naehte(img, streifen, griff_box, thr=7):
+    """Griffansätze nahtlos (Thorsten 14.11.): schmale Streifen über der Naht Griff/Korpus und Lackspuren auf dem Griff
+    (dunkler als lokaler Median, mit Abstand zur Kontur) per Inpainting schließen."""
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    mask = np.zeros(gray.shape, np.uint8)
+    for x0, y0, x1, y1 in streifen:
+        mask[y0:y1, x0:x1] = 255
+    x0, y0, x1, y1 = griff_box
+    sub = gray[y0:y1, x0:x1]
+    dev = (cv2.medianBlur(sub, 21).astype(np.int16) - sub.astype(np.int16)) > thr
+    innen = cv2.erode((sub < 236).astype(np.uint8), np.ones((9, 9), np.uint8)) > 0
+    mask[y0:y1, x0:x1] |= cv2.dilate((dev & innen).astype(np.uint8) * 255, np.ones((3, 3), np.uint8))
+    return cv2.inpaint(img, mask, 7, cv2.INPAINT_TELEA)
+
+
 if __name__ == "__main__":
     os.makedirs(PB + "Retusche", exist_ok=True)
     cv2.imwrite(ZIEL.format("MJOAR0182"), fugen(cv2.imread(ORIG.format("MJOAR0182")), [(895, 890, 965, 965), (865, 1945, 935, 2065)]))
     cv2.imwrite(ZIEL.format("MJOAR0215"), kante(cv2.imread(ORIG.format("MJOAR0215")), (120, 150, 1284, 560)))
+    # MJOAR0191 (Griff Linen, Detailkachel ab 14.11.): Nähte oben/unten + Lackspuren am Griff
+    cv2.imwrite(ZIEL.format("MJOAR0191"), naehte(cv2.imread(ORIG.format("MJOAR0191")),
+                                                 [(929, 910, 944, 961), (889, 1984, 904, 2053)], (330, 880, 960, 2060)))
     print("Retusche geschrieben:", PB + "Retusche/")

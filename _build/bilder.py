@@ -111,12 +111,15 @@ for farbe in ["Juniper", "Linen", "Onyx", "Steel"]:
 # Ausguss und Skala: 0215 ist das einzige Nahfoto von Ausguss und Skala im Shooting, das Original hat nur 1284 px;
 # die Ausschnitte bleiben deshalb unter 1600 px (kein Hochrechnen). Wand und Griff aus Originalen mit 1600 x 2000.
 d = weiss_anheben(retusche("MJOAR0215"))
-export("detail-ausguss", d.crop((0, 100, 680, 950)))
+# 14.11. (Thorsten: „abwechslungsreicher, viel Steel und Grün“): je Kachel eine Farbe. Tülle jetzt Onyx mit Milch
+# aus 0026 (Logo-Retusche 12.11.), Skala bleibt 0215 (innen ist jede Farbe Stahl), Griff Linen 0191 retuschiert,
+# Beutel bleibt Juniper 0307.
+export("detail-ausguss", quelle_logo("Mjoar_0026 2").crop((503, 603, 2515, 3118)))
 export("detail-skala", d.crop((500, 90, 1284, 1070)))
 export("detail-wand", crop_cover(quelle("MJOAR0307"), 4, 5, cx=0.30, cy=0.523, zoom=3779 / 2000))
 # Griff 0182 (Juniper, Freisteller auf Weiß): ganzer Griff mit beiden Ansätzen am Korpus, 1060 x 1325 (4:5),
 # rechts vor dem Schriftzug abgeschnitten, damit er nicht angeschnitten erscheint (Thorsten 08.10.).
-export("detail-griff", weiss_anheben(retusche("MJOAR0182")).crop((230, 760, 1290, 2085)))
+export("detail-griff", weiss_anheben(retusche("MJOAR0191")).crop((230, 760, 1290, 2085)))
 
 # Größe 0021 1 (Hand), 4:5 wie A+ 06
 export("groesse", crop_cover(quelle("Mjoar_0021 1"), 4, 5, cx=0.42, cy=0.45))
